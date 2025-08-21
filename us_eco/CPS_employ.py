@@ -3106,3 +3106,4 @@ plot_cps_series(['LNU05000097', 'LNU05024230'], chart_type='multi_line', data_ty
 plot_cps_series(['LNU01000003', 'LNU01000006', 'LNU01032183', 'LNU01035243', 'LNU01035553'], chart_type='multi_line', data_type='raw')
 
 # %%
+안녕
