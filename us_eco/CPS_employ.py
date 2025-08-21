@@ -3092,3 +3092,17 @@ list_available_series()
 # %%
 print_load_info()
 # %%
+labels = {'LNS11000000' : "경제활동인구", 'LNS11300000' : "경제활동참가율(우)"}
+plot_cps_series(['LNS11000000', 'LNS11300000'], chart_type='dual_axis', data_type='raw', left_ytitle='천 명', right_ytitle='%', labels=labels)
+# %%
+plot_cps_series(['LNS13000000'], chart_type='single_line', data_type='raw')
+# %%
+plot_cps_series(['LNU01076975', 'LNU01000048', 'LNU01000092', 'LNU01024230', 'LNU01000097'], chart_type='multi_line', data_type='raw')
+
+# %%
+plot_cps_series(['LNU05000097', 'LNU05024230'], chart_type='multi_line', data_type='raw')
+
+# %%
+plot_cps_series(['LNU01000003', 'LNU01000006', 'LNU01032183', 'LNU01035243', 'LNU01035553'], chart_type='multi_line', data_type='raw')
+
+# %%
