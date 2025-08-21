@@ -18,7 +18,6 @@ import os
 warnings.filterwarnings('ignore')
 
 # 필수 라이브러리들
-# 체크
 try:
     import requests
     import json
