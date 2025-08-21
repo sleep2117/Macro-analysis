@@ -35,7 +35,7 @@ from kpds_fig_format_enhanced import *
 
 # %%
 # === 전역 데이터 저장소 ===
-
+# 업데이트
 # API 설정
 BLS_SESSION = None
 API_INITIALIZED = False

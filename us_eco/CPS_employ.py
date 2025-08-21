@@ -2268,7 +2268,7 @@ print("   switch_api_key()  # API 키 수동 전환 (일일 한도 초과 시)")
 
 # %%
 # === 이민 정책 관련 분석 도구 ===
-
+# 제대로 작동하는지 확인
 def analyze_immigration_labor_impact():
     """
     이민 정책 관련 노동시장 영향 분석
