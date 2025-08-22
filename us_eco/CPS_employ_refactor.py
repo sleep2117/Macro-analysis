@@ -684,3 +684,12 @@ print("✅ 모든 함수가 us_eco_utils의 통합 함수 사용!")
 load_cps_data()
 plot_cps_series_advanced(['LNS14000000', 'LNS14000003'], 'multi_line', 'mom')
 # %%
+plot_cps_series_advanced(['LNU05024230', 'LNU03000000'], 'multi_line', 'yoy')
+
+# %%
+plot_cps_series_advanced(['LNU05024230', 'LNU03000000'], 'dual_axis', 'raw')
+
+# %%
+export_cps_data(['LNU05024230', 'LNU03000000'], 'raw')
+
+# %%

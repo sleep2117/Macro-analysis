@@ -1491,14 +1491,11 @@ def run_comprehensive_cpi_analysis():
 results = run_comprehensive_cpi_analysis()
 
 # %%
-create_hierarchical_cpi_chart('level5', 'auto')
-# %%
-create_hierarchical_cpi_chart('level6', 'auto')
+plot_cpi_series_advanced(['commodities', 'services', 'durables', 'nondurables', 'energy_commodities'], 'multi_line', 'yoy')
 
 # %%
-create_hierarchical_cpi_chart('level2', 'auto')
+plot_cpi_series_advanced(['apparel', 'appliances', 'furniture_bedding', 'sports_equipment', 'toys'], 'multi_line', 'yoy')
 
 # %%
-create_hierarchical_cpi_chart('level4', 'mom')
 
 # %%
