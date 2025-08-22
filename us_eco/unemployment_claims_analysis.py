@@ -160,7 +160,7 @@ def collect_fred_data():
 # 2. 데이터 저장 및 로드
 # =============================================================================
 
-def save_data(df, metadata, base_path="/home/jyp0615/us_eco"):
+def save_data(df, metadata, base_path="/home/jyp0615/us_eco/data"):
     """수집된 데이터를 CSV와 JSON으로 저장"""
     
     try:
@@ -181,7 +181,7 @@ def save_data(df, metadata, base_path="/home/jyp0615/us_eco"):
         print(f"❌ 데이터 저장 중 오류: {e}")
         return False
 
-def load_data(base_path="/home/jyp0615/us_eco"):
+def load_data(base_path="/home/jyp0615/us_eco/data"):
     """저장된 데이터를 로드"""
     
     try:
