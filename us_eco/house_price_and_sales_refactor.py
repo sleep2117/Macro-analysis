@@ -243,198 +243,54 @@ ALL_HOUSE_PRICE_SERIES = {
     **NEW_RESIDENTIAL_SALES_SERIES
 }
 
-# 한국어 이름 매핑 (DataFrame 열 이름 기반)
+# 한국어 이름 매핑 (실제 컬럼명 기반 - category_indicator 형태)
 HOUSE_PRICE_KOREAN_NAMES = {
-    # Case-Shiller National & Composite (기본 형태)
-    'cs_national_sa': 'CS 전국 지수(SA)',         'cs_national_nsa': 'CS 전국 지수(NSA)',
-    'cs_10city_sa': 'CS 10도시 지수(SA)',        'cs_10city_nsa': 'CS 10도시 지수(NSA)',
-    'cs_20city_sa': 'CS 20도시 지수(SA)',        'cs_20city_nsa': 'CS 20도시 지수(NSA)',
+    # Case-Shiller National & Composite
+    'case_shiller_cs_national_sa': 'CS 전국 지수(SA)',         'case_shiller_cs_national_nsa': 'CS 전국 지수(NSA)',
+    'case_shiller_cs_10city_sa': 'CS 10도시 지수(SA)',        'case_shiller_cs_10city_nsa': 'CS 10도시 지수(NSA)',
+    'case_shiller_cs_20city_sa': 'CS 20도시 지수(SA)',        'case_shiller_cs_20city_nsa': 'CS 20도시 지수(NSA)',
     
     # Case-Shiller Main Metro Areas
-    'cs_atlanta_sa': 'CS 애트랜타(SA)',          'cs_atlanta_nsa': 'CS 애트랜타(NSA)',
-    'cs_boston_sa': 'CS 보스턴(SA)',             'cs_boston_nsa': 'CS 보스턴(NSA)',
-    'cs_charlotte_sa': 'CS 샬럿(SA)',            'cs_charlotte_nsa': 'CS 샬럿(NSA)',
-    'cs_chicago_sa': 'CS 시카고(SA)',            'cs_chicago_nsa': 'CS 시카고(NSA)',
-    'cs_cleveland_sa': 'CS 클리블랜드(SA)',       'cs_cleveland_nsa': 'CS 클리블랜드(NSA)',
-    'cs_dallas_sa': 'CS 댈러스(SA)',             'cs_dallas_nsa': 'CS 댈러스(NSA)',
-    'cs_denver_sa': 'CS 덴버(SA)',               'cs_denver_nsa': 'CS 덴버(NSA)',
-    'cs_detroit_sa': 'CS 디트로이트(SA)',         'cs_detroit_nsa': 'CS 디트로이트(NSA)',
-    'cs_las_vegas_sa': 'CS 라스베이거스(SA)',    'cs_las_vegas_nsa': 'CS 라스베이거스(NSA)',
-    'cs_los_angeles_sa': 'CS 로스앤젤레스(SA)',  'cs_los_angeles_nsa': 'CS 로스앤젤레스(NSA)',
-    'cs_miami_sa': 'CS 마이애미(SA)',            'cs_miami_nsa': 'CS 마이애미(NSA)',
-    'cs_minneapolis_sa': 'CS 미니애폴리스(SA)',   'cs_minneapolis_nsa': 'CS 미니애폴리스(NSA)',
-    'cs_new_york_sa': 'CS 뉴욕(SA)',            'cs_new_york_nsa': 'CS 뉴욕(NSA)',
-    'cs_phoenix_sa': 'CS 피닉스(SA)',            'cs_phoenix_nsa': 'CS 피닉스(NSA)',
-    'cs_portland_sa': 'CS 포틀랜드(SA)',         'cs_portland_nsa': 'CS 포틀랜드(NSA)',
-    'cs_san_diego_sa': 'CS 샌디에이고(SA)',      'cs_san_diego_nsa': 'CS 샌디에이고(NSA)',
-    'cs_san_francisco_sa': 'CS 샌프란시스코(SA)', 'cs_san_francisco_nsa': 'CS 샌프란시스코(NSA)',
-    'cs_seattle_sa': 'CS 시애틀(SA)',            'cs_seattle_nsa': 'CS 시애틀(NSA)',
-    'cs_tampa_sa': 'CS 탬파(SA)',                'cs_tampa_nsa': 'CS 탬파(NSA)',
-    'cs_washington_sa': 'CS 워싱턴DC(SA)',       'cs_washington_nsa': 'CS 워싱턴DC(NSA)',
-    
-    # Case-Shiller Tiered Indices
-    'cs_la_high_sa': 'CS LA 고가(SA)',           'cs_la_high_nsa': 'CS LA 고가(NSA)',
-    'cs_la_mid_sa': 'CS LA 중가(SA)',            'cs_la_mid_nsa': 'CS LA 중가(NSA)',
-    'cs_la_low_sa': 'CS LA 저가(SA)',            'cs_la_low_nsa': 'CS LA 저가(NSA)',
-    'cs_ny_high_sa': 'CS 뉴욕 고가(SA)',         'cs_ny_high_nsa': 'CS 뉴욕 고가(NSA)',
-    'cs_ny_mid_sa': 'CS 뉴욕 중가(SA)',          'cs_ny_mid_nsa': 'CS 뉴욕 중가(NSA)',
-    'cs_ny_low_sa': 'CS 뉴욕 저가(SA)',          'cs_ny_low_nsa': 'CS 뉴욕 저가(NSA)',
-    'cs_sf_high_sa': 'CS SF 고가(SA)',           'cs_sf_high_nsa': 'CS SF 고가(NSA)',
-    'cs_sf_mid_sa': 'CS SF 중가(SA)',            'cs_sf_mid_nsa': 'CS SF 중가(NSA)',
-    'cs_sf_low_sa': 'CS SF 저가(SA)',            'cs_sf_low_nsa': 'CS SF 저가(NSA)',
-    
-    # Case-Shiller Condo Indices
-    'cs_boston_condo_sa': 'CS 보스턴 콘도(SA)',  'cs_boston_condo_nsa': 'CS 보스턴 콘도(NSA)',
-    'cs_chicago_condo_sa': 'CS 시카고 콘도(SA)', 'cs_chicago_condo_nsa': 'CS 시카고 콘도(NSA)',
-    'cs_la_condo_sa': 'CS LA 콘도(SA)',          'cs_la_condo_nsa': 'CS LA 콘도(NSA)',
-    'cs_ny_condo_sa': 'CS 뉴욕 콘도(SA)',        'cs_ny_condo_nsa': 'CS 뉴욕 콘도(NSA)',
-    'cs_sf_condo_sa': 'CS SF 콘도(SA)',          'cs_sf_condo_nsa': 'CS SF 콘도(NSA)',
-    
-    # FHFA Indices (기본 형태)
-    'fhfa_national_sa': 'FHFA 전국(SA)',              'fhfa_national_nsa': 'FHFA 전국(NSA)',
-    'fhfa_new_england_sa': 'FHFA 뉴잉글랜드(SA)',     'fhfa_new_england_nsa': 'FHFA 뉴잉글랜드(NSA)',
-    'fhfa_middle_atlantic_sa': 'FHFA 중부대서양(SA)', 'fhfa_middle_atlantic_nsa': 'FHFA 중부대서양(NSA)',
-    'fhfa_south_atlantic_sa': 'FHFA 남부대서양(SA)',  'fhfa_south_atlantic_nsa': 'FHFA 남부대서양(NSA)',
-    'fhfa_east_south_central_sa': 'FHFA 동남중부(SA)', 'fhfa_east_south_central_nsa': 'FHFA 동남중부(NSA)',
-    'fhfa_west_south_central_sa': 'FHFA 서남중부(SA)', 'fhfa_west_south_central_nsa': 'FHFA 서남중부(NSA)',
-    'fhfa_east_north_central_sa': 'FHFA 동북중부(SA)', 'fhfa_east_north_central_nsa': 'FHFA 동북중부(NSA)',
-    'fhfa_west_north_central_sa': 'FHFA 서북중부(SA)', 'fhfa_west_north_central_nsa': 'FHFA 서북중부(NSA)',
-    'fhfa_mountain_sa': 'FHFA 산악지역(SA)',          'fhfa_mountain_nsa': 'FHFA 산악지역(NSA)',
-    'fhfa_pacific_sa': 'FHFA 태평양(SA)',            'fhfa_pacific_nsa': 'FHFA 태평양(NSA)',
-    
-    # Zillow Indices
-    'zillow_us': 'Zillow 전미',
-    'zillow_california': 'Zillow 캘리포니아',
-    'zillow_florida': 'Zillow 플로리다',
-    'zillow_texas': 'Zillow 텍사스',
-    'zillow_new_york': 'Zillow 뉴욕주',
-    'zillow_washington': 'Zillow 워싱턴주',
-    'zillow_massachusetts': 'Zillow 매사추세츠',
-    'zillow_colorado': 'Zillow 콜로라도',
-    'zillow_arizona': 'Zillow 애리조나',
-    'zillow_nevada': 'Zillow 네바다',
-    'zillow_oregon': 'Zillow 오리건',
-    'zillow_georgia': 'Zillow 조지아',
-    'zillow_north_carolina': 'Zillow 노스캐롤라이나',
-    'zillow_illinois': 'Zillow 일리노이',
-    'zillow_pennsylvania': 'Zillow 펜실베이니아',
-    'zillow_ohio': 'Zillow 오하이오',
-    'zillow_michigan': 'Zillow 미시간',
-    'zillow_virginia': 'Zillow 버지니아',
-    
-    # Existing Home Sales (기존 주택 판매)
-    'ehs_sales_national_sa': 'EHS 전국 판매량(SA)',
-    'ehs_inventory_national': 'EHS 전국 재고',
-    'ehs_months_supply': 'EHS 재고 소진율',
-    'ehs_sf_sales_national_sa': 'EHS 단독주택 판매량(SA)',
-    'ehs_sf_inventory_national': 'EHS 단독주택 재고',
-    'ehs_sf_months_supply': 'EHS 단독주택 소진율',
-    
-    'ehs_sales_northeast_sa': 'EHS 동북부 판매량(SA)',
-    'ehs_sales_midwest_sa': 'EHS 중서부 판매량(SA)',
-    'ehs_sales_south_sa': 'EHS 남부 판매량(SA)',
-    'ehs_sales_west_sa': 'EHS 서부 판매량(SA)',
-    
-    'ehs_sf_sales_northeast_sa': 'EHS 동북부 단독주택(SA)',
-    'ehs_sf_sales_midwest_sa': 'EHS 중서부 단독주택(SA)',
-    'ehs_sf_sales_south_sa': 'EHS 남부 단독주택(SA)',
-    'ehs_sf_sales_west_sa': 'EHS 서부 단독주택(SA)',
-    
-    'ehs_median_price_national': 'EHS 전국 중간가격',
-    'ehs_sf_median_price_national': 'EHS 단독주택 중간가격',
-    
-    'ehs_median_price_northeast': 'EHS 동북부 중간가격',
-    'ehs_median_price_midwest': 'EHS 중서부 중간가격',
-    'ehs_median_price_south': 'EHS 남부 중간가격',
-    'ehs_median_price_west': 'EHS 서부 중간가격',
-    
-    'ehs_sf_median_price_northeast': 'EHS 동북부 단독주택 중간가격',
-    'ehs_sf_median_price_midwest': 'EHS 중서부 단독주택 중간가격',
-    'ehs_sf_median_price_south': 'EHS 남부 단독주택 중간가격',
-    'ehs_sf_median_price_west': 'EHS 서부 단독주택 중간가격',
-    
-    # New Residential Sales (신규 주택 판매)
-    'nrs_sales_national_sa': 'NRS 전국 판매량(SA)',
-    'nrs_sales_national_nsa': 'NRS 전국 판매량(NSA)',
-    'nrs_inventory_national_sa': 'NRS 전국 재고(SA)',
-    'nrs_inventory_national_nsa': 'NRS 전국 재고(NSA)',
-    'nrs_months_supply_sa': 'NRS 재고 소진율(SA)',
-    'nrs_months_supply_nsa': 'NRS 재고 소진율(NSA)',
-    
-    'nrs_sales_northeast_sa': 'NRS 동북부 판매량(SA)',
-    'nrs_sales_midwest_sa': 'NRS 중서부 판매량(SA)',
-    'nrs_sales_south_sa': 'NRS 남부 판매량(SA)',
-    'nrs_sales_west_sa': 'NRS 서부 판매량(SA)',
-    
-    'nrs_sales_northeast_nsa': 'NRS 동북부 판매량(NSA)',
-    'nrs_sales_midwest_nsa': 'NRS 중서부 판매량(NSA)',
-    'nrs_sales_south_nsa': 'NRS 남부 판매량(NSA)',
-    'nrs_sales_west_nsa': 'NRS 서부 판매량(NSA)',
-    
-    'nrs_inventory_northeast': 'NRS 동북부 재고',
-    'nrs_inventory_midwest': 'NRS 중서부 재고',
-    'nrs_inventory_south': 'NRS 남부 재고',
-    'nrs_inventory_west': 'NRS 서부 재고',
-    
-    'nrs_median_price_monthly': 'NRS 월별 중간가격',
-    'nrs_median_price_quarterly': 'NRS 분기별 중간가격',
-    'nrs_average_price_monthly': 'NRS 월별 평균가격',
-    'nrs_average_price_quarterly': 'NRS 분기별 평균가격',
-    
-    'nrs_median_price_northeast_q': 'NRS 동북부 중간가격(분기)',
-    'nrs_median_price_midwest_q': 'NRS 중서부 중간가격(분기)',
-    'nrs_median_price_south_q': 'NRS 남부 중간가격(분기)',
-    'nrs_median_price_west_q': 'NRS 서부 중간가격(분기)',
-    
-    'nrs_average_price_northeast_q': 'NRS 동북부 평균가격(분기)',
-    'nrs_average_price_midwest_q': 'NRS 중서부 평균가격(분기)',
-    'nrs_average_price_south_q': 'NRS 남부 평균가격(분기)',
-    'nrs_average_price_west_q': 'NRS 서부 평균가격(분기)',
-    
-    'nrs_sales_total_stage': 'NRS 전체 단계별',
-    'nrs_sales_completed': 'NRS 완공',
-    'nrs_sales_under_construction': 'NRS 건설중',
-    'nrs_sales_not_started': 'NRS 미착공',
-    
-    'nrs_inventory_total_stage': 'NRS 전체 재고 단계별',
-    'nrs_inventory_completed_stage': 'NRS 완공 재고',
-    'nrs_inventory_under_construction_stage': 'NRS 건설중 재고',
-    'nrs_inventory_not_started_stage': 'NRS 미착공 재고',
-    
-    'nrs_sales_cash': 'NRS 현금구매',
-    'nrs_sales_conventional': 'NRS 일반융자',
-    'nrs_sales_fha': 'NRS FHA융자',
-    'nrs_sales_va': 'NRS VA융자',
-    
-    'nrs_median_months_on_market': 'NRS 시장체류기간',
-    
-    # 카테고리 prefix가 있는 중복 컬럼들 (그룹별 업데이트로 생성됨)
-    # Case-Shiller with prefix
-    'case_shiller_cs_national_sa': 'CS 전국 지수(SA)',      'case_shiller_cs_national_nsa': 'CS 전국 지수(NSA)',
-    'case_shiller_cs_10city_sa': 'CS 10도시 지수(SA)',     'case_shiller_cs_10city_nsa': 'CS 10도시 지수(NSA)',
-    'case_shiller_cs_20city_sa': 'CS 20도시 지수(SA)',     'case_shiller_cs_20city_nsa': 'CS 20도시 지수(NSA)',
-    'case_shiller_cs_atlanta_sa': 'CS 애트랜타(SA)',       'case_shiller_cs_atlanta_nsa': 'CS 애트랜타(NSA)',
-    'case_shiller_cs_boston_sa': 'CS 보스턴(SA)',          'case_shiller_cs_boston_nsa': 'CS 보스턴(NSA)',
-    'case_shiller_cs_charlotte_sa': 'CS 샬럿(SA)',         'case_shiller_cs_charlotte_nsa': 'CS 샬럿(NSA)',
-    'case_shiller_cs_chicago_sa': 'CS 시카고(SA)',         'case_shiller_cs_chicago_nsa': 'CS 시카고(NSA)',
-    'case_shiller_cs_cleveland_sa': 'CS 클리블랜드(SA)',    'case_shiller_cs_cleveland_nsa': 'CS 클리블랜드(NSA)',
-    'case_shiller_cs_dallas_sa': 'CS 댈러스(SA)',          'case_shiller_cs_dallas_nsa': 'CS 댈러스(NSA)',
-    'case_shiller_cs_denver_sa': 'CS 덴버(SA)',            'case_shiller_cs_denver_nsa': 'CS 덴버(NSA)',
-    'case_shiller_cs_detroit_sa': 'CS 디트로이트(SA)',      'case_shiller_cs_detroit_nsa': 'CS 디트로이트(NSA)',
-    'case_shiller_cs_las_vegas_sa': 'CS 라스베이거스(SA)', 'case_shiller_cs_las_vegas_nsa': 'CS 라스베이거스(NSA)',
-    'case_shiller_cs_los_angeles_sa': 'CS 로스앤젤레스(SA)', 'case_shiller_cs_los_angeles_nsa': 'CS 로스앤젤레스(NSA)',
-    'case_shiller_cs_miami_sa': 'CS 마이애미(SA)',         'case_shiller_cs_miami_nsa': 'CS 마이애미(NSA)',
-    'case_shiller_cs_minneapolis_sa': 'CS 미니애폴리스(SA)', 'case_shiller_cs_minneapolis_nsa': 'CS 미니애폴리스(NSA)',
-    'case_shiller_cs_new_york_sa': 'CS 뉴욕(SA)',         'case_shiller_cs_new_york_nsa': 'CS 뉴욕(NSA)',
-    'case_shiller_cs_phoenix_sa': 'CS 피닉스(SA)',         'case_shiller_cs_phoenix_nsa': 'CS 피닉스(NSA)',
-    'case_shiller_cs_portland_sa': 'CS 포틀랜드(SA)',      'case_shiller_cs_portland_nsa': 'CS 포틀랜드(NSA)',
-    'case_shiller_cs_san_diego_sa': 'CS 샌디에이고(SA)',   'case_shiller_cs_san_diego_nsa': 'CS 샌디에이고(NSA)',
+    'case_shiller_cs_atlanta_sa': 'CS 애트랜타(SA)',          'case_shiller_cs_atlanta_nsa': 'CS 애트랜타(NSA)',
+    'case_shiller_cs_boston_sa': 'CS 보스턴(SA)',             'case_shiller_cs_boston_nsa': 'CS 보스턴(NSA)',
+    'case_shiller_cs_charlotte_sa': 'CS 샬럿(SA)',            'case_shiller_cs_charlotte_nsa': 'CS 샬럿(NSA)',
+    'case_shiller_cs_chicago_sa': 'CS 시카고(SA)',            'case_shiller_cs_chicago_nsa': 'CS 시카고(NSA)',
+    'case_shiller_cs_cleveland_sa': 'CS 클리블랜드(SA)',       'case_shiller_cs_cleveland_nsa': 'CS 클리블랜드(NSA)',
+    'case_shiller_cs_dallas_sa': 'CS 댈러스(SA)',             'case_shiller_cs_dallas_nsa': 'CS 댈러스(NSA)',
+    'case_shiller_cs_denver_sa': 'CS 덴버(SA)',               'case_shiller_cs_denver_nsa': 'CS 덴버(NSA)',
+    'case_shiller_cs_detroit_sa': 'CS 디트로이트(SA)',         'case_shiller_cs_detroit_nsa': 'CS 디트로이트(NSA)',
+    'case_shiller_cs_las_vegas_sa': 'CS 라스베이거스(SA)',    'case_shiller_cs_las_vegas_nsa': 'CS 라스베이거스(NSA)',
+    'case_shiller_cs_los_angeles_sa': 'CS 로스앤젤레스(SA)',  'case_shiller_cs_los_angeles_nsa': 'CS 로스앤젤레스(NSA)',
+    'case_shiller_cs_miami_sa': 'CS 마이애미(SA)',            'case_shiller_cs_miami_nsa': 'CS 마이애미(NSA)',
+    'case_shiller_cs_minneapolis_sa': 'CS 미니애폴리스(SA)',   'case_shiller_cs_minneapolis_nsa': 'CS 미니애폴리스(NSA)',
+    'case_shiller_cs_new_york_sa': 'CS 뉴욕(SA)',            'case_shiller_cs_new_york_nsa': 'CS 뉴욕(NSA)',
+    'case_shiller_cs_phoenix_sa': 'CS 피닉스(SA)',            'case_shiller_cs_phoenix_nsa': 'CS 피닉스(NSA)',
+    'case_shiller_cs_portland_sa': 'CS 포틀랜드(SA)',         'case_shiller_cs_portland_nsa': 'CS 포틀랜드(NSA)',
+    'case_shiller_cs_san_diego_sa': 'CS 샌디에이고(SA)',      'case_shiller_cs_san_diego_nsa': 'CS 샌디에이고(NSA)',
     'case_shiller_cs_san_francisco_sa': 'CS 샌프란시스코(SA)', 'case_shiller_cs_san_francisco_nsa': 'CS 샌프란시스코(NSA)',
-    'case_shiller_cs_seattle_sa': 'CS 시애틀(SA)',         'case_shiller_cs_seattle_nsa': 'CS 시애틀(NSA)',
-    'case_shiller_cs_tampa_sa': 'CS 탬파(SA)',             'case_shiller_cs_tampa_nsa': 'CS 탬파(NSA)',
-    'case_shiller_cs_washington_sa': 'CS 워싱턴DC(SA)',    'case_shiller_cs_washington_nsa': 'CS 워싱턴DC(NSA)',
-    
-    # FHFA with prefix
+    'case_shiller_cs_seattle_sa': 'CS 시애틀(SA)',            'case_shiller_cs_seattle_nsa': 'CS 시애틀(NSA)',
+    'case_shiller_cs_tampa_sa': 'CS 탬파(SA)',                'case_shiller_cs_tampa_nsa': 'CS 탬파(NSA)',
+    'case_shiller_cs_washington_sa': 'CS 워싱턴DC(SA)',       'case_shiller_cs_washington_nsa': 'CS 워싱턴DC(NSA)',
+
+    # Case-Shiller Tiered Indices
+    'case_shiller_cs_la_high_sa': 'CS LA 고가(SA)',           'case_shiller_cs_la_high_nsa': 'CS LA 고가(NSA)',
+    'case_shiller_cs_la_mid_sa': 'CS LA 중가(SA)',            'case_shiller_cs_la_mid_nsa': 'CS LA 중가(NSA)',
+    'case_shiller_cs_la_low_sa': 'CS LA 저가(SA)',            'case_shiller_cs_la_low_nsa': 'CS LA 저가(NSA)',
+    'case_shiller_cs_ny_high_sa': 'CS 뉴욕 고가(SA)',         'case_shiller_cs_ny_high_nsa': 'CS 뉴욕 고가(NSA)',
+    'case_shiller_cs_ny_mid_sa': 'CS 뉴욕 중가(SA)',          'case_shiller_cs_ny_mid_nsa': 'CS 뉴욕 중가(NSA)',
+    'case_shiller_cs_ny_low_sa': 'CS 뉴욕 저가(SA)',          'case_shiller_cs_ny_low_nsa': 'CS 뉴욕 저가(NSA)',
+    'case_shiller_cs_sf_high_sa': 'CS SF 고가(SA)',           'case_shiller_cs_sf_high_nsa': 'CS SF 고가(NSA)',
+    'case_shiller_cs_sf_mid_sa': 'CS SF 중가(SA)',            'case_shiller_cs_sf_mid_nsa': 'CS SF 중가(NSA)',
+    'case_shiller_cs_sf_low_sa': 'CS SF 저가(SA)',            'case_shiller_cs_sf_low_nsa': 'CS SF 저가(NSA)',
+
+    # Case-Shiller Condo Indices
+    'case_shiller_cs_boston_condo_sa': 'CS 보스턴 콘도(SA)',  'case_shiller_cs_boston_condo_nsa': 'CS 보스턴 콘도(NSA)',
+    'case_shiller_cs_chicago_condo_sa': 'CS 시카고 콘도(SA)', 'case_shiller_cs_chicago_condo_nsa': 'CS 시카고 콘도(NSA)',
+    'case_shiller_cs_la_condo_sa': 'CS LA 콘도(SA)',          'case_shiller_cs_la_condo_nsa': 'CS LA 콘도(NSA)',
+    'case_shiller_cs_ny_condo_sa': 'CS 뉴욕 콘도(SA)',        'case_shiller_cs_ny_condo_nsa': 'CS 뉴욕 콘도(NSA)',
+    'case_shiller_cs_sf_condo_sa': 'CS SF 콘도(SA)',          'case_shiller_cs_sf_condo_nsa': 'CS SF 콘도(NSA)',
+
+    # FHFA Indices
     'fhfa_fhfa_national_sa': 'FHFA 전국(SA)',              'fhfa_fhfa_national_nsa': 'FHFA 전국(NSA)',
     'fhfa_fhfa_new_england_sa': 'FHFA 뉴잉글랜드(SA)',     'fhfa_fhfa_new_england_nsa': 'FHFA 뉴잉글랜드(NSA)',
     'fhfa_fhfa_middle_atlantic_sa': 'FHFA 중부대서양(SA)', 'fhfa_fhfa_middle_atlantic_nsa': 'FHFA 중부대서양(NSA)',
@@ -446,7 +302,7 @@ HOUSE_PRICE_KOREAN_NAMES = {
     'fhfa_fhfa_mountain_sa': 'FHFA 산악지역(SA)',          'fhfa_fhfa_mountain_nsa': 'FHFA 산악지역(NSA)',
     'fhfa_fhfa_pacific_sa': 'FHFA 태평양(SA)',            'fhfa_fhfa_pacific_nsa': 'FHFA 태평양(NSA)',
     
-    # Zillow with prefix
+    # Zillow Indices
     'zillow_zillow_us': 'Zillow 전미',
     'zillow_zillow_california': 'Zillow 캘리포니아',
     'zillow_zillow_florida': 'Zillow 플로리다',
@@ -466,7 +322,7 @@ HOUSE_PRICE_KOREAN_NAMES = {
     'zillow_zillow_michigan': 'Zillow 미시간',
     'zillow_zillow_virginia': 'Zillow 버지니아',
     
-    # Existing Home Sales with prefix
+    # Existing Home Sales (기존 주택 판매)
     'existing_home_sales_ehs_sales_national_sa': 'EHS 전국 판매량(SA)',
     'existing_home_sales_ehs_inventory_national': 'EHS 전국 재고',
     'existing_home_sales_ehs_months_supply': 'EHS 재고 소진율',
@@ -497,7 +353,7 @@ HOUSE_PRICE_KOREAN_NAMES = {
     'existing_home_sales_ehs_sf_median_price_south': 'EHS 남부 단독주택 중간가격',
     'existing_home_sales_ehs_sf_median_price_west': 'EHS 서부 단독주택 중간가격',
     
-    # New Residential Sales with prefix
+    # New Residential Sales (신규 주택 판매)
     'new_residential_sales_nrs_sales_national_sa': 'NRS 전국 판매량(SA)',
     'new_residential_sales_nrs_sales_national_nsa': 'NRS 전국 판매량(NSA)',
     'new_residential_sales_nrs_inventory_national_sa': 'NRS 전국 재고(SA)',
