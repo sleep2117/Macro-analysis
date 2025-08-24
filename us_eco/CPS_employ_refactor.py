@@ -26,226 +26,226 @@ api_config.BLS_API_KEY3 = 'daf1ca7970b74e81b6a5c7a80a8b8a7f'
 
 CPS_SERIES = {
     # 주요 노동시장 지표
-    'LNS11000000': 'Civilian Labor Force Level',
-    'LNS11300000': 'Civilian Labor Force Participation Rate',
-    'LNS12000000': 'Employment Level',
-    'LNS12300000': 'Employment-Population Ratio',
-    'LNS12500000': 'Employed, Usually Work Full Time',
-    'LNS12600000': 'Employed, Usually Work Part Time',
-    'LNS13000000': 'Unemployment Level',
-    'LNS14000000': 'Unemployment Rate',
+    'civilian_labor_force': 'LNS11000000',
+    'participation_rate': 'LNS11300000',
+    'employment_level': 'LNS12000000',
+    'employment_population_ratio': 'LNS12300000',
+    'employed_full_time': 'LNS12500000',
+    'employed_part_time': 'LNS12600000',
+    'unemployment_level': 'LNS13000000',
+    'unemployment_rate': 'LNS14000000',
     
     # 연령별 실업률
-    'LNS14000012': 'Unemployment Rate - 16-19 Years',
-    'LNS14000025': 'Unemployment Rate - 20 Years & Over Men',
-    'LNS14000026': 'Unemployment Rate - 20 Years & Over Women',
+    'unemployment_rate_16_19': 'LNS14000012',
+    'unemployment_rate_men_20_over': 'LNS14000025',
+    'unemployment_rate_women_20_over': 'LNS14000026',
     
     # 인종별 실업률
-    'LNS14000003': 'Unemployment Rate - White',
-    'LNS14000006': 'Unemployment Rate - Black or African American',
-    'LNS14032183': 'Unemployment Rate - Asian',
-    'LNS14000009': 'Unemployment Rate - Hispanic or Latino',
+    'unemployment_rate_white': 'LNS14000003',
+    'unemployment_rate_black': 'LNS14000006',
+    'unemployment_rate_asian': 'LNS14032183',
+    'unemployment_rate_hispanic': 'LNS14000009',
     
     # 교육수준별 실업률
-    'LNS14027659': 'Unemployment Rate - Less than High School',
-    'LNS14027660': 'Unemployment Rate - High School Graduates',
-    'LNS14027689': 'Unemployment Rate - Some College',
-    'LNS14027662': 'Unemployment Rate - Bachelor\'s Degree and Higher',
+    'unemployment_rate_less_hs': 'LNS14027659',
+    'unemployment_rate_hs_grad': 'LNS14027660',
+    'unemployment_rate_some_college': 'LNS14027689',
+    'unemployment_rate_bachelor_higher': 'LNS14027662',
     
     # 실업 기간
-    'LNS13008396': 'Unemployed Less Than 5 weeks',
-    'LNS13008756': 'Unemployed 5-14 Weeks',
-    'LNS13008516': 'Unemployed 15 Weeks & Over',
-    'LNS13008636': 'Unemployed 27 Weeks & Over',
-    'LNS13008275': 'Average Weeks Unemployed',
-    'LNS13008276': 'Median Weeks Unemployed',
+    'unemployed_less_5_weeks': 'LNS13008396',
+    'unemployed_5_14_weeks': 'LNS13008756',
+    'unemployed_15_weeks_over': 'LNS13008516',
+    'unemployed_27_weeks_over': 'LNS13008636',
+    'average_weeks_unemployed': 'LNS13008275',
+    'median_weeks_unemployed': 'LNS13008276',
     
     # 실업 유형
-    'LNS13023621': 'Unemployment - Job Losers',
-    'LNS13023653': 'Unemployment - Job Losers On Layoff',
-    'LNS13025699': 'Unemployment - Job Losers Not on Layoff',
-    'LNS13023705': 'Unemployment - Job Leavers',
-    'LNS13023557': 'Unemployment - Reentrants',
-    'LNS13023569': 'Unemployment - New Entrants',
+    'unemployment_job_losers': 'LNS13023621',
+    'unemployment_job_losers_layoff': 'LNS13023653',
+    'unemployment_job_losers_not_layoff': 'LNS13025699',
+    'unemployment_job_leavers': 'LNS13023705',
+    'unemployment_reentrants': 'LNS13023557',
+    'unemployment_new_entrants': 'LNS13023569',
     
     # 기타 노동시장 지표
-    'LNS12032194': 'Part Time for Economic Reasons',
-    'LNS15000000': 'Not in Labor Force',
-    'LNS15026642': 'Marginally Attached to Labor Force',
-    'LNS15026645': 'Discouraged Workers',
-    'LNS13327709': 'U-6 Unemployment Rate',
-    'LNS12026619': 'Multiple Jobholders Level',
-    'LNS12026620': 'Multiple Jobholders as Percent of Employed',
+    'part_time_economic_reasons': 'LNS12032194',
+    'not_in_labor_force': 'LNS15000000',
+    'marginally_attached': 'LNS15026642',
+    'discouraged_workers': 'LNS15026645',
+    'u6_unemployment_rate': 'LNS13327709',
+    'multiple_jobholders_level': 'LNS12026619',
+    'multiple_jobholders_percent': 'LNS12026620',
     
     # 날씨 영향
-    'LNU02036012': 'Not at Work - Bad Weather',
-    'LNU02033224': 'At Work 1-34 Hrs - Bad Weather',
+    'not_at_work_bad_weather': 'LNU02036012',
+    'at_work_1_34hrs_bad_weather': 'LNU02033224',
     
     # 20세 이상 주요 지표
-    'LNS11000024': 'Labor Force - 20 Years & Over',
-    'LNS11300024': 'Participation Rate - 20 Years & Over',
-    'LNS12000024': 'Employment - 20 Years & Over',
-    'LNS13000024': 'Unemployment - 20 Years & Over',
-    'LNS14000024': 'Unemployment Rate - 20 Years & Over',
+    'labor_force_20_over': 'LNS11000024',
+    'participation_rate_20_over': 'LNS11300024',
+    'employment_20_over': 'LNS12000024',
+    'unemployment_20_over': 'LNS13000024',
+    'unemployment_rate_20_over': 'LNS14000024',
     
     # 25세 이상 주요 지표
-    'LNS11000048': 'Labor Force - 25 Years & Over',
-    'LNS11300048': 'Participation Rate - 25 Years & Over',
-    'LNS12000048': 'Employment - 25 Years & Over',
-    'LNS13000048': 'Unemployment - 25 Years & Over',
-    'LNS14000048': 'Unemployment Rate - 25 Years & Over',
+    'labor_force_25_over': 'LNS11000048',
+    'participation_rate_25_over': 'LNS11300048',
+    'employment_25_over': 'LNS12000048',
+    'unemployment_25_over': 'LNS13000048',
+    'unemployment_rate_25_over': 'LNS14000048',
     
     # 55세 이상 주요 지표
-    'LNS11024230': 'Labor Force - 55 Years & Over',
-    'LNS11324230': 'Participation Rate - 55 Years & Over',
-    'LNS12024230': 'Employment - 55 Years & Over',
-    'LNS13024230': 'Unemployment - 55 Years & Over',
-    'LNS14024230': 'Unemployment Rate - 55 Years & Over',
+    'labor_force_55_over': 'LNS11024230',
+    'participation_rate_55_over': 'LNS11324230',
+    'employment_55_over': 'LNS12024230',
+    'unemployment_55_over': 'LNS13024230',
+    'unemployment_rate_55_over': 'LNS14024230',
     
     # 히스패닉/라티노 전체 노동시장 지표
-    'LNS11000009': 'Labor Force - Hispanic or Latino',
-    'LNS11300009': 'Participation Rate - Hispanic or Latino',
-    'LNS12000009': 'Employment - Hispanic or Latino',
-    'LNS13000009': 'Unemployment - Hispanic or Latino',
-    'LNS15000009': 'Not in Labor Force - Hispanic or Latino',
+    'labor_force_hispanic': 'LNS11000009',
+    'participation_rate_hispanic': 'LNS11300009',
+    'employment_hispanic': 'LNS12000009',
+    'unemployment_hispanic': 'LNS13000009',
+    'not_in_labor_force_hispanic': 'LNS15000009',
     
     # === 추가 연령별 노동시장 지표 (Not Seasonally Adjusted) ===
-    'LNU01076975': 'Civilian Labor Force - 18 Years & Over (NSA)',
-    'LNU01376975': 'Participation Rate - 18 Years & Over (NSA)',
-    'LNU02076975': 'Employment - 18 Years & Over (NSA)',
-    'LNU03076975': 'Unemployment - 18 Years & Over (NSA)',
-    'LNU04076975': 'Unemployment Rate - 18 Years & Over (NSA)',
-    'LNU05076975': 'Not in Labor Force - 18 Years & Over (NSA)',
+    'labor_force_18_over_nsa': 'LNU01076975',
+    'participation_rate_18_over_nsa': 'LNU01376975',
+    'employment_18_over_nsa': 'LNU02076975',
+    'unemployment_18_over_nsa': 'LNU03076975',
+    'unemployment_rate_18_over_nsa': 'LNU04076975',
+    'not_in_labor_force_18_over_nsa': 'LNU05076975',
     
     # 25세 이상 (Not Seasonally Adjusted)
-    'LNU01000048': 'Civilian Labor Force - 25 Years & Over (NSA)',
-    'LNU01300048': 'Participation Rate - 25 Years & Over (NSA)',
-    'LNU02000048': 'Employment - 25 Years & Over (NSA)',
-    'LNU02500048': 'Employed Full Time - 25 Years & Over (NSA)',
-    'LNU02600048': 'Employed Part Time - 25 Years & Over (NSA)',
-    'LNU03000048': 'Unemployment - 25 Years & Over (NSA)',
-    'LNU03100048': 'Unemployed Looking for Full-time - 25 Years & Over (NSA)',
-    'LNU03200048': 'Unemployed Looking for Part-time - 25 Years & Over (NSA)',
-    'LNU04000048': 'Unemployment Rate - 25 Years & Over (NSA)',
+    'labor_force_25_over_nsa': 'LNU01000048',
+    'participation_rate_25_over_nsa': 'LNU01300048',
+    'employment_25_over_nsa': 'LNU02000048',
+    'employed_full_time_25_over_nsa': 'LNU02500048',
+    'employed_part_time_25_over_nsa': 'LNU02600048',
+    'unemployment_25_over_nsa': 'LNU03000048',
+    'unemployed_fulltime_seeking_25_over_nsa': 'LNU03100048',
+    'unemployed_parttime_seeking_25_over_nsa': 'LNU03200048',
+    'unemployment_rate_25_over_nsa': 'LNU04000048',
     
     # 45세 이상 (Not Seasonally Adjusted)
-    'LNU01000092': 'Civilian Labor Force - 45 Years & Over (NSA)',
-    'LNU01300092': 'Participation Rate - 45 Years & Over (NSA)',
-    'LNU02000092': 'Employment - 45 Years & Over (NSA)',
-    'LNU03000092': 'Unemployment - 45 Years & Over (NSA)',
-    'LNU04000092': 'Unemployment Rate - 45 Years & Over (NSA)',
-    'LNU05000092': 'Not in Labor Force - 45 Years & Over (NSA)',
+    'labor_force_45_over_nsa': 'LNU01000092',
+    'participation_rate_45_over_nsa': 'LNU01300092',
+    'employment_45_over_nsa': 'LNU02000092',
+    'unemployment_45_over_nsa': 'LNU03000092',
+    'unemployment_rate_45_over_nsa': 'LNU04000092',
+    'not_in_labor_force_45_over_nsa': 'LNU05000092',
     
     # 55세 이상 (Not Seasonally Adjusted)
-    'LNU01024230': 'Civilian Labor Force - 55 Years & Over (NSA)',
-    'LNU01324230': 'Participation Rate - 55 Years & Over (NSA)',
-    'LNU02024230': 'Employment - 55 Years & Over (NSA)',
-    'LNU02524230': 'Employed Full Time - 55 Years & Over (NSA)',
-    'LNU02624230': 'Employed Part Time - 55 Years & Over (NSA)',
-    'LNU03024230': 'Unemployment - 55 Years & Over (NSA)',
-    'LNU03124230': 'Unemployed Looking for Full-time - 55 Years & Over (NSA)',
-    'LNU03224230': 'Unemployed Looking for Part-time - 55 Years & Over (NSA)',
-    'LNU04024230': 'Unemployment Rate - 55 Years & Over (NSA)',
-    'LNU05024230': 'Not in Labor Force - 55 Years & Over (NSA)',
+    'labor_force_55_over_nsa': 'LNU01024230',
+    'participation_rate_55_over_nsa': 'LNU01324230',
+    'employment_55_over_nsa': 'LNU02024230',
+    'employed_full_time_55_over_nsa': 'LNU02524230',
+    'employed_part_time_55_over_nsa': 'LNU02624230',
+    'unemployment_55_over_nsa': 'LNU03024230',
+    'unemployed_fulltime_seeking_55_over_nsa': 'LNU03124230',
+    'unemployed_parttime_seeking_55_over_nsa': 'LNU03224230',
+    'unemployment_rate_55_over_nsa': 'LNU04024230',
+    'not_in_labor_force_55_over_nsa': 'LNU05024230',
     
     # 65세 이상 (Not Seasonally Adjusted)
-    'LNU01000097': 'Civilian Labor Force - 65 Years & Over (NSA)',
-    'LNU01300097': 'Participation Rate - 65 Years & Over (NSA)',
-    'LNU02000097': 'Employment - 65 Years & Over (NSA)',
-    'LNU03000097': 'Unemployment - 65 Years & Over (NSA)',
-    'LNU04000097': 'Unemployment Rate - 65 Years & Over (NSA)',
-    'LNU05000097': 'Not in Labor Force - 65 Years & Over (NSA)',
+    'labor_force_65_over_nsa': 'LNU01000097',
+    'participation_rate_65_over_nsa': 'LNU01300097',
+    'employment_65_over_nsa': 'LNU02000097',
+    'unemployment_65_over_nsa': 'LNU03000097',
+    'unemployment_rate_65_over_nsa': 'LNU04000097',
+    'not_in_labor_force_65_over_nsa': 'LNU05000097',
     
     # === 추가 인종별 노동시장 지표 (Not Seasonally Adjusted) ===
     # 백인 (White)
-    'LNU01000003': 'Civilian Labor Force - White (NSA)',
-    'LNU01300003': 'Participation Rate - White (NSA)',
-    'LNU02000003': 'Employment - White (NSA)',
-    'LNU02500003': 'Employed Full Time - White (NSA)',
-    'LNU02600003': 'Employed Part Time - White (NSA)',
-    'LNU03000003': 'Unemployment - White (NSA)',
-    'LNU04000003': 'Unemployment Rate - White (NSA)',
-    'LNU05000003': 'Not in Labor Force - White (NSA)',
+    'labor_force_white_nsa': 'LNU01000003',
+    'participation_rate_white_nsa': 'LNU01300003',
+    'employment_white_nsa': 'LNU02000003',
+    'employed_full_time_white_nsa': 'LNU02500003',
+    'employed_part_time_white_nsa': 'LNU02600003',
+    'unemployment_white_nsa': 'LNU03000003',
+    'unemployment_rate_white_nsa': 'LNU04000003',
+    'not_in_labor_force_white_nsa': 'LNU05000003',
     
     # 흑인 (Black or African American)
-    'LNU01000006': 'Civilian Labor Force - Black or African American (NSA)',
-    'LNU01300006': 'Participation Rate - Black or African American (NSA)',
-    'LNU02000006': 'Employment - Black or African American (NSA)',
-    'LNU02500006': 'Employed Full Time - Black or African American (NSA)',
-    'LNU02600006': 'Employed Part Time - Black or African American (NSA)',
-    'LNU03000006': 'Unemployment - Black or African American (NSA)',
-    'LNU04000006': 'Unemployment Rate - Black or African American (NSA)',
-    'LNU05000006': 'Not in Labor Force - Black or African American (NSA)',
+    'labor_force_black_nsa': 'LNU01000006',
+    'participation_rate_black_nsa': 'LNU01300006',
+    'employment_black_nsa': 'LNU02000006',
+    'employed_full_time_black_nsa': 'LNU02500006',
+    'employed_part_time_black_nsa': 'LNU02600006',
+    'unemployment_black_nsa': 'LNU03000006',
+    'unemployment_rate_black_nsa': 'LNU04000006',
+    'not_in_labor_force_black_nsa': 'LNU05000006',
     
     # 아시아계 (Asian)
-    'LNU01032183': 'Civilian Labor Force - Asian (NSA)',
-    'LNU01332183': 'Participation Rate - Asian (NSA)',
-    'LNU02032183': 'Employment - Asian (NSA)',
-    'LNU02532183': 'Employed Full Time - Asian (NSA)',
-    'LNU02632183': 'Employed Part Time - Asian (NSA)',
-    'LNU03032183': 'Unemployment - Asian (NSA)',
-    'LNU04032183': 'Unemployment Rate - Asian (NSA)',
-    'LNU05032183': 'Not in Labor Force - Asian (NSA)',
+    'labor_force_asian_nsa': 'LNU01032183',
+    'participation_rate_asian_nsa': 'LNU01332183',
+    'employment_asian_nsa': 'LNU02032183',
+    'employed_full_time_asian_nsa': 'LNU02532183',
+    'employed_part_time_asian_nsa': 'LNU02632183',
+    'unemployment_asian_nsa': 'LNU03032183',
+    'unemployment_rate_asian_nsa': 'LNU04032183',
+    'not_in_labor_force_asian_nsa': 'LNU05032183',
     
     # 아메리카 원주민 (American Indian or Alaska Native)
-    'LNU01035243': 'Civilian Labor Force - American Indian or Alaska Native (NSA)',
-    'LNU01335243': 'Participation Rate - American Indian or Alaska Native (NSA)',
-    'LNU02035243': 'Employment - American Indian or Alaska Native (NSA)',
-    'LNU03035243': 'Unemployment - American Indian or Alaska Native (NSA)',
-    'LNU04035243': 'Unemployment Rate - American Indian or Alaska Native (NSA)',
-    'LNU05035243': 'Not in Labor Force - American Indian or Alaska Native (NSA)',
+    'labor_force_native_american_nsa': 'LNU01035243',
+    'participation_rate_native_american_nsa': 'LNU01335243',
+    'employment_native_american_nsa': 'LNU02035243',
+    'unemployment_native_american_nsa': 'LNU03035243',
+    'unemployment_rate_native_american_nsa': 'LNU04035243',
+    'not_in_labor_force_native_american_nsa': 'LNU05035243',
     
     # 하와이 원주민 및 태평양 섬 주민 (Native Hawaiian or Other Pacific Islander)
-    'LNU01035553': 'Civilian Labor Force - Native Hawaiian or Other Pacific Islander (NSA)',
-    'LNU01335553': 'Participation Rate - Native Hawaiian or Other Pacific Islander (NSA)',
-    'LNU02035553': 'Employment - Native Hawaiian or Other Pacific Islander (NSA)',
-    'LNU03035553': 'Unemployment - Native Hawaiian or Other Pacific Islander (NSA)',
-    'LNU04035553': 'Unemployment Rate - Native Hawaiian or Other Pacific Islander (NSA)',
-    'LNU05035553': 'Not in Labor Force - Native Hawaiian or Other Pacific Islander (NSA)',
+    'labor_force_pacific_islander_nsa': 'LNU01035553',
+    'participation_rate_pacific_islander_nsa': 'LNU01335553',
+    'employment_pacific_islander_nsa': 'LNU02035553',
+    'unemployment_pacific_islander_nsa': 'LNU03035553',
+    'unemployment_rate_pacific_islander_nsa': 'LNU04035553',
+    'not_in_labor_force_pacific_islander_nsa': 'LNU05035553',
     
     # === 기본 지표들의 Not Seasonally Adjusted 버전 ===
-    'LNU01000000': 'Civilian Labor Force (NSA)',
-    'LNU01300000': 'Civilian Labor Force Participation Rate (NSA)',
-    'LNU02000000': 'Employment Level (NSA)',
-    'LNU02500000': 'Employed, Usually Work Full Time (NSA)',
-    'LNU02600000': 'Employed, Usually Work Part Time (NSA)',
-    'LNU03000000': 'Unemployment Level (NSA)',
-    'LNU03100000': 'Unemployed Looking for Full-time Work (NSA)',
-    'LNU03200000': 'Unemployed Looking for Part-time Work (NSA)',
-    'LNU04000000': 'Unemployment Rate (NSA)',
-    'LNU04100000': 'Unemployment Rate of the Full-time Labor Force (NSA)',
-    'LNU04200000': 'Unemployment Rate of the Part-time Labor Force (NSA)',
-    'LNU05000000': 'Not in Labor Force (NSA)'
+    'civilian_labor_force_nsa': 'LNU01000000',
+    'participation_rate_nsa': 'LNU01300000',
+    'employment_level_nsa': 'LNU02000000',
+    'employed_full_time_nsa': 'LNU02500000',
+    'employed_part_time_nsa': 'LNU02600000',
+    'unemployment_level_nsa': 'LNU03000000',
+    'unemployed_fulltime_seeking_nsa': 'LNU03100000',
+    'unemployed_parttime_seeking_nsa': 'LNU03200000',
+    'unemployment_rate_nsa': 'LNU04000000',
+    'unemployment_rate_fulltime_force_nsa': 'LNU04100000',
+    'unemployment_rate_parttime_force_nsa': 'LNU04200000',
+    'not_in_labor_force_nsa': 'LNU05000000'
 }
 
 # 한국어 이름 매핑
 CPS_KOREAN_NAMES = {
     # 주요 노동시장 지표
-    'LNS11000000': '경제활동인구',
-    'LNS11300000': '경제활동참가율',
-    'LNS12000000': '취업자수',
-    'LNS12300000': '고용률',
-    'LNS12500000': '풀타임 취업자',
-    'LNS12600000': '파트타임 취업자',
-    'LNS13000000': '실업자수',
-    'LNS14000000': '실업률',
+    'civilian_labor_force': '경제활동인구',
+    'participation_rate': '경제활동참가율',
+    'employment_level': '취업자수',
+    'employment_population_ratio': '고용률',
+    'employed_full_time': '풀타임 취업자',
+    'employed_part_time': '파트타임 취업자',
+    'unemployment_level': '실업자수',
+    'unemployment_rate': '실업률',
     
     # 연령별 실업률
-    'LNS14000012': '실업률 - 16-19세',
-    'LNS14000025': '실업률 - 20세 이상 남성',
-    'LNS14000026': '실업률 - 20세 이상 여성',
+    'unemployment_rate_16_19': '실업률 - 16-19세',
+    'unemployment_rate_men_20_over': '실업률 - 20세 이상 남성',
+    'unemployment_rate_women_20_over': '실업률 - 20세 이상 여성',
     
     # 인종별 실업률
-    'LNS14000003': '실업률 - 백인',
-    'LNS14000006': '실업률 - 흑인',
-    'LNS14032183': '실업률 - 아시아계',
-    'LNS14000009': '실업률 - 히스패닉',
+    'unemployment_rate_white': '실업률 - 백인',
+    'unemployment_rate_black': '실업률 - 흑인',
+    'unemployment_rate_asian': '실업률 - 아시아계',
+    'unemployment_rate_hispanic': '실업률 - 히스패닉',
     
     # 교육수준별 실업률
-    'LNS14027659': '실업률 - 고졸 미만',
-    'LNS14027660': '실업률 - 고졸',
-    'LNS14027689': '실업률 - 대학 중퇴/전문대',
-    'LNS14027662': '실업률 - 대졸 이상',
+    'unemployment_rate_less_hs': '실업률 - 고졸 미만',
+    'unemployment_rate_hs_grad': '실업률 - 고졸',
+    'unemployment_rate_some_college': '실업률 - 대학 중퇴/전문대',
+    'unemployment_rate_bachelor_higher': '실업률 - 대졸 이상',
     
     # 실업 기간
     'LNS13008396': '실업자 - 5주 미만',
@@ -479,11 +479,8 @@ def load_cps_data(start_date='2020-01-01', smart_update=True, force_reload=False
     """통합 함수 사용한 CPS 데이터 로드"""
     global CPS_DATA
 
-    # CPS_SERIES를 {id: id} 형태로 변환 (load_economic_data가 예상하는 형태)
-    series_dict = {series_id: series_id for series_id in CPS_SERIES.keys()}
-
     result = load_economic_data(
-        series_dict=series_dict,
+        series_dict=CPS_SERIES,
         data_source='BLS',
         csv_file_path=CSV_FILE_PATH,
         start_date=start_date,
@@ -627,9 +624,9 @@ def show_available_series():
     """사용 가능한 CPS 시리즈 표시"""
     print("=== 사용 가능한 CPS 시리즈 ===")
     
-    for series_id, description in CPS_SERIES.items():
-        korean_name = CPS_KOREAN_NAMES.get(series_id, description)
-        print(f"  '{series_id}': {korean_name} ({description})")
+    for series_name, series_id in CPS_SERIES.items():
+        korean_name = CPS_KOREAN_NAMES.get(series_name, series_name)
+        print(f"  '{series_name}': {korean_name} ({series_id})")
 
 def show_category_options():
     """사용 가능한 카테고리 옵션 표시"""
@@ -638,9 +635,10 @@ def show_category_options():
         print(f"\n{category}:")
         for group_name, series_list in groups.items():
             print(f"  {group_name}: {len(series_list)}개 시리즈")
-            for series_id in series_list:
-                korean_name = CPS_KOREAN_NAMES.get(series_id, series_id)
-                print(f"    - {series_id}: {korean_name}")
+            for series_name in series_list:
+                korean_name = CPS_KOREAN_NAMES.get(series_name, series_name)
+                api_id = CPS_SERIES.get(series_name, series_name)
+                print(f"    - {series_name}: {korean_name} ({api_id})")
 
 def get_data_status():
     """현재 데이터 상태 반환"""
@@ -667,14 +665,14 @@ print("   load_cps_data()  # 스마트 업데이트")
 print("   load_cps_data(force_reload=True)  # 강제 재로드")
 print()
 print("2. 🔥 범용 시각화 (가장 강력!):")
-print("   plot_cps_series_advanced(['LNS14000000', 'LNS14000003'], 'multi_line', 'mom')")
-print("   plot_cps_series_advanced(['LNS14000000'], 'horizontal_bar', 'yoy')")
-print("   plot_cps_series_advanced(['LNS11000000'], 'single_line', 'mom', periods=24)")
+print("   plot_cps_series_advanced(['unemployment_rate', 'unemployment_rate_white'], 'multi_line', 'mom')")
+print("   plot_cps_series_advanced(['unemployment_rate'], 'horizontal_bar', 'yoy')")
+print("   plot_cps_series_advanced(['civilian_labor_force'], 'single_line', 'mom', periods=24)")
 print()
 print("3. 🔥 데이터 Export:")
-print("   export_cps_data(['LNS14000000', 'LNS14000003'], 'mom')")
-print("   export_cps_data(['LNS11000000'], 'raw', periods=24, file_format='csv')")
-print("   export_cps_data(['LNS14000000'], 'yoy', target_date='2024-06-01')")
+print("   export_cps_data(['unemployment_rate', 'unemployment_rate_white'], 'mom')")
+print("   export_cps_data(['civilian_labor_force'], 'raw', periods=24, file_format='csv')")
+print("   export_cps_data(['unemployment_rate'], 'yoy', target_date='2024-06-01')")
 print()
 print("✅ plot_cps_series_advanced()는 어떤 시리즈든 원하는 형태로 시각화!")
 print("✅ export_cps_data()는 시각화와 동일한 데이터를 엑셀/CSV로 export!")
@@ -682,14 +680,4 @@ print("✅ 모든 함수가 us_eco_utils의 통합 함수 사용!")
 
 # %%
 load_cps_data()
-plot_cps_series_advanced(['LNS14000000', 'LNS14000003'], 'multi_line', 'mom')
-# %%
-plot_cps_series_advanced(['LNU05024230', 'LNU03000000'], 'multi_line', 'yoy')
-
-# %%
-plot_cps_series_advanced(['LNU05024230', 'LNU03000000'], 'dual_axis', 'raw')
-
-# %%
-export_cps_data(['LNU05024230', 'LNU03000000'], 'raw')
-
-# %%
+plot_cps_series_advanced(['unemployment_rate', 'unemployment_rate_white'], 'multi_line', 'mom')

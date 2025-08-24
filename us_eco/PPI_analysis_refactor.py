@@ -24,174 +24,174 @@ api_config.BLS_API_KEY3 = 'daf1ca7970b74e81b6a5c7a80a8b8a7f'
 # %%
 # === PPI 시리즈 정의 ===
 
-# PPI 시리즈 ID와 영어 이름 매핑
+# PPI 시리즈 매핑 (시리즈 이름: API ID)
 PPI_SERIES = {
     # Final Demand (최종 수요)
-    'WPSFD4': 'Final demand',
-    'WPSFD41': 'Final demand goods',
-    'WPSFD411': 'Final demand foods',
-    'WPSFD412': 'Final demand energy',
-    'WPSFD49104': 'Final demand less foods and energy',
-    'WPSFD49116': 'Final demand less foods, energy, & trade services',
-    'WPSFD42': 'Final demand services',
-    'WPSFD422': 'Final demand transportation and warehousing',
-    'WPSFD423': 'Final demand trade services',
-    'WPSFD421': 'Final demand services less trade, trans., wrhsg',
-    'WPSFD43': 'Final demand construction',
+    'final_demand_sa': 'WPSFD4',
+    'final_demand_goods_sa': 'WPSFD41',
+    'final_demand_foods_sa': 'WPSFD411',
+    'final_demand_energy_sa': 'WPSFD412',
+    'final_demand_core_sa': 'WPSFD49104',
+    'final_demand_core_ex_trade_sa': 'WPSFD49116',
+    'final_demand_services_sa': 'WPSFD42',
+    'final_demand_transport_sa': 'WPSFD422',
+    'final_demand_trade_sa': 'WPSFD423',
+    'final_demand_services_ex_trade_sa': 'WPSFD421',
+    'final_demand_construction_sa': 'WPSFD43',
 
     # Final Demand (최종 수요) - 계절미조정
-    'WPUFD4': 'Final demand',
-    'WPUFD41': 'Final demand goods',
-    'WPUFD411': 'Final demand foods',
-    'WPUFD412': 'Final demand energy',
-    'WPUFD49104': 'Final demand less foods and energy',
-    'WPUFD49116': 'Final demand less foods, energy, & trade services',
-    'WPUFD42': 'Final demand services',
-    'WPUFD422': 'Final demand transportation and warehousing',
-    'WPUFD423': 'Final demand trade services',
-    'WPUFD421': 'Final demand services less trade, trans., wrhsg',
-    'WPUFD43': 'Final demand construction',
+    'final_demand': 'WPUFD4',
+    'final_demand_goods': 'WPUFD41',
+    'final_demand_foods': 'WPUFD411',
+    'final_demand_energy': 'WPUFD412',
+    'final_demand_core': 'WPUFD49104',
+    'final_demand_core_ex_trade': 'WPUFD49116',
+    'final_demand_services': 'WPUFD42',
+    'final_demand_transport': 'WPUFD422',
+    'final_demand_trade': 'WPUFD423',
+    'final_demand_services_ex_trade': 'WPUFD421',
+    'final_demand_construction': 'WPUFD43',
     
     # Intermediate Demand (중간 수요)
-    'WPSID61': 'Processed goods for intermediate demand',
-    'WPSID62': 'Unprocessed goods for intermediate demand',
-    'WPSID63': 'Services for intermediate demand',
-    'WPSID54': 'Stage 4 intermediate demand',
-    'WPSID53': 'Stage 3 intermediate demand',
-    'WPSID52': 'Stage 2 intermediate demand',
-    'WPSID51': 'Stage 1 intermediate demand',
+    'intermediate_processed_sa': 'WPSID61',
+    'intermediate_unprocessed_sa': 'WPSID62',
+    'intermediate_services_sa': 'WPSID63',
+    'intermediate_stage4_sa': 'WPSID54',
+    'intermediate_stage3_sa': 'WPSID53',
+    'intermediate_stage2_sa': 'WPSID52',
+    'intermediate_stage1_sa': 'WPSID51',
     
     # Specific Commodities (주요 품목)
-    'WPS1411': 'Motor vehicles',
-    'WPS0638': 'Pharmaceutical preparations',
-    'WPS0571': 'Gasoline',
-    'WPS0221': 'Meats',
-    'WPS061': 'Industrial chemicals',
-    'WPS081': 'Lumber',
-    'WPS1017': 'Steel mill products',
-    'WPS057303': 'Diesel fuel',
-    'WPS029': 'Prepared animal feeds',
-    'WPS0561': 'Crude petroleum',
-    'WPS012': 'Grains',
-    'WPS101211': 'Carbon steel scrap',
+    'motor_vehicles_sa': 'WPS1411',
+    'pharmaceutical_sa': 'WPS0638',
+    'gasoline_sa': 'WPS0571',
+    'meats_sa': 'WPS0221',
+    'industrial_chemicals_sa': 'WPS061',
+    'lumber_sa': 'WPS081',
+    'steel_products_sa': 'WPS1017',
+    'diesel_fuel_sa': 'WPS057303',
+    'animal_feeds_sa': 'WPS029',
+    'crude_petroleum_sa': 'WPS0561',
+    'grains_sa': 'WPS012',
+    'carbon_steel_scrap_sa': 'WPS101211',
     
     # Services (서비스)
-    'WPS5111': 'Outpatient healthcare',
-    'WPS5121': 'Inpatient healthcare services',
-    'WPS5811': 'Food and alcohol retailing',
-    'WPS5831': 'Apparel and jewelry retailing',
-    'WPS3022': 'Airline passenger services',
-    'WPS4011': 'Securities brokerage, investment, and related',
-    'WPS3911': 'Business loans (partial)',
-    'WPS4511': 'Legal services',
-    'WPS301': 'Truck transportation of freight',
-    'WPS057': 'Machinery and equipment wholesaling',
+    'outpatient_healthcare_sa': 'WPS5111',
+    'inpatient_healthcare_sa': 'WPS5121',
+    'food_alcohol_retail_sa': 'WPS5811',
+    'apparel_jewelry_retail_sa': 'WPS5831',
+    'airline_services_sa': 'WPS3022',
+    'securities_brokerage_sa': 'WPS4011',
+    'business_loans_sa': 'WPS3911',
+    'legal_services_sa': 'WPS4511',
+    'truck_transport_sa': 'WPS301',
+    'machinery_wholesale_sa': 'WPS057',
     
     # All Commodities (전체 상품)
-    'WPSSOP3000': 'All commodities',
-    'WPS03THRU15': 'Industrial commodities'
+    'all_commodities': 'WPSSOP3000',
+    'industrial_commodities_sa': 'WPS03THRU15'
 }
 
 # 한국어 이름 매핑
 PPI_KOREAN_NAMES = {
     # Final Demand (최종수요) - 계절조정
-    'WPSFD4': '최종수요 (계절조정)',
-    'WPSFD41': '최종수요 재화 (계절조정)',
-    'WPSFD411': '최종수요 식품 (계절조정)',
-    'WPSFD412': '최종수요 에너지 (계절조정)',
-    'WPSFD49104': '최종수요(식품·에너지 제외) (계절조정)',
-    'WPSFD49116': '최종수요(식품·에너지·무역서비스 제외) (계절조정)',
-    'WPSFD42': '최종수요 서비스 (계절조정)',
-    'WPSFD422': '최종수요 운송·창고업 (계절조정)',
-    'WPSFD423': '최종수요 무역서비스 (계절조정)',
-    'WPSFD421': '최종수요 서비스(무역·운송·창고 제외) (계절조정)',
-    'WPSFD43': '최종수요 건설업 (계절조정)',
+    'final_demand_sa': '최종수요 (계절조정)',
+    'final_demand_goods_sa': '최종수요 재화 (계절조정)',
+    'final_demand_foods_sa': '최종수요 식품 (계절조정)',
+    'final_demand_energy_sa': '최종수요 에너지 (계절조정)',
+    'final_demand_core_sa': '최종수요(식품·에너지 제외) (계절조정)',
+    'final_demand_core_ex_trade_sa': '최종수요(식품·에너지·무역서비스 제외) (계절조정)',
+    'final_demand_services_sa': '최종수요 서비스 (계절조정)',
+    'final_demand_transport_sa': '최종수요 운송·창고업 (계절조정)',
+    'final_demand_trade_sa': '최종수요 무역서비스 (계절조정)',
+    'final_demand_services_ex_trade_sa': '최종수요 서비스(무역·운송·창고 제외) (계절조정)',
+    'final_demand_construction_sa': '최종수요 건설업 (계절조정)',
     
     # Final Demand (최종수요) - 계절미조정
-    'WPUFD4': '최종수요',
-    'WPUFD41': '최종수요 재화',
-    'WPUFD411': '최종수요 식품',
-    'WPUFD412': '최종수요 에너지',
-    'WPUFD49104': '최종수요(식품·에너지 제외)',
-    'WPUFD49116': '최종수요(식품·에너지·무역서비스 제외)',
-    'WPUFD42': '최종수요 서비스',
-    'WPUFD422': '최종수요 운송·창고업',
-    'WPUFD423': '최종수요 무역서비스',
-    'WPUFD421': '최종수요 서비스(무역·운송·창고 제외)',
-    'WPUFD43': '최종수요 건설업',
+    'final_demand': '최종수요',
+    'final_demand_goods': '최종수요 재화',
+    'final_demand_foods': '최종수요 식품',
+    'final_demand_energy': '최종수요 에너지',
+    'final_demand_core': '최종수요(식품·에너지 제외)',
+    'final_demand_core_ex_trade': '최종수요(식품·에너지·무역서비스 제외)',
+    'final_demand_services': '최종수요 서비스',
+    'final_demand_transport': '최종수요 운송·창고업',
+    'final_demand_trade': '최종수요 무역서비스',
+    'final_demand_services_ex_trade': '최종수요 서비스(무역·운송·창고 제외)',
+    'final_demand_construction': '최종수요 건설업',
     
     # Intermediate Demand (중간수요) - 계절조정
-    'WPSID61': '중간수요 가공재 (계절조정)',
-    'WPSID62': '중간수요 미가공재 (계절조정)',
-    'WPSID63': '중간수요 서비스 (계절조정)',
-    'WPSID54': '4단계 중간수요 (계절조정)',
-    'WPSID53': '3단계 중간수요 (계절조정)',
-    'WPSID52': '2단계 중간수요 (계절조정)',
-    'WPSID51': '1단계 중간수요 (계절조정)',
+    'intermediate_processed_sa': '중간수요 가공재 (계절조정)',
+    'intermediate_unprocessed_sa': '중간수요 미가공재 (계절조정)',
+    'intermediate_services_sa': '중간수요 서비스 (계절조정)',
+    'intermediate_stage4_sa': '4단계 중간수요 (계절조정)',
+    'intermediate_stage3_sa': '3단계 중간수요 (계절조정)',
+    'intermediate_stage2_sa': '2단계 중간수요 (계절조정)',
+    'intermediate_stage1_sa': '1단계 중간수요 (계절조정)',
     
     # Specific Commodities (주요 품목) - 계절조정
-    'WPS1411': '자동차 (계절조정)',
-    'WPS0638': '의약품 (계절조정)',
-    'WPS0571': '가솔린 (계절조정)',
-    'WPS0221': '육류 (계절조정)',
-    'WPS061': '산업화학 (계절조정)',
-    'WPS081': '목재 (계절조정)',
-    'WPS1017': '제철 제품 (계절조정)',
-    'WPS057303': '디젤연료 (계절조정)',
-    'WPS029': '사료 (계절조정)',
-    'WPS0561': '원유 (계절조정)',
-    'WPS012': '곡물 (계절조정)',
-    'WPS101211': '탄소강 스크랩 (계절조정)',
+    'motor_vehicles_sa': '자동차 (계절조정)',
+    'pharmaceutical_sa': '의약품 (계절조정)',
+    'gasoline_sa': '가솔린 (계절조정)',
+    'meats_sa': '육류 (계절조정)',
+    'industrial_chemicals_sa': '산업화학 (계절조정)',
+    'lumber_sa': '목재 (계절조정)',
+    'steel_products_sa': '제철 제품 (계절조정)',
+    'diesel_fuel_sa': '디젤연료 (계절조정)',
+    'animal_feeds_sa': '사료 (계절조정)',
+    'crude_petroleum_sa': '원유 (계절조정)',
+    'grains_sa': '곡물 (계절조정)',
+    'carbon_steel_scrap_sa': '탄소강 스크랩 (계절조정)',
     
     # Services (서비스) - 계절조정
-    'WPS5111': '외래 의료서비스 (계절조정)',
-    'WPS5121': '입원 의료서비스 (계절조정)',
-    'WPS5811': '식품·주류 소매 (계절조정)',
-    'WPS5831': '의류·보석 소매 (계절조정)',
-    'WPS3022': '항공 승객 서비스 (계절조정)',
-    'WPS4011': '증권중개·투자 관련 (계절조정)',
-    'WPS3911': '기업 대출(부분) (계절조정)',
-    'WPS4511': '법률 서비스 (계절조정)',
-    'WPS301': '화물 트럭 운송 (계절조정)',
-    'WPS057': '기계·장비 도매 (계절조정)',
+    'outpatient_healthcare_sa': '외래 의료서비스 (계절조정)',
+    'inpatient_healthcare_sa': '입원 의료서비스 (계절조정)',
+    'food_alcohol_retail_sa': '식품·주류 소매 (계절조정)',
+    'apparel_jewelry_retail_sa': '의류·보석 소매 (계절조정)',
+    'airline_services_sa': '항공 승객 서비스 (계절조정)',
+    'securities_brokerage_sa': '증권중개·투자 관련 (계절조정)',
+    'business_loans_sa': '기업 대출(부분) (계절조정)',
+    'legal_services_sa': '법률 서비스 (계절조정)',
+    'truck_transport_sa': '화물 트럭 운송 (계절조정)',
+    'machinery_wholesale_sa': '기계·장비 도매 (계절조정)',
     
     # All Commodities (전체 상품) - 계절조정
-    'WPSSOP3000': '전체 상품',
-    'WPS03THRU15': '산업 상품 (계절조정)'
+    'all_commodities': '전체 상품',
+    'industrial_commodities_sa': '산업 상품 (계절조정)'
 }
 
 # PPI 카테고리 분류
 PPI_CATEGORIES = {
     '최종수요_계절조정': {
-        '최종수요 전체': ['WPSFD4'],
-        '최종수요 재화': ['WPSFD41', 'WPSFD411', 'WPSFD412'],
-        '최종수요 서비스': ['WPSFD42', 'WPSFD422', 'WPSFD423', 'WPSFD421'],
-        '최종수요 건설': ['WPSFD43'],
-        '최종수요 코어': ['WPSFD49104', 'WPSFD49116']
+        '최종수요 전체': ['final_demand_sa'],
+        '최종수요 재화': ['final_demand_goods_sa', 'final_demand_foods_sa', 'final_demand_energy_sa'],
+        '최종수요 서비스': ['final_demand_services_sa', 'final_demand_transport_sa', 'final_demand_trade_sa', 'final_demand_services_ex_trade_sa'],
+        '최종수요 건설': ['final_demand_construction_sa'],
+        '최종수요 코어': ['final_demand_core_sa', 'final_demand_core_ex_trade_sa']
     },
     '최종수요': {
-        '최종수요 전체': ['WPUFD4'],
-        '최종수요 재화': ['WPUFD41', 'WPUFD411', 'WPUFD412'],
-        '최종수요 서비스': ['WPUFD42', 'WPUFD422', 'WPUFD423', 'WPUFD421'],
-        '최종수요 건설': ['WPUFD43'],
-        '최종수요 코어': ['WPUFD49104', 'WPUFD49116']
+        '최종수요 전체': ['final_demand'],
+        '최종수요 재화': ['final_demand_goods', 'final_demand_foods', 'final_demand_energy'],
+        '최종수요 서비스': ['final_demand_services', 'final_demand_transport', 'final_demand_trade', 'final_demand_services_ex_trade'],
+        '최종수요 건설': ['final_demand_construction'],
+        '최종수요 코어': ['final_demand_core', 'final_demand_core_ex_trade']
     },
     '중간수요_계절조정': {
-        '중간수요 가공재': ['WPSID61'],
-        '중간수요 미가공재': ['WPSID62'],
-        '중간수요 서비스': ['WPSID63'],
-        '중간수요 단계별': ['WPSID54', 'WPSID53', 'WPSID52', 'WPSID51']
+        '중간수요 가공재': ['intermediate_processed_sa'],
+        '중간수요 미가공재': ['intermediate_unprocessed_sa'],
+        '중간수요 서비스': ['intermediate_services_sa'],
+        '중간수요 단계별': ['intermediate_stage4_sa', 'intermediate_stage3_sa', 'intermediate_stage2_sa', 'intermediate_stage1_sa']
     },
     '주요품목_계절조정': {
-        '에너지 관련': ['WPS0571', 'WPS057303', 'WPS0561'],
-        '제조업': ['WPS1411', 'WPS0638', 'WPS061', 'WPS081', 'WPS1017'],
-        '식품 농업': ['WPS0221', 'WPS029', 'WPS012', 'WPS101211']
+        '에너지 관련': ['gasoline_sa', 'diesel_fuel_sa', 'crude_petroleum_sa'],
+        '제조업': ['motor_vehicles_sa', 'pharmaceutical_sa', 'industrial_chemicals_sa', 'lumber_sa', 'steel_products_sa'],
+        '식품 농업': ['meats_sa', 'animal_feeds_sa', 'grains_sa', 'carbon_steel_scrap_sa']
     },
     '서비스_계절조정': {
-        '의료서비스': ['WPS5111', 'WPS5121'],
-        '비즈니스서비스': ['WPS4011', 'WPS3911', 'WPS4511'],
-        '운송서비스': ['WPS3022', 'WPS301'],
-        '소매서비스': ['WPS5811', 'WPS5831', 'WPS057']
+        '의료서비스': ['outpatient_healthcare_sa', 'inpatient_healthcare_sa'],
+        '비즈니스서비스': ['securities_brokerage_sa', 'business_loans_sa', 'legal_services_sa'],
+        '운송서비스': ['airline_services_sa', 'truck_transport_sa'],
+        '소매서비스': ['food_alcohol_retail_sa', 'apparel_jewelry_retail_sa', 'machinery_wholesale_sa']
     }
 }
 
@@ -206,11 +206,8 @@ def load_ppi_data(start_date='2020-01-01', smart_update=True, force_reload=False
     """통합 함수 사용한 PPI 데이터 로드"""
     global PPI_DATA
 
-    # 시리즈 딕셔너리를 {id: id} 형태로 변환 (load_economic_data가 예상하는 형태)
-    series_dict = {series_id: series_id for series_id in PPI_SERIES.keys()}
-
     result = load_economic_data(
-        series_dict=series_dict,
+        series_dict=PPI_SERIES,
         data_source='BLS',
         csv_file_path=CSV_FILE_PATH,
         start_date=start_date,
@@ -394,14 +391,14 @@ print("   load_ppi_data()  # 스마트 업데이트")
 print("   load_ppi_data(force_reload=True)  # 강제 재로드")
 print()
 print("2. 🔥 범용 시각화 (가장 강력!):")
-print("   plot_ppi_series_advanced(['WPSFD4', 'WPSFD49104'], 'multi_line', 'mom')")
-print("   plot_ppi_series_advanced(['WPSFD4'], 'horizontal_bar', 'yoy')")
-print("   plot_ppi_series_advanced(['WPSFD4'], 'single_line', 'mom', periods=24)")
+print("   plot_ppi_series_advanced(['final_demand_sa', 'final_demand_core_sa'], 'multi_line', 'mom')")
+print("   plot_ppi_series_advanced(['final_demand_sa'], 'horizontal_bar', 'yoy')")
+print("   plot_ppi_series_advanced(['final_demand_sa'], 'single_line', 'mom', periods=24)")
 print()
 print("3. 🔥 데이터 Export:")
-print("   export_ppi_data(['WPSFD4', 'WPSFD49104'], 'mom')")
-print("   export_ppi_data(['WPSFD4'], 'raw', periods=24, file_format='csv')")
-print("   export_ppi_data(['WPSFD4'], 'yoy', target_date='2024-06-01')")
+print("   export_ppi_data(['final_demand_sa', 'final_demand_core_sa'], 'mom')")
+print("   export_ppi_data(['final_demand_sa'], 'raw', periods=24, file_format='csv')")
+print("   export_ppi_data(['final_demand_sa'], 'yoy', target_date='2024-06-01')")
 print()
 print("✅ plot_ppi_series_advanced()는 어떤 시리즈든 원하는 형태로 시각화!")
 print("✅ export_ppi_data()는 시각화와 동일한 데이터를 엑셀/CSV로 export!")
@@ -409,5 +406,5 @@ print("✅ 모든 함수가 us_eco_utils의 통합 함수 사용!")
 
 # %%
 load_ppi_data()
-plot_ppi_series_advanced(['WPSFD4', 'WPSFD49104'], 'multi_line', 'mom')
-plot_ppi_series_advanced(['WPSFD4'], 'horizontal_bar', 'yoy')
+plot_ppi_series_advanced(['final_demand_sa', 'final_demand_core_sa'], 'multi_line', 'mom')
+plot_ppi_series_advanced(['final_demand_sa'], 'horizontal_bar', 'yoy')

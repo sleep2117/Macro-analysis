@@ -334,6 +334,12 @@ def get_fred_data(series_id, start_date='2020-01-01', end_date=None):
             print(f"❌ FRED 응답에 데이터 없음: {series_id}")
             return None
             
+    except requests.exceptions.HTTPError as e:
+        if 'Bad Request' in str(e):
+            print(f"❌ FRED API 오류: 잘못된 시리즈 ID '{series_id}' - 존재하지 않는 시리즈일 수 있습니다")
+        else:
+            print(f"❌ FRED HTTP 오류: {series_id} - {e}")
+        return None
     except Exception as e:
         print(f"❌ FRED 요청 실패: {series_id} - {e}")
         return None
@@ -978,16 +984,28 @@ def plot_economic_series(data_dict, series_list, chart_type='multi_line', data_t
             unit=unit
         )
     
+    elif chart_type == 'vertical_bar':
+        # 시계열 세로 바 차트
+        print(f"경제 시리즈 세로 바 차트 ({desc})")
+        fig = create_vertical_bar_chart(
+            data=recent_data,
+            columns=available_cols,
+            labels=labels,
+            ytitle=left_ytitle,
+            unit=unit
+        )
+    
     else:
         print("❌ 지원하지 않는 chart_type이거나 시리즈 개수가 맞지 않습니다.")
         print("   - single_line: 1개 시리즈")
         print("   - multi_line: 여러 시리즈")
         print("   - dual_axis: 2개 이상 시리즈")
         print("   - horizontal_bar: 여러 시리즈")
+        print("   - vertical_bar: 여러 시리즈")
         return None
     
     # 0선 추가 (변화율/변화량 차트인 경우)
-    if data_type in ['mom', 'yoy', 'mom_change', 'yoy_change'] and chart_type not in ['horizontal_bar']:
+    if data_type in ['mom', 'yoy', 'mom_change', 'yoy_change'] and chart_type not in ['horizontal_bar', 'vertical_bar']:
         if hasattr(fig, 'add_hline'):
             fig.add_hline(y=0, line_width=1, line_color="black", opacity=0.5)
     
@@ -1064,6 +1082,129 @@ def create_horizontal_bar_chart(data_dict, positive_color=None, negative_color=N
             tickfont=dict(family=font_family, size=FONT_SIZE_GENERAL)
         )
     )
+    
+    return fig
+
+def create_vertical_bar_chart(data, columns, labels=None, ytitle="", unit="", stacked=True):
+    """
+    시계열 세로 바 차트 생성 (KPDS 포맷) - create_gdp_contribution_chart 스타일
+    
+    Args:
+        data: DataFrame (시계열 데이터)
+        columns: 표시할 컬럼 리스트
+        labels: 컬럼 라벨 딕셔너리 (None이면 자동)
+        ytitle: Y축 제목
+        unit: 단위
+        stacked: True면 누적 막대, False면 그룹 막대
+    
+    Returns:
+        plotly figure
+    """
+    if data.empty or not columns:
+        print("⚠️ 데이터가 없습니다.")
+        return None
+    
+    # 라벨 자동 설정
+    if labels is None:
+        labels = {col: col for col in columns}
+    
+    # 사용 가능한 컬럼만 선택
+    available_cols = [col for col in columns if col in data.columns]
+    if not available_cols:
+        print("❌ 요청한 시리즈가 데이터에 없습니다.")
+        return None
+    
+    # 데이터 준비
+    chart_data = data[available_cols].dropna()
+    if chart_data.empty:
+        print("⚠️ 유효한 데이터가 없습니다.")
+        return None
+    
+    # 날짜 인덱스를 표준 datetime으로 변환
+    try:
+        chart_data.index = pd.to_datetime(chart_data.index)
+    except:
+        pass  # 이미 datetime이거나 변환 불가능한 경우 그대로 사용
+    
+    # KPDS 색상 및 폰트 설정
+    colors = [deepblue_pds, deepred_pds, beige_pds, blue_pds, grey_pds]
+    font_family = 'NanumGothic'
+    
+    # 세로 막대 차트 생성
+    fig = go.Figure()
+    
+    for i, col in enumerate(available_cols):
+        korean_name = labels.get(col, col)
+        values = chart_data[col].values
+        
+        # 막대 추가
+        fig.add_trace(go.Bar(
+            x=chart_data.index,
+            y=values,
+            name=korean_name,
+            marker_color=colors[i % len(colors)],
+            text=[f'{v:+.1f}' if abs(v) >= 0.1 else f'{v:+.2f}' for v in values],
+            textposition='inside' if stacked else 'outside',
+            textfont=dict(size=10, color='white' if stacked else 'black'),
+            showlegend=len(available_cols) > 1
+        ))
+    
+    # 레이아웃 설정 (KPDS 표준 준수)
+    fig.update_layout(
+        barmode='stack' if stacked else 'group',
+        paper_bgcolor='white',
+        plot_bgcolor='white',
+        width=686,  # KPDS 표준 너비
+        height=400,  # KPDS 표준 높이
+        font=dict(family=font_family, size=FONT_SIZE_GENERAL, color="black"),
+        xaxis=dict(
+            title=dict(text=None, font=dict(family=font_family, size=FONT_SIZE_AXIS_TITLE)),
+            showline=True, linewidth=1.3, linecolor='lightgrey',
+            tickwidth=1.3, tickcolor='lightgrey',
+            ticks='outside',
+            showgrid=False
+        ),
+        yaxis=dict(
+            title="",  # Y축 제목 제거 (annotation으로 대체)
+            showline=False,
+            tickcolor='white',
+            tickformat=',',
+            showgrid=False
+        ),
+        legend=dict(
+            orientation="h",  # 가로 배열
+            yanchor="bottom",
+            y=1.05,  # 차트 위쪽
+            xanchor="center",
+            x=0.5,
+            font=dict(family=font_family, size=FONT_SIZE_LEGEND),
+            borderwidth=0,
+            bordercolor="rgba(0,0,0,0)"
+        ) if len(available_cols) > 1 else dict(showlegend=False)
+    )
+    
+    # 표준 날짜 포맷 적용 (다른 차트들과 동일)
+    fig = format_date_ticks(fig, '%b-%y', "auto", chart_data.index)
+    
+    # Y축 제목을 표준 위치에 추가 (다른 차트들과 동일)
+    if ytitle:
+        x_pos = calculate_title_position(ytitle, 'left')
+        fig.add_annotation(
+            text=ytitle,
+            xref="paper", yref="paper",
+            x=x_pos, y=1.1,  # 표준 위치 (다른 차트들과 동일)
+            showarrow=False,
+            font=dict(size=FONT_SIZE_ANNOTATION, family=font_family, color="black"),
+            align='left'
+        )
+    
+    # 0선 추가 (기여도나 변화율 데이터인 경우)
+    if any('기여' in str(col) or 'contrib' in str(col).lower() or unit == '%' for col in available_cols):
+        fig.add_hline(y=0, line_width=1, line_color="black", opacity=0.7)
+    
+    # 동적 마진 적용 (다른 차트들과 동일)
+    margins = get_dynamic_margins(ytitle1=ytitle)
+    fig.update_layout(margin=margins)
     
     return fig
 
@@ -1850,7 +1991,7 @@ print("   - create_comparison_chart(data, series_names, periods, ...)")
 print("   - create_heatmap_chart(data, series_names, months, ...)")
 print("   🔥 plot_economic_series(data_dict, series_list, chart_type, data_type, ...)")
 print("      └─ 가장 강력한 범용 시각화 함수!")
-print("      └─ 차트 타입: 'multi_line', 'single_line', 'dual_axis', 'horizontal_bar'")
+print("      └─ 차트 타입: 'multi_line', 'single_line', 'dual_axis', 'horizontal_bar', 'vertical_bar'")
 print("      └─ 데이터 타입: 'mom', 'raw', 'mom_change', 'yoy', 'yoy_change'")
 print("      └─ 기간 설정, 특정 날짜 기준 시각화 지원")
 print("   🔥 export_economic_data(data_dict, series_list, data_type, ...)")
@@ -1871,6 +2012,8 @@ print("   # 기간 제한 시각화")
 print("   plot_economic_series(data_dict, ['series1'], 'single_line', 'raw', periods=24)")
 print("   # 특정 날짜 기준")
 print("   plot_economic_series(data_dict, ['series1'], 'single_line', 'mom', target_date='2024-06-01')")
+print("   # 시계열 세로 바 차트 (기여도 분석에 최적)")
+print("   plot_economic_series(data_dict, ['consumption', 'investment'], 'vertical_bar', 'mom')")
 print("   # 데이터 export (엑셀)")
 print("   export_economic_data(data_dict, ['series1', 'series2'], 'mom')")
 print("   # 데이터 export (CSV, 최근 24개월)")

@@ -836,4 +836,3 @@ result = load_house_price_data()
 if result:
     print("\\n테스트: 기본 시각화...")
     plot_house_price_series_advanced(['fhfa_national_sa', 'fhfa_national_nsa'], 'multi_line', 'raw')
-# %%

@@ -77,11 +77,10 @@ def load_[데이터명]_data(start_date='2020-01-01', smart_update=True, force_r
     """통합 함수 사용한 [데이터명] 데이터 로드"""
     global [데이터명]_DATA
 
-    # 시리즈 딕셔너리를 {id: id} 형태로 변환 (load_economic_data가 예상하는 형태)
-    series_dict = {series_id: series_id for series_id in [시리즈_딕셔너리].keys()}
-
+    # 시리즈 딕셔너리를 직접 전달 (2024.08.24 업데이트)
+    # SERIES는 이미 {'시리즈_이름': 'API_ID'} 형태여야 함
     result = load_economic_data(
-        series_dict=series_dict,
+        series_dict=[시리즈_딕셔너리],
         data_source='BLS',  # 또는 'FRED'
         csv_file_path=CSV_FILE_PATH,
         start_date=start_date,
@@ -123,7 +122,8 @@ def print_load_info():
 # %%
 # === 범용 시각화 함수 ===
 def plot_[데이터명]_series_advanced(series_list, chart_type='multi_line', 
-                                    data_type='mom', periods=None, target_date=None):
+                                    data_type='mom', periods=None, target_date=None,
+                                    left_ytitle=None, right_ytitle=None):
     """범용 [데이터명] 시각화 함수 - plot_economic_series 활용"""
     if not [데이터명]_DATA:
         print("⚠️ 먼저 load_[데이터명]_data()를 실행하세요.")
@@ -136,6 +136,8 @@ def plot_[데이터명]_series_advanced(series_list, chart_type='multi_line',
         data_type=data_type,
         periods=periods,
         target_date=target_date,
+        left_ytitle=left_ytitle,
+        right_ytitle=right_ytitle,
         korean_names=[한국어_매핑_딕셔너리]
     )
 ```
@@ -241,9 +243,10 @@ def show_available_series():
     """사용 가능한 [데이터명] 시리즈 표시"""
     print("=== 사용 가능한 [데이터명] 시리즈 ===")
     
-    for series_id, description in [시리즈_딕셔너리].items():
-        korean_name = [한국어_매핑_딕셔너리].get(series_id, description)
-        print(f"  '{series_id}': {korean_name} ({description})")
+    # 2024.08.24 업데이트: 시리즈 이름이 key, API_ID가 value
+    for series_name, series_id in [시리즈_딕셔너리].items():
+        korean_name = [한국어_매핑_딕셔너리].get(series_name, series_name)
+        print(f"  '{series_name}': {korean_name} ({series_id})")
 
 def show_category_options():
     """사용 가능한 카테고리 옵션 표시"""
@@ -252,9 +255,11 @@ def show_category_options():
         print(f"\n{category}:")
         for group_name, series_list in groups.items():
             print(f"  {group_name}: {len(series_list)}개 시리즈")
-            for series_id in series_list:
-                korean_name = [한국어_매핑_딕셔너리].get(series_id, series_id)
-                print(f"    - {series_id}: {korean_name}")
+            # 2024.08.24 업데이트: 카테고리도 시리즈 이름 기준으로 수정
+            for series_name in series_list:
+                korean_name = [한국어_매핑_딕셔너리].get(series_name, series_name)
+                api_id = [시리즈_딕셔너리].get(series_name, series_name)
+                print(f"    - {series_name}: {korean_name} ({api_id})")
 
 def get_data_status():
     """현재 데이터 상태 반환"""
@@ -302,8 +307,9 @@ print("   load_[데이터명]_data(force_reload=True)  # 강제 재로드")
 print()
 print("2. 🔥 범용 시각화 (가장 강력!):")
 print("   plot_[데이터명]_series_advanced(['series1', 'series2'], 'multi_line', 'mom')")
-print("   plot_[데이터명]_series_advanced(['series1'], 'horizontal_bar', 'yoy')")
-print("   plot_[데이터명]_series_advanced(['series1'], 'single_line', 'mom', periods=24)")
+print("   plot_[데이터명]_series_advanced(['series1'], 'horizontal_bar', 'yoy', left_ytitle='%')")
+print("   plot_[데이터명]_series_advanced(['series1'], 'single_line', 'mom', periods=24, left_ytitle='천 명')")
+print("   plot_[데이터명]_series_advanced(['series1', 'series2'], 'dual_axis', 'raw', left_ytitle='%', right_ytitle='천 명')")
 print()
 print("3. 🔥 데이터 Export:")
 print("   export_[데이터명]_data(['series1', 'series2'], 'mom')")
@@ -319,10 +325,29 @@ print("✅ 모든 함수가 us_eco_utils의 통합 함수 사용!")
 
 ### ⚠️ 중요 사항:
 
-1. **🔑 시리즈 딕셔너리 변환**: `series_dict = {series_id: series_id for series_id in [시리즈_딕셔너리].keys()}` 형태로 변환 필수!
-2. **ytitle은 단위만**: "%" or "천 명" 등 단위만 사용
-3. **periods=None**: 기본값을 None으로 해서 전체 데이터 표시
-4. **🗑️ 기존 중복 함수들 모두 제거**: 
+1. **🔑 시리즈 딕셔너리 구조 변경 (2024.08.24 업데이트)**: 
+   - **OLD (잘못된 구조)**: `SERIES = {'API_ID': '시리즈 설명'}` ❌
+   - **NEW (올바른 구조)**: `SERIES = {'시리즈_이름': 'API_ID'}` ✅
+   - **예시**:
+     ```python
+     # 잘못된 구조 (수정 필요)
+     SERIES = {
+         'WPSFD4': 'Final demand',  # API_ID가 key
+         'JTS000000000000000JOL': 'Total nonfarm - Job openings'
+     }
+     
+     # 올바른 구조 (올바른 형태)
+     SERIES = {
+         'final_demand_sa': 'WPSFD4',  # 시리즈 이름이 key
+         'total_nonfarm_openings': 'JTS000000000000000JOL'
+     }
+     ```
+   - **데이터 로드시**: `result = load_economic_data(series_dict=SERIES, ...)` 직접 전달
+   - **한국어 매핑도 수정**: key를 새로운 시리즈 이름으로 변경 필수
+2. **⭐ Y축 제목 파라미터 필수**: `left_ytitle=None, right_ytitle=None` 파라미터를 `plot_[데이터명]_series_advanced` 함수에 반드시 추가하고 `plot_economic_series`에 전달
+3. **ytitle은 단위만**: "%" or "천 명" 등 단위만 사용
+4. **periods=None**: 기본값을 None으로 해서 전체 데이터 표시
+5. **🗑️ 기존 중복 함수들 모두 제거**: 
    - API 초기화 함수들 (initialize_*, switch_api_key)
    - CSV 저장/로드 함수들 (save_*_to_csv, load_*_from_csv)
    - 데이터 계산 함수들 (calculate_*, get_*_data)
@@ -330,13 +355,13 @@ print("✅ 모든 함수가 us_eco_utils의 통합 함수 사용!")
    - 데이터 업데이트 함수들 (update_*_from_api)
    - 검증 함수들 (check_recent_data_consistency)
    - 모든 중복된 유틸리티 함수들
-5. **데이터 소스 구분**: BLS면 'BLS', FRED면 'FRED'
-6. **허용 오차 설정**: 고용 데이터면 1000.0, 일반 지표면 10.0, CPI 데이터면 10.0
-7. **Export 기능 추가**: plot_xxx_series_advanced와 동일한 로직으로 export_xxx_data 함수 생성
-8. **🔧 시각화 함수 보존**: 데이터별 전용 시각화 함수들은 그대로 유지
-9. **분석 함수 보존**: run_*_analysis, analyze_* 등 분석 함수들은 그대로 유지
-10. **데이터 접근 함수**: get_raw_data, get_mom_data, get_yoy_data 등 필수 추가
-11. **안전성 체크**: 모든 함수에서 데이터 존재 여부 확인
+6. **데이터 소스 구분**: BLS면 'BLS', FRED면 'FRED'
+7. **허용 오차 설정**: 고용 데이터면 1000.0, 일반 지표면 10.0, CPI 데이터면 10.0
+8. **Export 기능 추가**: plot_xxx_series_advanced와 동일한 로직으로 export_xxx_data 함수 생성
+9. **🔧 시각화 함수 보존**: 데이터별 전용 시각화 함수들은 그대로 유지
+10. **분석 함수 보존**: run_*_analysis, analyze_* 등 분석 함수들은 그대로 유지
+11. **데이터 접근 함수**: get_raw_data, get_mom_data, get_yoy_data 등 필수 추가
+12. **안전성 체크**: 모든 함수에서 데이터 존재 여부 확인
 
 ### 📝 작업 순서:
 
@@ -360,6 +385,13 @@ print("✅ 모든 함수가 us_eco_utils의 통합 함수 사용!")
 - **완벽한 사용성**: 직관적이고 강력한 API
 
 ### 💡 참고 파일:
-완벽한 리팩토링 예시는 `/home/jyp0615/us_eco/CPS_employ_refactor.py`를 참조!
+완벽한 리팩토링 예시는 다음 파일들을 참조:
+- **완전 수정 완료**: `/home/jyp0615/Macro-analysis/us_eco/JOLTS_employ_refactor.py`
+- **완전 수정 완료**: `/home/jyp0615/Macro-analysis/us_eco/PPI_analysis_refactor.py`
+- **완전 수정 완료**: `/home/jyp0615/Macro-analysis/us_eco/import_price_refactor.py`
+- **참고 (기본 구조)**: `/home/jyp0615/Macro-analysis/us_eco/ADP_employ_refactored.py`
+
+### 🚨 시리즈 딕셔너리 구조 변경 필수!
+**기존 CSV 파일 삭제 후 재생성 필요**: 구 형태로 저장된 CSV는 새 구조와 호환되지 않음
 
 이렇게 리팩토링해줘!
