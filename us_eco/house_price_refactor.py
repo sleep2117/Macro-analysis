@@ -124,25 +124,6 @@ ZILLOW_SERIES = {
 
 # 기존 주택 판매 관련 시리즈 (NAR - Existing Home Sales)
 EXISTING_HOME_SALES_SERIES = {
-    # National Level - Sales Volume
-    'ehs_sales_national_sa': 'EXHOSLUSM495S',        # 전체 기존 주택 판매량 (SA)
-    'ehs_inventory_national': 'HOSINVUSM495N',       # 판매 가능 재고 (NSA)
-    'ehs_months_supply': 'HOSSUPUSM673N',            # 재고 소진 개월수 (NSA)
-    'ehs_sf_sales_national_sa': 'EXSFHSUSM495S',     # 단독주택 판매량 (SA)
-    'ehs_sf_inventory_national': 'HSFINVUSM495N',    # 단독주택 재고 (SA)
-    'ehs_sf_months_supply': 'HSFSUPUSM673N',         # 단독주택 재고 소진 개월수 (NSA)
-    
-    # Regional Level - Sales Volume
-    'ehs_sales_northeast_sa': 'EXHOSLUSNEM495S',     # 동북부 판매량 (SA)
-    'ehs_sales_midwest_sa': 'EXHOSLUSMWM495S',       # 중서부 판매량 (SA)
-    'ehs_sales_south_sa': 'EXHOSLUSSOM495S',         # 남부 판매량 (SA)
-    'ehs_sales_west_sa': 'EXHOSLUSWTM495S',          # 서부 판매량 (SA)
-    
-    'ehs_sf_sales_northeast_sa': 'EXSFHSUSNEM495S',  # 동북부 단독주택 판매량 (SA)
-    'ehs_sf_sales_midwest_sa': 'EXSFHSUSMWM495S',    # 중서부 단독주택 판매량 (SA)
-    'ehs_sf_sales_south_sa': 'EXSFHSUSSOM495S',      # 남부 단독주택 판매량 (SA)
-    'ehs_sf_sales_west_sa': 'EXSFHSUSWTM495S',       # 서부 단독주택 판매량 (SA)
-    
     # National Level - Median Prices
     'ehs_median_price_national': 'HOSMEDUSM052N',    # 전국 중간 판매가격
     'ehs_sf_median_price_national': 'HSFMEDUSM052N', # 전국 단독주택 중간 판매가격
@@ -160,69 +141,74 @@ EXISTING_HOME_SALES_SERIES = {
 }
 
 # 신규 주택 판매 관련 시리즈 (Census & HUD - New Residential Sales)
-NEW_RESIDENTIAL_SALES_SERIES = {
-    # National Level - Core Sales and Inventory
-    'nrs_sales_national_sa': 'HSN1F',               # 신규 단독주택 판매량 (SAAR)
-    'nrs_sales_national_nsa': 'HSN1FNSA',           # 신규 단독주택 판매량 (NSA)
-    'nrs_inventory_national_sa': 'HNFSEPUSSA',      # 신규 주택 재고 (SA)
-    'nrs_inventory_national_nsa': 'HNFSUSNSA',      # 신규 주택 재고 (NSA)
-    'nrs_months_supply_sa': 'MSACSR',               # 재고 소진 개월수 (SA)
-    'nrs_months_supply_nsa': 'MSACSRNSA',           # 재고 소진 개월수 (NSA)
-    
-    # Regional Level - Sales
-    'nrs_sales_northeast_sa': 'HSN1FNE',            # 동북부 판매량 (SA)
-    'nrs_sales_midwest_sa': 'HSN1FMW',              # 중서부 판매량 (SA)
-    'nrs_sales_south_sa': 'HSN1FS',                 # 남부 판매량 (SA)
-    'nrs_sales_west_sa': 'HSN1FW',                  # 서부 판매량 (SA)
-    
-    'nrs_sales_northeast_nsa': 'HSN1FNENSA',        # 동북부 판매량 (NSA)
-    'nrs_sales_midwest_nsa': 'HSN1FMWNSA',          # 중서부 판매량 (NSA)
-    'nrs_sales_south_nsa': 'HSN1FSNSA',             # 남부 판매량 (NSA)
-    'nrs_sales_west_nsa': 'HSN1FWNSA',              # 서부 판매량 (NSA)
-    
-    # Regional Level - Inventory
-    'nrs_inventory_northeast': 'HNFSNE',            # 동북부 재고
-    'nrs_inventory_midwest': 'HNFSMW',              # 중서부 재고
-    'nrs_inventory_south': 'HNFSS',                 # 남부 재고
-    'nrs_inventory_west': 'HNFSW',                  # 서부 재고
-    
+NEW_RESIDENTIAL_SALES_SERIES = { 
     # Price Indicators - National
     'nrs_median_price_monthly': 'MSPNHSUS',         # 월별 중간 판매가격
-    'nrs_median_price_quarterly': 'MSPUS',          # 분기별 중간 판매가격
     'nrs_average_price_monthly': 'ASPNHSUS',        # 월별 평균 판매가격
-    'nrs_average_price_quarterly': 'ASPUS',         # 분기별 평균 판매가격
+}
+
+# Realtor.com 주택 매물 가격 시리즈
+REALTOR_SERIES = {
+    # National Level - Price Metrics
+    'realtor_avg_price_national': 'AVGLISPRIUS',                    # 전국 평균 매물가격
+    'realtor_median_price_national': 'MEDLISPRIUS',                 # 전국 중간 매물가격  
+    'realtor_median_price_sqft_national': 'MEDLISPRIPERSQUFEEUS',   # 전국 평방피트당 중간가격
     
-    # Price Indicators - Regional (Quarterly)
-    'nrs_median_price_northeast_q': 'MSPNE',        # 동북부 중간 판매가격 (분기)
-    'nrs_median_price_midwest_q': 'MSPMW',          # 중서부 중간 판매가격 (분기)
-    'nrs_median_price_south_q': 'MSPS',             # 남부 중간 판매가격 (분기)
-    'nrs_median_price_west_q': 'MSPW',              # 서부 중간 판매가격 (분기)
-    
-    'nrs_average_price_northeast_q': 'ASPNE',       # 동북부 평균 판매가격 (분기)
-    'nrs_average_price_midwest_q': 'ASPMW',         # 중서부 평균 판매가격 (분기)
-    'nrs_average_price_south_q': 'ASPS',            # 남부 평균 판매가격 (분기)
-    'nrs_average_price_west_q': 'ASPW',             # 서부 평균 판매가격 (분기)
-    
-    # Sales by Stage of Construction
-    'nrs_sales_total_stage': 'NHSDPTS',             # 전체 (단계별)
-    'nrs_sales_completed': 'NHSDPCS',               # 완공
-    'nrs_sales_under_construction': 'NHSDPUCS',     # 건설중
-    'nrs_sales_not_started': 'NHSDPNSS',            # 미착공
-    
-    # Inventory by Stage of Construction
-    'nrs_inventory_total_stage': 'NHFSEPTS',        # 전체 재고 (단계별)
-    'nrs_inventory_completed_stage': 'NHFSEPCS',    # 완공 재고
-    'nrs_inventory_under_construction_stage': 'NHFSEPUCS', # 건설중 재고
-    'nrs_inventory_not_started_stage': 'NHFSEPNTS', # 미착공 재고
-    
-    # Sales by Type of Financing (Quarterly)
-    'nrs_sales_cash': 'HSTFC',                      # 현금 구매
-    'nrs_sales_conventional': 'HSTFCM',             # 일반 융자
-    'nrs_sales_fha': 'HSTFFHAI',                    # FHA 융자
-    'nrs_sales_va': 'HSTFVAG',                      # VA 융자
-    
-    # Other Indicators
-    'nrs_median_months_on_market': 'MNMFS',         # 시장 체류 기간 (중간값)
+    # State Level - Average Listing Price
+    'realtor_avg_price_alabama': 'AVGLISPRIAL',           'realtor_avg_price_alaska': 'AVGLISPRIAK',
+    'realtor_avg_price_arizona': 'AVGLISPRIAZ',           'realtor_avg_price_arkansas': 'AVGLISPRIAR',
+    'realtor_avg_price_california': 'AVGLISPRICA',        'realtor_avg_price_colorado': 'AVGLISPRICO',
+    'realtor_avg_price_connecticut': 'AVGLISPRICT',       'realtor_avg_price_delaware': 'AVGLISPRIDE',
+    'realtor_avg_price_dc': 'AVGLISPRIDC',                'realtor_avg_price_florida': 'AVGLISPRFL',
+    'realtor_avg_price_georgia': 'AVGLISPRIGA',           'realtor_avg_price_hawaii': 'AVGLISPRHI',
+    'realtor_avg_price_idaho': 'AVGLISPRIID',             'realtor_avg_price_illinois': 'AVGLISPRIIIL',
+    'realtor_avg_price_indiana': 'AVGLISPRIIN',           'realtor_avg_price_iowa': 'AVGLISPRIIIA',
+    'realtor_avg_price_kansas': 'AVGLISPRIKS',            'realtor_avg_price_kentucky': 'AVGLISPRIKY',
+    'realtor_avg_price_louisiana': 'AVGLISPRILA',         'realtor_avg_price_maine': 'AVGLISPRME',
+    'realtor_avg_price_maryland': 'AVGLISPRMD',           'realtor_avg_price_massachusetts': 'AVGLISPRIMA',
+    'realtor_avg_price_michigan': 'AVGLISPRIMI',          'realtor_avg_price_minnesota': 'AVGLISPRUMN',
+    'realtor_avg_price_mississippi': 'AVGLISPRUMS',       'realtor_avg_price_missouri': 'AVGLISPRIMO',
+    'realtor_avg_price_montana': 'AVGLISPRMT',            'realtor_avg_price_nebraska': 'AVGLISPRNE',
+    'realtor_avg_price_nevada': 'AVGLISPRIV',             'realtor_avg_price_new_hampshire': 'AVGLISPRNH',
+    'realtor_avg_price_new_jersey': 'AVGLISPRIJNJ',       'realtor_avg_price_new_mexico': 'AVGLISPRINNM',
+    'realtor_avg_price_new_york': 'AVGLISPRNY',           'realtor_avg_price_north_carolina': 'AVGLISPRINCN',
+    'realtor_avg_price_north_dakota': 'AVGLISPRND',       'realtor_avg_price_ohio': 'AVGLISPROH',
+    'realtor_avg_price_oklahoma': 'AVGLISPRKOK',          'realtor_avg_price_oregon': 'AVGLISPRIOR',
+    'realtor_avg_price_pennsylvania': 'AVGLISPRIPA',      'realtor_avg_price_rhode_island': 'AVGLISPRRI',
+    'realtor_avg_price_south_carolina': 'AVGLISPRSC',     'realtor_avg_price_south_dakota': 'AVGLISPRSD',
+    'realtor_avg_price_tennessee': 'AVGLISPRTN',          'realtor_avg_price_texas': 'AVGLISPRTTX',
+    'realtor_avg_price_utah': 'AVGLISPRUT',               'realtor_avg_price_vermont': 'AVGLISPRUVT',
+    'realtor_avg_price_virginia': 'AVGLISPRVA',           'realtor_avg_price_washington': 'AVGLISPRWA',
+    'realtor_avg_price_west_virginia': 'AVGLISPRWV',      'realtor_avg_price_wisconsin': 'AVGLISPRIWI',
+    'realtor_avg_price_wyoming': 'AVGLISPRWY',
+
+    # State Level - Median Listing Price  
+    'realtor_median_price_alabama': 'MEDLISPRIAL',        'realtor_median_price_alaska': 'MEDLISPRIAK',
+    'realtor_median_price_arizona': 'MEDLISPRIAZ',        'realtor_median_price_arkansas': 'MEDLISPRIAR',
+    'realtor_median_price_california': 'MEDLISPRICA',     'realtor_median_price_colorado': 'MEDLISPRICO',
+    'realtor_median_price_connecticut': 'MEDLISPRICT',    'realtor_median_price_delaware': 'MEDLISPRIDE',
+    'realtor_median_price_dc': 'MEDLISPRIDC',             'realtor_median_price_florida': 'MEDLISPRIFL',
+    'realtor_median_price_georgia': 'MEDLISPRIGA',        'realtor_median_price_hawaii': 'MEDLISPRIHI',
+    'realtor_median_price_idaho': 'MEDLISPRIID',          'realtor_median_price_illinois': 'MEDLISPRIIL',
+    'realtor_median_price_indiana': 'MEDLISPRIIN',        'realtor_median_price_iowa': 'MEDLISPRIIA',
+    'realtor_median_price_kansas': 'MEDLISPRIKS',         'realtor_median_price_kentucky': 'MEDLISPRIKY',
+    'realtor_median_price_louisiana': 'MEDLISPRILA',      'realtor_median_price_maine': 'MEDLISPRIME',
+    'realtor_median_price_maryland': 'MEDLISPRIMD',       'realtor_median_price_massachusetts': 'MEDLISPRIMA',
+    'realtor_median_price_michigan': 'MEDLISPRIMI',       'realtor_median_price_minnesota': 'MEDLISPRIMN',
+    'realtor_median_price_mississippi': 'MEDLISPRIMS',    'realtor_median_price_missouri': 'MEDLISPRIMO',
+    'realtor_median_price_montana': 'MEDLISPRIMT',        'realtor_median_price_nebraska': 'MEDLISPRINE',
+    'realtor_median_price_nevada': 'MEDLISPRINV',         'realtor_median_price_new_hampshire': 'MEDLISPRINH',
+    'realtor_median_price_new_jersey': 'MEDLISPRINJ',     'realtor_median_price_new_mexico': 'MEDLISPRINM',
+    'realtor_median_price_new_york': 'MEDLISPRINY',       'realtor_median_price_north_carolina': 'MEDLISPRINC',
+    'realtor_median_price_north_dakota': 'MEDLISPRIND',   'realtor_median_price_ohio': 'MEDLISPRIOH',
+    'realtor_median_price_oklahoma': 'MEDLISPRIOK',       'realtor_median_price_oregon': 'MEDLISPRIOR',
+    'realtor_median_price_pennsylvania': 'MEDLISPRIPA',   'realtor_median_price_rhode_island': 'MEDLISPRIRI',
+    'realtor_median_price_south_carolina': 'MEDLISPRISC', 'realtor_median_price_south_dakota': 'MEDLISPRISD',
+    'realtor_median_price_tennessee': 'MEDLISPRITN',      'realtor_median_price_texas': 'MEDLISPRITX',
+    'realtor_median_price_utah': 'MEDLISPRIUT',           'realtor_median_price_vermont': 'MEDLISPRIVT',
+    'realtor_median_price_virginia': 'MEDLISPRIVA',       'realtor_median_price_washington': 'MEDLISPRIWA',
+    'realtor_median_price_west_virginia': 'MEDLISPRIWV',  'realtor_median_price_wisconsin': 'MEDLISPRIWI',
+    'realtor_median_price_wyoming': 'MEDLISPRIWY',
 }
 
 # 데이터 유형별로 분류
@@ -231,7 +217,8 @@ HOUSE_PRICE_DATA_CATEGORIES = {
     'fhfa': FHFA_SERIES,
     'zillow': ZILLOW_SERIES,
     'existing_home_sales': EXISTING_HOME_SALES_SERIES,
-    'new_residential_sales': NEW_RESIDENTIAL_SALES_SERIES
+    'new_residential_sales': NEW_RESIDENTIAL_SALES_SERIES,
+    'realtor': REALTOR_SERIES
 }
 
 # 전체 시리즈 통합
@@ -240,7 +227,8 @@ ALL_HOUSE_PRICE_SERIES = {
     **FHFA_SERIES, 
     **ZILLOW_SERIES,
     **EXISTING_HOME_SALES_SERIES,
-    **NEW_RESIDENTIAL_SALES_SERIES
+    **NEW_RESIDENTIAL_SALES_SERIES,
+    **REALTOR_SERIES
 }
 
 # 한국어 이름 매핑 (실제 컬럼명 기반 - category_indicator 형태)
@@ -322,24 +310,7 @@ HOUSE_PRICE_KOREAN_NAMES = {
     'zillow_zillow_michigan': 'Zillow 미시간',
     'zillow_zillow_virginia': 'Zillow 버지니아',
     
-    # Existing Home Sales (기존 주택 판매)
-    'existing_home_sales_ehs_sales_national_sa': 'EHS 전국 판매량(SA)',
-    'existing_home_sales_ehs_inventory_national': 'EHS 전국 재고',
-    'existing_home_sales_ehs_months_supply': 'EHS 재고 소진율',
-    'existing_home_sales_ehs_sf_sales_national_sa': 'EHS 단독주택 판매량(SA)',
-    'existing_home_sales_ehs_sf_inventory_national': 'EHS 단독주택 재고',
-    'existing_home_sales_ehs_sf_months_supply': 'EHS 단독주택 소진율',
-    
-    'existing_home_sales_ehs_sales_northeast_sa': 'EHS 동북부 판매량(SA)',
-    'existing_home_sales_ehs_sales_midwest_sa': 'EHS 중서부 판매량(SA)',
-    'existing_home_sales_ehs_sales_south_sa': 'EHS 남부 판매량(SA)',
-    'existing_home_sales_ehs_sales_west_sa': 'EHS 서부 판매량(SA)',
-    
-    'existing_home_sales_ehs_sf_sales_northeast_sa': 'EHS 동북부 단독주택(SA)',
-    'existing_home_sales_ehs_sf_sales_midwest_sa': 'EHS 중서부 단독주택(SA)',
-    'existing_home_sales_ehs_sf_sales_south_sa': 'EHS 남부 단독주택(SA)',
-    'existing_home_sales_ehs_sf_sales_west_sa': 'EHS 서부 단독주택(SA)',
-    
+    # Existing Home Sales (기존 주택 판매)   
     'existing_home_sales_ehs_median_price_national': 'EHS 전국 중간가격',
     'existing_home_sales_ehs_sf_median_price_national': 'EHS 단독주택 중간가격',
     
@@ -353,60 +324,70 @@ HOUSE_PRICE_KOREAN_NAMES = {
     'existing_home_sales_ehs_sf_median_price_south': 'EHS 남부 단독주택 중간가격',
     'existing_home_sales_ehs_sf_median_price_west': 'EHS 서부 단독주택 중간가격',
     
-    # New Residential Sales (신규 주택 판매)
-    'new_residential_sales_nrs_sales_national_sa': 'NRS 전국 판매량(SA)',
-    'new_residential_sales_nrs_sales_national_nsa': 'NRS 전국 판매량(NSA)',
-    'new_residential_sales_nrs_inventory_national_sa': 'NRS 전국 재고(SA)',
-    'new_residential_sales_nrs_inventory_national_nsa': 'NRS 전국 재고(NSA)',
-    'new_residential_sales_nrs_months_supply_sa': 'NRS 재고 소진율(SA)',
-    'new_residential_sales_nrs_months_supply_nsa': 'NRS 재고 소진율(NSA)',
-    
-    'new_residential_sales_nrs_sales_northeast_sa': 'NRS 동북부 판매량(SA)',
-    'new_residential_sales_nrs_sales_midwest_sa': 'NRS 중서부 판매량(SA)',
-    'new_residential_sales_nrs_sales_south_sa': 'NRS 남부 판매량(SA)',
-    'new_residential_sales_nrs_sales_west_sa': 'NRS 서부 판매량(SA)',
-    
-    'new_residential_sales_nrs_sales_northeast_nsa': 'NRS 동북부 판매량(NSA)',
-    'new_residential_sales_nrs_sales_midwest_nsa': 'NRS 중서부 판매량(NSA)',
-    'new_residential_sales_nrs_sales_south_nsa': 'NRS 남부 판매량(NSA)',
-    'new_residential_sales_nrs_sales_west_nsa': 'NRS 서부 판매량(NSA)',
-    
-    'new_residential_sales_nrs_inventory_northeast': 'NRS 동북부 재고',
-    'new_residential_sales_nrs_inventory_midwest': 'NRS 중서부 재고',
-    'new_residential_sales_nrs_inventory_south': 'NRS 남부 재고',
-    'new_residential_sales_nrs_inventory_west': 'NRS 서부 재고',
-    
+    # New Residential Sales (신규 주택 판매)  
     'new_residential_sales_nrs_median_price_monthly': 'NRS 월별 중간가격',
-    'new_residential_sales_nrs_median_price_quarterly': 'NRS 분기별 중간가격',
     'new_residential_sales_nrs_average_price_monthly': 'NRS 월별 평균가격',
-    'new_residential_sales_nrs_average_price_quarterly': 'NRS 분기별 평균가격',
     
-    'new_residential_sales_nrs_median_price_northeast_q': 'NRS 동북부 중간가격(분기)',
-    'new_residential_sales_nrs_median_price_midwest_q': 'NRS 중서부 중간가격(분기)',
-    'new_residential_sales_nrs_median_price_south_q': 'NRS 남부 중간가격(분기)',
-    'new_residential_sales_nrs_median_price_west_q': 'NRS 서부 중간가격(분기)',
+    # Realtor.com 매물 가격 데이터
+    'realtor_realtor_avg_price_national': 'Realtor 전국 평균가격',
+    'realtor_realtor_median_price_national': 'Realtor 전국 중간가격',
+    'realtor_realtor_median_price_sqft_national': 'Realtor 전국 평방피트당 중간가격',
     
-    'new_residential_sales_nrs_average_price_northeast_q': 'NRS 동북부 평균가격(분기)',
-    'new_residential_sales_nrs_average_price_midwest_q': 'NRS 중서부 평균가격(분기)',
-    'new_residential_sales_nrs_average_price_south_q': 'NRS 남부 평균가격(분기)',
-    'new_residential_sales_nrs_average_price_west_q': 'NRS 서부 평균가격(분기)',
-    
-    'new_residential_sales_nrs_sales_total_stage': 'NRS 전체 단계별',
-    'new_residential_sales_nrs_sales_completed': 'NRS 완공',
-    'new_residential_sales_nrs_sales_under_construction': 'NRS 건설중',
-    'new_residential_sales_nrs_sales_not_started': 'NRS 미착공',
-    
-    'new_residential_sales_nrs_inventory_total_stage': 'NRS 전체 재고 단계별',
-    'new_residential_sales_nrs_inventory_completed_stage': 'NRS 완공 재고',
-    'new_residential_sales_nrs_inventory_under_construction_stage': 'NRS 건설중 재고',
-    'new_residential_sales_nrs_inventory_not_started_stage': 'NRS 미착공 재고',
-    
-    'new_residential_sales_nrs_sales_cash': 'NRS 현금구매',
-    'new_residential_sales_nrs_sales_conventional': 'NRS 일반융자',
-    'new_residential_sales_nrs_sales_fha': 'NRS FHA융자',
-    'new_residential_sales_nrs_sales_va': 'NRS VA융자',
-    
-    'new_residential_sales_nrs_median_months_on_market': 'NRS 시장체류기간'
+    # Realtor State Level - Average Price
+    'realtor_realtor_avg_price_alabama': 'Realtor 앨라배마 평균가격',            'realtor_realtor_avg_price_alaska': 'Realtor 알래스카 평균가격',
+    'realtor_realtor_avg_price_arizona': 'Realtor 애리조나 평균가격',           'realtor_realtor_avg_price_arkansas': 'Realtor 아칸소 평균가격',
+    'realtor_realtor_avg_price_california': 'Realtor 캘리포니아 평균가격',      'realtor_realtor_avg_price_colorado': 'Realtor 콜로라도 평균가격',
+    'realtor_realtor_avg_price_connecticut': 'Realtor 코네티컷 평균가격',       'realtor_realtor_avg_price_delaware': 'Realtor 델라웨어 평균가격',
+    'realtor_realtor_avg_price_dc': 'Realtor DC 평균가격',                     'realtor_realtor_avg_price_florida': 'Realtor 플로리다 평균가격',
+    'realtor_realtor_avg_price_georgia': 'Realtor 조지아 평균가격',            'realtor_realtor_avg_price_hawaii': 'Realtor 하와이 평균가격',
+    'realtor_realtor_avg_price_idaho': 'Realtor 아이다호 평균가격',            'realtor_realtor_avg_price_illinois': 'Realtor 일리노이 평균가격',
+    'realtor_realtor_avg_price_indiana': 'Realtor 인디애나 평균가격',          'realtor_realtor_avg_price_iowa': 'Realtor 아이오와 평균가격',
+    'realtor_realtor_avg_price_kansas': 'Realtor 캔자스 평균가격',             'realtor_realtor_avg_price_kentucky': 'Realtor 켄터키 평균가격',
+    'realtor_realtor_avg_price_louisiana': 'Realtor 루이지애나 평균가격',      'realtor_realtor_avg_price_maine': 'Realtor 메인 평균가격',
+    'realtor_realtor_avg_price_maryland': 'Realtor 메릴랜드 평균가격',         'realtor_realtor_avg_price_massachusetts': 'Realtor 매사추세츠 평균가격',
+    'realtor_realtor_avg_price_michigan': 'Realtor 미시간 평균가격',           'realtor_realtor_avg_price_minnesota': 'Realtor 미네소타 평균가격',
+    'realtor_realtor_avg_price_mississippi': 'Realtor 미시시피 평균가격',      'realtor_realtor_avg_price_missouri': 'Realtor 미주리 평균가격',
+    'realtor_realtor_avg_price_montana': 'Realtor 몬타나 평균가격',            'realtor_realtor_avg_price_nebraska': 'Realtor 네브라스카 평균가격',
+    'realtor_realtor_avg_price_nevada': 'Realtor 네바다 평균가격',             'realtor_realtor_avg_price_new_hampshire': 'Realtor 뉴햄프셔 평균가격',
+    'realtor_realtor_avg_price_new_jersey': 'Realtor 뉴저지 평균가격',         'realtor_realtor_avg_price_new_mexico': 'Realtor 뉴멕시코 평균가격',
+    'realtor_realtor_avg_price_new_york': 'Realtor 뉴욕 평균가격',             'realtor_realtor_avg_price_north_carolina': 'Realtor 노스캐롤라이나 평균가격',
+    'realtor_realtor_avg_price_north_dakota': 'Realtor 노스다코타 평균가격',    'realtor_realtor_avg_price_ohio': 'Realtor 오하이오 평균가격',
+    'realtor_realtor_avg_price_oklahoma': 'Realtor 오클라호마 평균가격',       'realtor_realtor_avg_price_oregon': 'Realtor 오리건 평균가격',
+    'realtor_realtor_avg_price_pennsylvania': 'Realtor 펜실베이니아 평균가격', 'realtor_realtor_avg_price_rhode_island': 'Realtor 로드아일랜드 평균가격',
+    'realtor_realtor_avg_price_south_carolina': 'Realtor 사우스캐롤라이나 평균가격', 'realtor_realtor_avg_price_south_dakota': 'Realtor 사우스다코타 평균가격',
+    'realtor_realtor_avg_price_tennessee': 'Realtor 테네시 평균가격',         'realtor_realtor_avg_price_texas': 'Realtor 텍사스 평균가격',
+    'realtor_realtor_avg_price_utah': 'Realtor 유타 평균가격',                'realtor_realtor_avg_price_vermont': 'Realtor 버몬트 평균가격',
+    'realtor_realtor_avg_price_virginia': 'Realtor 버지니아 평균가격',         'realtor_realtor_avg_price_washington': 'Realtor 워싱턴 평균가격',
+    'realtor_realtor_avg_price_west_virginia': 'Realtor 웨스트버지니아 평균가격', 'realtor_realtor_avg_price_wisconsin': 'Realtor 위스콘신 평균가격',
+    'realtor_realtor_avg_price_wyoming': 'Realtor 와이오밍 평균가격',
+
+    # Realtor State Level - Median Price
+    'realtor_realtor_median_price_alabama': 'Realtor 앨라배마 중간가격',       'realtor_realtor_median_price_alaska': 'Realtor 알래스카 중간가격',
+    'realtor_realtor_median_price_arizona': 'Realtor 애리조나 중간가격',      'realtor_realtor_median_price_arkansas': 'Realtor 아칸소 중간가격',
+    'realtor_realtor_median_price_california': 'Realtor 캘리포니아 중간가격', 'realtor_realtor_median_price_colorado': 'Realtor 콜로라도 중간가격',
+    'realtor_realtor_median_price_connecticut': 'Realtor 코네티컷 중간가격',  'realtor_realtor_median_price_delaware': 'Realtor 델라웨어 중간가격',
+    'realtor_realtor_median_price_dc': 'Realtor DC 중간가격',                'realtor_realtor_median_price_florida': 'Realtor 플로리다 중간가격',
+    'realtor_realtor_median_price_georgia': 'Realtor 조지아 중간가격',       'realtor_realtor_median_price_hawaii': 'Realtor 하와이 중간가격',
+    'realtor_realtor_median_price_idaho': 'Realtor 아이다호 중간가격',       'realtor_realtor_median_price_illinois': 'Realtor 일리노이 중간가격',
+    'realtor_realtor_median_price_indiana': 'Realtor 인디애나 중간가격',     'realtor_realtor_median_price_iowa': 'Realtor 아이오와 중간가격',
+    'realtor_realtor_median_price_kansas': 'Realtor 캔자스 중간가격',        'realtor_realtor_median_price_kentucky': 'Realtor 켄터키 중간가격',
+    'realtor_realtor_median_price_louisiana': 'Realtor 루이지애나 중간가격', 'realtor_realtor_median_price_maine': 'Realtor 메인 중간가격',
+    'realtor_realtor_median_price_maryland': 'Realtor 메릴랜드 중간가격',    'realtor_realtor_median_price_massachusetts': 'Realtor 매사추세츠 중간가격',
+    'realtor_realtor_median_price_michigan': 'Realtor 미시간 중간가격',      'realtor_realtor_median_price_minnesota': 'Realtor 미네소타 중간가격',
+    'realtor_realtor_median_price_mississippi': 'Realtor 미시시피 중간가격', 'realtor_realtor_median_price_missouri': 'Realtor 미주리 중간가격',
+    'realtor_realtor_median_price_montana': 'Realtor 몬타나 중간가격',       'realtor_realtor_median_price_nebraska': 'Realtor 네브라스카 중간가격',
+    'realtor_realtor_median_price_nevada': 'Realtor 네바다 중간가격',        'realtor_realtor_median_price_new_hampshire': 'Realtor 뉴햄프셔 중간가격',
+    'realtor_realtor_median_price_new_jersey': 'Realtor 뉴저지 중간가격',    'realtor_realtor_median_price_new_mexico': 'Realtor 뉴멕시코 중간가격',
+    'realtor_realtor_median_price_new_york': 'Realtor 뉴욕 중간가격',        'realtor_realtor_median_price_north_carolina': 'Realtor 노스캐롤라이나 중간가격',
+    'realtor_realtor_median_price_north_dakota': 'Realtor 노스다코타 중간가격', 'realtor_realtor_median_price_ohio': 'Realtor 오하이오 중간가격',
+    'realtor_realtor_median_price_oklahoma': 'Realtor 오클라호마 중간가격',  'realtor_realtor_median_price_oregon': 'Realtor 오리건 중간가격',
+    'realtor_realtor_median_price_pennsylvania': 'Realtor 펜실베이니아 중간가격', 'realtor_realtor_median_price_rhode_island': 'Realtor 로드아일랜드 중간가격',
+    'realtor_realtor_median_price_south_carolina': 'Realtor 사우스캐롤라이나 중간가격', 'realtor_realtor_median_price_south_dakota': 'Realtor 사우스다코타 중간가격',
+    'realtor_realtor_median_price_tennessee': 'Realtor 테네시 중간가격',    'realtor_realtor_median_price_texas': 'Realtor 텍사스 중간가격',
+    'realtor_realtor_median_price_utah': 'Realtor 유타 중간가격',           'realtor_realtor_median_price_vermont': 'Realtor 버몬트 중간가격',
+    'realtor_realtor_median_price_virginia': 'Realtor 버지니아 중간가격',    'realtor_realtor_median_price_washington': 'Realtor 워싱턴 중간가격',
+    'realtor_realtor_median_price_west_virginia': 'Realtor 웨스트버지니아 중간가격', 'realtor_realtor_median_price_wisconsin': 'Realtor 위스콘신 중간가격',
+    'realtor_realtor_median_price_wyoming': 'Realtor 와이오밍 중간가격',
 }
 
 # %%
@@ -702,27 +683,30 @@ def show_available_series():
     
     all_columns = HOUSE_PRICE_DATA['raw_data'].columns.tolist()
     
-    # 카테고리별로 그룹화
+    # 카테고리별로 그룹화 (컬럼명 앞의 카테고리 prefix로 분류)
     category_groups = {
         'case_shiller': [],
         'fhfa': [],
         'zillow': [],
         'existing_home_sales': [],
-        'new_residential_sales': []
+        'new_residential_sales': [],
+        'realtor': []
     }
     
-    # FRED 시리즈 ID를 카테고리별로 분류
+    # 실제 컬럼명을 카테고리별로 분류 (prefix 기반)
     for col in all_columns:
-        if col in CASE_SHILLER_SERIES.values():
+        if col.startswith('case_shiller_'):
             category_groups['case_shiller'].append(col)
-        elif col in FHFA_SERIES.values():
+        elif col.startswith('fhfa_'):
             category_groups['fhfa'].append(col)
-        elif col in ZILLOW_SERIES.values():
+        elif col.startswith('zillow_'):
             category_groups['zillow'].append(col)
-        elif col in EXISTING_HOME_SALES_SERIES.values():
+        elif col.startswith('existing_home_sales_'):
             category_groups['existing_home_sales'].append(col)
-        elif col in NEW_RESIDENTIAL_SALES_SERIES.values():
+        elif col.startswith('new_residential_sales_'):
             category_groups['new_residential_sales'].append(col)
+        elif col.startswith('realtor_'):
+            category_groups['realtor'].append(col)
     
     # 카테고리별 출력
     category_names = {
@@ -730,7 +714,8 @@ def show_available_series():
         'fhfa': 'FHFA 지수',
         'zillow': 'Zillow 지수',
         'existing_home_sales': '기존주택 판매',
-        'new_residential_sales': '신규주택 판매'
+        'new_residential_sales': '신규주택 판매',
+        'realtor': 'Realtor.com 매물'
     }
     
     for category_key, category_name in category_names.items():
@@ -783,14 +768,14 @@ print("   load_house_price_data()  # 그룹별 스마트 업데이트")
 print("   load_house_price_data(force_reload=True)  # 강제 재로드")
 print()
 print("2. 🔥 범용 시각화 (가장 강력!):")
-print("   plot_house_price_series_advanced(['CSUSHPISA', 'HPIPONM226S'], 'multi_line', 'raw')")
-print("   plot_house_price_series_advanced(['EXHOSLUSM495S'], 'horizontal_bar', 'mom')")
-print("   plot_house_price_series_advanced(['SPCS20RSA'], 'single_line', 'yoy', periods=24)")
+print("   plot_house_price_series_advanced(['case_shiller_cs_national_sa', 'fhfa_fhfa_national_sa'], 'multi_line', 'raw')")
+print("   plot_house_price_series_advanced(['realtor_realtor_avg_price_national'], 'horizontal_bar', 'mom')")
+print("   plot_house_price_series_advanced(['case_shiller_cs_20city_sa'], 'single_line', 'yoy', periods=24)")
 print()
 print("3. 🔥 데이터 Export:")
-print("   export_house_price_data(['CSUSHPISA', 'HPIPONM226S'], 'raw')")
-print("   export_house_price_data(['EXHOSLUSM495S'], 'mom', periods=24, file_format='csv')")
-print("   export_house_price_data(['SPCS20RSA'], 'yoy', target_date='2024-06-01')")
+print("   export_house_price_data(['case_shiller_cs_national_sa', 'fhfa_fhfa_national_sa'], 'raw')")
+print("   export_house_price_data(['realtor_realtor_avg_price_national'], 'mom', periods=24, file_format='csv')")
+print("   export_house_price_data(['case_shiller_cs_20city_sa'], 'yoy', target_date='2024-06-01')")
 print()
 print("4. 📋 데이터 확인:")
 print("   show_available_series()  # 사용 가능한 모든 시리즈 목록")
@@ -821,6 +806,7 @@ print("   • FHFA: 매월 25일경")
 print("   • Zillow: 매월 중순")
 print("   • 기존주택 판매: 매월 20일경")
 print("   • 신규주택 판매: 매월 17일경")
+print("   • Realtor.com: 매월 15일경")
 print()
 print("🎯 최적화된 워크플로:")
 print("   1. 매일 load_house_price_data() 실행")
@@ -835,4 +821,8 @@ print("테스트: 주택 가격 데이터 로딩...")
 result = load_house_price_data()
 if result:
     print("\\n테스트: 기본 시각화...")
-    plot_house_price_series_advanced(['fhfa_national_sa', 'fhfa_national_nsa'], 'multi_line', 'raw')
+    plot_house_price_series_advanced(['fhfa_fhfa_national_sa', 'fhfa_fhfa_national_nsa'], 'multi_line', 'raw')
+
+# %%
+plot_house_price_series_advanced(['fhfa_fhfa_national_sa', 'realtor_realtor_avg_price_national', 'existing_home_sales_ehs_median_price_national'], 'multi_line', 'raw')
+# %%
