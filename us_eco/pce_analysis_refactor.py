@@ -22,58 +22,85 @@ api_config.FRED_API_KEY = 'f4bd434811e42e42287a0e5ccf400fff'
 # %%
 # === PCE 시리즈 정의 ===
 PCE_MAIN_SERIES = {
-    # 핵심 PCE 지표 (실질 소비 MoM 변화율) - 이미 MoM 처리됨
-    'pce_total': 'DPCERAM1M225NBEA',  # Real PCE - total (MoM %)
-    'pce_goods': 'DGDSRAM1M225NBEA',  # Goods (MoM %)
-    'pce_durable': 'DDURRAM1M225NBEA',  # Durable goods (MoM %)
-    'pce_nondurable': 'DNDGRAM1M225NBEA',  # Nondurable goods (MoM %)
-    'pce_services': 'DSERRAM1M225NBEA',  # Services (MoM %)
-    'pce_core': 'DPCCRAM1M225NBEA',  # PCE ex-food & energy (MoM %)
-    'pce_food': 'DFXARAM1M225NBEA',  # Food (MoM %)
-    'pce_energy': 'DNRGRAM1M225NBEA',  # Energy goods & services (MoM %)
-    'pce_market_based': 'DPCMRAM1M225NBEA',  # Market-based PCE (MoM %)
-    'pce_market_core': 'DPCXRAM1M225NBEA',  # Market-based PCE ex-food & energy (MoM %)
-    
-    # PCE 가격지수 (물가 MoM 변화율) - 이미 MoM 처리됨
-    'pce_price_headline': 'DPCERGM1M225SBEA',  # PCE Price index (headline) (MoM %)
-    'pce_price_goods': 'DGDSRGM1M225SBEA',  # Goods prices (MoM %)
-    'pce_price_durable': 'DDURRGM1M225SBEA',  # Durable goods prices (MoM %)
-    'pce_price_nondurable': 'DNDGRGM1M225SBEA',  # Nondurable goods prices (MoM %)
-    'pce_price_services': 'DSERRGM1M225SBEA',  # Services prices (MoM %)
-    'pce_price_core': 'DPCCRGM1M225SBEA',  # Core PCE (ex-food & energy) (MoM %)
-    'pce_price_food': 'DFXARGM1M225SBEA',  # Food prices (MoM %)
-    'pce_price_energy': 'DNRGRGM1M225SBEA',  # Energy prices (MoM %)
-    'pce_price_market': 'DPCMRGM1M225SBEA',  # Market-based PCE prices (MoM %)
-    'pce_price_market_core': 'DPCXRGM1M225SBEA',  # Market-based core PCE prices (MoM %)
-    
-    # 추가 경제지표 (레벨 데이터 - MoM 계산 필요)
-    'personal_income': 'PI',  # Personal income (level data)
-    'disposable_income': 'DSPI',  # Disposable personal income (level data)
-    'saving_rate': 'PSAVERT',  # Personal saving rate (level data)
+    # 실질 PCE (레벨, 연쇄 2017달러) - Table 2.8.6 (eid=3232)
+    'pce_total': 'PCEC96',                 # Personal consumption expenditures (Chained 2017 Dollars)
+    'pce_goods': 'DGDSRX1',                # Goods (Chained 2017 Dollars)
+    'pce_durable': 'PCEDGC96',             # Durable goods (Chained 2017 Dollars)
+    'pce_nondurable': 'PCENDC96',          # Nondurable goods (Chained 2017 Dollars)
+    'pce_services': 'PCESC96',             # Services (Chained 2017 Dollars)
+    'pce_core': 'DPCCRX1M020SBEA',         # PCE excluding food & energy (Chained 2017 Dollars)
+    'pce_food': 'DFXARX1M020SBEA',         # Food (Chained 2017 Dollars)
+    'pce_energy': 'DNRGRX1M020SBEA',       # Energy goods & services (Chained 2017 Dollars)
+    'pce_market_based': 'DPCMRX1M020SBEA', # Market-based PCE (Chained 2017 Dollars)
+    'pce_market_core': 'DPCXRX1M020SBEA',  # Market-based PCE ex-food & energy (Chained 2017 Dollars)
+
+    # PCE 가격지수 (레벨, Index 2017=100) - Table 2.8.4 (eid=3208)
+    'pce_price_headline': 'PCEPI',               # PCE Price Index (headline)
+    'pce_price_goods': 'DGDSRG3M086SBEA',       # Goods price index
+    'pce_price_durable': 'DDURRG3M086SBEA',     # Durable goods price index
+    'pce_price_nondurable': 'DNDGRG3M086SBEA',  # Nondurable goods price index
+    'pce_price_services': 'DSERRG3M086SBEA',    # Services price index
+    'pce_price_core': 'PCEPILFE',               # Core PCE price index (ex-food & energy)
+    'pce_price_food': 'DFXARG3M086SBEA',        # Food price index
+    'pce_price_energy': 'DNRGRG3M086SBEA',      # Energy goods & services price index
+    'pce_price_market': 'DPCMRG3M086SBEA',      # Market-based PCE price index
+    'pce_price_market_core': 'DPCXRG3M086SBEA', # Market-based core PCE price index
+
+    # 명목 PCE (레벨, 억 달러 SAAR) - Table 2.8.5? (eid=3220)
+    'pce_nominal_total': 'PCE',                   # Personal consumption expenditures (Billions $, SAAR)
+    'pce_nominal_goods': 'DGDSRC1',               # Goods (Billions $, SAAR)
+    'pce_nominal_durable': 'PCEDG',               # Durable goods (Billions $, SAAR)
+    'pce_nominal_nondurable': 'PCEND',            # Nondurable goods (Billions $, SAAR)
+    'pce_nominal_services': 'PCES',               # Services (Billions $, SAAR)
+    'pce_nominal_core': 'DPCCRC1M027SBEA',        # PCE ex-food & energy (Billions $, SAAR)
+    'pce_nominal_food': 'DFXARC1M027SBEA',        # Food (Billions $, SAAR)
+    'pce_nominal_energy': 'DNRGRC1M027SBEA',      # Energy goods & services (Billions $, SAAR)
+    'pce_nominal_market': 'DPCMRC1M027SBEA',      # Market-based PCE (Billions $, SAAR)
+    'pce_nominal_market_core': 'DPCXRC1M027SBEA', # Market-based PCE ex-food & energy (Billions $, SAAR)
+
+    # 추가 경제지표 (레벨 데이터)
+    'personal_income': 'PI',     # Personal income (Billions $, SAAR)
+    'disposable_income': 'DSPI', # Disposable personal income (Billions $, SAAR)
+    'saving_rate': 'PSAVERT',    # Personal saving rate (%)
 }
 
 # PCE 한국어 이름 매핑
 PCE_KOREAN_NAMES = {
-    'pce_total': '전체 개인소비',
-    'pce_goods': '상품소비',
-    'pce_durable': '내구재소비',
-    'pce_nondurable': '비내구재소비',
-    'pce_services': '서비스소비',
-    'pce_core': '근원 개인소비',
-    'pce_food': '식품소비',
-    'pce_energy': '에너지소비',
-    'pce_market_based': '시장기반 개인소비',
-    'pce_market_core': '시장기반 근원소비',
-    'pce_price_headline': 'PCE 물가지수',
-    'pce_price_goods': '상품물가',
-    'pce_price_durable': '내구재물가',
-    'pce_price_nondurable': '비내구재물가',
-    'pce_price_services': '서비스물가',
-    'pce_price_core': '근원 PCE물가',
-    'pce_price_food': '식품물가',
-    'pce_price_energy': '에너지물가',
-    'pce_price_market': '시장기반 PCE물가',
-    'pce_price_market_core': '시장기반 근원물가',
+    # 실질 PCE (연쇄 2017달러)
+    'pce_total': '실질 개인소비',
+    'pce_goods': '실질 상품소비',
+    'pce_durable': '실질 내구재소비',
+    'pce_nondurable': '실질 비내구재소비',
+    'pce_services': '실질 서비스소비',
+    'pce_core': '실질 근원 개인소비(식품·에너지 제외)',
+    'pce_food': '실질 식품소비',
+    'pce_energy': '실질 에너지소비',
+    'pce_market_based': '실질 시장기반 개인소비',
+    'pce_market_core': '실질 시장기반 근원소비',
+
+    # PCE 가격지수 (Index 2017=100)
+    'pce_price_headline': 'PCE 물가지수(헤드라인)',
+    'pce_price_goods': 'PCE 물가지수-상품',
+    'pce_price_durable': 'PCE 물가지수-내구재',
+    'pce_price_nondurable': 'PCE 물가지수-비내구재',
+    'pce_price_services': 'PCE 물가지수-서비스',
+    'pce_price_core': '근원 PCE 물가지수(식품·에너지 제외)',
+    'pce_price_food': 'PCE 물가지수-식품',
+    'pce_price_energy': 'PCE 물가지수-에너지',
+    'pce_price_market': '시장기반 PCE 물가지수',
+    'pce_price_market_core': '시장기반 근원 PCE 물가지수',
+
+    # 명목 PCE (억 달러, SAAR)
+    'pce_nominal_total': '명목 개인소비',
+    'pce_nominal_goods': '명목 상품소비',
+    'pce_nominal_durable': '명목 내구재소비',
+    'pce_nominal_nondurable': '명목 비내구재소비',
+    'pce_nominal_services': '명목 서비스소비',
+    'pce_nominal_core': '명목 근원 개인소비(식품·에너지 제외)',
+    'pce_nominal_food': '명목 식품소비',
+    'pce_nominal_energy': '명목 에너지소비',
+    'pce_nominal_market': '명목 시장기반 개인소비',
+    'pce_nominal_market_core': '명목 시장기반 근원소비',
     'personal_income': '개인소득',
     'disposable_income': '가처분소득',
     'saving_rate': '저축률'
@@ -85,21 +112,26 @@ PCE_CATEGORIES = {
         '전체소비': ['pce_total', 'pce_core'],
         '상품소비': ['pce_goods', 'pce_durable', 'pce_nondurable'], 
         '서비스소비': ['pce_services'],
-        '품목별소비': ['pce_food', 'pce_energy']
+        '품목별소비': ['pce_food', 'pce_energy'],
+        '시장기반': ['pce_market_based', 'pce_market_core']
+    },
+    '명목소비': {
+        '전체소비': ['pce_nominal_total', 'pce_nominal_core'],
+        '상품소비': ['pce_nominal_goods', 'pce_nominal_durable', 'pce_nominal_nondurable'],
+        '서비스소비': ['pce_nominal_services'],
+        '품목별소비': ['pce_nominal_food', 'pce_nominal_energy'],
+        '시장기반': ['pce_nominal_market', 'pce_nominal_market_core']
     },
     'PCE물가': {
         '전체물가': ['pce_price_headline', 'pce_price_core'],
         '상품물가': ['pce_price_goods', 'pce_price_durable', 'pce_price_nondurable'],
         '서비스물가': ['pce_price_services'],
-        '품목별물가': ['pce_price_food', 'pce_price_energy']
+        '품목별물가': ['pce_price_food', 'pce_price_energy'],
+        '시장기반물가': ['pce_price_market', 'pce_price_market_core']
     },
     '소득지표': {
         '소득': ['personal_income', 'disposable_income'],
         '저축': ['saving_rate']
-    },
-    '시장기반지표': {
-        '시장기반소비': ['pce_market_based', 'pce_market_core'],
-        '시장기반물가': ['pce_price_market', 'pce_price_market_core']
     }
 }
 
@@ -307,10 +339,10 @@ print("   load_pce_data()  # 스마트 업데이트")
 print("   load_pce_data(force_reload=True)  # 강제 재로드")
 print()
 print("2. 🔥 범용 시각화 (가장 강력!):")
-print("   plot_pce_series_advanced(['pce_total', 'pce_core'], 'multi_line', 'mom')")
-print("   plot_pce_series_advanced(['pce_price_headline'], 'horizontal_bar', 'yoy', left_ytitle='%')")
-print("   plot_pce_series_advanced(['pce_total'], 'single_line', 'mom', periods=24, left_ytitle='%')")
-print("   plot_pce_series_advanced(['pce_total', 'pce_services'], 'dual_axis', 'raw', left_ytitle='%', right_ytitle='%')")
+print("   plot_pce_series_advanced(['pce_total', 'pce_core'], 'multi_line', 'raw', left_ytitle='Chained 2017 $ bn')")
+print("   plot_pce_series_advanced(['pce_price_headline', 'pce_price_core'], 'multi_line', 'raw', left_ytitle='Index 2017=100')")
+print("   plot_pce_series_advanced(['pce_nominal_total', 'pce_nominal_services'], 'multi_line', 'raw', left_ytitle='$ bn (SAAR)')")
+print("   plot_pce_series_advanced(['pce_total'], 'single_line', 'mom', periods=24, left_ytitle='% MoM')")
 print()
 print("3. 🔥 데이터 Export:")
 print("   export_pce_data(['pce_total', 'pce_core'], 'mom')")
@@ -323,5 +355,13 @@ print("✅ 모든 함수가 us_eco_utils의 통합 함수 사용!")
 
 # %%
 load_pce_data()
-plot_pce_series_advanced(['pce_total', 'pce_core'], 'multi_line', 'raw', left_ytitle='%')
+plot_pce_series_advanced(['pce_total', 'pce_core'], 'multi_line', 'raw', left_ytitle='Chained 2017 $ bn')
+# %%
+plot_pce_series_advanced(['pce_total', 'pce_core'], 'multi_line', 'yoy', left_ytitle='%')
+
+# %%
+plot_pce_series_advanced(['pce_price_headline', 'pce_price_goods',
+                          'pce_price_durable', 'pce_price_nondurable',
+                          'pce_price_services', 'pce_price_core'], 'multi_line', 'yoy', left_ytitle='%')
+
 # %%

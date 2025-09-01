@@ -68,10 +68,11 @@ PPI_SERIES = {
     'meats_sa': 'WPS0221',
     'industrial_chemicals_sa': 'WPS061',
     'lumber_sa': 'WPS081',
-    'steel_products_sa': 'WPS1017',
+    # 일부 품목은 계절조정(SA) 시리즈가 없어 NSA로 대체
+    'steel_products_sa': 'WPU1017',
     'diesel_fuel_sa': 'WPS057303',
     'animal_feeds_sa': 'WPS029',
-    'crude_petroleum_sa': 'WPS0561',
+    'crude_petroleum_sa': 'WPU0561',
     'grains_sa': 'WPS012',
     'carbon_steel_scrap_sa': 'WPS101211',
     
@@ -81,15 +82,15 @@ PPI_SERIES = {
     'food_alcohol_retail_sa': 'WPS5811',
     'apparel_jewelry_retail_sa': 'WPS5831',
     'airline_services_sa': 'WPS3022',
-    'securities_brokerage_sa': 'WPS4011',
+    'securities_brokerage_sa': 'WPU4011',
     'business_loans_sa': 'WPS3911',
     'legal_services_sa': 'WPS4511',
     'truck_transport_sa': 'WPS301',
     'machinery_wholesale_sa': 'WPS057',
     
     # All Commodities (전체 상품)
-    'all_commodities': 'WPSSOP3000',
-    'industrial_commodities_sa': 'WPS03THRU15'
+    'all_commodities': 'WPU00000000',
+    'industrial_commodities_sa': 'WPU03THRU15'
 }
 
 # 한국어 이름 매핑
@@ -136,10 +137,11 @@ PPI_KOREAN_NAMES = {
     'meats_sa': '육류 (계절조정)',
     'industrial_chemicals_sa': '산업화학 (계절조정)',
     'lumber_sa': '목재 (계절조정)',
-    'steel_products_sa': '제철 제품 (계절조정)',
+    # NSA로 대체된 품목들 (계절조정 시리즈 부재)
+    'steel_products_sa': '제철 제품 (계절미조정)',
     'diesel_fuel_sa': '디젤연료 (계절조정)',
     'animal_feeds_sa': '사료 (계절조정)',
-    'crude_petroleum_sa': '원유 (계절조정)',
+    'crude_petroleum_sa': '원유 (계절미조정)',
     'grains_sa': '곡물 (계절조정)',
     'carbon_steel_scrap_sa': '탄소강 스크랩 (계절조정)',
     
@@ -149,7 +151,7 @@ PPI_KOREAN_NAMES = {
     'food_alcohol_retail_sa': '식품·주류 소매 (계절조정)',
     'apparel_jewelry_retail_sa': '의류·보석 소매 (계절조정)',
     'airline_services_sa': '항공 승객 서비스 (계절조정)',
-    'securities_brokerage_sa': '증권중개·투자 관련 (계절조정)',
+    'securities_brokerage_sa': '증권중개·투자 관련 (계절미조정)',
     'business_loans_sa': '기업 대출(부분) (계절조정)',
     'legal_services_sa': '법률 서비스 (계절조정)',
     'truck_transport_sa': '화물 트럭 운송 (계절조정)',
@@ -157,7 +159,7 @@ PPI_KOREAN_NAMES = {
     
     # All Commodities (전체 상품) - 계절조정
     'all_commodities': '전체 상품',
-    'industrial_commodities_sa': '산업 상품 (계절조정)'
+    'industrial_commodities_sa': '산업 상품 (계절미조정)'
 }
 
 # PPI 카테고리 분류
@@ -217,6 +219,22 @@ def load_ppi_data(start_date='2020-01-01', smart_update=True, force_reload=False
     )
 
     if result:
+        # CSV에 ID 컬럼으로 저장된 이전 데이터와의 호환성 처리
+        # 만약 raw_data 컬럼이 BLS 시리즈 ID(WP*)라면, 친숙한 시리즈 이름으로 리네임
+        reverse_map = {v: k for k, v in PPI_SERIES.items()}
+        try:
+            raw_cols = list(result.get('raw_data', pd.DataFrame()).columns)
+            if any(col in reverse_map for col in raw_cols):
+                # 모든 데이터프레임에 동일한 리네임 적용
+                for key in ['raw_data', 'mom_data', 'mom_change', 'yoy_data', 'yoy_change']:
+                    if key in result and isinstance(result[key], pd.DataFrame):
+                        result[key] = result[key].rename(columns=reverse_map)
+                # 정규화된 컬럼으로 CSV 덮어쓰기 (향후 일관성)
+                if 'raw_data' in result and not result['raw_data'].empty:
+                    save_data_to_csv(result['raw_data'], CSV_FILE_PATH)
+        except Exception:
+            pass
+
         PPI_DATA = result
         print_load_info()
         return True
@@ -351,9 +369,9 @@ def show_available_series():
     """사용 가능한 PPI 시리즈 표시"""
     print("=== 사용 가능한 PPI 시리즈 ===")
     
-    for series_id, description in PPI_SERIES.items():
-        korean_name = PPI_KOREAN_NAMES.get(series_id, description)
-        print(f"  '{series_id}': {korean_name} ({description})")
+    for series_name, series_id in PPI_SERIES.items():
+        korean_name = PPI_KOREAN_NAMES.get(series_name, series_name)
+        print(f"  '{series_name}': {korean_name} ({series_id})")
 
 def show_category_options():
     """사용 가능한 카테고리 옵션 표시"""
@@ -407,4 +425,20 @@ print("✅ 모든 함수가 us_eco_utils의 통합 함수 사용!")
 # %%
 load_ppi_data()
 plot_ppi_series_advanced(['final_demand_sa', 'final_demand_core_sa'], 'multi_line', 'mom')
-plot_ppi_series_advanced(['final_demand_sa'], 'horizontal_bar', 'yoy')
+
+# %%
+plot_ppi_series_advanced(['final_demand_sa', 'final_demand_core_sa', 'final_demand_services_sa', 'final_demand_goods_sa', 'final_demand_foods_sa'], 'multi_line', 'yoy')
+
+# %%
+plot_ppi_series_advanced(['intermediate_processed_sa', 'intermediate_unprocessed_sa', 'intermediate_services_sa'], 'multi_line', 'yoy')
+plot_ppi_series_advanced(['intermediate_stage4_sa', 'intermediate_stage3_sa', 'intermediate_stage2_sa', 'intermediate_stage1_sa'], 'multi_line', 'yoy')
+# %%
+plot_ppi_series_advanced(['motor_vehicles_sa', 'pharmaceutical_sa', 'gasoline_sa', 'meats_sa',
+                          'industrial_chemicals_sa', 'lumber_sa', 'steel_products_sa',
+                          'diesel_fuel_sa', 'animal_feeds_sa', 'crude_petroleum_sa', 'grains_sa', 'carbon_steel_scrap_sa'], 'horizontal_bar', 'yoy')
+# %%
+plot_ppi_series_advanced(['outpatient_healthcare_sa', 'inpatient_healthcare_sa',
+                          'food_alcohol_retail_sa', 'apparel_jewelry_retail_sa',
+                          'airline_services_sa', 'securities_brokerage_sa',
+                          'business_loans_sa', 'legal_services_sa',
+                          'truck_transport_sa', 'machinery_wholesale_sa'], 'horizontal_bar', 'yoy')
