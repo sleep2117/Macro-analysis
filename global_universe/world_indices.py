@@ -537,6 +537,8 @@ import os
 from pathlib import Path as _Path
 import time
 import re
+import json as _json
+import subprocess as _sp
 
 _BASE_DIR = _Path(__file__).resolve().parent
 _DATA_DIR = _BASE_DIR / "data" / "daily"
@@ -581,9 +583,16 @@ def _fetch_history(symbol: str, start: datetime | None = None, end: datetime | N
                         last_exc = e
                         continue
                 if hist is None or hist.empty:
-                    if last_exc:
-                        raise last_exc
-                    return pd.DataFrame()
+                    # yfinance failed (common on CI). Fallback to Yahoo chart API via curl
+                    for p in periods:
+                        h = _fetch_history_via_chart(symbol, period=p)
+                        if h is not None and not h.empty:
+                            hist = h
+                            break
+                    if hist is None or hist.empty:
+                        if last_exc:
+                            raise last_exc
+                        return pd.DataFrame()
             else:
                 # Incremental fetch with explicit end to avoid start > end errors
                 today = datetime.utcnow()
@@ -600,6 +609,9 @@ def _fetch_history(symbol: str, start: datetime | None = None, end: datetime | N
                 except Exception:
                     # As a fallback, try a short period if range query fails
                     hist = t.history(period="5d", interval="1d")
+                    if hist is None or hist.empty:
+                        # fallback to chart api for a short period
+                        hist = _fetch_history_via_chart(symbol, period="5d")
             if not hist.empty:
                 cols = [c.strip().title() for c in hist.columns]
                 hist.columns = cols
@@ -720,6 +732,57 @@ def build_symbols_catalog(universe: dict, primary_only: bool = True) -> pd.DataF
     (_BASE_DIR / "data").mkdir(exist_ok=True)
     df.to_csv(_BASE_DIR / "data" / "symbols_catalog.csv", index=False)
     return df
+
+def _fetch_history_via_chart(symbol: str, period: str = "max", interval: str = "1d") -> pd.DataFrame | None:
+    """Fallback downloader using Yahoo chart API via curl with browser-like headers.
+    Returns OHLCV (+ Adj Close if available) DataFrame or None.
+    """
+    try:
+        url = f"https://query1.finance.yahoo.com/v8/finance/chart/{symbol}?range={period}&interval={interval}"
+        headers = [
+            "-H", "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+            "-H", "Accept: application/json, text/plain, */*",
+            "-H", f"Referer: https://finance.yahoo.com/quote/{symbol}",
+            "-H", "Accept-Language: en-US,en;q=0.9",
+        ]
+        out = _sp.check_output(["curl", "-s", *headers, url], timeout=20)
+        if not out:
+            return None
+        data = _json.loads(out.decode("utf-8", errors="ignore"))
+        result = (data or {}).get("chart", {}).get("result")
+        if not result:
+            return None
+        res = result[0]
+        ts = res.get("timestamp") or []
+        if not ts:
+            return None
+        import numpy as _np
+        idx = pd.to_datetime(_np.array(ts, dtype="int64"), unit="s", utc=True).tz_convert(None)
+        ind = res.get("indicators", {})
+        quote = (ind.get("quote") or [{}])[0]
+        open_ = quote.get("open")
+        high_ = quote.get("high")
+        low_ = quote.get("low")
+        close_ = quote.get("close")
+        vol_ = quote.get("volume")
+        df = pd.DataFrame({
+            "Open": open_,
+            "High": high_,
+            "Low": low_,
+            "Close": close_,
+            "Volume": vol_,
+        }, index=idx)
+        adj = (ind.get("adjclose") or [{}])[0].get("adjclose")
+        if adj is not None:
+            df["Adj Close"] = adj
+        # Clean
+        df = df.dropna(how="all")
+        if "Adj Close" in df.columns:
+            cols = ["Open","High","Low","Close","Adj Close","Volume"]
+            df = df[[c for c in cols if c in df.columns]]
+        return df
+    except Exception:
+        return None
 
 def update_all_daily_data(universe: dict, pause: float = 0.6, symbols: list[str] | None = None) -> pd.DataFrame:
     if symbols is None:
