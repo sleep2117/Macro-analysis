@@ -1,117 +1,117 @@
 symbol,file,added,status
-XLK,/home/jyp0615/global_universe/data/daily/XLK.csv,0,error: Failed to fetch history for XLK: module 'datetime' has no attribute 'utcnow'
-XLV,/home/jyp0615/global_universe/data/daily/XLV.csv,0,error: Failed to fetch history for XLV: module 'datetime' has no attribute 'utcnow'
-XLF,/home/jyp0615/global_universe/data/daily/XLF.csv,0,error: Failed to fetch history for XLF: module 'datetime' has no attribute 'utcnow'
-XLY,/home/jyp0615/global_universe/data/daily/XLY.csv,0,error: Failed to fetch history for XLY: module 'datetime' has no attribute 'utcnow'
-XLP,/home/jyp0615/global_universe/data/daily/XLP.csv,0,error: Failed to fetch history for XLP: module 'datetime' has no attribute 'utcnow'
-XLI,/home/jyp0615/global_universe/data/daily/XLI.csv,0,error: Failed to fetch history for XLI: module 'datetime' has no attribute 'utcnow'
-XLE,/home/jyp0615/global_universe/data/daily/XLE.csv,0,error: Failed to fetch history for XLE: module 'datetime' has no attribute 'utcnow'
-XLB,/home/jyp0615/global_universe/data/daily/XLB.csv,0,error: Failed to fetch history for XLB: module 'datetime' has no attribute 'utcnow'
-XLU,/home/jyp0615/global_universe/data/daily/XLU.csv,0,error: Failed to fetch history for XLU: module 'datetime' has no attribute 'utcnow'
-XLC,/home/jyp0615/global_universe/data/daily/XLC.csv,0,error: Failed to fetch history for XLC: module 'datetime' has no attribute 'utcnow'
-XLRE,/home/jyp0615/global_universe/data/daily/XLRE.csv,0,error: Failed to fetch history for XLRE: module 'datetime' has no attribute 'utcnow'
-^GSPC,/home/jyp0615/global_universe/data/daily/IDX_GSPC.csv,0,error: Failed to fetch history for ^GSPC: module 'datetime' has no attribute 'utcnow'
-^SP400,/home/jyp0615/global_universe/data/daily/IDX_SP400.csv,0,error: Failed to fetch history for ^SP400: module 'datetime' has no attribute 'utcnow'
-^RUT,/home/jyp0615/global_universe/data/daily/IDX_RUT.csv,0,error: Failed to fetch history for ^RUT: module 'datetime' has no attribute 'utcnow'
-^SP600,/home/jyp0615/global_universe/data/daily/IDX_SP600.csv,0,error: Failed to fetch history for ^SP600: module 'datetime' has no attribute 'utcnow'
-^NDX,/home/jyp0615/global_universe/data/daily/IDX_NDX.csv,0,error: Failed to fetch history for ^NDX: module 'datetime' has no attribute 'utcnow'
-IWC,/home/jyp0615/global_universe/data/daily/IWC.csv,0,error: Failed to fetch history for IWC: module 'datetime' has no attribute 'utcnow'
-IJS,/home/jyp0615/global_universe/data/daily/IJS.csv,0,error: Failed to fetch history for IJS: module 'datetime' has no attribute 'utcnow'
-IJT,/home/jyp0615/global_universe/data/daily/IJT.csv,0,error: Failed to fetch history for IJT: module 'datetime' has no attribute 'utcnow'
-IWS,/home/jyp0615/global_universe/data/daily/IWS.csv,0,error: Failed to fetch history for IWS: module 'datetime' has no attribute 'utcnow'
-IWP,/home/jyp0615/global_universe/data/daily/IWP.csv,0,error: Failed to fetch history for IWP: module 'datetime' has no attribute 'utcnow'
-RSP,/home/jyp0615/global_universe/data/daily/RSP.csv,0,error: Failed to fetch history for RSP: module 'datetime' has no attribute 'utcnow'
-USMV,/home/jyp0615/global_universe/data/daily/USMV.csv,0,error: Failed to fetch history for USMV: module 'datetime' has no attribute 'utcnow'
-SPHB,/home/jyp0615/global_universe/data/daily/SPHB.csv,0,error: Failed to fetch history for SPHB: module 'datetime' has no attribute 'utcnow'
-SPLV,/home/jyp0615/global_universe/data/daily/SPLV.csv,0,error: Failed to fetch history for SPLV: module 'datetime' has no attribute 'utcnow'
-VYM,/home/jyp0615/global_universe/data/daily/VYM.csv,0,error: Failed to fetch history for VYM: module 'datetime' has no attribute 'utcnow'
-VIG,/home/jyp0615/global_universe/data/daily/VIG.csv,0,error: Failed to fetch history for VIG: module 'datetime' has no attribute 'utcnow'
-IUSV,/home/jyp0615/global_universe/data/daily/IUSV.csv,0,error: Failed to fetch history for IUSV: module 'datetime' has no attribute 'utcnow'
-IUSG,/home/jyp0615/global_universe/data/daily/IUSG.csv,0,error: Failed to fetch history for IUSG: module 'datetime' has no attribute 'utcnow'
-MTUM,/home/jyp0615/global_universe/data/daily/MTUM.csv,0,error: Failed to fetch history for MTUM: module 'datetime' has no attribute 'utcnow'
-QUAL,/home/jyp0615/global_universe/data/daily/QUAL.csv,0,error: Failed to fetch history for QUAL: module 'datetime' has no attribute 'utcnow'
-SPHQ,/home/jyp0615/global_universe/data/daily/SPHQ.csv,0,error: Failed to fetch history for SPHQ: module 'datetime' has no attribute 'utcnow'
-COWZ,/home/jyp0615/global_universe/data/daily/COWZ.csv,0,error: Failed to fetch history for COWZ: module 'datetime' has no attribute 'utcnow'
-LRGF,/home/jyp0615/global_universe/data/daily/LRGF.csv,0,error: Failed to fetch history for LRGF: module 'datetime' has no attribute 'utcnow'
-EXV3.DE,/home/jyp0615/global_universe/data/daily/EXV3.DE.csv,0,error: Failed to fetch history for EXV3.DE: module 'datetime' has no attribute 'utcnow'
-SXDP.Z,/home/jyp0615/global_universe/data/daily/SXDP.Z.csv,0,error: Failed to fetch history for SXDP.Z: module 'datetime' has no attribute 'utcnow'
-SX6P.Z,/home/jyp0615/global_universe/data/daily/SX6P.Z.csv,0,error: Failed to fetch history for SX6P.Z: module 'datetime' has no attribute 'utcnow'
-SXKP.Z,/home/jyp0615/global_universe/data/daily/SXKP.Z.csv,0,error: Failed to fetch history for SXKP.Z: module 'datetime' has no attribute 'utcnow'
-SXAP.Z,/home/jyp0615/global_universe/data/daily/SXAP.Z.csv,0,error: Failed to fetch history for SXAP.Z: module 'datetime' has no attribute 'utcnow'
-SXPP.Z,/home/jyp0615/global_universe/data/daily/SXPP.Z.csv,0,error: Failed to fetch history for SXPP.Z: module 'datetime' has no attribute 'utcnow'
-SX4P.Z,/home/jyp0615/global_universe/data/daily/SX4P.Z.csv,0,error: Failed to fetch history for SX4P.Z: module 'datetime' has no attribute 'utcnow'
-EXV1.DE,/home/jyp0615/global_universe/data/daily/EXV1.DE.csv,0,error: Failed to fetch history for EXV1.DE: module 'datetime' has no attribute 'utcnow'
-SXIP.Z,/home/jyp0615/global_universe/data/daily/SXIP.Z.csv,0,error: Failed to fetch history for SXIP.Z: module 'datetime' has no attribute 'utcnow'
-SXNP.Z,/home/jyp0615/global_universe/data/daily/SXNP.Z.csv,0,error: Failed to fetch history for SXNP.Z: module 'datetime' has no attribute 'utcnow'
-SXOP.Z,/home/jyp0615/global_universe/data/daily/SXOP.Z.csv,0,error: Failed to fetch history for SXOP.Z: module 'datetime' has no attribute 'utcnow'
-^STOXX,/home/jyp0615/global_universe/data/daily/IDX_STOXX.csv,0,error: Failed to fetch history for ^STOXX: module 'datetime' has no attribute 'utcnow'
-SMEA.MI,/home/jyp0615/global_universe/data/daily/SMEA.MI.csv,0,error: Failed to fetch history for SMEA.MI: module 'datetime' has no attribute 'utcnow'
-IEVL.MI,/home/jyp0615/global_universe/data/daily/IEVL.MI.csv,0,error: Failed to fetch history for IEVL.MI: module 'datetime' has no attribute 'utcnow'
-CEMR.DE,/home/jyp0615/global_universe/data/daily/CEMR.DE.csv,0,error: Failed to fetch history for CEMR.DE: module 'datetime' has no attribute 'utcnow'
-CEMQ.DE,/home/jyp0615/global_universe/data/daily/CEMQ.DE.csv,0,error: Failed to fetch history for CEMQ.DE: module 'datetime' has no attribute 'utcnow'
-EUMV,/home/jyp0615/global_universe/data/daily/EUMV.csv,0,error: Failed to fetch history for EUMV: module 'datetime' has no attribute 'utcnow'
-^STOXX50E,/home/jyp0615/global_universe/data/daily/IDX_STOXX50E.csv,0,error: Failed to fetch history for ^STOXX50E: module 'datetime' has no attribute 'utcnow'
-^CXPHX,/home/jyp0615/global_universe/data/daily/IDX_CXPHX.csv,0,error: Failed to fetch history for ^CXPHX: module 'datetime' has no attribute 'utcnow'
-^CXPPX,/home/jyp0615/global_universe/data/daily/IDX_CXPPX.csv,0,error: Failed to fetch history for ^CXPPX: module 'datetime' has no attribute 'utcnow'
-^CXPNX,/home/jyp0615/global_universe/data/daily/IDX_CXPNX.csv,0,error: Failed to fetch history for ^CXPNX: module 'datetime' has no attribute 'utcnow'
-^CXPVX,/home/jyp0615/global_universe/data/daily/IDX_CXPVX.csv,0,error: Failed to fetch history for ^CXPVX: module 'datetime' has no attribute 'utcnow'
-^CXPIX,/home/jyp0615/global_universe/data/daily/IDX_CXPIX.csv,0,error: Failed to fetch history for ^CXPIX: module 'datetime' has no attribute 'utcnow'
-^GDAXI,/home/jyp0615/global_universe/data/daily/IDX_GDAXI.csv,0,error: Failed to fetch history for ^GDAXI: module 'datetime' has no attribute 'utcnow'
-^MDAXI,/home/jyp0615/global_universe/data/daily/IDX_MDAXI.csv,0,error: Failed to fetch history for ^MDAXI: module 'datetime' has no attribute 'utcnow'
-^SDAXI,/home/jyp0615/global_universe/data/daily/IDX_SDAXI.csv,0,error: Failed to fetch history for ^SDAXI: module 'datetime' has no attribute 'utcnow'
-EWJ,/home/jyp0615/global_universe/data/daily/EWJ.csv,0,error: Failed to fetch history for EWJ: module 'datetime' has no attribute 'utcnow'
-^N225,/home/jyp0615/global_universe/data/daily/IDX_N225.csv,0,error: Failed to fetch history for ^N225: module 'datetime' has no attribute 'utcnow'
-1617.T,/home/jyp0615/global_universe/data/daily/1617.T.csv,0,error: Failed to fetch history for 1617.T: module 'datetime' has no attribute 'utcnow'
-1618.T,/home/jyp0615/global_universe/data/daily/1618.T.csv,0,error: Failed to fetch history for 1618.T: module 'datetime' has no attribute 'utcnow'
-1619.T,/home/jyp0615/global_universe/data/daily/1619.T.csv,0,error: Failed to fetch history for 1619.T: module 'datetime' has no attribute 'utcnow'
-1620.T,/home/jyp0615/global_universe/data/daily/1620.T.csv,0,error: Failed to fetch history for 1620.T: module 'datetime' has no attribute 'utcnow'
-1621.T,/home/jyp0615/global_universe/data/daily/1621.T.csv,0,error: Failed to fetch history for 1621.T: module 'datetime' has no attribute 'utcnow'
-1622.T,/home/jyp0615/global_universe/data/daily/1622.T.csv,0,error: Failed to fetch history for 1622.T: module 'datetime' has no attribute 'utcnow'
-1623.T,/home/jyp0615/global_universe/data/daily/1623.T.csv,0,error: Failed to fetch history for 1623.T: module 'datetime' has no attribute 'utcnow'
-1624.T,/home/jyp0615/global_universe/data/daily/1624.T.csv,0,error: Failed to fetch history for 1624.T: module 'datetime' has no attribute 'utcnow'
-1625.T,/home/jyp0615/global_universe/data/daily/1625.T.csv,0,error: Failed to fetch history for 1625.T: module 'datetime' has no attribute 'utcnow'
-1626.T,/home/jyp0615/global_universe/data/daily/1626.T.csv,0,error: Failed to fetch history for 1626.T: module 'datetime' has no attribute 'utcnow'
-1627.T,/home/jyp0615/global_universe/data/daily/1627.T.csv,0,error: Failed to fetch history for 1627.T: module 'datetime' has no attribute 'utcnow'
-1628.T,/home/jyp0615/global_universe/data/daily/1628.T.csv,0,error: Failed to fetch history for 1628.T: module 'datetime' has no attribute 'utcnow'
-1629.T,/home/jyp0615/global_universe/data/daily/1629.T.csv,0,error: Failed to fetch history for 1629.T: module 'datetime' has no attribute 'utcnow'
-1630.T,/home/jyp0615/global_universe/data/daily/1630.T.csv,0,error: Failed to fetch history for 1630.T: module 'datetime' has no attribute 'utcnow'
-1631.T,/home/jyp0615/global_universe/data/daily/1631.T.csv,0,error: Failed to fetch history for 1631.T: module 'datetime' has no attribute 'utcnow'
-1632.T,/home/jyp0615/global_universe/data/daily/1632.T.csv,0,error: Failed to fetch history for 1632.T: module 'datetime' has no attribute 'utcnow'
-1633.T,/home/jyp0615/global_universe/data/daily/1633.T.csv,0,error: Failed to fetch history for 1633.T: module 'datetime' has no attribute 'utcnow'
-SCJ,/home/jyp0615/global_universe/data/daily/SCJ.csv,0,error: Failed to fetch history for SCJ: module 'datetime' has no attribute 'utcnow'
-EWJV,/home/jyp0615/global_universe/data/daily/EWJV.csv,0,error: Failed to fetch history for EWJV: module 'datetime' has no attribute 'utcnow'
-FXI,/home/jyp0615/global_universe/data/daily/FXI.csv,0,error: Failed to fetch history for FXI: module 'datetime' has no attribute 'utcnow'
-CQQQ,/home/jyp0615/global_universe/data/daily/CQQQ.csv,0,error: Failed to fetch history for CQQQ: module 'datetime' has no attribute 'utcnow'
-CHIQ,/home/jyp0615/global_universe/data/daily/CHIQ.csv,0,error: Failed to fetch history for CHIQ: module 'datetime' has no attribute 'utcnow'
-CHIS,/home/jyp0615/global_universe/data/daily/CHIS.csv,0,error: Failed to fetch history for CHIS: module 'datetime' has no attribute 'utcnow'
-CHIX,/home/jyp0615/global_universe/data/daily/CHIX.csv,0,error: Failed to fetch history for CHIX: module 'datetime' has no attribute 'utcnow'
-CHII,/home/jyp0615/global_universe/data/daily/CHII.csv,0,error: Failed to fetch history for CHII: module 'datetime' has no attribute 'utcnow'
-CHIM,/home/jyp0615/global_universe/data/daily/CHIM.csv,0,error: Failed to fetch history for CHIM: module 'datetime' has no attribute 'utcnow'
-CHIE,/home/jyp0615/global_universe/data/daily/CHIE.csv,0,error: Failed to fetch history for CHIE: module 'datetime' has no attribute 'utcnow'
-CHIU,/home/jyp0615/global_universe/data/daily/CHIU.csv,0,error: Failed to fetch history for CHIU: module 'datetime' has no attribute 'utcnow'
-CHIC,/home/jyp0615/global_universe/data/daily/CHIC.csv,0,error: Failed to fetch history for CHIC: module 'datetime' has no attribute 'utcnow'
-CHIR,/home/jyp0615/global_universe/data/daily/CHIR.csv,0,error: Failed to fetch history for CHIR: module 'datetime' has no attribute 'utcnow'
-CHIH,/home/jyp0615/global_universe/data/daily/CHIH.csv,0,error: Failed to fetch history for CHIH: module 'datetime' has no attribute 'utcnow'
-ECNS,/home/jyp0615/global_universe/data/daily/ECNS.csv,0,error: Failed to fetch history for ECNS: module 'datetime' has no attribute 'utcnow'
-ASHR,/home/jyp0615/global_universe/data/daily/ASHR.csv,0,error: Failed to fetch history for ASHR: module 'datetime' has no attribute 'utcnow'
-000300.SS,/home/jyp0615/global_universe/data/daily/000300.SS.csv,0,error: Failed to fetch history for 000300.SS: module 'datetime' has no attribute 'utcnow'
-CNXT,/home/jyp0615/global_universe/data/daily/CNXT.csv,0,error: Failed to fetch history for CNXT: module 'datetime' has no attribute 'utcnow'
-^GSPTSE,/home/jyp0615/global_universe/data/daily/IDX_GSPTSE.csv,0,error: Failed to fetch history for ^GSPTSE: module 'datetime' has no attribute 'utcnow'
-^BVSP,/home/jyp0615/global_universe/data/daily/IDX_BVSP.csv,0,error: Failed to fetch history for ^BVSP: module 'datetime' has no attribute 'utcnow'
-ACWX,/home/jyp0615/global_universe/data/daily/ACWX.csv,0,error: Failed to fetch history for ACWX: module 'datetime' has no attribute 'utcnow'
-EWS,/home/jyp0615/global_universe/data/daily/EWS.csv,0,error: Failed to fetch history for EWS: module 'datetime' has no attribute 'utcnow'
-EIDO,/home/jyp0615/global_universe/data/daily/EIDO.csv,0,error: Failed to fetch history for EIDO: module 'datetime' has no attribute 'utcnow'
-THD,/home/jyp0615/global_universe/data/daily/THD.csv,0,error: Failed to fetch history for THD: module 'datetime' has no attribute 'utcnow'
-EWM,/home/jyp0615/global_universe/data/daily/EWM.csv,0,error: Failed to fetch history for EWM: module 'datetime' has no attribute 'utcnow'
-^NSEI,/home/jyp0615/global_universe/data/daily/IDX_NSEI.csv,0,error: Failed to fetch history for ^NSEI: module 'datetime' has no attribute 'utcnow'
-INDF,/home/jyp0615/global_universe/data/daily/INDF.csv,0,error: Failed to fetch history for INDF: module 'datetime' has no attribute 'utcnow'
-INCO,/home/jyp0615/global_universe/data/daily/INCO.csv,0,error: Failed to fetch history for INCO: module 'datetime' has no attribute 'utcnow'
-INQQ,/home/jyp0615/global_universe/data/daily/INQQ.csv,0,error: Failed to fetch history for INQQ: module 'datetime' has no attribute 'utcnow'
-SMIN,/home/jyp0615/global_universe/data/daily/SMIN.csv,0,error: Failed to fetch history for SMIN: module 'datetime' has no attribute 'utcnow'
-EPI,/home/jyp0615/global_universe/data/daily/EPI.csv,0,error: Failed to fetch history for EPI: module 'datetime' has no attribute 'utcnow'
-^FTSE,/home/jyp0615/global_universe/data/daily/IDX_FTSE.csv,0,error: Failed to fetch history for ^FTSE: module 'datetime' has no attribute 'utcnow'
-^FCHI,/home/jyp0615/global_universe/data/daily/IDX_FCHI.csv,0,error: Failed to fetch history for ^FCHI: module 'datetime' has no attribute 'utcnow'
-FTSEMIB.MI,/home/jyp0615/global_universe/data/daily/FTSEMIB.MI.csv,0,error: Failed to fetch history for FTSEMIB.MI: module 'datetime' has no attribute 'utcnow'
-^IBEX,/home/jyp0615/global_universe/data/daily/IDX_IBEX.csv,0,error: Failed to fetch history for ^IBEX: module 'datetime' has no attribute 'utcnow'
-^TWII,/home/jyp0615/global_universe/data/daily/IDX_TWII.csv,0,error: Failed to fetch history for ^TWII: module 'datetime' has no attribute 'utcnow'
-^HSI,/home/jyp0615/global_universe/data/daily/IDX_HSI.csv,0,error: Failed to fetch history for ^HSI: module 'datetime' has no attribute 'utcnow'
+XLK,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLK.csv,0,ok
+XLV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLV.csv,0,ok
+XLF,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLF.csv,0,ok
+XLY,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLY.csv,0,ok
+XLP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLP.csv,0,ok
+XLI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLI.csv,0,ok
+XLE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLE.csv,0,ok
+XLB,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLB.csv,0,ok
+XLU,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLU.csv,0,ok
+XLC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLC.csv,0,ok
+XLRE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLRE.csv,0,ok
+^GSPC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_GSPC.csv,0,ok
+^SP400,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_SP400.csv,0,ok
+^RUT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_RUT.csv,0,ok
+^SP600,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_SP600.csv,0,ok
+^NDX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_NDX.csv,0,ok
+IWC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IWC.csv,0,ok
+IJS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IJS.csv,0,ok
+IJT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IJT.csv,0,ok
+IWS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IWS.csv,0,ok
+IWP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IWP.csv,0,ok
+RSP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/RSP.csv,0,ok
+USMV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/USMV.csv,0,ok
+SPHB,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SPHB.csv,0,ok
+SPLV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SPLV.csv,0,ok
+VYM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/VYM.csv,0,ok
+VIG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/VIG.csv,0,ok
+IUSV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IUSV.csv,0,ok
+IUSG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IUSG.csv,0,ok
+MTUM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/MTUM.csv,0,ok
+QUAL,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/QUAL.csv,0,ok
+SPHQ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SPHQ.csv,0,ok
+COWZ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/COWZ.csv,0,ok
+LRGF,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/LRGF.csv,0,ok
+EXV3.DE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EXV3.DE.csv,0,ok
+SXDP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXDP.Z.csv,0,ok
+SX6P.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SX6P.Z.csv,0,ok
+SXKP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXKP.Z.csv,0,ok
+SXAP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXAP.Z.csv,0,ok
+SXPP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXPP.Z.csv,0,ok
+SX4P.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SX4P.Z.csv,0,ok
+EXV1.DE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EXV1.DE.csv,0,ok
+SXIP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXIP.Z.csv,0,ok
+SXNP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXNP.Z.csv,0,ok
+SXOP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXOP.Z.csv,0,ok
+^STOXX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_STOXX.csv,0,ok
+SMEA.MI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SMEA.MI.csv,0,ok
+IEVL.MI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IEVL.MI.csv,0,ok
+CEMR.DE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CEMR.DE.csv,0,ok
+CEMQ.DE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CEMQ.DE.csv,0,ok
+EUMV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EUMV.csv,0,ok
+^STOXX50E,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_STOXX50E.csv,0,ok
+^CXPHX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_CXPHX.csv,0,ok
+^CXPPX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_CXPPX.csv,0,ok
+^CXPNX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_CXPNX.csv,0,ok
+^CXPVX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_CXPVX.csv,0,ok
+^CXPIX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_CXPIX.csv,0,ok
+^GDAXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_GDAXI.csv,0,ok
+^MDAXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_MDAXI.csv,0,ok
+^SDAXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_SDAXI.csv,0,ok
+EWJ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWJ.csv,0,ok
+^N225,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_N225.csv,0,ok
+1617.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1617.T.csv,0,ok
+1618.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1618.T.csv,0,ok
+1619.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1619.T.csv,0,ok
+1620.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1620.T.csv,0,ok
+1621.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1621.T.csv,0,ok
+1622.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1622.T.csv,0,ok
+1623.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1623.T.csv,0,ok
+1624.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1624.T.csv,0,ok
+1625.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1625.T.csv,0,ok
+1626.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1626.T.csv,0,ok
+1627.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1627.T.csv,0,ok
+1628.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1628.T.csv,0,ok
+1629.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1629.T.csv,0,ok
+1630.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1630.T.csv,0,ok
+1631.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1631.T.csv,0,ok
+1632.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1632.T.csv,0,ok
+1633.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1633.T.csv,0,ok
+SCJ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SCJ.csv,0,ok
+EWJV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWJV.csv,0,ok
+FXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/FXI.csv,0,ok
+CQQQ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CQQQ.csv,0,ok
+CHIQ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIQ.csv,0,ok
+CHIS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIS.csv,0,ok
+CHIX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIX.csv,0,ok
+CHII,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHII.csv,0,ok
+CHIM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIM.csv,0,ok
+CHIE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIE.csv,0,ok
+CHIU,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIU.csv,0,ok
+CHIC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIC.csv,0,ok
+CHIR,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIR.csv,0,ok
+CHIH,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIH.csv,0,ok
+ECNS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ECNS.csv,0,ok
+ASHR,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ASHR.csv,0,ok
+000300.SS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/000300.SS.csv,0,ok
+CNXT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CNXT.csv,0,ok
+^GSPTSE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_GSPTSE.csv,0,ok
+^BVSP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_BVSP.csv,0,ok
+ACWX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ACWX.csv,0,ok
+EWS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWS.csv,0,ok
+EIDO,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EIDO.csv,0,ok
+THD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/THD.csv,0,ok
+EWM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWM.csv,0,ok
+^NSEI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_NSEI.csv,0,ok
+INDF,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/INDF.csv,0,ok
+INCO,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/INCO.csv,0,ok
+INQQ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/INQQ.csv,0,ok
+SMIN,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SMIN.csv,0,ok
+EPI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EPI.csv,0,ok
+^FTSE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_FTSE.csv,0,ok
+^FCHI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_FCHI.csv,0,ok
+FTSEMIB.MI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/FTSEMIB.MI.csv,0,ok
+^IBEX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_IBEX.csv,0,ok
+^TWII,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_TWII.csv,0,ok
+^HSI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_HSI.csv,0,ok
