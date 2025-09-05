@@ -744,11 +744,9 @@ _VAL_DIR = _BASE_DIR / "data" / "valuations"
 _VAL_DIR.mkdir(parents=True, exist_ok=True)
 
 _VALUATION_FIELDS = [
-    # Common valuation metrics offered by yfinance .info for ETFs/equities
+    # Limit to the 3 consistently available fields
     "trailingPE",
-    "forwardPE",
     "priceToBook",
-    "priceToSalesTrailing12Months",
     "trailingAnnualDividendYield",
 ]
 
@@ -873,8 +871,12 @@ if __name__ == "__main__":
         if _max:
             syms = syms[:int(_max)]
         summary = update_all_daily_data(investment_universe, pause=0.3, symbols=syms)
-        print("Update complete. Summary saved to data/update_summary.csv")
-        print(summary.head())
+        print("Price update complete. Summary saved to data/update_summary.csv")
+        # Valuation snapshots (snapshot only, daily append)
+        print("Updating valuation snapshots (primary symbols, with ETF fallback)...")
+        vsummary = update_all_valuations(investment_universe, pause=0.05)
+        print("Valuation update complete. Saved to data/valuations_update_summary.csv")
+        print(vsummary.head())
     except Exception as e:
         print(f"Error during update: {e}")
 
