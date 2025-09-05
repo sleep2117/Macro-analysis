@@ -1,0 +1,95 @@
+Total symbols: 203
+
+Not found on Yahoo: 0
+
+Expected type mismatch: 0
+
+Currency mismatch: 16
+  - Europe | factors:Small_Cap(EMU) | alternative IEUS | type=ETF exch=NasdaqGM name=iShares MSCI Europe Small-Cap E
+  - Europe | factors:Quality | alternative IEFQ.L | type=ETF exch=LSE name=ISHARES IV PLC ISHS EDGE MSCI E
+  - Europe | factors:EuroStoxx50 | alternative FEZ | type=ETF exch=NYSEArca name=SPDR DJ Euro STOXX 50 Etf
+  - Japan | sectors:Nikkei_225 | alternative EWJ | type=ETF exch=NYSEArca name=iShares MSCI Japan Index Fund
+  - China | factors:CSI_300 | alternative ASHR | type=ETF exch=NYSEArca name=Xtrackers Harvest CSI 300 China
+  - Canada | sectors:Broad_Market | alternative EWC | type=ETF exch=NYSEArca name=iShares MSCI Canada Index Fund
+  - Brazil | sectors:Broad_Market | alternative EWZ | type=ETF exch=NYSEArca name=iShares Inc iShares MSCI Brazil
+  - India | sectors:Broad_Market | alternative INDA | type=ETF exch=Cboe US name=Ishares MSCI India ETF
+  - India | sectors:Broad_Market | alternative EPI | type=ETF exch=NYSEArca name=WisdomTree India Earnings Fund
+  - India | sectors:Broad_Market | alternative INDY | type=ETF exch=NasdaqGM name=iShares India 50 ETF
+  - UK | sectors:Broad_Market | alternative ISF.L | type=ETF exch=LSE name=ISHARES PLC ISHARES CORE FTSE10
+  - France | sectors:Broad_Market | alternative EWQ | type=ETF exch=NYSEArca name=iShares MSCI France Index Fund
+  - Italy | sectors:Broad_Market | alternative EWI | type=ETF exch=NYSEArca name=iShares Inc iShares MSCI Italy 
+  - Spain | sectors:Broad_Market | alternative EWP | type=ETF exch=NYSEArca name=iShares Inc iShares MSCI Spain 
+  - Taiwan | sectors:Broad_Market | alternative EWT | type=ETF exch=NYSEArca name=iShares Inc iShares MSCI Taiwan
+  - Hong_Kong | sectors:Broad_Market | alternative EWH | type=ETF exch=NYSEArca name=iShares MSCI Hong Kong Index Fu
+
+Country/region tokens not found: 3
+  - US | factors:Small_Cap_600 | index ^SP600 | type=INDEX exch=SNP name=^SP600
+  - China | factors:CSI_300 | index 000300.SS | type=INDEX exch=Shanghai name=CSI 300 Index
+  - China | factors:Growth | etf CNXT | type=ETF exch=NYSEArca name=VanEck ChiNext ETF
+
+Sector/Factor tokens not found: 65
+  - US | factors:Large_Cap | index ^GSPC | type=INDEX exch=SNP name=S&P 500
+  - US | factors:Large_Cap | alternative SPY | type=ETF exch=NYSEArca name=SPDR S&P 500
+  - US | factors:Large_Cap | alternative VOO | type=ETF exch=NYSEArca name=Vanguard S&P 500 ETF
+  - US | factors:Mid_Cap | index ^SP400 | type=INDEX exch=SNP name=S&P 400
+  - US | factors:Small_Cap | index ^RUT | type=INDEX exch=Chicago Options name=^RUT
+  - US | factors:Small_Cap | alternative IWM | type=ETF exch=NYSEArca name=iShares Russell 2000 ETF
+  - US | factors:Low_Beta | alternative USMV | type=ETF exch=Cboe US name=iShares MSCI USA Min Vol Factor
+  - US | factors:Multi_Factor | etf LRGF | type=ETF exch=NYSEArca name=iShares U.S. Equity Factor ETF
+  - Europe | sectors:Construction | index SXOP.Z | type=INDEX exch=Zurich name=STXE 600 Constr. & Materials  I
+  - Europe | factors:Large_Cap | index ^STOXX | type=INDEX exch=Zurich name=STXE 600                      I
+  - Europe | factors:Large_Cap | alternative EXSA.DE | type=ETF exch=XETRA name=iSh.STOXX Europe 600 U.ETF DE I
+  - Europe | factors:Large_Cap | alternative DX2X.DE | type=ETF exch=XETRA name=XTR.STOXX EUROPE 600 1C
+  - Germany | sectors:Technology | alternative EXS2.DE | type=ETF exch=XETRA name=iShares TecDAX UCITS ETF DE   I
+  - Germany | factors:Large_Cap | index ^GDAXI | type=INDEX exch=XETRA name=DAX                           P
+  - Germany | factors:Large_Cap | alternative EXS1.DE | type=ETF exch=XETRA name=iShares Core DAX UCITS ETF DE I
+  - Germany | factors:Mid_Cap | index ^MDAXI | type=INDEX exch=XETRA name=MDAX                          P
+  - Germany | factors:Mid_Cap | alternative EXS3.DE | type=ETF exch=XETRA name=iShares MDAX UCITS ETF DE     I
+  - Germany | factors:Small_Cap | index ^SDAXI | type=INDEX exch=XETRA name=SDAX                          P
+  - Japan | sectors:Broad_Market | etf EWJ | type=ETF exch=NYSEArca name=iShares MSCI Japan Index Fund
+  - Japan | sectors:Broad_Market | alternative DXJ | type=ETF exch=NYSEArca name=WisdomTree Japan Hedged Equity 
+  - Japan | sectors:Broad_Market | alternative HEWJ | type=ETF exch=NYSEArca name=iShares Currency Hedged MSCI Ja
+  - Japan | sectors:Broad_Market | alternative BBJP | type=ETF exch=Cboe US name=JPMorgan BetaBuilders Japan ETF
+  - Japan | sectors:Broad_Market | alternative JPXN | type=ETF exch=NYSEArca name=iShares JPX-Nikkei 400 ETF
+  - Japan | sectors:Technology | etf FLJP | type=ETF exch=NYSEArca name=Franklin FTSE Japan ETF
+  - Japan | sectors:Technology | alternative EWJ | type=ETF exch=NYSEArca name=iShares MSCI Japan Index Fund
+  - Japan | sectors:Industrials | etf DXJC | type=ETF exch=NYSEArca name=WisdomTree Japan Hedged Capital
+  - Japan | factors:Large_Cap | etf EWJ | type=ETF exch=NYSEArca name=iShares MSCI Japan Index Fund
+  - Japan | factors:Large_Cap | alternative DXJ | type=ETF exch=NYSEArca name=WisdomTree Japan Hedged Equity 
+  - China | sectors:Broad_Market | etf FXI | type=ETF exch=NYSEArca name=iShares China Large-Cap ETF
+  - China | sectors:Broad_Market | alternative MCHI | type=ETF exch=NasdaqGM name=iShares MSCI China ETF
+  - China | sectors:Broad_Market | alternative ASHR | type=ETF exch=NYSEArca name=Xtrackers Harvest CSI 300 China
+  - China | sectors:Broad_Market | alternative GXC | type=ETF exch=NYSEArca name=SPDR S&P China ETF
+  - China | sectors:Technology | alternative KWEB | type=ETF exch=NYSEArca name=KraneShares Trust KraneShares C
+  - China | factors:Large_Cap | alternative GXC | type=ETF exch=NYSEArca name=SPDR S&P China ETF
+  - China | factors:Growth | etf CNXT | type=ETF exch=NYSEArca name=VanEck ChiNext ETF
+  - Canada | sectors:Broad_Market | index ^GSPTSE | type=INDEX exch=Toronto name=S&P/TSX Composite index
+  - Canada | sectors:Broad_Market | alternative XIC.TO | type=ETF exch=Toronto name=iSHARES CORE SP TSX CAPPED COMP
+  - Canada | sectors:Broad_Market | alternative EWC | type=ETF exch=NYSEArca name=iShares MSCI Canada Index Fund
+  - Brazil | sectors:Broad_Market | index ^BVSP | type=INDEX exch=São Paulo name=IBOVESPA
+  - Brazil | sectors:Broad_Market | alternative EWZ | type=ETF exch=NYSEArca name=iShares Inc iShares MSCI Brazil
+  - Global_ExUS | sectors:Broad_Market | etf ACWX | type=ETF exch=NasdaqGM name=iShares MSCI ACWI ex U.S. ETF
+  - Global_ExUS | sectors:Broad_Market | alternative VEU | type=ETF exch=NYSEArca name=Vanguard FTSE All World Ex US E
+  - Global_ExUS | sectors:Broad_Market | alternative IEFA | type=ETF exch=Cboe US name=iShares Core MSCI EAFE ETF
+  - Singapore | sectors:Broad_Market | etf EWS | type=ETF exch=NYSEArca name=iShares Inc iShares MSCI Singap
+  - Indonesia | sectors:Broad_Market | etf EIDO | type=ETF exch=NYSEArca name=iShares MSCI Indonesia ETF
+  - Thailand | sectors:Broad_Market | etf THD | type=ETF exch=NYSEArca name=iShares Inc iShares MSCI Thaila
+  - Malaysia | sectors:Broad_Market | etf EWM | type=ETF exch=NYSEArca name=iShares MSCI Malaysia Index Fun
+  - India | sectors:Broad_Market | index ^NSEI | type=INDEX exch=NSE name=NIFTY 50
+  - India | sectors:Broad_Market | alternative INDA | type=ETF exch=Cboe US name=Ishares MSCI India ETF
+  - India | sectors:Broad_Market | alternative EPI | type=ETF exch=NYSEArca name=WisdomTree India Earnings Fund
+  - India | sectors:Broad_Market | alternative INDY | type=ETF exch=NasdaqGM name=iShares India 50 ETF
+  - India | sectors:Technology | etf INQQ | type=ETF exch=NYSEArca name=INQQ The India Internet ETF
+  - UK | sectors:Broad_Market | index ^FTSE | type=INDEX exch=FTSE Index name=FTSE 100
+  - UK | sectors:Broad_Market | alternative ISF.L | type=ETF exch=LSE name=ISHARES PLC ISHARES CORE FTSE10
+  - UK | sectors:Broad_Market | alternative VUKE.L | type=ETF exch=LSE name=VANGUARD FUNDS PLC VANGUARD FTS
+  - France | sectors:Broad_Market | index ^FCHI | type=INDEX exch=Paris name=CAC 40
+  - France | sectors:Broad_Market | alternative EWQ | type=ETF exch=NYSEArca name=iShares MSCI France Index Fund
+  - Italy | sectors:Broad_Market | index FTSEMIB.MI | type=INDEX exch=Milan name=FTSEMIB.MI
+  - Italy | sectors:Broad_Market | alternative EWI | type=ETF exch=NYSEArca name=iShares Inc iShares MSCI Italy 
+  - Spain | sectors:Broad_Market | index ^IBEX | type=INDEX exch=MCE name=IBEX 35...
+  - Spain | sectors:Broad_Market | alternative EWP | type=ETF exch=NYSEArca name=iShares Inc iShares MSCI Spain 
+  - Taiwan | sectors:Broad_Market | index ^TWII | type=INDEX exch=Taiwan name=TSEC CAPITALIZATION WEIGHTED ST
+  - Taiwan | sectors:Broad_Market | alternative EWT | type=ETF exch=NYSEArca name=iShares Inc iShares MSCI Taiwan
+  - Hong_Kong | sectors:Broad_Market | index ^HSI | type=INDEX exch=HKSE name=HANG SENG INDEX
+  - Hong_Kong | sectors:Broad_Market | alternative EWH | type=ETF exch=NYSEArca name=iShares MSCI Hong Kong Index Fu
