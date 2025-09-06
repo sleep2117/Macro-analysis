@@ -844,6 +844,25 @@ def update_all_valuations(
                         used_symbol = sym
                         time.sleep(pause)
                         break
+            # Determine status: ok if we appended or today's row already exists; else no_data
+            status = "ok"
+            if not updated:
+                try:
+                    from datetime import datetime as _dt
+                    today = _dt.utcnow().date().isoformat()
+                    if not path or not isinstance(path, _Path) or not path.exists():
+                        status = "no_data"
+                    else:
+                        try:
+                            df_existing = pd.read_csv(path)
+                            has_today = ("Date" in df_existing.columns) and (df_existing["Date"] == today).any()
+                            if not has_today:
+                                status = "no_data"
+                        except Exception:
+                            status = "no_data"
+                except Exception:
+                    status = "no_data"
+
             rows.append({
                 "country": country,
                 "category": section,
@@ -853,6 +872,7 @@ def update_all_valuations(
                 "used_symbol": used_symbol,
                 "file": str(path) if isinstance(path, _Path) else str(path),
                 "updated": updated,
+                "status": status,
             })
     else:
         # Legacy per-symbol yfinance .info mode
@@ -870,6 +890,25 @@ def update_all_valuations(
                     if fb:
                         path, updated = update_valuation_csv(fb)
                         used_fallback = True
+            # Determine status
+            status = "ok"
+            if not updated:
+                try:
+                    from datetime import datetime as _dt
+                    today = _dt.utcnow().date().isoformat()
+                    if not path or not isinstance(path, _Path) or not path.exists():
+                        status = "no_data"
+                    else:
+                        try:
+                            df_existing = pd.read_csv(path)
+                            has_today = ("Date" in df_existing.columns) and (df_existing["Date"] == today).any()
+                            if not has_today:
+                                status = "no_data"
+                        except Exception:
+                            status = "no_data"
+                except Exception:
+                    status = "no_data"
+
             rows.append({
                 "country": country,
                 "category": section,
@@ -878,6 +917,7 @@ def update_all_valuations(
                 "fallback_to_etf": used_fallback,
                 "file": str(path) if isinstance(path, _Path) else str(path),
                 "updated": updated,
+                "status": status,
             })
             time.sleep(pause)
     df = pd.DataFrame(rows)
