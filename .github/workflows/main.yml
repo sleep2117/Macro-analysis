@@ -39,6 +39,15 @@ jobs:
       - name: Run data updater (prices + valuations)
         env:
           MAX_SYMBOLS: ''
+          # We DO run valuations daily; use batch quote API to avoid 429
+          SKIP_VALUATIONS: 'false'
+          VALUATION_FETCH_MODE: 'batch_quote'
+          VALUATION_CHUNK: '20'
+          VALUATION_INFO_FALLBACK: '1'
+          MAX_INFO_CALLS: '40'
+          # Throttle to be kind to Yahoo endpoints
+          PRICE_PAUSE: '0.6'
+          VALUATION_PAUSE: '1.0'
         run: |
           python -u global_universe/world_indices.py
 

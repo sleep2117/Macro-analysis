@@ -886,37 +886,255 @@ def update_valuation_csv(symbol: str) -> tuple[_Path, bool]:
     os.replace(tmp, path)
     return path, True
 
-def update_all_valuations(universe: dict, pause: float = 0.2) -> pd.DataFrame:
+def _batch_fetch_quote(symbols: list[str]) -> dict:
+    """
+    Fetch quote fields in a single call for multiple symbols using Yahoo v7 API via curl.
+    Returns mapping: symbol -> dict(fields) for available results.
+    Only a light set of headers to mimic a browser.
+    """
+    if not symbols:
+        return {}
+    import urllib.parse as _up
+    # URL-encode symbols for query param (handles '^')
+    joined = ",".join(symbols)
+    # Request specific fields to ensure availability
+    fields = [
+        "trailingPE",
+        "priceToBook",
+        "trailingAnnualDividendYield",
+        "dividendYield",
+        "trailingAnnualDividendRate",
+        "bookValue",
+        "epsTrailingTwelveMonths",
+        "regularMarketPrice",
+        "currency",
+        "quoteType",
+    ]
+    url = (
+        f"https://query1.finance.yahoo.com/v7/finance/quote?symbols={_up.quote(joined)}"
+        f"&fields={_up.quote(','.join(fields))}"
+    )
+    headers = [
+        "-H", "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+        "-H", "Accept: application/json, text/plain, */*",
+        "-H", "Accept-Language: en-US,en;q=0.9",
+        "-H", "Referer: https://finance.yahoo.com/",
+    ]
+    try:
+        out = _sp.check_output(["curl", "-s", *headers, url], timeout=25)
+        data = _json.loads(out.decode("utf-8", errors="ignore"))
+        results = (((data or {}).get("quoteResponse") or {}).get("result")) or []
+        out_map: dict[str, dict] = {}
+        for item in results:
+            sym = item.get("symbol")
+            if not sym:
+                continue
+            # Base: direct fields
+            row = {k: item.get(k) for k in _VALUATION_FIELDS}
+            # Derive dividend yield if missing
+            if row.get("trailingAnnualDividendYield") in (None, "None"):
+                dy = item.get("dividendYield")
+                if dy in (None, "None"):
+                    rate = item.get("trailingAnnualDividendRate")
+                    price = item.get("regularMarketPrice") or 0
+                    if rate not in (None, "None") and price:
+                        try:
+                            dy = float(rate) / float(price)
+                        except Exception:
+                            dy = None
+                row["trailingAnnualDividendYield"] = dy
+            # Derive P/B if missing
+            if row.get("priceToBook") in (None, "None"):
+                bv = item.get("bookValue")
+                price = item.get("regularMarketPrice")
+                if bv not in (None, "None", 0) and price not in (None, "None"):
+                    try:
+                        row["priceToBook"] = float(price) / float(bv)
+                    except Exception:
+                        pass
+            # Derive P/E if missing
+            if row.get("trailingPE") in (None, "None"):
+                eps = item.get("epsTrailingTwelveMonths")
+                price = item.get("regularMarketPrice")
+                if eps not in (None, "None", 0) and price not in (None, "None"):
+                    try:
+                        pe = float(price) / float(eps)
+                        # Avoid absurd values due to tiny EPS
+                        if np.isfinite(pe) and pe > 0:
+                            row["trailingPE"] = pe
+                    except Exception:
+                        pass
+            row.update({
+                "symbol": sym,
+                "currency": item.get("currency"),
+                "quoteType": item.get("quoteType"),
+            })
+            out_map[sym] = row
+        return out_map
+    except Exception:
+        return {}
+
+def _append_valuation_row(symbol: str, row: dict) -> tuple[_Path, bool]:
+    """Append a single day's row to the symbol's valuation CSV if not present."""
+    path = _valuation_csv_path(symbol)
+    from datetime import datetime as _dt
+    today = _dt.utcnow().date().isoformat()
+    df_new = pd.DataFrame([{**{"Date": today}, **row}])
+    if path.exists():
+        try:
+            df = pd.read_csv(path)
+            if (df["Date"] == today).any():
+                return path, False
+            df = pd.concat([df, df_new], ignore_index=True)
+        except Exception:
+            df = df_new
+    else:
+        df = df_new
+    tmp = path.with_suffix(".csv.tmp")
+    df.to_csv(tmp, index=False)
+    os.replace(tmp, path)
+    return path, True
+
+def update_all_valuations(
+    universe: dict,
+    pause: float = 0.2,
+    symbols: list[str] | None = None,
+    max_symbols: int | None = None,
+    mode: str = "batch_quote",
+    chunk: int = 20,
+    info_fallback: bool = True,
+    max_info_calls: int | None = None,
+) -> pd.DataFrame:
     """
     Build/update daily valuation snapshots for each asset (one symbol per asset).
     Preference: index; if index has no valuation fields, fallback to ETF.
     No use of alternatives and no historical backfill (snapshot only).
     """
     rows = []
+    # Build the traversal list with optional filtering
+    tasks = []
     for country, cdata in universe.items():
         for section in ("sectors", "factors"):
             for name, asset in cdata.get(section, {}).items():
                 chosen = asset.get("index") or asset.get("etf")
-                used_fallback = False
-                path, updated = _valuation_csv_path(""), False  # init
-                if chosen:
-                    path, updated = update_valuation_csv(chosen)
-                    if not updated and asset.get("index") and asset.get("etf") and asset.get("index") == chosen:
-                        # fallback to ETF if index had no valuation data today
-                        fb = asset.get("etf")
-                        if fb:
-                            path, updated = update_valuation_csv(fb)
-                            used_fallback = True
-                rows.append({
-                    "country": country,
-                    "category": section,
-                    "name": name,
-                    "primary": chosen,
-                    "fallback_to_etf": used_fallback,
-                    "file": str(path) if isinstance(path, _Path) else str(path),
-                    "updated": updated,
-                })
+                if symbols and chosen not in symbols:
+                    continue
+                tasks.append((country, section, name, asset, chosen))
+
+    if max_symbols is not None:
+        tasks = tasks[:max_symbols]
+
+    if mode == "batch_quote":
+        # 1) Primary fetch in chunks
+        prim_syms = [t[4] for t in tasks if t[4]]
+        prim_map: dict[str, dict] = {}
+        for i in range(0, len(prim_syms), max(1, chunk)):
+            batch = prim_syms[i:i+chunk]
+            prim_map.update(_batch_fetch_quote(batch))
+            time.sleep(pause)
+
+        # 2) Build full fallback candidate lists per task (ETF + alternatives + index when applicable)
+        fb_lists: list[list[str]] = []
+        fb_set: list[str] = []
+        for (_, _, _, asset, chosen) in tasks:
+            cands: list[str] = []
+            idx_sym = asset.get("index")
+            etf_sym = asset.get("etf")
+            alts = [a for a in (asset.get("alternatives") or []) if a]
+            if chosen == idx_sym:
+                if etf_sym:
+                    cands.append(etf_sym)
+                cands.extend(alts)
+            else:
+                # chosen is ETF or alternative; try other ETFs/alternatives first, then index
+                # Keep order but skip the chosen symbol itself
+                for a in ([etf_sym] if etf_sym else []) + alts:
+                    if a and a != chosen and a not in cands:
+                        cands.append(a)
+                if idx_sym:
+                    cands.append(idx_sym)
+            fb_lists.append(cands)
+            for s in cands:
+                if s not in fb_set:
+                    fb_set.append(s)
+
+        fb_map: dict[str, dict] = {}
+        if fb_set:
+            for i in range(0, len(fb_set), max(1, chunk)):
+                batch = fb_set[i:i+chunk]
+                fb_map.update(_batch_fetch_quote(batch))
                 time.sleep(pause)
+
+        # 3) Write CSVs and build summary rows (with optional info fallback)
+        info_calls = 0
+        for ti, (country, section, name, asset, chosen) in enumerate(tasks):
+            used_fallback = False
+            path = _valuation_csv_path(chosen or "")
+            updated = False
+            used_symbol = chosen
+            snap = prim_map.get(chosen)
+            if snap is None or all(snap.get(k) in (None, "None") for k in _VALUATION_FIELDS):
+                # try broader fallback list (ETF/alternatives/index depending on chosen)
+                for sym in fb_lists[ti]:
+                    alt = fb_map.get(sym)
+                    if alt and not all(alt.get(k) in (None, "None") for k in _VALUATION_FIELDS):
+                        path, updated = _append_valuation_row(sym, alt)
+                        used_fallback = True
+                        used_symbol = sym
+                        break
+            if not used_fallback and snap and not all(snap.get(k) in (None, "None") for k in _VALUATION_FIELDS):
+                path, updated = _append_valuation_row(chosen, snap)
+                used_symbol = chosen
+
+            # Per-symbol info fallback (quoteSummary) if still not updated
+            if not updated and info_fallback and (max_info_calls is None or info_calls < max_info_calls):
+                # Try chosen, then ETF, then alternatives in order
+                cand_syms = [s for s in [chosen, asset.get("etf"), *(asset.get("alternatives") or []), asset.get("index")] if s]
+                for sym in cand_syms:
+                    row = fetch_valuation_snapshot(sym)
+                    info_calls += 1
+                    if row and not all(row.get(k) in (None, "None") for k in _VALUATION_FIELDS):
+                        path, updated = _append_valuation_row(sym, row)
+                        used_fallback = used_fallback or (sym != chosen)
+                        used_symbol = sym
+                        time.sleep(pause)
+                        break
+            rows.append({
+                "country": country,
+                "category": section,
+                "name": name,
+                "primary": chosen,
+                "fallback_to_etf": used_fallback,
+                "used_symbol": used_symbol,
+                "file": str(path) if isinstance(path, _Path) else str(path),
+                "updated": updated,
+            })
+    else:
+        # Legacy per-symbol yfinance .info mode
+        for (country, section, name, asset, chosen) in tasks:
+            used_fallback = False
+            path, updated = _valuation_csv_path(""), False  # init
+            if chosen:
+                path, updated = update_valuation_csv(chosen)
+                if not updated and asset.get("index") and asset.get("index") == chosen:
+                    # fallback to ETF/alternative if index had no valuation data today
+                    fb = asset.get("etf")
+                    if not fb:
+                        alts = asset.get("alternatives") or []
+                        fb = alts[0] if alts else None
+                    if fb:
+                        path, updated = update_valuation_csv(fb)
+                        used_fallback = True
+            rows.append({
+                "country": country,
+                "category": section,
+                "name": name,
+                "primary": chosen,
+                "fallback_to_etf": used_fallback,
+                "file": str(path) if isinstance(path, _Path) else str(path),
+                "updated": updated,
+            })
+            time.sleep(pause)
     df = pd.DataFrame(rows)
     df.to_csv(_BASE_DIR / "data" / "valuations_update_summary.csv", index=False)
     return df
@@ -933,20 +1151,71 @@ if __name__ == "__main__":
         _max = _os.environ.get("MAX_SYMBOLS")
         if _max:
             syms = syms[:int(_max)]
-        summary = update_all_daily_data(investment_universe, pause=0.3, symbols=syms)
+        # In CI we slow down more to mitigate Yahoo 429
+        _is_ci = _os.environ.get("GITHUB_ACTIONS") == "true"
+        price_pause = float(_os.environ.get("PRICE_PAUSE", "0.6" if _is_ci else "0.3"))
+        summary = update_all_daily_data(investment_universe, pause=price_pause, symbols=syms)
         print("Price update complete. Summary saved to data/update_summary.csv")
+
         # Valuation snapshots (snapshot only, daily append)
-        print("Updating valuation snapshots (primary symbols, with ETF fallback)...")
-        vsummary = update_all_valuations(investment_universe, pause=0.05)
-        print("Valuation update complete. Saved to data/valuations_update_summary.csv")
-        print(vsummary.head())
+        skip_vals = _os.environ.get("SKIP_VALUATIONS", "false").lower() in {"1","true","yes","on"}
+        if _is_ci and not _os.environ.get("FORCE_VALUATIONS"):
+            # Default to skipping valuations on GitHub Actions to avoid 429
+            skip_vals = True
+        if not skip_vals:
+            print("Updating valuation snapshots (primary symbols, with ETF fallback)...")
+            val_pause = float(_os.environ.get("VALUATION_PAUSE", "1.0" if _is_ci else "0.2"))
+            # Optional limiting in CI to avoid 429
+            _max_val = _os.environ.get("MAX_VAL_SYMBOLS")
+            _val_syms_env = _os.environ.get("VAL_SYMBOLS")  # comma-separated list, optional
+            _val_symbols = None
+            if _val_syms_env:
+                _val_symbols = [s.strip() for s in _val_syms_env.split(",") if s.strip()]
+            _mode = _os.environ.get("VALUATION_FETCH_MODE", "batch_quote")
+            _chunk = int(_os.environ.get("VALUATION_CHUNK", "20"))
+            _info_fallback = (_os.environ.get("VALUATION_INFO_FALLBACK", "1").lower() in {"1","true","yes","on"})
+            _max_info_calls = _os.environ.get("MAX_INFO_CALLS")
+            vsummary = update_all_valuations(
+                investment_universe,
+                pause=val_pause,
+                symbols=_val_symbols,
+                max_symbols=int(_max_val) if _max_val else None,
+                mode=_mode,
+                chunk=_chunk,
+                info_fallback=_info_fallback,
+                max_info_calls=int(_max_info_calls) if _max_info_calls else None,
+            )
+            print("Valuation update complete. Saved to data/valuations_update_summary.csv")
+            print(vsummary.head())
+        else:
+            print("Skipping valuation snapshots (set FORCE_VALUATIONS=1 to override).")
     except Exception as e:
         print(f"Error during update: {e}")
 
-# Import visualization functions
+# Import visualization functions (robust path resolution)
 try:
-    exec(open('/home/jyp0615/kpds_fig_format_enhanced.py').read())
-    print("KPDS visualization library loaded successfully")
+    import importlib.util as _importlib_util
+    from pathlib import Path as __Path
+    _here = __Path(__file__).resolve()
+    # Try repository root first (one level up from this file's dir)
+    _candidate_paths = [
+        _here.parent.parent / "kpds_fig_format_enhanced.py",
+        _here.parent / "kpds_fig_format_enhanced.py",
+    ]
+    _kpds_loaded = False
+    for _p in _candidate_paths:
+        if _p.exists():
+            spec = _importlib_util.spec_from_file_location("kpds_fig_format_enhanced", str(_p))
+            if spec and spec.loader:
+                _mod = _importlib_util.module_from_spec(spec)
+                spec.loader.exec_module(_mod)  # noqa: F401 - side-effects define plotting helpers
+                globals().update({k: getattr(_mod, k) for k in dir(_mod) if not k.startswith("__")})
+                _kpds_loaded = True
+                break
+    if _kpds_loaded:
+        print("KPDS visualization library loaded successfully")
+    else:
+        print("Warning: KPDS visualization library not found in repo paths")
 except Exception as e:
     print(f"Warning: Could not load KPDS visualization library: {e}")
 
