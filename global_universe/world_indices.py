@@ -5,11 +5,43 @@ Global indices/sectors/factors universe with data validation
 # Note: file moved under global_universe/ for project organization
 
 import yfinance as yf
+import requests as _requests
+from requests.adapters import HTTPAdapter as _HTTPAdapter
+try:
+    from urllib3.util.retry import Retry as _Retry
+except Exception:
+    _Retry = None
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
 import warnings
 warnings.filterwarnings('ignore')
+
+# Shared HTTP session for yfinance with retry/backoff and browser-like headers
+def _build_http_session():
+    s = _requests.Session()
+    s.headers.update({
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36",
+        "Accept": "application/json, text/plain, */*",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Connection": "keep-alive",
+    })
+    if _Retry is not None:
+        retry = _Retry(
+            total=5,
+            connect=5,
+            read=5,
+            status=5,
+            backoff_factor=0.5,
+            status_forcelist=[429, 500, 502, 503, 504],
+            allowed_methods=frozenset(["HEAD", "GET"]),
+        )
+        adapter = _HTTPAdapter(max_retries=retry)
+        s.mount("https://", adapter)
+        s.mount("http://", adapter)
+    return s
+
+_YF_SESSION = _build_http_session()
 
 # Ticker validation functions
 def validate_ticker(symbol, min_days=252):
@@ -18,7 +50,7 @@ def validate_ticker(symbol, min_days=252):
     Returns: dict with validation results
     """
     try:
-        ticker = yf.Ticker(symbol)
+        ticker = yf.Ticker(symbol, session=_YF_SESSION)
         hist = ticker.history(period="2y")
         
         if hist.empty:
@@ -474,7 +506,7 @@ def collect_data(ticker, period='2y'):
     Collect historical data for a ticker
     """
     try:
-        stock = yf.Ticker(ticker)
+        stock = yf.Ticker(ticker, session=_YF_SESSION)
         hist = stock.history(period=period)
         info = stock.info
         
@@ -567,7 +599,7 @@ def _fetch_history(symbol: str, start: datetime | None = None, end: datetime | N
     last_err = None
     for attempt in range(1, max_retries + 1):
         try:
-            t = yf.Ticker(symbol)
+            t = yf.Ticker(symbol, session=_YF_SESSION)
             if start is None and end is None:
                 # Try a sequence of periods from longest to shortest; some symbols only allow 1d/5d
                 periods = ["max", "10y", "5y", "2y", "1y", "6mo", "3mo", "1mo", "5d", "1d"]
@@ -822,7 +854,7 @@ def fetch_valuation_snapshot(symbol: str) -> dict | None:
     Returns dict with available fields; None if unavailable.
     """
     try:
-        t = yf.Ticker(symbol)
+        t = yf.Ticker(symbol, session=_YF_SESSION)
         info = t.info
         if not info or not isinstance(info, dict):
             return None
@@ -1494,7 +1526,7 @@ def collect_currency_data():
             else:
                 continue
                 
-            fx_data = yf.Ticker(ticker).history(period='2y')
+            fx_data = yf.Ticker(ticker, session=_YF_SESSION).history(period='2y')
             if not fx_data.empty:
                 rates = fx_data['Close']
                 if invert:
