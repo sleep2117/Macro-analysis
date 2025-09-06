@@ -552,6 +552,12 @@ def update_all_daily_data(universe: dict, pause: float = 0.6, symbols: list[str]
             results.append({"symbol": sym, "file": str(_csv_path_for(sym)), "added": 0, "status": f"error: {e}"})
         time.sleep(pause)
     df = pd.DataFrame(results)
+    # Mark execution time for visibility in CI even when no rows are added
+    try:
+        ts = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+    except Exception:
+        ts = datetime.utcnow().isoformat() + "Z"
+    df["run_at"] = ts
     df.to_csv(_BASE_DIR / "data" / "update_summary.csv", index=False)
     return df
 
@@ -875,6 +881,12 @@ def update_all_valuations(
             })
             time.sleep(pause)
     df = pd.DataFrame(rows)
+    # Mark execution time for visibility in CI
+    try:
+        ts = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+    except Exception:
+        ts = datetime.utcnow().isoformat() + "Z"
+    df["run_at"] = ts
     df.to_csv(_BASE_DIR / "data" / "valuations_update_summary.csv", index=False)
     return df
 
@@ -927,5 +939,3 @@ if __name__ == "__main__":
             print("Skipping valuation snapshots (set FORCE_VALUATIONS=1 to override).")
     except Exception as e:
         print(f"Error during update: {e}")
-
-# (Visualization/analysis blocks removed.)
