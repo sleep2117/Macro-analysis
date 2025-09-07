@@ -681,3 +681,11 @@ print("✅ 모든 함수가 us_eco_utils의 통합 함수 사용!")
 # %%
 load_cps_data()
 plot_cps_series_advanced(['unemployment_rate', 'unemployment_rate_white'], 'multi_line', 'mom')
+
+# %%
+plot_cps_series_advanced(['employment_population_ratio', 'participation_rate'], 'multi_line', 'raw')
+
+# %%
+plot_cps_series_advanced(['civilian_labor_force', 'unemployment_level'], 'dual_axis', 'raw')
+
+# %%
