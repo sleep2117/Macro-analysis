@@ -2,7 +2,8 @@ name: Update Market Data
 
 on:
   schedule:
-    - cron: '20 2 * * *'  # every day at 02:20 UTC
+    - cron: '20 2 * * *'   # 11:20 KST
+    - cron: '20 14 * * *'  # 23:20 KST
   workflow_dispatch: {}
   push:
     branches: [ main ]
@@ -34,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install yfinance pandas numpy
+          pip install yfinance pandas numpy pykrx
 
       - name: Run data updater (prices + valuations)
         env:
@@ -48,8 +49,17 @@ jobs:
           # Throttle to be kind to Yahoo endpoints
           PRICE_PAUSE: '0.6'
           VALUATION_PAUSE: '1.0'
+          # Include KRX (pykrx) updates with backfill and full price history
+          INCLUDE_KRX: '1'
+          # After initial backfill, only append recent values with lookback to avoid zeros
+          KRX_VAL_MODE: 'append_today'
+          KRX_VAL_LOOKBACK: '7'
+          # Price updater is incremental; mode irrelevant once backfilled
+          KRX_PRICE_MODE: 'full'
         run: |
           python -u global_universe/world_indices.py
+
+      # Cleanup is manual only to avoid irrecoverable deletions
 
       - name: Commit and push changes
         run: |

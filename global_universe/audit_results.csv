@@ -1,204 +1,270 @@
-country,category,name,field,symbol,exists,quoteType,exchange,currency,shortName,longName,expected_type,type_match,currency_match,country_match,topic_match,reason
-US,sectors,Technology,etf,XLK,True,ETF,NYSEArca,USD,SPDR Select Sector Fund - Techn,The Technology Select Sector SPDR Fund,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Technology,alternative,VGT,True,ETF,NYSEArca,USD,Vanguard Information Tech ETF,Vanguard Information Technology Index Fund ETF Shares,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Technology,alternative,FTEC,True,ETF,NYSEArca,USD,Fidelity MSCI Information Techn,Fidelity MSCI Information Technology Index ETF,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Healthcare,etf,XLV,True,ETF,NYSEArca,USD,SPDR Select Sector Fund - Healt,The Health Care Select Sector SPDR Fund,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Healthcare,alternative,VHT,True,ETF,NYSEArca,USD,Vanguard Health Care ETF,Vanguard Health Care Index Fund ETF Shares,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Healthcare,alternative,FHLC,True,ETF,NYSEArca,USD,Fidelity MSCI Health Care Index,Fidelity MSCI Health Care Index ETF,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Financials,etf,XLF,True,ETF,NYSEArca,USD,SPDR Select Sector Fund - Finan,The Financial Select Sector SPDR Fund,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Financials,alternative,VFH,True,ETF,NYSEArca,USD,Vanguard Financials ETF,Vanguard Financials Index Fund ETF Shares,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Cons_Discr.,etf,XLY,True,ETF,NYSEArca,USD,SPDR Select Sector Fund - Consu,The Consumer Discretionary Select Sector SPDR Fund,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Cons_Discr.,alternative,VCR,True,ETF,NYSEArca,USD,Vanguard Consumer Discretion ET,Vanguard Consumer Discretionary Index Fund ETF Shares,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Cons_Staples,etf,XLP,True,ETF,NYSEArca,USD,SPDR Select Sector Fund - Consu,The Consumer Staples Select Sector SPDR Fund,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Cons_Staples,alternative,VDC,True,ETF,NYSEArca,USD,Vanguard Consumer Staples ETF,Vanguard Consumer Staples Index Fund ETF Shares,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Industrials,etf,XLI,True,ETF,NYSEArca,USD,SPDR Select Sector Fund - Indus,The Industrial Select Sector SPDR Fund,ETF,True,True,True,True,
-US,sectors,Industrials,alternative,VIS,True,ETF,NYSEArca,USD,Vanguard Industrials ETF,Vanguard Industrials Index Fund ETF Shares,ETF,True,True,True,True,
-US,sectors,Energy,etf,XLE,True,ETF,NYSEArca,USD,SPDR Select Sector Fund - Energ,The Energy Select Sector SPDR Fund,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Energy,alternative,VDE,True,ETF,NYSEArca,USD,Vanguard Energy ETF,Vanguard Energy Index Fund ETF Shares,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Materials,etf,XLB,True,ETF,NYSEArca,USD,Materials Select Sector SPDR,The Materials Select Sector SPDR Fund,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Materials,alternative,VAW,True,ETF,NYSEArca,USD,Vanguard Materials ETF,Vanguard Materials Index Fund ETF Shares,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Utilities,etf,XLU,True,ETF,NYSEArca,USD,SPDR Select Sector Fund - Utili,The Utilities Select Sector SPDR Fund,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Utilities,alternative,VPU,True,ETF,NYSEArca,USD,Vanguard Utilities ETF,Vanguard Utilities Index Fund ETF Shares,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Comm_Services,etf,XLC,True,ETF,NYSEArca,USD,The Communication Services Sele,The Communication Services Select Sector SPDR ETF Fund,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Real_Estate,etf,XLRE,True,ETF,NYSEArca,USD,Real Estate Select Sector SPDR ,The Real Estate Select Sector SPDR Fund,ETF,True,True,True,True,Country matched via exchange hint
-US,sectors,Real_Estate,alternative,VNQ,True,ETF,NYSEArca,USD,Vanguard Real Estate ETF,Vanguard Real Estate Index Fund ETF Shares,ETF,True,True,True,True,Country matched via exchange hint
-US,factors,Large_Cap,index,^GSPC,True,INDEX,SNP,USD,S&P 500,S&P 500,INDEX,True,True,True,False,Topic tokens not found in name
-US,factors,Large_Cap,alternative,SPY,True,ETF,NYSEArca,USD,SPDR S&P 500,SPDR S&P 500 ETF,ETF,True,True,True,False,Topic tokens not found in name
-US,factors,Large_Cap,alternative,VOO,True,ETF,NYSEArca,USD,Vanguard S&P 500 ETF,Vanguard S&P 500 ETF,ETF,True,True,True,False,Topic tokens not found in name
-US,factors,Mid_Cap,index,^SP400,True,INDEX,SNP,USD,S&P 400,S&P 400,INDEX,True,True,True,False,Topic tokens not found in name
-US,factors,Mid_Cap,alternative,IJH,True,ETF,NYSEArca,USD,iShares Core S&P Mid-Cap ETF,iShares Core S&P Mid-Cap ETF,ETF,True,True,True,True,
-US,factors,Small_Cap,index,^RUT,True,INDEX,Chicago Options,USD,^RUT, Russell 2000 Index,INDEX,True,True,True,False,Topic tokens not found in name
-US,factors,Small_Cap,alternative,IWM,True,ETF,NYSEArca,USD,iShares Russell 2000 ETF,iShares Russell 2000 ETF,ETF,True,True,True,False,Topic tokens not found in name
-US,factors,Small_Cap,alternative,IJR,True,ETF,NYSEArca,USD,iShares Core S&P Small-Cap ETF,iShares Core S&P Small-Cap ETF,ETF,True,True,True,True,
-US,factors,Small_Cap_600,index,^SP600,True,INDEX,SNP,USD,^SP600,^SP600,INDEX,True,True,False,True,Country tokens not found in name; No topic tokens configured
-US,factors,Small_Cap_600,alternative,IJR,True,ETF,NYSEArca,USD,iShares Core S&P Small-Cap ETF,iShares Core S&P Small-Cap ETF,ETF,True,True,True,True,No topic tokens configured
-US,factors,Small_Cap_600,alternative,SLY,True,ETF,NYSEArca,USD,SPDR S&P 600 Small Cap ETF (bas,SPDR S&P 600 Small Cap ETF,ETF,True,True,True,True,No topic tokens configured
-US,factors,Small_Cap_600,alternative,VIOO,True,ETF,NYSEArca,USD,Vanguard S&P Small-Cap 600 ETF,Vanguard S&P Small-Cap 600 Index Fund ETF Shares,ETF,True,True,True,True,No topic tokens configured
-US,factors,Nasdaq_100,index,^NDX,True,INDEX,Nasdaq GIDS,USD,NASDAQ-100,NASDAQ-100,INDEX,True,True,True,True,Country matched via exchange hint; No topic tokens configured
-US,factors,Nasdaq_100,alternative,QQQ,True,ETF,NasdaqGM,USD,"Invesco QQQ Trust, Series 1",Invesco QQQ Trust,ETF,True,True,True,True,No topic tokens configured
-US,factors,Micro_Cap,etf,IWC,True,ETF,NYSEArca,USD,iShares Microcap ETF,iShares Micro-Cap ETF,ETF,True,True,True,True,Country matched via exchange hint; No topic tokens configured
-US,factors,Small_Value,etf,IJS,True,ETF,NYSEArca,USD,iShares S&P SmallCap 600 Value ,iShares S&P Small-Cap 600 Value ETF,ETF,True,True,True,True,No topic tokens configured
-US,factors,Small_Value,alternative,VBR,True,ETF,NYSEArca,USD,Vanguard Small-Cap Value ETF,Vanguard Small-Cap Value Index Fund ETF Shares,ETF,True,True,True,True,Country matched via exchange hint; No topic tokens configured
-US,factors,Small_Value,alternative,RZV,True,ETF,NYSEArca,USD,Invesco S&P Smallcap 600 Pure V,Invesco S&P SmallCap 600 Pure Value ETF,ETF,True,True,True,True,No topic tokens configured
-US,factors,Small_Growth,etf,IJT,True,ETF,NasdaqGM,USD,iShares S&P SmallCap 600 Growth,iShares S&P Small-Cap 600 Growth ETF,ETF,True,True,True,True,No topic tokens configured
-US,factors,Small_Growth,alternative,VBK,True,ETF,NYSEArca,USD,Vanguard Small-Cap Growth ETF,Vanguard Small-Cap Growth Index Fund ETF Shares,ETF,True,True,True,True,Country matched via exchange hint; No topic tokens configured
-US,factors,Small_Growth,alternative,RZG,True,ETF,NYSEArca,USD,Invesco S&P Smallcap 600 Pure G,Invesco S&P SmallCap 600 Pure Growth ETF,ETF,True,True,True,True,No topic tokens configured
-US,factors,Mid_Value,etf,IWS,True,ETF,NYSEArca,USD,iShares Russell Mid-cap Value E,iShares Russell Mid-Cap Value ETF,ETF,True,True,True,True,No topic tokens configured
-US,factors,Mid_Growth,etf,IWP,True,ETF,NYSEArca,USD,iShares Russell Midcap Growth E,iShares Russell Mid-Cap Growth ETF,ETF,True,True,True,True,No topic tokens configured
-US,factors,Equal_Weight,etf,RSP,True,ETF,NYSEArca,USD,Invesco S&P 500 Equal Weight ET,Invesco S&P 500 Equal Weight ETF,ETF,True,True,True,True,
-US,factors,Low_Vol,etf,USMV,True,ETF,Cboe US,USD,iShares MSCI USA Min Vol Factor,iShares MSCI USA Min Vol Factor ETF,ETF,True,True,True,True,
-US,factors,Low_Vol,alternative,SPLV,True,ETF,NYSEArca,USD,Invesco S&P 500 Low Volatility ,Invesco S&P 500 Low Volatility ETF,ETF,True,True,True,True,
-US,factors,High_Beta,etf,SPHB,True,ETF,NYSEArca,USD,Invesco S&P 500 High Beta ETF,Invesco S&P 500 High Beta ETF,ETF,True,True,True,True,
-US,factors,Low_Beta,etf,SPLV,True,ETF,NYSEArca,USD,Invesco S&P 500 Low Volatility ,Invesco S&P 500 Low Volatility ETF,ETF,True,True,True,True,
-US,factors,Low_Beta,alternative,USMV,True,ETF,Cboe US,USD,iShares MSCI USA Min Vol Factor,iShares MSCI USA Min Vol Factor ETF,ETF,True,True,True,False,Topic tokens not found in name
-US,factors,High_Dividend,etf,VYM,True,ETF,NYSEArca,USD,Vanguard High Dividend Yield ET,Vanguard High Dividend Yield Index Fund ETF Shares,ETF,True,True,True,True,Country matched via exchange hint
-US,factors,High_Dividend,alternative,HDV,True,ETF,NYSEArca,USD,iShares Core High Dividend ETF,iShares Core High Dividend ETF,ETF,True,True,True,True,Country matched via exchange hint
-US,factors,High_Dividend,alternative,SCHD,True,ETF,NYSEArca,USD,Schwab US Dividend Equity ETF,Schwab U.S. Dividend Equity ETF,ETF,True,True,True,True,
-US,factors,High_Dividend,alternative,DVY,True,ETF,NasdaqGM,USD,iShares Select Dividend ETF,iShares Select Dividend ETF,ETF,True,True,True,True,Country matched via exchange hint
-US,factors,Dividend_Growth,etf,VIG,True,ETF,NYSEArca,USD,Vanguard Div Appreciation ETF,Vanguard Dividend Appreciation Index Fund ETF Shares,ETF,True,True,True,True,Country matched via exchange hint
-US,factors,Dividend_Growth,alternative,DGRO,True,ETF,NYSEArca,USD,iShares Core Dividend Growth ET,iShares Core Dividend Growth ETF,ETF,True,True,True,True,Country matched via exchange hint
-US,factors,Dividend_Growth,alternative,DGRW,True,ETF,NasdaqGM,USD,WisdomTree U.S. Quality Dividen,WisdomTree U.S. Quality Dividend Growth Fund,ETF,True,True,True,True,
-US,factors,Value,etf,IUSV,True,ETF,NasdaqGM,USD,iShares Core S&P U.S. Value ETF,iShares Core S&P U.S. Value ETF,ETF,True,True,True,True,
-US,factors,Value,alternative,VLUE,True,ETF,Cboe US,USD,iShares MSCI USA Value Factor E,iShares MSCI USA Value Factor ETF,ETF,True,True,True,True,
-US,factors,Value,alternative,VTV,True,ETF,NYSEArca,USD,Vanguard Value ETF,Vanguard Value Index Fund ETF Shares,ETF,True,True,True,True,Country matched via exchange hint
-US,factors,Value,alternative,IVE,True,ETF,NYSEArca,USD,iShares S&P 500 Value ETF,iShares S&P 500 Value ETF,ETF,True,True,True,True,
-US,factors,Growth,etf,IUSG,True,ETF,NasdaqGM,USD,iShares Core S&P U.S. Growth ET,iShares Core S&P U.S. Growth ETF,ETF,True,True,True,True,
-US,factors,Growth,alternative,IVW,True,ETF,NYSEArca,USD,iShares S&P 500 Growth ETF,iShares S&P 500 Growth ETF,ETF,True,True,True,True,
-US,factors,Growth,alternative,VUG,True,ETF,NYSEArca,USD,Vanguard Growth ETF,Vanguard Growth Index Fund ETF Shares,ETF,True,True,True,True,Country matched via exchange hint
-US,factors,Momentum,etf,MTUM,True,ETF,Cboe US,USD,iShares MSCI USA Momentum Facto,iShares MSCI USA Momentum Factor ETF,ETF,True,True,True,True,
-US,factors,Quality,etf,QUAL,True,ETF,Cboe US,USD,iShares MSCI USA Quality Factor,iShares MSCI USA Quality Factor ETF,ETF,True,True,True,True,
-US,factors,Quality,alternative,SPHQ,True,ETF,NYSEArca,USD,Invesco S&P 500 Quality ETF,Invesco S&P 500 Quality ETF,ETF,True,True,True,True,
-US,factors,High_Quality,etf,SPHQ,True,ETF,NYSEArca,USD,Invesco S&P 500 Quality ETF,Invesco S&P 500 Quality ETF,ETF,True,True,True,True,
-US,factors,High_Quality,alternative,QUAL,True,ETF,Cboe US,USD,iShares MSCI USA Quality Factor,iShares MSCI USA Quality Factor ETF,ETF,True,True,True,True,
-US,factors,High_Quality,alternative,QLTY,True,ETF,NYSEArca,USD,The 2023 ETF Series Trust II GM,GMO U.S. Quality ETF,ETF,True,True,True,True,
-US,factors,Profitability,etf,COWZ,True,ETF,Cboe US,USD,Pacer US Cash Cows 100 ETF,Pacer US Cash Cows 100 ETF,ETF,True,True,True,True,
-US,factors,Multi_Factor,etf,LRGF,True,ETF,NYSEArca,USD,iShares U.S. Equity Factor ETF,iShares U.S. Equity Factor ETF,ETF,True,True,True,False,Topic tokens not found in name
-Europe,sectors,Technology,index,SX8P.Z,True,INDEX,Zurich,EUR,STXE 600 Technology           I,STXE 600 Technology           I,INDEX,True,True,True,True,Country matched via exchange hint
-Europe,sectors,Technology,etf,EXV3.DE,True,ETF,XETRA,EUR,iSh.ST.Eu.600 Technol.U.ETF DEI,iShares STOXX Europe 600 Technology UCITS ETF (DE) EUR dis,ETF,True,True,True,True,
-Europe,sectors,Healthcare,index,SXDP.Z,True,INDEX,Zurich,EUR,STXE 600 Health Care          I,STXE 600 Health Care          I,INDEX,True,True,True,True,Country matched via exchange hint
-Europe,sectors,Healthcare,etf,EXV4.DE,True,ETF,XETRA,EUR,iSh.ST.Eu.600 Healt.C.U.ETF DEI,iShares STOXX Europe 600 Health Care UCITS ETF (DE),ETF,True,True,True,True,
-Europe,sectors,Utilities,index,SX6P.Z,True,INDEX,Zurich,EUR,STXE 600 Utilities            I,STXE 600 Utilities            I,INDEX,True,True,True,True,Country matched via exchange hint
-Europe,sectors,Utilities,etf,EXH9.DE,True,ETF,XETRA,EUR,iSh.ST.Eur.600 Utilit.U.ETF DEI,iShares STOXX Europe 600 Utilities UCITS ETF (DE),ETF,True,True,True,True,
-Europe,sectors,Telecom,index,SXKP.Z,True,INDEX,Zurich,EUR,STXE 600 Telecommunications   I,STXE 600 Telecommunications   I,INDEX,True,True,True,True,Country matched via exchange hint
-Europe,sectors,Telecom,etf,EXV2.DE,True,ETF,XETRA,EUR,iSh.ST.Eu.600 Telecom.U.ETF DEI,iShares STOXX Europe 600 Telecommunications UCITS ETF (DE),ETF,True,True,True,True,
-Europe,sectors,Automobiles,index,SXAP.Z,True,INDEX,Zurich,EUR,STXE 600 Automobiles & Parts  I,STXE 600 Automobiles & Parts  I,INDEX,True,True,True,True,Country matched via exchange hint
-Europe,sectors,Automobiles,etf,EXV5.DE,True,ETF,XETRA,EUR,iSh.ST.Eu.600 Aut.&Pa.U.ETF DEI,iShares STOXX Europe 600 Automobiles & Parts UCITS ETF (DE) EUR dis,ETF,True,True,True,True,
-Europe,sectors,Basic_Resrcs,index,SXPP.Z,True,INDEX,Zurich,EUR,STXE 600 Basic Resources      I,STXE 600 Basic Resources      I,INDEX,True,True,True,True,Country matched via exchange hint
-Europe,sectors,Basic_Resrcs,etf,EXV6.DE,True,ETF,XETRA,EUR,iSh.ST.Eu.600 Bas.Res.U.ETF DEI,iShares STOXX Europe 600 Basic Resources UCITS ETF (DE),ETF,True,True,True,True,
-Europe,sectors,Chemicals,index,SX4P.Z,True,INDEX,Zurich,EUR,STXE 600 Chemicals            I,STXE 600 Chemicals            I,INDEX,True,True,True,True,Country matched via exchange hint
-Europe,sectors,Chemicals,etf,EXV7.DE,True,ETF,XETRA,EUR,iSh.ST.Eur.600 Chemic.U.ETF DEI,iShares STOXX Europe 600 Chemicals UCITS ETF (DE),ETF,True,True,True,True,
-Europe,sectors,Banks,index,SX7P.Z,True,INDEX,Zurich,EUR,STXE 600 Banks                I,STXE 600 Banks                I,INDEX,True,True,True,True,Country matched via exchange hint
-Europe,sectors,Banks,etf,EXV1.DE,True,ETF,XETRA,EUR,iSh.ST.Euro.600 Banks U.ETF DEI,iShares STOXX Europe 600 Banks UCITS ETF (DE),ETF,True,True,True,True,
-Europe,sectors,Insurance,index,SXIP.Z,True,INDEX,Zurich,EUR,STXE 600 Insurance            I,STXE 600 Insurance            I,INDEX,True,True,True,True,Country matched via exchange hint
-Europe,sectors,Insurance,etf,EXH5.DE,True,ETF,XETRA,EUR,iSh.ST.Eu.600 Insuran.U.ETF DEI,iShares STOXX Europe 600 Insurance UCITS ETF (DE),ETF,True,True,True,True,
-Europe,sectors,Industrials,index,SXNP.Z,True,INDEX,Zurich,EUR,STXE 600 Industrial G&S       I,STXE 600 Industrial G&S       I,INDEX,True,True,True,True,Country matched via exchange hint
-Europe,sectors,Industrials,etf,EXH4.DE,True,ETF,XETRA,EUR,iSh.ST.Eu.600 In.G.&S.U.ETF DEI,iShares STOXX Europe 600 Industrial Goods & Services UCITS ETF (DE),ETF,True,True,True,True,
-Europe,sectors,Construction,index,SXOP.Z,True,INDEX,Zurich,EUR,STXE 600 Constr. & Materials  I,STXE 600 Constr. & Materials  I,INDEX,True,True,True,False,Country matched via exchange hint; Topic tokens not found in name
-Europe,sectors,Construction,etf,EXV8.DE,True,ETF,XETRA,EUR,iSh.ST.Eu.600 Con.&Ma.U.ETF DEI,iShares STOXX Europe 600 Construction & Materials UCITS ETF (DE),ETF,True,True,True,True,
-Europe,factors,Large_Cap,index,^STOXX,True,INDEX,Zurich,EUR,STXE 600                      I,STXE 600                      I,INDEX,True,True,True,False,Country matched via exchange hint; Topic tokens not found in name
-Europe,factors,Large_Cap,alternative,EXSA.DE,True,ETF,XETRA,EUR,iSh.STOXX Europe 600 U.ETF DE I,iShares STOXX Europe 600 UCITS ETF (DE) EUR (Dist),ETF,True,True,True,False,Topic tokens not found in name
-Europe,factors,Large_Cap,alternative,DX2X.DE,True,ETF,XETRA,EUR,XTR.STOXX EUROPE 600 1C,Xtrackers Stoxx Europe 600 UCITS ETF 1C,ETF,True,True,True,False,Topic tokens not found in name
-Europe,factors,Small_Cap(EMU),etf,SMEA.MI,True,ETF,Milan,EUR,ISHARESCOREMSCIEUROPE(ACC) UCIT,iShares Core MSCI Europe UCITS ETF EUR (Acc),ETF,True,True,True,True,No topic tokens configured
-Europe,factors,Small_Cap(EMU),alternative,IEUS,True,ETF,NasdaqGM,USD,iShares MSCI Europe Small-Cap E,iShares MSCI Europe Small-Cap ETF,ETF,True,False,True,True,"No topic tokens configured; Currency mismatch: expected EUR, got USD"
-Europe,factors,Value,etf,IEVL.MI,True,ETF,Milan,EUR,ISHARES EDG MSCI E VAL FAC UCIT,iShares Edge MSCI Europe Value Factor UCITS ETF EUR (Acc),ETF,True,True,True,True,
-Europe,factors,Value,alternative,CEMS.DE,True,ETF,XETRA,EUR,iShsIV-Edge MSCI Eu.Va.F.U.ETFR,iShares Edge MSCI Europe Value Factor UCITS ETF EUR (Acc),ETF,True,True,True,True,
-Europe,factors,Momentum,etf,CEMR.DE,True,ETF,XETRA,EUR,iShsIV-Edge MSCI Eu.Mo.F.U.ETFR,iShares Edge MSCI Europe Momentum Factor UCITS ETF EUR (Acc),ETF,True,True,True,True,
-Europe,factors,Quality,etf,CEMQ.DE,True,ETF,XETRA,EUR,iShsIV-Edge MSCI Eu.Qu.F.U.ETFR,iShares Edge MSCI Europe Quality Factor UCITS ETF EUR (Acc),ETF,True,True,True,True,
-Europe,factors,Quality,alternative,IEFQ.L,True,ETF,LSE,GBp,ISHARES IV PLC ISHS EDGE MSCI E,iShares Edge MSCI Europe Quality Factor UCITS ETF EUR (Acc),ETF,True,False,True,True,"Currency mismatch: expected EUR, got GBp"
-Europe,factors,Min_Vol,etf,EUMV,True,ETF,NYSEArca,USD,iShares Edge MSCI Min Vol Europ,iShares Edge MSCI Min Vol Europe ETF,ETF,True,True,True,True,No topic tokens configured
-Europe,factors,EuroStoxx50,index,^STOXX50E,True,INDEX,Zurich,EUR,EURO STOXX 50                 I,EURO STOXX 50                 I,INDEX,True,True,True,True,No topic tokens configured
-Europe,factors,EuroStoxx50,alternative,FEZ,True,ETF,NYSEArca,USD,SPDR DJ Euro STOXX 50 Etf,SPDR EURO STOXX 50 ETF,ETF,True,False,True,True,"No topic tokens configured; Currency mismatch: expected EUR, got USD"
-Europe,factors,EuroStoxx50,alternative,EXW1.DE,True,ETF,XETRA,EUR,iShares Core EO STOX.50 U.E.DEI,iShares Core EURO STOXX 50 UCITS ETF (DE),ETF,True,True,True,True,No topic tokens configured
-Germany,sectors,Technology,index,^CXPHX,True,INDEX,XETRA,EUR,DAXsector Technology          P,DAXsector Technology          P,INDEX,True,True,True,True,
-Germany,sectors,Technology,alternative,EXS2.DE,True,ETF,XETRA,EUR,iShares TecDAX UCITS ETF DE   I,iShares TecDAX UCITS ETF (DE),ETF,True,True,True,False,Topic tokens not found in name
-Germany,sectors,Healthcare,index,^CXPPX,True,INDEX,XETRA,EUR,DAXsector Pharma & Healthcare P,DAXsector Pharma & Healthcare P,INDEX,True,True,True,True,
-Germany,sectors,Industrials,index,^CXPNX,True,INDEX,XETRA,EUR,DAXsector Industrial          P,DAXsector Industrial          P,INDEX,True,True,True,True,
-Germany,sectors,Fin_Services,index,^CXPVX,True,INDEX,XETRA,EUR,DAXsector Financial Services  P,DAXsector Financial Services  P,INDEX,True,True,True,True,No topic tokens configured
-Germany,sectors,Insurance,index,^CXPIX,True,INDEX,XETRA,EUR,DAXsector Insurance           P,DAXsector Insurance           P,INDEX,True,True,True,True,
-Germany,factors,Large_Cap,index,^GDAXI,True,INDEX,XETRA,EUR,DAX                           P,DAX P,INDEX,True,True,True,False,Topic tokens not found in name
-Germany,factors,Large_Cap,alternative,EXS1.DE,True,ETF,XETRA,EUR,iShares Core DAX UCITS ETF DE I,iShares Core DAX UCITS ETF (DE) EUR (Acc),ETF,True,True,True,False,Topic tokens not found in name
-Germany,factors,Mid_Cap,index,^MDAXI,True,INDEX,XETRA,EUR,MDAX                          P,MDAX                          P,INDEX,True,True,True,False,Topic tokens not found in name
-Germany,factors,Mid_Cap,alternative,EXS3.DE,True,ETF,XETRA,EUR,iShares MDAX UCITS ETF DE     I,iShares MDAX UCITS ETF (DE),ETF,True,True,True,False,Topic tokens not found in name
-Germany,factors,Small_Cap,index,^SDAXI,True,INDEX,XETRA,EUR,SDAX                          P,SDAX                          P,INDEX,True,True,True,False,Topic tokens not found in name
-Japan,sectors,Broad_Market,etf,EWJ,True,ETF,NYSEArca,USD,iShares MSCI Japan Index Fund,iShares MSCI Japan ETF,ETF,True,True,True,False,Topic tokens not found in name
-Japan,sectors,Broad_Market,alternative,DXJ,True,ETF,NYSEArca,USD,WisdomTree Japan Hedged Equity ,WisdomTree Japan Hedged Equity Fund,ETF,True,True,True,False,Topic tokens not found in name
-Japan,sectors,Broad_Market,alternative,HEWJ,True,ETF,NYSEArca,USD,iShares Currency Hedged MSCI Ja,iShares Currency Hedged MSCI Japan ETF,ETF,True,True,True,False,Topic tokens not found in name
-Japan,sectors,Broad_Market,alternative,BBJP,True,ETF,Cboe US,USD,JPMorgan BetaBuilders Japan ETF,JPMorgan BetaBuilders Japan ETF,ETF,True,True,True,False,Topic tokens not found in name
-Japan,sectors,Broad_Market,alternative,JPXN,True,ETF,NYSEArca,USD,iShares JPX-Nikkei 400 ETF,iShares JPX-Nikkei 400 ETF,ETF,True,True,True,False,Topic tokens not found in name
-Japan,sectors,Technology,etf,FLJP,True,ETF,NYSEArca,USD,Franklin FTSE Japan ETF,Franklin FTSE Japan ETF,ETF,True,True,True,False,Topic tokens not found in name
-Japan,sectors,Technology,alternative,DXJT,True,ETF,NYSEArca,USD,"WisdomTree Japan Hedged Tech, M","WisdomTree Jpn Hdgd Tech,Media&amp;Telec ETF",ETF,True,True,True,True,
-Japan,sectors,Technology,alternative,EWJ,True,ETF,NYSEArca,USD,iShares MSCI Japan Index Fund,iShares MSCI Japan ETF,ETF,True,True,True,False,Topic tokens not found in name
-Japan,sectors,Financials,etf,DXJF,True,ETF,NYSEArca,USD,WisdomTree Japan Hedged Financi,WisdomTree Japan Hedged Financials Fund,ETF,True,True,True,True,
-Japan,sectors,Healthcare,etf,DXJH,True,ETF,NYSEArca,USD,WisdomTree Japan Hedged Health ,WisdomTree Japan Hedged Health Care ETF,ETF,True,True,True,True,
-Japan,sectors,Industrials,etf,DXJC,True,ETF,NYSEArca,USD,WisdomTree Japan Hedged Capital,WisdomTree Japan Hedged Capital Gds ETF,ETF,True,True,True,False,Topic tokens not found in name
-Japan,sectors,Real_Estate,etf,DXJR,True,ETF,NYSEArca,USD,WisdomTree Japan Hedged Real Es,WisdomTree Japan Hedged Real Estate ETF,ETF,True,True,True,True,
-Japan,sectors,Nikkei_225,index,^N225,True,INDEX,Osaka,JPY,Nikkei 225,Nikkei 225,INDEX,True,True,True,True,No topic tokens configured
-Japan,sectors,Nikkei_225,alternative,EWJ,True,ETF,NYSEArca,USD,iShares MSCI Japan Index Fund,iShares MSCI Japan ETF,ETF,True,False,True,True,"No topic tokens configured; Currency mismatch: expected JPY, got USD"
-Japan,factors,Large_Cap,etf,EWJ,True,ETF,NYSEArca,USD,iShares MSCI Japan Index Fund,iShares MSCI Japan ETF,ETF,True,True,True,False,Topic tokens not found in name
-Japan,factors,Large_Cap,alternative,DXJ,True,ETF,NYSEArca,USD,WisdomTree Japan Hedged Equity ,WisdomTree Japan Hedged Equity Fund,ETF,True,True,True,False,Topic tokens not found in name
-Japan,factors,Small_Cap,etf,SCJ,True,ETF,NYSEArca,USD,iShares MSCI Japan Sm Cap,iShares MSCI Japan Small-Cap ETF,ETF,True,True,True,True,
-Japan,factors,Small_Cap,alternative,DXJS,True,ETF,NasdaqGM,USD,WisdomTree Japan Hedged SmallCa,WisdomTree Japan Opportunities Fund,ETF,True,True,True,True,
-Japan,factors,Value,etf,EWJV,True,ETF,NasdaqGM,USD,iShares MSCI Japan Value ETF,iShares MSCI Japan Value ETF,ETF,True,True,True,True,
-Japan,factors,Min_Vol,etf,JPMV,True,ETF,NYSEArca,USD,iShares Edge MSCI Min Vol Japan,iShares Edge MSCI Min Vol Japan ETF,ETF,True,True,True,True,No topic tokens configured
-China,sectors,Broad_Market,etf,FXI,True,ETF,NYSEArca,USD,iShares China Large-Cap ETF,iShares China Large-Cap ETF,ETF,True,True,True,False,Topic tokens not found in name
-China,sectors,Broad_Market,alternative,MCHI,True,ETF,NasdaqGM,USD,iShares MSCI China ETF,iShares MSCI China ETF,ETF,True,True,True,False,Topic tokens not found in name
-China,sectors,Broad_Market,alternative,ASHR,True,ETF,NYSEArca,USD,Xtrackers Harvest CSI 300 China,Xtrackers Harvest CSI 300 China A-Shares ETF,ETF,True,True,True,False,Topic tokens not found in name
-China,sectors,Broad_Market,alternative,GXC,True,ETF,NYSEArca,USD,SPDR S&P China ETF,SPDR S&P China ETF,ETF,True,True,True,False,Topic tokens not found in name
-China,sectors,Technology,etf,CQQQ,True,ETF,NYSEArca,USD,Invesco China Technology ETF,Invesco China Technology ETF,ETF,True,True,True,True,
-China,sectors,Technology,alternative,KWEB,True,ETF,NYSEArca,USD,KraneShares Trust KraneShares C,KraneShares CSI China Internet ETF,ETF,True,True,True,False,Topic tokens not found in name
-China,sectors,Consumer,etf,CHIQ,True,ETF,NYSEArca,USD,Global X MSCI China Consumer Di,Global X MSCI China Consumer Discretionary ETF,ETF,True,True,True,True,No topic tokens configured
-China,sectors,Cons_Staples,etf,CHIS,True,ETF,NYSEArca,USD,Global X Funds Global X MSCI Ch,Global X MSCI China Consumer Staples ETF,ETF,True,True,True,True,
-China,sectors,Financials,etf,CHIX,True,ETF,NYSEArca,USD,Global X MSCI China Financials ,Global X MSCI China Financials ETF,ETF,True,True,True,True,
-China,sectors,Industrials,etf,CHII,True,ETF,NYSEArca,USD,Global X MSCI China Industrials,Global X MSCI China Industrials ETF,ETF,True,True,True,True,
-China,sectors,Materials,etf,CHIM,True,ETF,NYSEArca,USD,Global X MSCI China Materials E,Global X MSCI China Materials ETF,ETF,True,True,True,True,
-China,sectors,Energy,etf,CHIE,True,ETF,NYSEArca,USD,Global X MSCI China Energy ETF,Global X MSCI China Energy ETF,ETF,True,True,True,True,
-China,sectors,Utilities,etf,CHIU,True,ETF,NYSEArca,USD,Global X Funds Global X MSCI Ch,Global X MSCI China Utilities ETF,ETF,True,True,True,True,
-China,sectors,Comm_Services,etf,CHIC,True,ETF,NYSEArca,USD,Global X Funds Global X MSCI Ch,Global X MSCI China Communication Services ETF,ETF,True,True,True,True,
-China,sectors,Real_Estate,etf,CHIR,True,ETF,NYSEArca,USD,Global X Funds Global X MSCI Ch,Global X MSCI China Real Estate ETF,ETF,True,True,True,True,
-China,sectors,Healthcare,etf,CHIH,True,ETF,NYSEArca,USD,Global X Funds Global X MSCI Ch,Global X MSCI China Health Care ETF,ETF,True,True,True,True,
-China,sectors,Healthcare,alternative,KURE,True,ETF,NYSEArca,USD,KraneShares MSCI All China Heal,KraneShares MSCI All China Health Care Index ETF,ETF,True,True,True,True,
-China,factors,Large_Cap,etf,FXI,True,ETF,NYSEArca,USD,iShares China Large-Cap ETF,iShares China Large-Cap ETF,ETF,True,True,True,True,
-China,factors,Large_Cap,alternative,GXC,True,ETF,NYSEArca,USD,SPDR S&P China ETF,SPDR S&P China ETF,ETF,True,True,True,False,Topic tokens not found in name
-China,factors,Small_Cap,etf,ECNS,True,ETF,NYSEArca,USD,iShares MSCI China Small-Cap ET,iShares MSCI China Small-Cap ETF,ETF,True,True,True,True,
-China,factors,A_Shares,etf,ASHR,True,ETF,NYSEArca,USD,Xtrackers Harvest CSI 300 China,Xtrackers Harvest CSI 300 China A-Shares ETF,ETF,True,True,True,True,
-China,factors,A_Shares,alternative,CNYA,True,ETF,Cboe US,USD,iShares MSCI China A ETF,iShares MSCI China A ETF,ETF,True,True,True,True,
-China,factors,A_Shares,alternative,KBA,True,ETF,NYSEArca,USD,KraneShares Bosera MSCI China A,KraneShares Bosera MSCI China A 50 Connect Index ETF,ETF,True,True,True,True,
-China,factors,CSI_300,index,000300.SS,True,INDEX,Shanghai,CNY,CSI 300 Index,CSI 300 Index,INDEX,True,True,False,True,Country tokens not found in name; No topic tokens configured
-China,factors,CSI_300,alternative,ASHR,True,ETF,NYSEArca,USD,Xtrackers Harvest CSI 300 China,Xtrackers Harvest CSI 300 China A-Shares ETF,ETF,True,False,True,True,"No topic tokens configured; Currency mismatch: expected CNY, got USD"
-China,factors,Growth,etf,CNXT,True,ETF,NYSEArca,USD,VanEck ChiNext ETF,VanEck ChiNext ETF,ETF,True,True,False,False,Country tokens not found in name; Topic tokens not found in name
-Canada,sectors,Broad_Market,index,^GSPTSE,True,INDEX,Toronto,CAD,S&P/TSX Composite index,S&P/TSX Composite index,INDEX,True,True,True,False,No country tokens configured; Topic tokens not found in name
-Canada,sectors,Broad_Market,alternative,XIC.TO,True,ETF,Toronto,CAD,iSHARES CORE SP TSX CAPPED COMP,iShares Core S&P/TSX Capped Composite Index ETF,ETF,True,True,True,False,No country tokens configured; Topic tokens not found in name
-Canada,sectors,Broad_Market,alternative,EWC,True,ETF,NYSEArca,USD,iShares MSCI Canada Index Fund,iShares MSCI Canada ETF,ETF,True,False,True,False,"No country tokens configured; Topic tokens not found in name; Currency mismatch: expected CAD, got USD"
-Brazil,sectors,Broad_Market,index,^BVSP,True,INDEX,São Paulo,BRL,IBOVESPA,IBOVESPA,INDEX,True,True,True,False,No country tokens configured; Topic tokens not found in name
-Brazil,sectors,Broad_Market,alternative,EWZ,True,ETF,NYSEArca,USD,iShares Inc iShares MSCI Brazil,iShares MSCI Brazil ETF,ETF,True,False,True,False,"No country tokens configured; Topic tokens not found in name; Currency mismatch: expected BRL, got USD"
-Global_ExUS,sectors,Broad_Market,etf,ACWX,True,ETF,NasdaqGM,USD,iShares MSCI ACWI ex U.S. ETF,iShares MSCI ACWI ex U.S. ETF,ETF,True,True,True,False,No country tokens configured; Topic tokens not found in name
-Global_ExUS,sectors,Broad_Market,alternative,VEU,True,ETF,NYSEArca,USD,Vanguard FTSE All World Ex US E,Vanguard FTSE All-World ex-US Index Fund ETF Shares,ETF,True,True,True,False,No country tokens configured; Topic tokens not found in name
-Global_ExUS,sectors,Broad_Market,alternative,VEA,True,ETF,NYSEArca,USD,Vanguard FTSE Developed Markets,Vanguard FTSE Developed Markets Index Fund ETF Shares,ETF,True,True,True,True,No country tokens configured
-Global_ExUS,sectors,Broad_Market,alternative,IEFA,True,ETF,Cboe US,USD,iShares Core MSCI EAFE ETF,iShares Core MSCI EAFE ETF,ETF,True,True,True,False,No country tokens configured; Topic tokens not found in name
-Singapore,sectors,Broad_Market,etf,EWS,True,ETF,NYSEArca,USD,iShares Inc iShares MSCI Singap,iShares MSCI Singapore ETF,ETF,True,True,True,False,No country tokens configured; Topic tokens not found in name
-Indonesia,sectors,Broad_Market,etf,EIDO,True,ETF,NYSEArca,USD,iShares MSCI Indonesia ETF,iShares MSCI Indonesia ETF,ETF,True,True,True,False,No country tokens configured; Topic tokens not found in name
-Thailand,sectors,Broad_Market,etf,THD,True,ETF,NYSEArca,USD,iShares Inc iShares MSCI Thaila,iShares MSCI Thailand ETF,ETF,True,True,True,False,No country tokens configured; Topic tokens not found in name
-Malaysia,sectors,Broad_Market,etf,EWM,True,ETF,NYSEArca,USD,iShares MSCI Malaysia Index Fun,iShares MSCI Malaysia ETF,ETF,True,True,True,False,No country tokens configured; Topic tokens not found in name
-India,sectors,Broad_Market,index,^NSEI,True,INDEX,NSE,INR,NIFTY 50,NIFTY 50,INDEX,True,True,True,False,Topic tokens not found in name
-India,sectors,Broad_Market,alternative,INDA,True,ETF,Cboe US,USD,Ishares MSCI India ETF,iShares MSCI India ETF,ETF,True,False,True,False,"Topic tokens not found in name; Currency mismatch: expected INR, got USD"
-India,sectors,Broad_Market,alternative,EPI,True,ETF,NYSEArca,USD,WisdomTree India Earnings Fund,WisdomTree India Earnings Fund,ETF,True,False,True,False,"Topic tokens not found in name; Currency mismatch: expected INR, got USD"
-India,sectors,Broad_Market,alternative,INDY,True,ETF,NasdaqGM,USD,iShares India 50 ETF,iShares India 50 ETF,ETF,True,False,True,False,"Topic tokens not found in name; Currency mismatch: expected INR, got USD"
-India,sectors,Financials,etf,INDF,True,ETF,NYSEArca,USD,Range India Financials ETF,Range India Financials ETF,ETF,True,True,True,True,
-India,sectors,Consumer,etf,INCO,True,ETF,NYSEArca,USD,Columbia India Consumer ETF,Columbia India Consumer ETF,ETF,True,True,True,True,No topic tokens configured
-India,sectors,Technology,etf,INQQ,True,ETF,NYSEArca,USD,INQQ The India Internet ETF,INQQ The India Internet ETF,ETF,True,True,True,False,Topic tokens not found in name
-India,sectors,Small_Cap,etf,SMIN,True,ETF,Cboe US,USD,Ishares MSCI India Small Cap ET,iShares MSCI India Small-Cap ETF,ETF,True,True,True,True,No topic tokens configured
-India,sectors,Small_Cap,alternative,SCIF,True,ETF,NYSEArca,USD,VanEck Vectors India Small-Cap ,VanEck Vectors India Small-Cap Index ETF,ETF,True,True,True,True,No topic tokens configured
-India,sectors,Value(Proxy),etf,EPI,True,ETF,NYSEArca,USD,WisdomTree India Earnings Fund,WisdomTree India Earnings Fund,ETF,True,True,True,True,No topic tokens configured
-UK,sectors,Broad_Market,index,^FTSE,True,INDEX,FTSE Index,GBP,FTSE 100,FTSE 100,INDEX,True,True,True,False,Topic tokens not found in name
-UK,sectors,Broad_Market,alternative,ISF.L,True,ETF,LSE,GBp,ISHARES PLC ISHARES CORE FTSE10,iShares Core FTSE 100 UCITS ETF GBP (Dist),ETF,True,False,True,False,"Topic tokens not found in name; Currency mismatch: expected GBP, got GBp"
-UK,sectors,Broad_Market,alternative,VUKE.L,True,ETF,LSE,GBP,VANGUARD FUNDS PLC VANGUARD FTS,Vanguard FTSE 100 UCITS ETF,ETF,True,True,True,False,Topic tokens not found in name
-France,sectors,Broad_Market,index,^FCHI,True,INDEX,Paris,EUR,CAC 40,CAC 40,INDEX,True,True,True,False,Topic tokens not found in name
-France,sectors,Broad_Market,alternative,EWQ,True,ETF,NYSEArca,USD,iShares MSCI France Index Fund,iShares MSCI France ETF,ETF,True,False,True,False,"Topic tokens not found in name; Currency mismatch: expected EUR, got USD"
-Italy,sectors,Broad_Market,index,FTSEMIB.MI,True,INDEX,Milan,EUR,FTSEMIB.MI,FTSEMIB.MI,INDEX,True,True,True,False,Topic tokens not found in name
-Italy,sectors,Broad_Market,alternative,EWI,True,ETF,NYSEArca,USD,iShares Inc iShares MSCI Italy ,iShares MSCI Italy ETF,ETF,True,False,True,False,"Topic tokens not found in name; Currency mismatch: expected EUR, got USD"
-Spain,sectors,Broad_Market,index,^IBEX,True,INDEX,MCE,EUR,IBEX 35...,IBEX 35...,INDEX,True,True,True,False,Topic tokens not found in name
-Spain,sectors,Broad_Market,alternative,EWP,True,ETF,NYSEArca,USD,iShares Inc iShares MSCI Spain ,iShares MSCI Spain ETF,ETF,True,False,True,False,"Topic tokens not found in name; Currency mismatch: expected EUR, got USD"
-Taiwan,sectors,Broad_Market,index,^TWII,True,INDEX,Taiwan,TWD,TSEC CAPITALIZATION WEIGHTED ST,TWSE Capitalization Weighted Stock Index,INDEX,True,True,True,False,Topic tokens not found in name
-Taiwan,sectors,Broad_Market,alternative,EWT,True,ETF,NYSEArca,USD,iShares Inc iShares MSCI Taiwan,iShares MSCI Taiwan ETF,ETF,True,False,True,False,"Topic tokens not found in name; Currency mismatch: expected TWD, got USD"
-Hong_Kong,sectors,Broad_Market,index,^HSI,True,INDEX,HKSE,HKD,HANG SENG INDEX,HANG SENG INDEX,INDEX,True,True,True,False,Topic tokens not found in name
-Hong_Kong,sectors,Broad_Market,alternative,EWH,True,ETF,NYSEArca,USD,iShares MSCI Hong Kong Index Fu,iShares MSCI Hong Kong ETF,ETF,True,False,True,False,"Topic tokens not found in name; Currency mismatch: expected HKD, got USD"
+country,category,name,field,symbol,exists,quoteType,exchange,currency,shortName,longName
+Commodities,sectors,Broad,etf,PDBC,True,ETF,NGM,USD,Invesco Optimum Yield Diversifi,Invesco Optimum Yield Diversified Commodity Strategy No K-1 ETF
+Commodities,sectors,Energy_Broad,etf,DBE,True,ETF,PCX,USD,Invesco DB Energy Fund,Invesco DB Energy Fund
+Commodities,sectors,Crude_Oil,etf,OILK,True,ETF,BTS,USD,ProShares K-1 Free Crude Oil ET,ProShares K-1 Free Crude Oil ETF
+Commodities,sectors,Natural_Gas,etf,UNG,True,ETF,PCX,USD,United States Natural Gas Fund ,"United States Natural Gas Fund, LP"
+Commodities,sectors,Gold,etf,GLD,True,ETF,PCX,USD,SPDR Gold Trust,SPDR Gold Shares
+Commodities,sectors,Silver,etf,SLV,True,ETF,PCX,USD,iShares Silver Trust,iShares Silver Trust
+Commodities,sectors,Palladium,etf,PALL,True,ETF,PCX,USD,abrdn Physical Palladium Shares,abrdn Physical Palladium Shares ETF
+Commodities,sectors,Platinum,etf,PPLT,True,ETF,PCX,USD,abrdn Physical Platinum Shares ,abrdn Physical Platinum Shares ETF
+Commodities,sectors,Copper,etf,CPER,True,ETF,PCX,USD,United States Copper Index Fund,"United States Copper Index Fund, LP"
+Commodities,sectors,Industrial_Metals,etf,BCIM,True,ETF,PCX,USD,abrdn Bloomberg Industrial Meta,abrdn Bloomberg Industrial Metals Strategy K-1 Free ETF
+Commodities,sectors,Agriculture_Broad,etf,TILL,True,ETF,PCX,USD,Listed Funds Trust Teucrium Agr,Teucrium Agricultural Strategy No K-1 ETF
+Commodities,sectors,Dry_Bulk_Freight,etf,BDRY,True,ETF,PCX,USD,Amplify Commodity Trust Breakwa,Breakwave Dry Bulk Shipping ETF
+Commodities,sectors,Carbon_Global,etf,KRBN,True,ETF,PCX,USD,KraneShares Global Carbon Strat,KraneShares Global Carbon ETF
+Commodities,sectors,Carbon_California,etf,KCCA,True,ETF,PCX,USD,KraneShares California Carbon A,KraneShares California Carbon Allowance ETF
+Commodities,sectors,Volatility,etf,VXX,True,ETF,BTS,USD,iPath Series B S&P 500 VIX Shor,iPath Series B S&P 500 VIX Short-Term Futures ETN
+Global,sectors,Technology,etf,IXN,True,ETF,PCX,USD,iShares Global Tech ETF,iShares Global Tech ETF
+Global,sectors,Healthcare,etf,IXJ,True,ETF,PCX,USD,iShares Global Healthcare ETF,iShares Global Healthcare ETF
+Global,sectors,Financials,etf,IXG,True,ETF,PCX,USD,iShares Global Financial ETF,iShares Global Financials ETF
+Global,sectors,Cons_Discr.,etf,RXI,True,ETF,PCX,USD,iShares Global Consumer Discret,iShares Global Consumer Discretionary ETF
+Global,sectors,Cons_Staples,etf,KXI,True,ETF,PCX,USD,iShares Global Consumer Staples,iShares Global Consumer Staples ETF
+Global,sectors,Industrials,etf,EXI,True,ETF,PCX,USD,iShares Global Industrials ETF,iShares Global Industrials ETF
+Global,sectors,Energy,etf,IXC,True,ETF,PCX,USD,iShares Global Energy ETF,iShares Global Energy ETF
+Global,sectors,Materials,etf,MXI,True,ETF,PCX,USD,iShares Global Materials ETF,iShares Global Materials ETF
+Global,sectors,Utilities,etf,JXI,True,ETF,PCX,USD,iShares Global Utilities ETF,iShares Global Utilities ETF
+Global,sectors,Comm_Services,etf,IXP,True,ETF,PCX,USD,iShares Global Comm Services ET,iShares Global Comm Services ETF
+Global,sectors,Defense,etf,SHLD,True,ETF,PCX,USD,Global X Funds Global X Defense,Global X Defense Tech ETF
+Global,sectors,Real_Estate,etf,REET,True,ETF,PCX,USD,iShares Trust iShares Global RE,iShares Global REIT ETF
+Global,sectors,Airlines,etf,JETS,True,ETF,PCX,USD,U.S. Global Jets ETF,U.S. Global Jets ETF
+Global,factors,Global_BM,etf,ACWI,True,ETF,NGM,USD,iShares MSCI ACWI ETF,iShares MSCI ACWI ETF
+Global,factors,Global_Treasury,etf,IGOV,True,ETF,NGM,USD,iShares International Treasury ,iShares International Treasury Bond ETF
+Global,factors,Developed_World,etf,URTH,True,ETF,PCX,USD,"iShares, Inc. iShares MSCI Worl",iShares MSCI World ETF
+Global,factors,Dividend_Growth_Global,etf,FID,True,ETF,NGM,USD,First Trust S&P International D,First Trust S&P International Dividend Aristocrats ETF
+Global,factors,High_Dividend_Global,etf,IDOG,True,ETF,PCX,USD,ALPS International Sector Divid,ALPS International Sector Dividend Dogs ETF
+Global,factors,Momentum_Developed,etf,IMTM,True,ETF,PCX,USD,iShares MSCI Intl Momentum Fact,iShares MSCI Intl Momentum Factor ETF
+Global,factors,Quality_Global,etf,IQLT,True,ETF,PCX,USD,iShares MSCI Intl Quality Facto,iShares MSCI Intl Quality Factor ETF
+Global,factors,IPO_Global,etf,IPOS,True,ETF,PCX,USD,Renaissance Capital Greenwich F,Renaissance International IPO ETF
+Global,factors,Moat_Global,etf,MOTG,True,ETF,BTS,USD,VanEck Morningstar Global Wide ,VanEck Morningstar Global Wide Moat ETF
+Global,factors,CashFlow_Global,etf,GCOW,True,ETF,BTS,USD,Pacer Global Cash Cows Dividend,Pacer Global Cash Cows Dividend ETF
+Global,factors,Min_Vol_Global,etf,EFAV,True,ETF,BTS,USD,iShares MSCI EAFE Min Vol Facto,iShares MSCI EAFE Min Vol Factor ETF
+US,sectors,Broad_Market,etf,SPTM,True,ETF,PCX,USD,SPDR Portfolio S&P 1500 Composi,SPDR Portfolio S&P 1500 Composite Stock Market ETF
+US,sectors,Technology,etf,XLK,True,ETF,PCX,USD,SPDR Select Sector Fund - Techn,The Technology Select Sector SPDR Fund
+US,sectors,Semiconductors,etf,SOXX,True,ETF,NGM,USD,iShares Semiconductor ETF,iShares Semiconductor ETF
+US,sectors,Software,etf,IGV,True,ETF,BTS,USD,iShares Expanded Tech-Software ,iShares Expanded Tech-Software Sector ETF
+US,sectors,Biotech,etf,IBB,True,ETF,NGM,USD,iShares Biotechnology ETF,iShares Biotechnology ETF
+US,sectors,Healthcare,etf,XLV,True,ETF,PCX,USD,SPDR Select Sector Fund - Healt,The Health Care Select Sector SPDR Fund
+US,sectors,Financials,etf,XLF,True,ETF,PCX,USD,SPDR Select Sector Fund - Finan,The Financial Select Sector SPDR Fund
+US,sectors,Cons_Discr.,etf,XLY,True,ETF,PCX,USD,SPDR Select Sector Fund - Consu,The Consumer Discretionary Select Sector SPDR Fund
+US,sectors,Cons_Staples,etf,XLP,True,ETF,PCX,USD,SPDR Select Sector Fund - Consu,The Consumer Staples Select Sector SPDR Fund
+US,sectors,Industrials,etf,XLI,True,ETF,PCX,USD,SPDR Select Sector Fund - Indus,The Industrial Select Sector SPDR Fund
+US,sectors,Energy,etf,XLE,True,ETF,PCX,USD,SPDR Select Sector Fund - Energ,The Energy Select Sector SPDR Fund
+US,sectors,Materials,etf,XLB,True,ETF,PCX,USD,Materials Select Sector SPDR,The Materials Select Sector SPDR Fund
+US,sectors,Utilities,etf,XLU,True,ETF,PCX,USD,SPDR Select Sector Fund - Utili,The Utilities Select Sector SPDR Fund
+US,sectors,Comm_Services,etf,XLC,True,ETF,PCX,USD,The Communication Services Sele,The Communication Services Select Sector SPDR ETF Fund
+US,sectors,Real_Estate,etf,XLRE,True,ETF,PCX,USD,Real Estate Select Sector SPDR ,The Real Estate Select Sector SPDR Fund
+US,sectors,Defense,etf,ITA,True,ETF,BTS,USD,iShares U.S. Aerospace & Defens,iShares U.S. Aerospace & Defense ETF
+US,sectors,Banks_Large,etf,KBWB,True,ETF,NGM,USD,Invesco KBW Bank ETF,Invesco KBW Bank ETF
+US,sectors,Banks_Regional,etf,KRE,True,ETF,PCX,USD,SPDR S&P Regional Banking ETF,SPDR S&P Regional Banking ETF
+US,sectors,Insurance,etf,KIE,True,ETF,PCX,USD,SPDR S&P Insurance ETF,SPDR S&P Insurance ETF
+US,sectors,Retail,etf,XRT,True,ETF,PCX,USD,SPDR S&P Retail ETF,SPDR S&P Retail ETF
+US,factors,Large_Cap,index,^GSPC,True,INDEX,SNP,USD,S&P 500,S&P 500
+US,factors,Mid_Cap,index,^SP400,True,INDEX,SNP,USD,S&P 400,S&P 400
+US,factors,Small_Cap,index,^RUT,True,INDEX,WCB,USD,^RUT, Russell 2000 Index
+US,factors,Small_Cap_600,index,^SP600,True,INDEX,SNP,USD,^SP600,S&P 600
+US,factors,Nasdaq_100,index,^NDX,True,INDEX,NIM,USD,NASDAQ-100,NASDAQ-100
+US,factors,Micro_Cap,etf,IWC,True,ETF,PCX,USD,iShares Microcap ETF,iShares Micro-Cap ETF
+US,factors,Small_Value,etf,IJS,True,ETF,PCX,USD,iShares S&P SmallCap 600 Value ,iShares S&P Small-Cap 600 Value ETF
+US,factors,Small_Growth,etf,IJT,True,ETF,NGM,USD,iShares S&P SmallCap 600 Growth,iShares S&P Small-Cap 600 Growth ETF
+US,factors,Mid_Value,etf,IWS,True,ETF,PCX,USD,iShares Russell Mid-cap Value E,iShares Russell Mid-Cap Value ETF
+US,factors,Mid_Growth,etf,IWP,True,ETF,PCX,USD,iShares Russell Midcap Growth E,iShares Russell Mid-Cap Growth ETF
+US,factors,Equal_Weight,etf,RSP,True,ETF,PCX,USD,Invesco S&P 500 Equal Weight ET,Invesco S&P 500 Equal Weight ETF
+US,factors,Low_Vol,etf,USMV,True,ETF,BTS,USD,iShares MSCI USA Min Vol Factor,iShares MSCI USA Min Vol Factor ETF
+US,factors,High_Beta,etf,SPHB,True,ETF,PCX,USD,Invesco S&P 500 High Beta ETF,Invesco S&P 500 High Beta ETF
+US,factors,Low_Beta,etf,SPLV,True,ETF,PCX,USD,Invesco S&P 500 Low Volatility ,Invesco S&P 500 Low Volatility ETF
+US,factors,High_Dividend,etf,VYM,True,ETF,PCX,USD,Vanguard High Dividend Yield ET,Vanguard High Dividend Yield Index Fund ETF Shares
+US,factors,Dividend_Growth,etf,VIG,True,ETF,PCX,USD,Vanguard Div Appreciation ETF,Vanguard Dividend Appreciation Index Fund ETF Shares
+US,factors,Value,etf,IUSV,True,ETF,NGM,USD,iShares Core S&P U.S. Value ETF,iShares Core S&P U.S. Value ETF
+US,factors,Growth,etf,IUSG,True,ETF,NGM,USD,iShares Core S&P U.S. Growth ET,iShares Core S&P U.S. Growth ETF
+US,factors,Momentum,etf,MTUM,True,ETF,BTS,USD,iShares MSCI USA Momentum Facto,iShares MSCI USA Momentum Factor ETF
+US,factors,Quality,etf,QUAL,True,ETF,BTS,USD,iShares MSCI USA Quality Factor,iShares MSCI USA Quality Factor ETF
+US,factors,High_Quality,etf,SPHQ,True,ETF,PCX,USD,Invesco S&P 500 Quality ETF,Invesco S&P 500 Quality ETF
+US,factors,Profitability,etf,COWZ,True,ETF,BTS,USD,Pacer US Cash Cows 100 ETF,Pacer US Cash Cows 100 ETF
+US,factors,Multi_Factor,etf,LRGF,True,ETF,PCX,USD,iShares U.S. Equity Factor ETF,iShares U.S. Equity Factor ETF
+US,factors,Wide_Moat,etf,MOAT,True,ETF,BTS,USD,VanEck Morningstar Wide Moat ET,VanEck Morningstar Wide Moat ETF
+US,factors,Semiconductors,etf,SOXX,True,ETF,NGM,USD,iShares Semiconductor ETF,iShares Semiconductor ETF
+US,factors,US_Power,etf,ZAP,True,ETF,NGM,USD,Global X U.S. Electrification E,Global X U.S. Electrification ETF
+US,factors,China_Tech_US,etf,DRAG,True,ETF,BTS,USD,Roundhill ETF Trust Roundhill C,Roundhill China Dragons ETF
+US,factors,Defense_Tech,etf,SHLD,True,ETF,PCX,USD,Global X Funds Global X Defense,Global X Defense Tech ETF
+US,factors,Manufacturing_Trad,etf,AIRR,True,ETF,NGM,USD,First Trust RBA American Indust,First Trust RBA American Industrial RenaissanceTM ETF
+US,factors,Pipelines,etf,TPYP,True,ETF,NYQ,USD,Tortoise Capital Series Trust T,Tortoise North American Pipeline Fund
+US,factors,Dividend_Aristocrats,etf,NOBL,True,ETF,BTS,USD,ProShares S&P 500 Dividend Aris,ProShares S&P 500 Dividend Aristocrats ETF
+US,factors,Preferreds,etf,PFFD,True,ETF,PCX,USD,Global X U.S. Preferred ETF,Global X U.S. Preferred ETF
+US,factors,Dividend_Growth_US,etf,SCHD,True,ETF,PCX,USD,Schwab US Dividend Equity ETF,Schwab U.S. Dividend Equity ETF
+US,factors,High_Dividend_US,etf,SPYD,True,ETF,PCX,USD,SPDR Series Trust SPDR Portfoli,SPDR Portfolio S&P 500 High Dividend ETF
+US,factors,IPO_US,etf,IPO,True,ETF,PCX,USD,Renaissance IPO ETF,Renaissance IPO ETF
+US,factors,Buyback_US,etf,PKW,True,ETF,NGM,USD,Invesco BuyBack Achievers ETF,Invesco BuyBack Achievers ETF
+US,factors,US_IG_Corp,etf,LQD,True,ETF,PCX,USD,iShares iBoxx $ Investment Grad,iShares iBoxx $ Investment Grade Corporate Bond ETF
+US,factors,US_HY_Corp,etf,HYG,True,ETF,PCX,USD,iShares iBoxx $ High Yield Corp,iShares iBoxx $ High Yield Corporate Bond ETF
+US,factors,US_Treasuries_20Y,etf,TLT,True,ETF,NGM,USD,iShares 20+ Year Treasury Bond ,iShares 20+ Year Treasury Bond ETF
+US,factors,Agg_Bond_US,etf,AGG,True,ETF,PCX,USD,iShares Core U.S. Aggregate Bon,iShares Core U.S. Aggregate Bond ETF
+US,factors,TIPS_US,etf,TIP,True,ETF,PCX,USD,iShares TIPS Bond ETF,iShares TIPS Bond ETF
+US,factors,Convertibles_US,etf,CWB,True,ETF,PCX,USD,SPDR Bloomberg Convertible Secu,SPDR Bloomberg Convertible Securities ETF
+US,factors,MBS_US,etf,MBB,True,ETF,NGM,USD,iShares MBS ETF,iShares MBS ETF
+US,factors,Senior_Loans_US,etf,SRLN,True,ETF,PCX,USD,SPDR Blackstone Senior Loan ETF,SPDR Blackstone Senior Loan ETF
+US,factors,Fallen_Angels_US,etf,FALN,True,ETF,NGM,USD,iShares Fallen Angels USD Bond ,iShares Fallen Angels USD Bond ETF
+Europe,sectors,Technology,etf,EXV3.DE,True,ETF,GER,EUR,iSh.ST.Eu.600 Technol.U.ETF DEI,iShares STOXX Europe 600 Technology UCITS ETF (DE) EUR dis
+Europe,sectors,Healthcare,etf,CH5.L,True,ETF,LSE,GBp,MULTI UNITS LUXEMBOURG AMUNDI S,Multi Units Luxembourg - Amundi STOXX Europe 600 Healthcare UCITS ETF Acc
+Europe,sectors,Healthcare,index,SXDP.Z,True,INDEX,ZRH,EUR,STXE 600 Health Care          I,STXE 600 Health Care          I
+Europe,sectors,Utilities,etf,XS6R.L,True,ETF,LSE,GBp,XTRACKERS X MSCI EU UTILITIES E,Xtrackers MSCI Europe Utilities Screened UCITS ETF 1C
+Europe,sectors,Utilities,index,SX6P.Z,True,INDEX,ZRH,EUR,STXE 600 Utilities            I,STXE 600 Utilities            I
+Europe,sectors,Telecom,etf,EXV2.DE,True,ETF,GER,EUR,iSh.ST.Eu.600 Telecom.U.ETF DEI,iShares STOXX Europe 600 Telecommunications UCITS ETF (DE)
+Europe,sectors,Telecom,index,SXKP.Z,True,INDEX,ZRH,EUR,STXE 600 Telecommunications   I,STXE 600 Telecommunications   I
+Europe,sectors,Automobiles,etf,EXV5.DE,True,ETF,GER,EUR,iSh.ST.Eu.600 Aut.&Pa.U.ETF DEI,iShares STOXX Europe 600 Automobiles & Parts UCITS ETF (DE) EUR dis
+Europe,sectors,Automobiles,index,SXAP.Z,True,INDEX,ZRH,EUR,STXE 600 Automobiles & Parts  I,STXE 600 Automobiles & Parts  I
+Europe,sectors,Basic_Resrcs,etf,EXV6.DE,True,ETF,GER,EUR,iSh.ST.Eu.600 Bas.Res.U.ETF DEI,iShares STOXX Europe 600 Basic Resources UCITS ETF (DE)
+Europe,sectors,Basic_Resrcs,index,SXPP.Z,True,INDEX,ZRH,EUR,STXE 600 Basic Resources      I,STXE 600 Basic Resources      I
+Europe,sectors,Chemicals,etf,EXV7.DE,True,ETF,GER,EUR,iSh.ST.Eur.600 Chemic.U.ETF DEI,iShares STOXX Europe 600 Chemicals UCITS ETF (DE)
+Europe,sectors,Chemicals,index,SX4P.Z,True,INDEX,ZRH,EUR,STXE 600 Chemicals            I,STXE 600 Chemicals            I
+Europe,sectors,Banks,etf,BNKE.L,True,ETF,LSE,GBP,MULTI UNITS LUXEMBOURG AMUNDI E,Amundi Euro Stoxx Banks UCITS ETF Acc
+Europe,sectors,Insurance,etf,EXH5.DE,True,ETF,GER,EUR,iSh.ST.Eu.600 Insuran.U.ETF DEI,iShares STOXX Europe 600 Insurance UCITS ETF (DE)
+Europe,sectors,Insurance,index,SXIP.Z,True,INDEX,ZRH,EUR,STXE 600 Insurance            I,STXE 600 Insurance            I
+Europe,sectors,Industrials,etf,EXH4.DE,True,ETF,GER,EUR,iSh.ST.Eu.600 In.G.&S.U.ETF DEI,iShares STOXX Europe 600 Industrial Goods & Services UCITS ETF (DE)
+Europe,sectors,Industrials,index,SXNP.Z,True,INDEX,ZRH,EUR,STXE 600 Industrial G&S       I,STXE 600 Industrial G&S       I
+Europe,sectors,Construction,etf,EXV8.DE,True,ETF,GER,EUR,iSh.ST.Eu.600 Con.&Ma.U.ETF DEI,iShares STOXX Europe 600 Construction & Materials UCITS ETF (DE)
+Europe,sectors,Construction,index,SXOP.Z,True,INDEX,ZRH,EUR,STXE 600 Constr. & Materials  I,STXE 600 Constr. & Materials  I
+Europe,sectors,Cons_Discr.,etf,ESIC.L,True,ETF,LSE,GBP,ISHARES VI PLC ISH MSCI EPE CDS,iShares MSCI Europe Consumer Discretionary Sector UCITS ETF
+Europe,sectors,Cons_Staples,etf,ESIS.L,True,ETF,LSE,GBP,ISHARES VI PLC ISH MSCI EPE CSS,iShares MSCI Europe Consumer Staples Sector UCITS ETF
+Europe,sectors,Energy,etf,ENGE.L,True,ETF,LSE,GBP,SSGA SPDR ETFS EUROPE II PLC SP,SPDR MSCI Europe Energy UCITS ETF
+Europe,sectors,Defense,etf,EUAD,True,ETF,BTS,USD,Spinnaker ETF Series Select STO,Select STOXX Europe Aerospace & Defense ETF
+Europe,sectors,Financials,etf,ESIF.L,True,ETF,LSE,GBP,ISHARES VI PLC ISH MSCI EPE FS ,iShares MSCI Europe Financials Sector UCITS ETF
+Europe,sectors,Real_Estate,etf,XDER.L,True,ETF,LSE,GBp,XTRACKERS X FTSE EUROPE REAL ES,Xtrackers FTSE Developed Europe Real Estate UCITS ETF 1C
+Europe,factors,Large_Cap,index,^STOXX,True,INDEX,ZRH,EUR,STXE 600                      I,STXE 600                      I
+Europe,factors,Small_Cap(EMU),etf,SMEA.MI,True,ETF,MIL,EUR,ISHARESCOREMSCIEUROPE(ACC) UCIT,iShares Core MSCI Europe UCITS ETF EUR (Acc)
+Europe,factors,Value,etf,IEVL.MI,True,ETF,MIL,EUR,ISHARES EDG MSCI E VAL FAC UCIT,iShares Edge MSCI Europe Value Factor UCITS ETF EUR (Acc)
+Europe,factors,Momentum,etf,CEMR.DE,True,ETF,GER,EUR,iShsIV-Edge MSCI Eu.Mo.F.U.ETFR,iShares Edge MSCI Europe Momentum Factor UCITS ETF EUR (Acc)
+Europe,factors,Quality,etf,CEMQ.DE,True,ETF,GER,EUR,iShsIV-Edge MSCI Eu.Qu.F.U.ETFR,iShares Edge MSCI Europe Quality Factor UCITS ETF EUR (Acc)
+Europe,factors,Min_Vol,etf,EUMV,True,ETF,PCX,USD,iShares Edge MSCI Min Vol Europ,iShares Edge MSCI Min Vol Europe ETF
+Europe,factors,EuroStoxx50,index,^STOXX50E,True,INDEX,ZRH,EUR,EURO STOXX 50                 I,EURO STOXX 50                 I
+Germany,sectors,Broad_Market,etf,EWG,True,ETF,PCX,USD,iShares MSCI Germany Index Fund,iShares MSCI Germany ETF
+Germany,sectors,Technology,index,^CXPHX,True,INDEX,GER,EUR,DAXsector Technology          P,DAXsector Technology          P
+Germany,sectors,Healthcare,index,^CXPPX,True,INDEX,GER,EUR,DAXsector Pharma & Healthcare P,DAXsector Pharma & Healthcare P
+Germany,sectors,Industrials,index,^CXPNX,True,INDEX,GER,EUR,DAXsector Industrial          P,DAXsector Industrial          P
+Germany,sectors,Fin_Services,index,^CXPVX,True,INDEX,GER,EUR,DAXsector Financial Services  P,DAXsector Financial Services  P
+Germany,sectors,Insurance,index,^CXPIX,True,INDEX,GER,EUR,DAXsector Insurance           P,DAXsector Insurance           P
+Germany,factors,Large_Cap,index,^GDAXI,True,INDEX,GER,EUR,DAX                           P,DAX P
+Germany,factors,Mid_Cap,index,^MDAXI,True,INDEX,GER,EUR,MDAX                          P,MDAX                          P
+Germany,factors,Small_Cap,index,^SDAXI,True,INDEX,GER,EUR,SDAX                          P,SDAX                          P
+Japan,sectors,Broad_Market,etf,EWJ,True,ETF,PCX,USD,iShares MSCI Japan Index Fund,iShares MSCI Japan ETF
+Japan,sectors,Nikkei_225,index,^N225,True,INDEX,OSA,JPY,Nikkei 225,Nikkei 225
+Japan,sectors,Technology,etf,2854.T,True,ETF,JPX,JPY,GLOBAL X JAPAN CO LTD TECH TOP ,Global X Japan Tech Top 20 ETF
+Japan,sectors,Semiconductors,etf,2644.T,True,ETF,JPX,JPY,GLOBAL X JAPAN CO LTD SEMICONDU,Global X Japan Semiconductor ETF
+Japan,sectors,Banks,etf,1615.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX Banks Exchange Traded Fund
+Japan,sectors,Foods,etf,1617.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX-17 FOODS ETF
+Japan,sectors,Energy_Resources,etf,1618.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX-17 ENERGY RESOURCES ETF
+Japan,sectors,Construction_Materials,etf,1619.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX-17 CONSTRUCTION & MATERIALS ETF
+Japan,sectors,Raw_Materials_Chemicals,etf,1620.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX-17 RAW MATERIALS & CHEMICALS ETF
+Japan,sectors,Pharmaceuticals,etf,1621.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX-17 PHARMACEUTICAL ETF
+Japan,sectors,Autos_Transport_Equip,etf,1622.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX-17 AUTOMOBILES TRANSPORTATION EQUIPMENT ETF
+Japan,sectors,Steel_Nonferrous,etf,1623.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX-17 STEEL & NONFERROUS ETF
+Japan,sectors,Machinery,etf,1624.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX-17 MACHINERY ETF
+Japan,sectors,Electric_Precision,etf,1625.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX-17 ELECTRIC & PRECISION INSTRUMENTS ETF
+Japan,sectors,IT_Services_Others,etf,1626.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,"NEXT FUNDS TOPIX-17 IT & SERVICES,OTHERS ETF"
+Japan,sectors,Electric_Power_Gas,etf,1627.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX-17 ELECTRIC POWER & GAS ETF
+Japan,sectors,Transportation_Logistics,etf,1628.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX-17 TRANSPORTATION & LOGISTICS ETF
+Japan,sectors,Commercial_Wholesale,etf,1629.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX-17 COMMERCIAL & WHOLESALE TRADE ETF
+Japan,sectors,Retail_Trade,etf,1630.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX-17 RETAIL TRADE ETF
+Japan,sectors,Financials_ex_Banks,etf,1632.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX-17 FINANCIALS (EX BANKS) ETF
+Japan,sectors,Real_Estate,etf,1633.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS TOPIX-17 REAL ESTATE ETF
+Japan,sectors,REITs,etf,1488.T,True,ETF,JPX,JPY,DAIWA ASSET MANAGEMENT IFREEETF,Daiwa ETF Tokyo Stock Exchange REIT Index
+Japan,factors,Large_Cap,etf,EWJ,True,ETF,PCX,USD,iShares MSCI Japan Index Fund,iShares MSCI Japan ETF
+Japan,factors,Small_Cap,etf,SCJ,True,ETF,PCX,USD,iShares MSCI Japan Sm Cap,iShares MSCI Japan Small-Cap ETF
+Japan,factors,Value,etf,EWJV,True,ETF,NGM,USD,iShares MSCI Japan Value ETF,iShares MSCI Japan Value ETF
+Japan,factors,Gov_Bonds,etf,2561.T,True,ETF,JPX,JPY,BLACKROCK JAPAN CO LTD ISHARES ,iShares Core Japan Government Bond ETF
+Japan,factors,Biotech,etf,2639.T,True,ETF,JPX,JPY,GLOBAL X JAPAN CO LTD BIO & MED,Global X Japan Bio & Med Tech ETF
+Japan,factors,Quality,etf,1480.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS Nomura Enterprise Value Allocation Index Exchange Traded Fund
+Japan,factors,Low_Vol,etf,1477.T,True,ETF,JPX,JPY,BLACKROCK JAPAN CO LTD ISHARES ,iShares MSCI Japan Minimum Volatility ex-REITs ETF
+Japan,factors,Shareholder_Return,etf,2529.T,True,ETF,JPX,JPY,NOMURA ASSET MANAGEMENT CO LTD ,NEXT FUNDS Nomura Shareholder Yield 70 Exchange Traded Fund
+Japan,factors,High_Dividend_JP,etf,2564.T,True,ETF,JPX,JPY,GLOBAL X JAPAN CO LTD MSCI SUPE,Global X MSCI SuperDividend Japan ETF
+Japan,factors,Dividend_Growth_JP,etf,1494.T,True,ETF,JPX,JPY,ASSET MGT ONE CO LTD ONE ETF HI,One ETF High Dividend Japan Equity
+Korea,sectors,Broad_Market,etf,EWY,True,ETF,PCX,USD,iShares Inc iShares MSCI South ,iShares MSCI South Korea ETF
+Korea,sectors,Technology,etf,139260.KS,True,ETF,KSC,KRW,TIGER 200 IT,Mirae Asset TIGER IT ETF
+Korea,sectors,Semiconductors,etf,091230.KS,True,ETF,KSC,KRW,TIGER SEMICON ETF,Mirae Asset TIGER Semicon ETF
+Korea,sectors,Software,etf,157490.KS,True,ETF,KSC,KRW,TIGER SOFTWARE,Mirae Asset TIGER Software ETF
+Korea,sectors,Comm_Services,etf,315270.KS,True,ETF,KSC,KRW,TIGER 200CS,Mirae Asset Tiger 200 Communication Service ETF
+Korea,sectors,Cons_Discr.,etf,139290.KS,True,ETF,KSC,KRW,TIGER 200 DISCRETIONARY,Mirae Asset TIGER Consumer Discretionary ETF
+Korea,sectors,Cons_Staples,etf,227560.KS,True,ETF,KSC,KRW,TIGER 200 CONSUMER STAPLES,Mirae Asset Tiger 200 Consumer Staples ETF
+Korea,sectors,Defense,etf,449450.KS,True,ETF,KSC,KRW,PLUS K-Defense Industry,ARIRANG Defensive ETF
+Korea,sectors,Energy,etf,139250.KS,True,ETF,KSC,KRW,TIGER 200 ENERGY&,Mirae Asset TIGER Energy & Chemicals ETF
+Korea,sectors,Financials,etf,139270.KS,True,ETF,KSC,KRW,TIGER 200 FINANCIALS,Mirae Asset TIGER Financials ETF
+Korea,sectors,Insurance,etf,140700.KS,True,ETF,KSC,KRW,KODEX INSURANCE,Samsung Investment Trust - Kodex Insurance ETF
+Korea,sectors,Healthcare,etf,227540.KS,True,ETF,KSC,KRW,TIGER 200 HEALTH CARE,Mirae Asset Tiger 200 Health Care ETF
+Korea,sectors,Biotech,etf,244580.KS,True,ETF,KSC,KRW,KODEX BIO,KODEX Biotech
+Korea,sectors,Real_Estate,etf,476800.KS,True,ETF,KSC,KRW,KODEX KOREA REITs Infra,Samsung Kodex Korea Reits Infra Etf
+Korea,sectors,Shipbuilding,etf,466920.KS,True,ETF,KSC,KRW,SOL Shipbuilding TOP3 Plus,Shinhan Sol Shipbuilding Top3 Plus Etf
+Korea,sectors,Automobiles,etf,091180.KS,True,ETF,KSC,KRW,KODEX AUTOs,Kodex Autos
+Korea,factors,Gov_Bonds,etf,385560.KS,True,ETF,KSC,KRW,RISE 30Y T-Bond Enhanced ETF,KB Kbstar 30-Years Treasury Bond Enhanced ETF Fund
+Korea,factors,Dividend_Growth,etf,211560.KS,True,ETF,KSC,KRW,TIGER DIV GROWTH,Mirae Asset TIGER Dividend Growth ETF
+Korea,factors,High_Dividend,etf,210780.KS,True,ETF,KSC,KRW,TIGER HIGH DIVIDEND,Mirae Asset TIGER KOSPI High Dividend ETF
+Korea,factors,Momentum,etf,147970.KS,True,ETF,KSC,KRW,TIGER MOMENTUM,Mirae Asset TIGER Momentum ETF
+Korea,factors,Quality,etf,275300.KS,True,ETF,KSC,KRW,KODEX MSCI Quality,KODEX MSCI Quality
+Korea,factors,Low_Vol,etf,215620.KS,True,ETF,KSC,KRW,HK S&P Korea LowVol,Heungkuk S&P Low Vol Securities ETF Investment Trust - Equity
+China,sectors,Broad_Market,etf,FXI,True,ETF,PCX,USD,iShares China Large-Cap ETF,iShares China Large-Cap ETF
+China,sectors,Broad_Market_US_ETF,etf,MCHI,True,ETF,NGM,USD,iShares MSCI China ETF,iShares MSCI China ETF
+China,sectors,Technology,etf,CQQQ,True,ETF,PCX,USD,Invesco China Technology ETF,Invesco China Technology ETF
+China,sectors,Consumer,etf,CHIQ,True,ETF,PCX,USD,Global X MSCI China Consumer Di,Global X MSCI China Consumer Discretionary ETF
+China,sectors,Cons_Staples,etf,CHIS,True,ETF,PCX,USD,Global X Funds Global X MSCI Ch,Global X MSCI China Consumer Staples ETF
+China,sectors,Financials,etf,CHIX,True,ETF,PCX,USD,Global X MSCI China Financials ,Global X MSCI China Financials ETF
+China,sectors,Financials_Local,etf,510230.SS,True,EQUITY,SHH,CNY,GUOTAI ASSET MANAGEMENT CO SSE ,Guotai Asset Management - Guotai SSE 180 Financial Index ETF
+China,sectors,Industrials,etf,CHII,True,ETF,PCX,USD,Global X MSCI China Industrials,Global X MSCI China Industrials ETF
+China,sectors,Materials,etf,CHIM,True,ETF,PCX,USD,Global X MSCI China Materials E,Global X MSCI China Materials ETF
+China,sectors,Energy,etf,CHIE,True,ETF,PCX,USD,Global X MSCI China Energy ETF,Global X MSCI China Energy ETF
+China,sectors,Utilities,etf,CHIU,True,ETF,PCX,USD,Global X Funds Global X MSCI Ch,Global X MSCI China Utilities ETF
+China,sectors,Comm_Services,etf,CHIC,True,ETF,PCX,USD,Global X Funds Global X MSCI Ch,Global X MSCI China Communication Services ETF
+China,sectors,Real_Estate,etf,CHIR,True,ETF,PCX,USD,Global X Funds Global X MSCI Ch,Global X MSCI China Real Estate ETF
+China,sectors,Healthcare,etf,CHIH,True,ETF,PCX,USD,Global X Funds Global X MSCI Ch,Global X MSCI China Health Care ETF
+China,sectors,Banks,etf,CHIX,True,ETF,PCX,USD,Global X MSCI China Financials ,Global X MSCI China Financials ETF
+China,sectors,Banks_Local,etf,512800.SS,True,EQUITY,SHH,CNY,HWABAO WP FUND MANAGEMENT CO LT,Hwabao CSI Bank ETF
+China,sectors,Biotech,etf,2820.HK,True,ETF,HKG,HKD,GX CN BIOTECH,Global X ETF Series - Global X China Biotech ETF
+China,sectors,Software,etf,159852.SZ,True,EQUITY,SHZ,CNY,HARVEST FUND MGMT,Harvest Fund Management Co Ltd - Harvest CSI Software and Services ETF
+China,factors,Large_Cap,etf,FXI,True,ETF,PCX,USD,iShares China Large-Cap ETF,iShares China Large-Cap ETF
+China,factors,Small_Cap,etf,ECNS,True,ETF,PCX,USD,iShares MSCI China Small-Cap ET,iShares MSCI China Small-Cap ETF
+China,factors,A_Shares,etf,ASHR,True,ETF,PCX,USD,Xtrackers Harvest CSI 300 China,Xtrackers Harvest CSI 300 China A-Shares ETF
+China,factors,CSI_300,index,000300.SS,True,INDEX,SHH,CNY,CSI 300 Index,CSI 300 Index
+China,factors,Growth,etf,CNXT,True,ETF,PCX,USD,VanEck ChiNext ETF,VanEck ChiNext ETF
+China,factors,Quality_CN,etf,02803.HK,True,MUTUALFUND,YHD,,,
+China,factors,Low_Vol_CN,etf,515300.SS,True,EQUITY,SHH,CNY,HARVEST FUND MANAGEMENT HVST CS,Harvest CSI 300 Bonus Low Volatility ETF
+Canada,sectors,Broad_Market,index,^GSPTSE,True,INDEX,TSI,CAD,S&P/TSX Composite index,S&P/TSX Composite index
+Canada,sectors,Broad_Market_ETF,etf,EWC,True,ETF,PCX,USD,iShares MSCI Canada Index Fund,iShares MSCI Canada ETF
+Brazil,sectors,Broad_Market,index,^BVSP,True,INDEX,SAO,BRL,IBOVESPA,IBOVESPA
+Mexico,sectors,Broad_Market,etf,EWW,True,ETF,PCX,USD,iShares Inc iShares MSCI Mexico,iShares MSCI Mexico ETF
+Argentina,sectors,Broad_Market,etf,ARGT,True,ETF,PCX,USD,Global X MSCI Argentina ETF,Global X MSCI Argentina ETF
+Colombia,sectors,Broad_Market,etf,ICOL,True,ETF,PCX,USD,iShares Inc iShares MSCI Colomb,iShares MSCI Colombia ETF
+Global_ExUS,sectors,Broad_Market,etf,ACWX,True,ETF,NGM,USD,iShares MSCI ACWI ex U.S. ETF,iShares MSCI ACWI ex U.S. ETF
+Global_ExUS,sectors,Broad_ExUS,etf,IXUS,True,ETF,NGM,USD,iShares Core MSCI Total Interna,iShares Core MSCI Total International Stock ETF
+Global_ExUS,sectors,Developed_exUS,etf,EFA,True,ETF,PCX,USD,iShares MSCI EAFE ETF,iShares MSCI EAFE ETF
+Global_ExUS,sectors,Emerging_Markets,etf,EEM,True,ETF,PCX,USD,iShares MSCI Emerging Index Fun,iShares MSCI Emerging Markets ETF
+Global_ExUS,sectors,EM_ex_China,etf,EMXC,True,ETF,NGM,USD,iShares MSCI Emerging Markets e,iShares MSCI Emerging Markets ex China ETF
+Global_ExUS,sectors,Pacific_Developed,etf,VPL,True,ETF,PCX,USD,Vanguard FTSE Pacific ETF,Vanguard FTSE Pacific Index Fund ETF Shares
+Global_ExUS,sectors,Latin_America,etf,ILF,True,ETF,PCX,USD,iShares Latin America 40 ETF,iShares Latin America 40 ETF
+Global_ExUS,sectors,Eurozone,etf,EZU,True,ETF,BTS,USD,iShares MSCI Eurozone ETF,iShares MSCI Eurozone ETF
+Singapore,sectors,Broad_Market,etf,EWS,True,ETF,PCX,USD,iShares Inc iShares MSCI Singap,iShares MSCI Singapore ETF
+Indonesia,sectors,Broad_Market,etf,EIDO,True,ETF,PCX,USD,iShares MSCI Indonesia ETF,iShares MSCI Indonesia ETF
+Thailand,sectors,Broad_Market,etf,THD,True,ETF,PCX,USD,iShares Inc iShares MSCI Thaila,iShares MSCI Thailand ETF
+Malaysia,sectors,Broad_Market,etf,EWM,True,ETF,PCX,USD,iShares MSCI Malaysia Index Fun,iShares MSCI Malaysia ETF
+Vietnam,sectors,Broad_Market,etf,VNM,True,ETF,BTS,USD,VanEck Vietnam ETF,VanEck Vietnam ETF
+India,sectors,Broad_Market,index,^NSEI,True,INDEX,NSI,INR,NIFTY 50,NIFTY 50
+India,sectors,Financials,etf,INDF,True,ETF,PCX,USD,Range India Financials ETF,Range India Financials ETF
+India,sectors,Consumer,etf,INCO,True,ETF,PCX,USD,Columbia India Consumer ETF,Columbia India Consumer ETF
+India,sectors,Technology,etf,INQQ,True,ETF,PCX,USD,INQQ The India Internet ETF,INQQ The India Internet ETF
+India,sectors,Small_Cap,etf,SMIN,True,ETF,BTS,USD,Ishares MSCI India Small Cap ET,iShares MSCI India Small-Cap ETF
+India,sectors,Value(Proxy),etf,EPI,True,ETF,PCX,USD,WisdomTree India Earnings Fund,WisdomTree India Earnings Fund
+UK,sectors,Broad_Market,index,^FTSE,True,INDEX,FGI,GBP,FTSE 100,FTSE 100
+UK,sectors,Broad_Market_ETF,etf,EWU,True,ETF,PCX,USD,iShares MSCI,iShares MSCI United Kingdom ETF
+France,sectors,Broad_Market,index,^FCHI,True,INDEX,PAR,EUR,CAC 40,CAC 40
+France,sectors,Broad_Market_ETF,etf,EWQ,True,ETF,PCX,USD,iShares MSCI France Index Fund,iShares MSCI France ETF
+Italy,sectors,Broad_Market,index,FTSEMIB.MI,True,INDEX,MIL,EUR,FTSEMIB.MI,FTSE MIB Index
+Italy,sectors,Broad_Market_ETF,etf,EWI,True,ETF,PCX,USD,iShares Inc iShares MSCI Italy ,iShares MSCI Italy ETF
+Spain,sectors,Broad_Market,index,^IBEX,True,INDEX,MCE,EUR,IBEX 35...,IBEX 35...
+Spain,sectors,Broad_Market_ETF,etf,EWP,True,ETF,PCX,USD,iShares Inc iShares MSCI Spain ,iShares MSCI Spain ETF
+Taiwan,sectors,Broad_Market,index,^TWII,True,INDEX,TAI,TWD,TSEC CAPITALIZATION WEIGHTED ST,TWSE Capitalization Weighted Stock Index
+Taiwan,sectors,Broad_Market_ETF,etf,EWT,True,ETF,PCX,USD,iShares Inc iShares MSCI Taiwan,iShares MSCI Taiwan ETF
+Hong_Kong,sectors,Broad_Market,index,^HSI,True,INDEX,HKG,HKD,HANG SENG INDEX,HANG SENG INDEX
+Hong_Kong,factors,Hang_Seng_Tech,etf,3033.HK,True,ETF,HKG,HKD,CSOP HS TECH,CSOP ETF Series - CSOP Hang Seng TECH Index ETF
+Hong_Kong,factors,Gov_Bonds_HK,etf,3199.HK,True,ETF,HKG,HKD,ICBCCSOP CGPB,CSOP ETF Series II - CSOP China 5-Year Treasury Bond ETF
+Australia,sectors,Broad_Market,etf,EWA,True,ETF,PCX,USD,iShares MSCI Australia Index Fu,iShares MSCI Australia ETF
+Sweden,sectors,Broad_Market,etf,EWD,True,ETF,PCX,USD,iShares Inc iShares MSCI Sweden,iShares MSCI Sweden ETF
+Greece,sectors,Broad_Market,etf,GREK,True,ETF,PCX,USD,Global X MSCI Greece ETF,Global X MSCI Greece ETF
+Switzerland,sectors,Broad_Market,etf,EWL,True,ETF,PCX,USD,iShares Inc iShares MSCI Switze,iShares MSCI Switzerland ETF
+Israel,sectors,Broad_Market,etf,EIS,True,ETF,PCX,USD,iShares Inc iShares MSCI Israel,iShares MSCI Israel ETF
+Turkey,sectors,Broad_Market,etf,TUR,True,ETF,NGM,USD,iShares MSCI Turkey ETF,iShares MSCI Turkey ETF

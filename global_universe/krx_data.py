@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import os
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 from pathlib import Path
 import pandas as pd
 
@@ -242,7 +243,8 @@ def update_index_valuation_csv(ticker: str, mode: str = "append_today") -> tuple
     Returns (path, rows_added)
     """
     path = _valuation_csv_path(ticker)
-    today_str = datetime.utcnow().date().isoformat()
+    # Use KST for KRX-related dating and summaries
+    today_str = datetime.now(ZoneInfo("Asia/Seoul")).date().isoformat()
 
     canonical_cols = ["Date", "trailingPE", "priceToBook", "trailingAnnualDividendYield", "symbol", "currency", "quoteType"]
 
@@ -338,48 +340,36 @@ def update_index_valuation_csv(ticker: str, mode: str = "append_today") -> tuple
             added_count = 0
         return path, added_count
 
-    # backfill mode
-    if not path.exists() or os.path.getsize(path) == 0:
-        # Full history from 1990
-        df = fetch_index_fundamentals(ticker, "19900101", datetime.today())
-        if df is None or df.empty:
-            pd.DataFrame(columns=["Date","symbol","currency","quoteType",*VAL_FIELDS]).to_csv(path, index=False)
-            _ensure_canonical(path)
-            return path, 0
-        # Ensure canonical order
-        for col in canonical_cols:
-            if col not in df.columns:
-                df[col] = pd.NA
-        df = df[canonical_cols]
-        tmp = path.with_suffix(".csv.tmp")
-        df.to_csv(tmp, index=False)
-        os.replace(tmp, path)
-        return path, len(df)
-    # Incremental backfill
+    # backfill mode: always fetch full history and merge with existing
     try:
-        cur = pd.read_csv(path)
-        cur["Date"] = pd.to_datetime(cur["Date"]).dt.date.astype(str)
-        last = max(cur["Date"]) if not cur.empty else "1990-01-01"
+        cur = pd.read_csv(path) if path.exists() and os.path.getsize(path) > 0 else None
+        if cur is not None and not cur.empty and "Date" in cur.columns:
+            cur["Date"] = pd.to_datetime(cur["Date"], errors="coerce").dt.date.astype(str)
     except Exception:
         cur = None
-        last = "1990-01-01"
-    start_dt = datetime.strptime(last, "%Y-%m-%d") + timedelta(days=1)
-    df = fetch_index_fundamentals(ticker, start_dt, datetime.today())
-    if df is None or df.empty:
-        # Even if no new data, ensure header/order canonical
+    full_df = fetch_index_fundamentals(ticker, "19900101", datetime.today())
+    if full_df is None or full_df.empty:
+        if not path.exists():
+            pd.DataFrame(columns=["Date","symbol","currency","quoteType",*VAL_FIELDS]).to_csv(path, index=False)
         _ensure_canonical(path)
         return path, 0
-    new_df = pd.concat([cur, df], ignore_index=True) if cur is not None else df
-    # Canonical order and clean
+    # Canonical order
     for col in canonical_cols:
-        if col not in new_df.columns:
-            new_df[col] = pd.NA
-    new_df = new_df[canonical_cols]
-    new_df = new_df.sort_values("Date").drop_duplicates(subset=["Date"], keep="last")
+        if col not in full_df.columns:
+            full_df[col] = pd.NA
+    full_df = full_df[canonical_cols]
+    if cur is None or cur.empty:
+        new_df = full_df.sort_values("Date").drop_duplicates(subset=["Date"], keep="last")
+        added = len(new_df)
+    else:
+        merged = pd.concat([cur, full_df], ignore_index=True)
+        merged = merged.sort_values("Date").drop_duplicates(subset=["Date"], keep="last")
+        added = max(0, len(merged) - len(cur))
+        new_df = merged
     tmp = path.with_suffix(".csv.tmp")
     new_df.to_csv(tmp, index=False)
     os.replace(tmp, path)
-    return path, len(df)
+    return path, added
 
 
 # --------------------
@@ -449,15 +439,23 @@ def batch_update_indices(index_map: dict[str, str] | None = None, valuation_mode
     if index_map is None:
         index_map = KRX_TEST_INDICES
     rows: list[dict] = []
+    run_at = datetime.now(ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds")
     for code, name in index_map.items():
         entry = {
             "ticker": code,
             "name": name,
             "price_path": None,
             "price_rows_added": 0,
+            "price_updated": False,
+            "price_status": None,
+            "price_reason": None,
             "valuation_path": None,
             "valuation_rows_added": 0,
+            "valuation_updated": False,
+            "valuation_status": None,
+            "valuation_reason": None,
             "status": "ok",
+            "run_at": run_at,
         }
         try:
             price_mode = os.environ.get("KRX_PRICE_MODE", "quick").lower()
@@ -469,12 +467,28 @@ def batch_update_indices(index_map: dict[str, str] | None = None, valuation_mode
                 p_path, p_added = update_index_daily_csv_quick(code, years=years)
             entry["price_path"] = str(p_path)
             entry["price_rows_added"] = int(p_added)
+            if p_added > 0:
+                entry["price_updated"] = True
+                entry["price_status"] = "updated"
+                entry["price_reason"] = f"appended {p_added}"
+            else:
+                entry["price_status"] = "no_change"
+                entry["price_reason"] = "up_to_date or no_new_rows"
         except Exception as e:
             entry["status"] = f"price_error: {e}"[:200]
+            entry["price_status"] = "error"
+            entry["price_reason"] = str(e)[:200]
         try:
             v_path, v_added = update_index_valuation_csv(code, mode=valuation_mode)
             entry["valuation_path"] = str(v_path)
             entry["valuation_rows_added"] = int(v_added)
+            if v_added > 0:
+                entry["valuation_updated"] = True
+                entry["valuation_status"] = "updated"
+                entry["valuation_reason"] = f"appended {v_added}"
+            else:
+                entry["valuation_status"] = "no_change"
+                entry["valuation_reason"] = "up_to_date or no_new_rows"
             if entry["status"] == "ok":
                 entry["status"] = "ok"
         except Exception as e:
@@ -483,6 +497,8 @@ def batch_update_indices(index_map: dict[str, str] | None = None, valuation_mode
                 entry["status"] = f"valuation_error: {e}"[:200]
             else:
                 entry["status"] = (entry["status"] + f"; valuation_error: {e}")[:200]
+            entry["valuation_status"] = "error"
+            entry["valuation_reason"] = str(e)[:200]
         rows.append(entry)
         # Minimal progress print for long runs
         print(f"[{code} {name}] price+val done -> status={entry['status']}")

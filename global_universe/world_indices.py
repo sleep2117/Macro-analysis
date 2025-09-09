@@ -14,6 +14,7 @@ except Exception:
 import pandas as pd
 import numpy as np
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo as _ZoneInfo
 import warnings
 warnings.filterwarnings('ignore')
 
@@ -44,10 +45,67 @@ def _build_http_session():
 _YF_SESSION = _build_http_session()
 
 investment_universe = {
+    'Commodities': {
+        'currency': 'USD',
+        'sectors': {
+            'Broad':            {'index': None, 'etf': 'PDBC', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Energy_Broad':     {'index': None, 'etf': 'DBE',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Crude_Oil':        {'index': None, 'etf': 'OILK', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Natural_Gas':      {'index': None, 'etf': 'UNG',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Gold':             {'index': None, 'etf': 'GLD',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Silver':           {'index': None, 'etf': 'SLV',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Palladium':        {'index': None, 'etf': 'PALL', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Platinum':         {'index': None, 'etf': 'PPLT', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Copper':           {'index': None, 'etf': 'CPER', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Industrial_Metals':{'index': None, 'etf': 'BCIM', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Agriculture_Broad':{'index': None, 'etf': 'TILL', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Dry_Bulk_Freight': {'index': None, 'etf': 'BDRY', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Carbon_Global':    {'index': None, 'etf': 'KRBN', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Carbon_California':{'index': None, 'etf': 'KCCA', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Volatility':       {'index': None, 'etf': 'VXX',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+        },
+        'factors': {}
+    },
+    'Global': {
+        'currency': 'USD',
+        'sectors': {
+            # Global sector ETFs (USD)
+            'Technology':    {'index': None, 'etf': 'IXN',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Healthcare':    {'index': None, 'etf': 'IXJ',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Financials':    {'index': None, 'etf': 'IXG',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Cons_Discr.':   {'index': None, 'etf': 'RXI',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Cons_Staples':  {'index': None, 'etf': 'KXI',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Industrials':   {'index': None, 'etf': 'EXI',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Energy':        {'index': None, 'etf': 'IXC',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Materials':     {'index': None, 'etf': 'MXI',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Utilities':     {'index': None, 'etf': 'JXI',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Comm_Services': {'index': None, 'etf': 'IXP',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Defense':       {'index': None, 'etf': 'SHLD', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Real_Estate':   {'index': None, 'etf': 'REET', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Airlines':      {'index': None, 'etf': 'JETS', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+        },
+        'factors': {
+            'Global_BM':       {'index': None, 'etf': 'ACWI', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Global_Treasury': {'index': None, 'etf': 'IGOV', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Developed_World': {'index': None, 'etf': 'URTH', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Dividend_Growth_Global': {'index': None, 'etf': 'FID',   'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'High_Dividend_Global':   {'index': None, 'etf': 'IDOG',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Momentum_Developed':     {'index': None, 'etf': 'IMTM',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Quality_Global':         {'index': None, 'etf': 'IQLT',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'IPO_Global':             {'index': None, 'etf': 'IPOS',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Moat_Global':            {'index': None, 'etf': 'MOTG',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'CashFlow_Global':        {'index': None, 'etf': 'GCOW',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Min_Vol_Global':         {'index': None, 'etf': 'EFAV',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+        }
+    },
     'US': {
         'currency': 'USD',
         'sectors': {
+            'Broad_Market': {'index': None, 'etf': 'SPTM',  'currency': 'USD', 'valuation_data': True,  'alternatives': ['VTI','ITOT']},
             'Technology':    {'index': None, 'etf': 'XLK',  'currency': 'USD', 'valuation_data': True,  'alternatives': ['VGT','FTEC']},
+            'Semiconductors':{'index': None, 'etf': 'SOXX', 'currency': 'USD', 'valuation_data': True,  'alternatives': ['SMH']},
+            'Software':      {'index': None, 'etf': 'IGV',  'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            'Biotech':       {'index': None, 'etf': 'IBB',  'currency': 'USD', 'valuation_data': True,  'alternatives': []},
             'Healthcare':    {'index': None, 'etf': 'XLV',  'currency': 'USD', 'valuation_data': True,  'alternatives': ['VHT','FHLC']},
             'Financials':    {'index': None, 'etf': 'XLF',  'currency': 'USD', 'valuation_data': True,  'alternatives': ['VFH']},
             'Cons_Discr.':   {'index': None, 'etf': 'XLY',  'currency': 'USD', 'valuation_data': True,  'alternatives': ['VCR']},
@@ -57,7 +115,13 @@ investment_universe = {
             'Materials':     {'index': None, 'etf': 'XLB',  'currency': 'USD', 'valuation_data': True,  'alternatives': ['VAW']},
             'Utilities':     {'index': None, 'etf': 'XLU',  'currency': 'USD', 'valuation_data': True,  'alternatives': ['VPU']},
             'Comm_Services': {'index': None, 'etf': 'XLC',  'currency': 'USD', 'valuation_data': True,  'alternatives': []},
-            'Real_Estate':   {'index': None, 'etf': 'XLRE', 'currency': 'USD', 'valuation_data': True,  'alternatives': ['VNQ']}
+            'Real_Estate':   {'index': None, 'etf': 'XLRE', 'currency': 'USD', 'valuation_data': True,  'alternatives': ['VNQ']},
+            # Additional US sector/thematic ETFs
+            'Defense':       {'index': None, 'etf': 'ITA',  'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            'Banks_Large':   {'index': None, 'etf': 'KBWB', 'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            'Banks_Regional':{'index': None, 'etf': 'KRE',  'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            'Insurance':     {'index': None, 'etf': 'KIE',  'currency': 'USD', 'valuation_data': True,  'alternatives': ['KBWP']},
+            'Retail':        {'index': None, 'etf': 'XRT',  'currency': 'USD', 'valuation_data': True,  'alternatives': []},
         },
         'factors': {
             'Large_Cap':        {'index': '^GSPC',  'currency': 'USD', 'valuation_data': False, 'alternatives': ['SPY','VOO']},
@@ -82,7 +146,34 @@ investment_universe = {
             'Quality':          {'index': None,     'etf': 'QUAL',     'currency': 'USD', 'valuation_data': True,  'alternatives': ['SPHQ']},
             'High_Quality':     {'index': None,     'etf': 'SPHQ',     'currency': 'USD', 'valuation_data': True,  'alternatives': ['QUAL','QLTY']},
             'Profitability':    {'index': None,     'etf': 'COWZ',     'currency': 'USD', 'valuation_data': True,  'alternatives': []},
-            'Multi_Factor':     {'index': None,     'etf': 'LRGF',     'currency': 'USD', 'valuation_data': True,  'alternatives': []}
+            'Multi_Factor':     {'index': None,     'etf': 'LRGF',     'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            # Additional themes from provided images
+            'Wide_Moat':        {'index': None,     'etf': 'MOAT',     'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            'Semiconductors':   {'index': None,     'etf': 'SOXX',     'currency': 'USD', 'valuation_data': True,  'alternatives': ['SMH']},
+            'US_Power':         {'index': None,     'etf': 'ZAP',      'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            'China_Tech_US':    {'index': None,     'etf': 'DRAG',     'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            'Defense_Tech':     {'index': None,     'etf': 'SHLD',     'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            'Manufacturing_Trad':{'index': None,    'etf': 'AIRR',     'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            'Pipelines':        {'index': None,     'etf': 'TPYP',     'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            'Dividend_Aristocrats': {'index': None, 'etf': 'NOBL',     'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            'Preferreds':       {'index': None,     'etf': 'PFFD',     'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            # Factor set from image (skip duplicates):
+            'Dividend_Growth_US': {'index': None, 'etf': 'SCHD', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'High_Dividend_US':   {'index': None, 'etf': 'SPYD', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'IPO_US':             {'index': None, 'etf': 'IPO',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Buyback_US':         {'index': None, 'etf': 'PKW',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            # Corporate credit
+            'US_IG_Corp':       {'index': None,     'etf': 'LQD',      'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            'US_HY_Corp':       {'index': None,     'etf': 'HYG',      'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            # Treasuries
+            'US_Treasuries_20Y':{'index': None,     'etf': 'TLT',      'currency': 'USD', 'valuation_data': True,  'alternatives': []},
+            # Bond sleeves (country-level)
+            'Agg_Bond_US':        {'index': None, 'etf': 'AGG',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'TIPS_US':            {'index': None, 'etf': 'TIP',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Convertibles_US':    {'index': None, 'etf': 'CWB',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'MBS_US':             {'index': None, 'etf': 'MBB',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Senior_Loans_US':    {'index': None, 'etf': 'SRLN', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Fallen_Angels_US':   {'index': None, 'etf': 'FALN', 'currency': 'USD', 'valuation_data': True, 'alternatives': []}
         }
     },
 
@@ -90,26 +181,32 @@ investment_universe = {
         'currency': 'EUR',
         'sectors': {
             # Technology: use ETF as primary (index has short history on Yahoo)
-            'Technology':    {'index': None,     'etf': 'EXV3.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': ['SX8P.Z']},
-            'Healthcare':    {'index': 'SXDP.Z', 'etf': 'EXV4.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
-            'Utilities':     {'index': 'SX6P.Z', 'etf': 'EXH9.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
+            'Technology':    {'index': None,     'etf': 'EXV3.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': ['SX8P.Z','ESIT.L']},
+            'Healthcare':    {'index': 'SXDP.Z', 'etf': 'CH5.L',  'currency': 'GBP', 'valuation_data': True, 'alternatives': ['EXV4.DE']},
+            'Utilities':     {'index': 'SX6P.Z', 'etf': 'XS6R.L', 'currency': 'GBP', 'valuation_data': True, 'alternatives': ['EXH9.DE']},
             'Telecom':       {'index': 'SXKP.Z', 'etf': 'EXV2.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
             'Automobiles':   {'index': 'SXAP.Z', 'etf': 'EXV5.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
             'Basic_Resrcs':  {'index': 'SXPP.Z', 'etf': 'EXV6.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
             'Chemicals':     {'index': 'SX4P.Z', 'etf': 'EXV7.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
             # Banks: use ETF as primary (index has short history on Yahoo)
-            'Banks':         {'index': None,     'etf': 'EXV1.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': ['SX7P.Z']},
+            'Banks':         {'index': None,     'etf': 'BNKE.L', 'currency': 'GBP', 'valuation_data': True, 'alternatives': ['EXV1.DE','SX7P.Z']},
             'Insurance':     {'index': 'SXIP.Z', 'etf': 'EXH5.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
-            'Industrials':   {'index': 'SXNP.Z', 'etf': 'EXH4.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
+            'Industrials':   {'index': 'SXNP.Z', 'etf': 'EXH4.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': ['ESIN.L']},
             'Construction':  {'index': 'SXOP.Z', 'etf': 'EXV8.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
+            'Cons_Discr.':   {'index': None,     'etf': 'ESIC.L',  'currency': 'GBP', 'valuation_data': True, 'alternatives': []},
+            'Cons_Staples':  {'index': None,     'etf': 'ESIS.L',  'currency': 'GBP', 'valuation_data': True, 'alternatives': []},
+            'Energy':        {'index': None,     'etf': 'ENGE.L',  'currency': 'GBP', 'valuation_data': True, 'alternatives': []},
+            'Defense':       {'index': None,     'etf': 'EUAD',    'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Financials':    {'index': None,     'etf': 'ESIF.L',  'currency': 'GBP', 'valuation_data': True, 'alternatives': []},
+            'Real_Estate':   {'index': None,     'etf': 'XDER.L',  'currency': 'GBP', 'valuation_data': True, 'alternatives': []},
         },
         'factors': {
             'Large_Cap':     {'index': '^STOXX', 'currency': 'EUR', 'valuation_data': False, 'alternatives': ['EXSA.DE','DX2X.DE']},
             'Small_Cap(EMU)':{'index': None, 'etf': 'SMEA.MI', 'currency':'EUR','valuation_data':True,'alternatives': ['IEUS']},
             'Value':         {'index': None, 'etf': 'IEVL.MI','currency':'EUR','valuation_data':True,'alternatives':['CEMS.DE']},
-            'Momentum':      {'index': None, 'etf': 'CEMR.DE','currency':'EUR','valuation_data':True,'alternatives': []},
+            'Momentum':      {'index': None, 'etf': 'CEMR.DE','currency':'EUR','valuation_data':True,'alternatives': ['IEFM.L']},
             'Quality':       {'index': None, 'etf': 'CEMQ.DE', 'currency':'EUR','valuation_data':True,'alternatives':['IEFQ.L']},
-            'Min_Vol':       {'index': None, 'etf': 'EUMV',    'currency':'USD','valuation_data':True,'alternatives': []},
+            'Min_Vol':       {'index': None, 'etf': 'EUMV',    'currency':'USD','valuation_data':True,'alternatives': ['IMV.L']},
             'EuroStoxx50':   {'index': '^STOXX50E','currency': 'EUR','valuation_data': False,'alternatives': ['FEZ','EXW1.DE']},
         }
     },
@@ -117,6 +214,7 @@ investment_universe = {
     'Germany': {
         'currency': 'EUR',
         'sectors': {
+            'Broad_Market': {'index': None, 'etf': 'EWG', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
             'Technology':   {'index': '^CXPHX','currency':'EUR','valuation_data':False, 'alternatives':['EXS2.DE']},
             'Healthcare':   {'index': '^CXPPX','currency':'EUR','valuation_data':False, 'alternatives': []},
             'Industrials':  {'index': '^CXPNX','currency':'EUR','valuation_data':False, 'alternatives': []},
@@ -135,7 +233,10 @@ investment_universe = {
         'sectors': {
             'Broad_Market': {'index': None, 'etf': 'EWJ',   'currency': 'USD', 'valuation_data': True, 'alternatives': ['DXJ','HEWJ','BBJP','JPXN']},
             'Nikkei_225':   {'index': '^N225','currency': 'JPY', 'valuation_data': False,'alternatives': ['EWJ']},
-            # TOPIX-17 sector ETFs (JPY, Tokyo)
+            'Technology':    {'index': None, 'etf': '2854.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Semiconductors':{'index': None, 'etf': '2644.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Banks':         {'index': None, 'etf': '1615.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': ['1631.T']},
+        # TOPIX-17 sector ETFs (JPY, Tokyo)
             'Foods':                     {'index': None, 'etf': '1617.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
             'Energy_Resources':          {'index': None, 'etf': '1618.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
             'Construction_Materials':    {'index': None, 'etf': '1619.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
@@ -150,14 +251,54 @@ investment_universe = {
             'Transportation_Logistics':  {'index': None, 'etf': '1628.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
             'Commercial_Wholesale':      {'index': None, 'etf': '1629.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
             'Retail_Trade':              {'index': None, 'etf': '1630.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
-            'Banks':                     {'index': None, 'etf': '1631.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            # 'Banks' covered via 1615.T above; keep 1631.T as alternative there
             'Financials_ex_Banks':       {'index': None, 'etf': '1632.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
             'Real_Estate':               {'index': None, 'etf': '1633.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'REITs':                      {'index': None, 'etf': '1488.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
         },
         'factors': {
             'Large_Cap': {'index': None, 'etf': 'EWJ',  'currency': 'USD', 'valuation_data': True, 'alternatives': ['DXJ']},
             'Small_Cap': {'index': None, 'etf': 'SCJ',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
             'Value':     {'index': None, 'etf': 'EWJV', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Gov_Bonds': {'index': None, 'etf': '2561.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Biotech':   {'index': None, 'etf': '2639.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Quality':   {'index': None, 'etf': '1480.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Low_Vol':   {'index': None, 'etf': '1477.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Shareholder_Return': {'index': None, 'etf': '2529.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'High_Dividend_JP': {'index': None, 'etf': '2564.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Dividend_Growth_JP': {'index': None, 'etf': '1494.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+        }
+    },
+
+    'Korea': {
+        'currency': 'KRW',
+        'sectors': {
+            'Broad_Market': {'index': None, 'etf': 'EWY', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Technology':    {'index': None, 'etf': '139260.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Semiconductors':{'index': None, 'etf': '091230.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Software':      {'index': None, 'etf': '157490.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Comm_Services': {'index': None, 'etf': '315270.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Cons_Discr.':   {'index': None, 'etf': '139290.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Cons_Staples':  {'index': None, 'etf': '227560.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Defense':       {'index': None, 'etf': '449450.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Energy':        {'index': None, 'etf': '139250.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Financials':    {'index': None, 'etf': '139270.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Insurance':     {'index': None, 'etf': '140700.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Healthcare':    {'index': None, 'etf': '227540.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Biotech':       {'index': None, 'etf': '244580.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Real_Estate':   {'index': None, 'etf': '476800.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Shipbuilding':  {'index': None, 'etf': '466920.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Automobiles':   {'index': None, 'etf': '091180.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+        },
+        'factors': {
+            # Korea gov bonds via local ETF (approximation)
+            'Gov_Bonds': {'index': None, 'etf': '385560.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Dividend_Growth': {'index': None, 'etf': '211560.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'High_Dividend':   {'index': None, 'etf': '210780.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Momentum':        {'index': None, 'etf': '147970.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Quality':         {'index': None, 'etf': '275300.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Low_Vol':         {'index': None, 'etf': '215620.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            # 'Shareholder_Return' removed pending valid Yahoo symbol
         }
     },
 
@@ -165,17 +306,27 @@ investment_universe = {
         'currency': 'CNY',
         'sectors': {
             'Broad_Market': {'index': None, 'etf': 'FXI',  'currency': 'USD', 'valuation_data': True, 'alternatives': ['MCHI','ASHR','GXC']},
-            'Technology':   {'index': None, 'etf': 'CQQQ', 'currency': 'USD', 'valuation_data': True, 'alternatives': ['KWEB']},
+            'Broad_Market_US_ETF': {'index': None, 'etf': 'MCHI', 'currency': 'USD', 'valuation_data': True, 'alternatives': ['FXI','GXC','ASHR']},
+            'Technology':   {'index': None, 'etf': 'CQQQ', 'currency': 'USD', 'valuation_data': True, 'alternatives': ['KWEB','159939.SZ']},
+            # China Semiconductors (03191.HK) removed pending valid Yahoo symbol
             'Consumer':     {'index': None, 'etf': 'CHIQ', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
-            'Cons_Staples': {'index': None, 'etf': 'CHIS', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Cons_Staples': {'index': None, 'etf': 'CHIS', 'currency': 'USD', 'valuation_data': True, 'alternatives': ['159928.SZ']},
             'Financials':   {'index': None, 'etf': 'CHIX', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Financials_Local': {'index': None, 'etf': '510230.SS', 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
             'Industrials':  {'index': None, 'etf': 'CHII', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
             'Materials':    {'index': None, 'etf': 'CHIM', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
             'Energy':       {'index': None, 'etf': 'CHIE', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
-            'Utilities':    {'index': None, 'etf': 'CHIU', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Utilities':    {'index': None, 'etf': 'CHIU', 'currency': 'USD', 'valuation_data': True, 'alternatives': ['159611.SZ']},
             'Comm_Services':{'index': None, 'etf': 'CHIC', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
-            'Real_Estate':  {'index': None, 'etf': 'CHIR', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
-            'Healthcare':   {'index': None, 'etf': 'CHIH', 'currency': 'USD', 'valuation_data': True, 'alternatives': ['KURE']},
+            'Real_Estate':  {'index': None, 'etf': 'CHIR', 'currency': 'USD', 'valuation_data': True, 'alternatives': ['512200.SS']},
+            'Healthcare':   {'index': None, 'etf': 'CHIH', 'currency': 'USD', 'valuation_data': True, 'alternatives': ['KURE','512010.SS']},
+            'Banks':        {'index': None, 'etf': 'CHIX', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Banks_Local':  {'index': None, 'etf': '512800.SS', 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
+            'Biotech':      {'index': None, 'etf': '2820.HK', 'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'Software':     {'index': None, 'etf': '159852.SZ', 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
+            # China Defense (512660.CH) removed pending valid Yahoo symbol
+            'Insurance':    {'index': None, 'etf': None, 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
+            # China Financials local added as 510230.SS above
         },
         'factors': {
             'Large_Cap': {'index': None, 'etf': 'FXI',  'currency': 'USD', 'valuation_data': True, 'alternatives': ['GXC']},
@@ -183,6 +334,8 @@ investment_universe = {
             'A_Shares':  {'index': None, 'etf': 'ASHR', 'currency': 'USD', 'valuation_data': True, 'alternatives': ['CNYA','KBA']},
             'CSI_300':   {'index': '000300.SS','currency': 'CNY','valuation_data': False,'alternatives': ['ASHR']},
             'Growth':    {'index': None, 'etf': 'CNXT', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Quality_CN': {'index': None, 'etf': '02803.HK', 'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'Low_Vol_CN': {'index': None, 'etf': '515300.SS', 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
         }
     },
 
@@ -190,6 +343,7 @@ investment_universe = {
         'currency': 'CAD',
         'sectors': {
             'Broad_Market': {'index': '^GSPTSE', 'currency': 'CAD', 'valuation_data': False, 'alternatives': ['XIC.TO','EWC']},
+            'Broad_Market_ETF': {'index': None, 'etf': 'EWC', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
         },
         'factors': {}
     },
@@ -202,10 +356,41 @@ investment_universe = {
         'factors': {}
     },
 
+    'Mexico': {
+        'currency': 'MXN',
+        'sectors': {
+            'Broad_Market': {'index': None, 'etf': 'EWW', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+        },
+        'factors': {}
+    },
+
+    'Argentina': {
+        'currency': 'ARS',
+        'sectors': {
+            'Broad_Market': {'index': None, 'etf': 'ARGT', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+        },
+        'factors': {}
+    },
+
+    'Colombia': {
+        'currency': 'COP',
+        'sectors': {
+            'Broad_Market': {'index': None, 'etf': 'ICOL', 'currency': 'USD', 'valuation_data': True, 'alternatives': ['GXG','COLO']},
+        },
+        'factors': {}
+    },
+
     'Global_ExUS': {
         'currency': 'USD',
         'sectors': {
             'Broad_Market': {'index': None, 'etf': 'ACWX', 'currency': 'USD', 'valuation_data': True, 'alternatives': ['VEU','VEA','IEFA']},
+            'Broad_ExUS':   {'index': None, 'etf': 'IXUS', 'currency': 'USD', 'valuation_data': True, 'alternatives': ['VEU']},
+            'Developed_exUS': {'index': None, 'etf': 'EFA', 'currency': 'USD', 'valuation_data': True, 'alternatives': ['VEA','IEFA']},
+            'Emerging_Markets': {'index': None, 'etf': 'EEM', 'currency': 'USD', 'valuation_data': True, 'alternatives': ['VWO']},
+            'EM_ex_China': {'index': None, 'etf': 'EMXC', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Pacific_Developed': {'index': None, 'etf': 'VPL', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Latin_America': {'index': None, 'etf': 'ILF', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Eurozone': {'index': None, 'etf': 'EZU', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
         },
         'factors': {}
     },
@@ -242,6 +427,14 @@ investment_universe = {
         'factors': {}
     },
 
+    'Vietnam': {
+        'currency': 'VND',
+        'sectors': {
+            'Broad_Market': {'index': None, 'etf': 'VNM', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+        },
+        'factors': {}
+    },
+
     'India': {
         'currency': 'INR',
         'sectors': {
@@ -259,6 +452,7 @@ investment_universe = {
         'currency': 'GBP',
         'sectors': {
             'Broad_Market': {'index': '^FTSE', 'currency': 'GBP', 'valuation_data': False, 'alternatives': ['ISF.L','VUKE.L']},
+            'Broad_Market_ETF': {'index': None, 'etf': 'EWU', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
         },
         'factors': {}
     },
@@ -267,6 +461,7 @@ investment_universe = {
         'currency': 'EUR',
         'sectors': {
             'Broad_Market': {'index': '^FCHI', 'currency': 'EUR', 'valuation_data': False, 'alternatives': ['EWQ']},
+            'Broad_Market_ETF': {'index': None, 'etf': 'EWQ', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
         },
         'factors': {}
     },
@@ -275,6 +470,7 @@ investment_universe = {
         'currency': 'EUR',
         'sectors': {
             'Broad_Market': {'index': 'FTSEMIB.MI', 'currency': 'EUR', 'valuation_data': False, 'alternatives': ['EWI']},
+            'Broad_Market_ETF': {'index': None, 'etf': 'EWI', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
         },
         'factors': {}
     },
@@ -283,6 +479,7 @@ investment_universe = {
         'currency': 'EUR',
         'sectors': {
             'Broad_Market': {'index': '^IBEX', 'currency': 'EUR', 'valuation_data': False, 'alternatives': ['EWP']},
+            'Broad_Market_ETF': {'index': None, 'etf': 'EWP', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
         },
         'factors': {}
     },
@@ -291,6 +488,7 @@ investment_universe = {
         'currency': 'TWD',
         'sectors': {
             'Broad_Market':     {'index': '^TWII', 'currency': 'TWD', 'valuation_data': False, 'alternatives': ['EWT']},
+            'Broad_Market_ETF': {'index': None, 'etf': 'EWT', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
         },
         'factors': {}
     },
@@ -300,11 +498,260 @@ investment_universe = {
         'sectors': {
             'Broad_Market': {'index': '^HSI', 'currency': 'HKD', 'valuation_data': False, 'alternatives': ['EWH']},
         },
+        'factors': {
+            'Hang_Seng_Tech': {'index': None, 'etf': '3033.HK', 'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'Gov_Bonds_HK':   {'index': None, 'etf': '3199.HK', 'currency': 'HKD', 'valuation_data': True, 'alternatives': []}
+        }
+    },
+
+    'Australia': {
+        'currency': 'AUD',
+        'sectors': {
+            'Broad_Market': {'index': None, 'etf': 'EWA', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+        },
+        'factors': {}
+    },
+
+    'Sweden': {
+        'currency': 'SEK',
+        'sectors': {
+            'Broad_Market': {'index': None, 'etf': 'EWD', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+        },
+        'factors': {}
+    },
+
+    'Greece': {
+        'currency': 'EUR',
+        'sectors': {
+            'Broad_Market': {'index': None, 'etf': 'GREK', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+        },
+        'factors': {}
+    },
+
+    'Switzerland': {
+        'currency': 'CHF',
+        'sectors': {
+            'Broad_Market': {'index': None, 'etf': 'EWL', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+        },
+        'factors': {}
+    },
+
+    'Israel': {
+        'currency': 'ILS',
+        'sectors': {
+            'Broad_Market': {'index': None, 'etf': 'EIS', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+        },
+        'factors': {}
+    },
+
+    'Turkey': {
+        'currency': 'TRY',
+        'sectors': {
+            'Broad_Market': {'index': None, 'etf': 'TUR', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+        },
         'factors': {}
     },
 }
 
 # (Validation and analysis helpers removed: this module focuses on data collection only.)
+
+# ============================
+# Korean Labels (Countries/Sectors/Factors)
+# ============================
+
+KOREAN_LABELS = {
+    'countries': {
+        'Global': '글로벌',
+        'US': '미국',
+        'Global_ExUS': '글로벌(미국 제외)',
+        'Europe': '유럽',
+        'Germany': '독일',
+        'UK': '영국',
+        'France': '프랑스',
+        'Italy': '이탈리아',
+        'Spain': '스페인',
+        'Japan': '일본',
+        'China': '중국',
+        'Hong_Kong': '홍콩',
+        'Taiwan': '대만',
+        'Korea': '한국',
+        'India': '인도',
+        'Canada': '캐나다',
+        'Brazil': '브라질',
+        'Singapore': '싱가포르',
+        'Indonesia': '인도네시아',
+        'Thailand': '태국',
+        'Malaysia': '말레이시아',
+        'Australia': '호주',
+        'Sweden': '스웨덴',
+        'Greece': '그리스',
+        'Switzerland': '스위스',
+        'Israel': '이스라엘',
+        'Turkey': '튀르키예',
+        'Mexico': '멕시코',
+        'Argentina': '아르헨티나',
+        'Colombia': '콜롬비아',
+        'Vietnam': '베트남',
+        'Commodities': '원자재',
+    },
+    'sectors': {
+        'Broad_Market': '전반 시장',
+        'Technology': '정보기술',
+        'Healthcare': '헬스케어',
+        'Financials': '금융',
+        'Fin_Services': '금융서비스',
+        'Insurance': '보험',
+        'Cons_Discr.': '경기소비재',
+        'Cons_Staples': '필수소비재',
+        'Industrials': '산업재',
+        'Energy': '에너지',
+        'Materials': '소재',
+        'Utilities': '유틸리티',
+        'Comm_Services': '커뮤니케이션서비스',
+        'Real_Estate': '부동산',
+        'Telecom': '통신',
+        'Automobiles': '자동차',
+        'Basic_Resrcs': '기초자원',
+        'Construction': '건설',
+        'Nikkei_225': '니케이 225',
+        # Commodities detail
+        'Broad': '원자재 전반',
+        'Energy_Broad': '에너지 전반',
+        'Crude_Oil': '원유',
+        'Natural_Gas': '천연가스',
+        'Gold': '금',
+        'Silver': '은',
+        'Palladium': '팔라듐',
+        'Platinum': '플래티넘',
+        'Copper': '구리',
+        'Industrial_Metals': '산업금속',
+        'Agriculture_Broad': '농산물 전반',
+        'Dry_Bulk_Freight': 'BDI 운임지수',
+        'Carbon_Global': '탄소배출권(글로벌)',
+        'Carbon_California': '탄소배출권(캘리포니아)',
+        'Volatility': '변동성',
+    },
+    'factors': {
+        'Global_BM': '글로벌 BM',
+        'Global_Treasury': '글로벌 국채',
+        'Dividend_Growth_Global': '글로벌 배당성장',
+        'High_Dividend_Global': '글로벌 고배당',
+        'Momentum_Developed': '선진국 모멘텀',
+        'Quality_Global': '글로벌 퀄리티',
+        'IPO_Global': '글로벌 신규상장',
+        'Moat_Global': '글로벌 해자',
+        'CashFlow_Global': '글로벌 현금흐름',
+        'Min_Vol_Global': '글로벌 최소변동성',
+        # Global bonds
+        'Green_Bonds_Global': '글로벌 그린본드',
+        'EM_Local_Bonds': '이머징 로컬채',
+        'EM_USD_Bonds': '이머징 USD채',
+        'Large_Cap': '대형주',
+        'Mid_Cap': '중형주',
+        'Small_Cap': '소형주',
+        'Small_Cap_600': '소형주 600',
+        'Nasdaq_100': '나스닥 100',
+        'Micro_Cap': '마이크로캡',
+        'Small_Value': '소형 가치',
+        'Small_Growth': '소형 성장',
+        'Mid_Value': '중형 가치',
+        'Mid_Growth': '중형 성장',
+        'Equal_Weight': '동일가중',
+        'Low_Vol': '저변동성',
+        'High_Beta': '하이베타',
+        'Low_Beta': '로우베타',
+        'High_Dividend': '고배당',
+        'Dividend_Growth': '배당성장',
+        'Value': '가치',
+        'Growth': '성장',
+        'Momentum': '모멘텀',
+        'Quality': '퀄리티',
+        'High_Quality': '고퀄리티',
+        'Profitability': '수익성',
+        'Multi_Factor': '멀티팩터',
+        'Wide_Moat': '와이드 모트',
+        'Semiconductors': '반도체',
+        'US_Power': '미국 전력',
+        'China_Tech_US': '중국 테크',
+        'Defense_Tech': '방위 기술',
+        'Manufacturing_Trad': '전통 제조업',
+        'Pipelines': '파이프라인',
+        'Dividend_Aristocrats': '배당귀족',
+        'Preferreds': '우선주',
+        'US_IG_Corp': '미 IG 회사채',
+        'US_HY_Corp': '미 HY 회사채',
+        'US_Treasuries_20Y': '미국 20년물 국채',
+        'A_Shares': '중국 A주',
+        'CSI_300': 'CSI 300',
+        'Gov_Bonds': '국채',
+        'Broad_ExUS': '광범위(미국 제외)',
+        'Developed_exUS': '선진국(미국 제외)',
+        'Emerging_Markets': '신흥국',
+        'EM_ex_China': '신흥국(중국 제외)',
+        'Hang_Seng_Tech': '항셍 테크',
+        # US factors extended
+        'Dividend_Growth_US': '미국 배당성장',
+        'High_Dividend_US': '미국 고배당',
+        'IPO_US': '미국 신규상장',
+        'Buyback_US': '미국 주주환원',
+        'Agg_Bond_US': '미국 채권 전반',
+        'TIPS_US': '미국 TIPS',
+        'Convertibles_US': '미국 전환사채',
+        'MBS_US': '미국 MBS',
+        'Senior_Loans_US': '미국 시니어론',
+        'Fallen_Angels_US': '미국 강등채',
+        # Japan
+        'High_Dividend_JP': '일본 고배당',
+        'Dividend_Growth_JP': '일본 배당성장',
+        'Agg_Bond_JP': '일본 채권 전반',
+        # Korea
+        'Agg_Bond_KR': '한국 종합채',
+        # China
+        'Quality_CN': '중국 퀄리티',
+        'Low_Vol_CN': '중국 저변동성',
+        'HY_Bond_HK': '중국 달러 HY채',
+        'Quasi_Govt_HK': '홍콩 준정부채',
+        'Gov_Bonds_HK': '홍콩 국채',
+        'Financials_Local': '중국 금융(본토)',
+        'Banks_Local': '중국 은행(본토)',
+    },
+}
+
+def get_korean_label(kind: str, key: str) -> str:
+    """Return Korean label for a given kind ('countries'|'sectors'|'factors') and key.
+    Falls back to key if no mapping exists.
+    """
+    try:
+        return KOREAN_LABELS.get(kind, {}).get(key, key)
+    except Exception:
+        return key
+
+# ============================
+# Safe add helpers (dedupe + Korea US-theme skip)
+# ============================
+
+def symbol_exists_in_universe(universe: dict, symbol: str) -> bool:
+    if not symbol:
+        return False
+    for _, cdata in universe.items():
+        for section in ("sectors", "factors"):
+            for _, asset in cdata.get(section, {}).items():
+                sym = asset.get("index") or asset.get("etf")
+                if isinstance(sym, str) and sym == symbol:
+                    return True
+    return False
+
+def should_skip_asset(country: str, name: str, asset: dict, universe: dict) -> tuple[bool, str | None]:
+    """Return (skip, reason). Rules:
+    - Skip if symbol already exists anywhere in universe
+    - Skip Korea entries that are US-themed local listings (name endswith '_K' or startswith 'US_')
+    """
+    sym = (asset or {}).get("etf") or (asset or {}).get("index")
+    if sym and symbol_exists_in_universe(universe, sym):
+        return True, "duplicate_symbol"
+    if country == 'Korea' and (name.endswith('_K') or name.startswith('US_')):
+        return True, "korea_us_theme_skipped"
+    return False, None
 
 # ============================
 # Daily CSV Cache (New)
@@ -547,16 +994,31 @@ def update_all_daily_data(universe: dict, pause: float = 0.6, symbols: list[str]
     for sym in symbols:
         try:
             path, added = update_symbol_csv(sym, pause=pause)
-            results.append({"symbol": sym, "file": str(path), "added": added, "status": "ok"})
+            updated = added > 0
+            results.append({
+                "symbol": sym,
+                "file": str(path),
+                "added": added,
+                "updated": updated,
+                "status": "ok" if updated else "no_change",
+                "reason": (f"appended {added}" if updated else "up_to_date"),
+            })
         except Exception as e:
-            results.append({"symbol": sym, "file": str(_csv_path_for(sym)), "added": 0, "status": f"error: {e}"})
+            results.append({
+                "symbol": sym,
+                "file": str(_csv_path_for(sym)),
+                "added": 0,
+                "updated": False,
+                "status": "error",
+                "reason": str(e)[:200],
+            })
         time.sleep(pause)
     df = pd.DataFrame(results)
     # Mark execution time for visibility in CI even when no rows are added
     try:
-        ts = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+        ts = datetime.now(_ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds")
     except Exception:
-        ts = datetime.utcnow().isoformat() + "Z"
+        ts = datetime.now().isoformat()
     df["run_at"] = ts
     df.to_csv(_BASE_DIR / "data" / "update_summary.csv", index=False)
     return df
@@ -577,6 +1039,20 @@ _VALUATION_FIELDS = [
 
 def _valuation_csv_path(symbol: str) -> _Path:
     return _VAL_DIR / f"{_sanitize_symbol(symbol)}.csv"
+
+def _has_price_for_date(symbol: str, date_iso: str) -> bool:
+    """Return True if daily price CSV for symbol has a row for date_iso (YYYY-MM-DD)."""
+    try:
+        p = _csv_path_for(symbol)
+        if not p.exists():
+            return False
+        df = pd.read_csv(p)
+        if "Date" not in df.columns or df.empty:
+            return False
+        s = pd.to_datetime(df["Date"], errors="coerce").dt.date.astype(str)
+        return (s == date_iso).any()
+    except Exception:
+        return False
 
 def fetch_valuation_snapshot(symbol: str) -> dict | None:
     """
@@ -612,6 +1088,9 @@ def update_valuation_csv(symbol: str) -> tuple[_Path, bool]:
     path = _valuation_csv_path(symbol)
     from datetime import datetime as _dt
     today = _dt.utcnow().date().isoformat()
+    # Only append for trading days where a price bar exists for today
+    if not _has_price_for_date(symbol, today):
+        return path, False
     snap = fetch_valuation_snapshot(symbol)
     if snap is None:
         return path, False
@@ -720,25 +1199,104 @@ def _batch_fetch_quote(symbols: list[str]) -> dict:
         return {}
 
 def _append_valuation_row(symbol: str, row: dict) -> tuple[_Path, bool]:
-    """Append a single day's row to the symbol's valuation CSV if not present."""
+    """Append a single day's row to the symbol's valuation CSV if not present.
+
+    Behavior tweak: if there's no price bar today, we still append when metrics
+    changed versus the latest stored row. This allows weekend updates only when
+    they are meaningful, avoiding duplicate weekend rows.
+    """
     path = _valuation_csv_path(symbol)
     from datetime import datetime as _dt
     today = _dt.utcnow().date().isoformat()
+    # Build the new row frame
     df_new = pd.DataFrame([{**{"Date": today}, **row}])
+    # Load existing for duplicate checks
+    df = None
     if path.exists():
         try:
             df = pd.read_csv(path)
-            if (df["Date"] == today).any():
-                return path, False
+        except Exception:
+            df = None
+    if df is not None and not df.empty:
+        if (df.get("Date") == today).any():
+            return path, False
+        # Compare against last stored row for metric equality
+        last = df.iloc[-1].to_dict()
+        import numpy as _np
+        def _norm(v):
+            try:
+                fv = float(v)
+                if _np.isnan(fv):
+                    return None
+                return fv
+            except Exception:
+                return None
+        changed = False
+        for k in _VALUATION_FIELDS:
+            if k in row:
+                a = _norm(row.get(k))
+                b = _norm(last.get(k))
+                if a is None and b is None:
+                    continue
+                if a is None or b is None:
+                    changed = True; break
+                if not _np.isclose(a, b, rtol=1e-9, atol=1e-12):
+                    changed = True; break
+        has_price_today = _has_price_for_date(symbol, today)
+        if not has_price_today and not changed:
+            # No price bar and metrics unchanged -> skip appending
+            return path, False
+        # else proceed to append
+        try:
             df = pd.concat([df, df_new], ignore_index=True)
         except Exception:
             df = df_new
     else:
+        # No prior file OR unreadable -> write new row regardless of price bar
         df = df_new
     tmp = path.with_suffix(".csv.tmp")
     df.to_csv(tmp, index=False)
     os.replace(tmp, path)
     return path, True
+
+# ============================
+# KRX Integration (pykrx)
+# ============================
+
+def update_krx_indices(run_backfill: bool = True,
+                       price_mode: str = "full",
+                       price_years: int = 3,
+                       pause: float = 0.0) -> pd.DataFrame | None:
+    """Update KRX index OHLCV and valuations using krx_data module.
+
+    - run_backfill: if True, run valuation backfill; else append_today.
+    - price_mode: 'full' for full backfill; 'quick' limits initial backfill to recent years.
+    - price_years: used when price_mode='quick'.
+    Returns batch summary DataFrame or None on import failure.
+    """
+    try:
+        # Prefer normal import if package is resolvable
+        try:
+            from global_universe import krx_data as _krx
+        except Exception:
+            import importlib.util, sys as _sys
+            _spec = importlib.util.spec_from_file_location("krx_data", (_BASE_DIR / "krx_data.py"))
+            _krx = importlib.util.module_from_spec(_spec)
+            assert _spec and _spec.loader
+            _spec.loader.exec_module(_krx)
+        # Control price mode via env variables understood by krx_data
+        import os as _os
+        _os.environ["KRX_PRICE_MODE"] = price_mode
+        if price_mode == "quick":
+            _os.environ["KRX_PRICE_YEARS"] = str(int(price_years))
+        mode = "backfill" if run_backfill else "append_today"
+        df = _krx.batch_update_indices(_krx.KRX_TEST_INDICES, valuation_mode=mode)
+        # Save a separate summary file
+        out_csv = _BASE_DIR / "data" / "krx_batch_summary_from_world_indices.csv"
+        df.to_csv(out_csv, index=False)
+        return df
+    except Exception:
+        return None
 
 def update_all_valuations(
     universe: dict,
@@ -756,6 +1314,13 @@ def update_all_valuations(
     No use of alternatives and no historical backfill (snapshot only).
     """
     rows = []
+    # Helper to test if any valuation metric is present
+    def _has_metrics(d: dict | None) -> bool:
+        if not isinstance(d, dict):
+            return False
+        return any(d.get(k) not in (None, "None") for k in _VALUATION_FIELDS)
+    from datetime import datetime as _dt
+    today = _dt.utcnow().date().isoformat()
     # Build the traversal list with optional filtering
     tasks = []
     for country, cdata in universe.items():
@@ -817,17 +1382,18 @@ def update_all_valuations(
             path = _valuation_csv_path(chosen or "")
             updated = False
             used_symbol = chosen
+            reason = None
             snap = prim_map.get(chosen)
-            if snap is None or all(snap.get(k) in (None, "None") for k in _VALUATION_FIELDS):
+            if not _has_metrics(snap):
                 # try broader fallback list (ETF/alternatives/index depending on chosen)
                 for sym in fb_lists[ti]:
                     alt = fb_map.get(sym)
-                    if alt and not all(alt.get(k) in (None, "None") for k in _VALUATION_FIELDS):
+                    if _has_metrics(alt):
                         path, updated = _append_valuation_row(sym, alt)
                         used_fallback = True
                         used_symbol = sym
                         break
-            if not used_fallback and snap and not all(snap.get(k) in (None, "None") for k in _VALUATION_FIELDS):
+            if not used_fallback and _has_metrics(snap):
                 path, updated = _append_valuation_row(chosen, snap)
                 used_symbol = chosen
 
@@ -838,29 +1404,36 @@ def update_all_valuations(
                 for sym in cand_syms:
                     row = fetch_valuation_snapshot(sym)
                     info_calls += 1
-                    if row and not all(row.get(k) in (None, "None") for k in _VALUATION_FIELDS):
+                    if _has_metrics(row):
                         path, updated = _append_valuation_row(sym, row)
                         used_fallback = used_fallback or (sym != chosen)
                         used_symbol = sym
                         time.sleep(pause)
                         break
-            # Determine status: ok if we appended or today's row already exists; else no_data
-            status = "ok"
+            # Determine status and reason
+            status = "ok" if updated else "no_change"
             if not updated:
+                # Check specific reasons
+                has_price_bar = _has_price_for_date(used_symbol or chosen, today)
+                # Check if valuation file already has today's row
+                has_today_row = False
                 try:
-                    from datetime import datetime as _dt
-                    today = _dt.utcnow().date().isoformat()
-                    if not path or not isinstance(path, _Path) or not path.exists():
-                        status = "no_data"
-                    else:
-                        try:
-                            df_existing = pd.read_csv(path)
-                            has_today = ("Date" in df_existing.columns) and (df_existing["Date"] == today).any()
-                            if not has_today:
-                                status = "no_data"
-                        except Exception:
-                            status = "no_data"
+                    if path and isinstance(path, _Path) and path.exists():
+                        df_existing = pd.read_csv(path)
+                        has_today_row = ("Date" in df_existing.columns) and (df_existing["Date"] == today).any()
                 except Exception:
+                    pass
+                if has_today_row:
+                    reason = "already_has_today"
+                elif not has_price_bar:
+                    reason = "no_price_bar_today"
+                else:
+                    # No metrics found on all sources
+                    primary_ok = _has_metrics(snap)
+                    any_fb_ok = any(_has_metrics(fb_map.get(s)) for s in fb_lists[ti])
+                    reason = "no_valuation_fields" if not (primary_ok or any_fb_ok) else "unknown_or_write_skipped"
+                # If truly no data captured at all, mark status accordingly
+                if not has_today_row:
                     status = "no_data"
 
             rows.append({
@@ -873,12 +1446,14 @@ def update_all_valuations(
                 "file": str(path) if isinstance(path, _Path) else str(path),
                 "updated": updated,
                 "status": status,
+                "reason": reason,
             })
     else:
         # Legacy per-symbol yfinance .info mode
         for (country, section, name, asset, chosen) in tasks:
             used_fallback = False
             path, updated = _valuation_csv_path(""), False  # init
+            reason = None
             if chosen:
                 path, updated = update_valuation_csv(chosen)
                 if not updated and asset.get("index") and asset.get("index") == chosen:
@@ -891,22 +1466,25 @@ def update_all_valuations(
                         path, updated = update_valuation_csv(fb)
                         used_fallback = True
             # Determine status
-            status = "ok"
+            status = "ok" if updated else "no_change"
             if not updated:
+                # Reasoning
+                has_price_bar = _has_price_for_date(chosen, today)
+                # Check if valuation file already has today's row
+                has_today_row = False
                 try:
-                    from datetime import datetime as _dt
-                    today = _dt.utcnow().date().isoformat()
-                    if not path or not isinstance(path, _Path) or not path.exists():
-                        status = "no_data"
-                    else:
-                        try:
-                            df_existing = pd.read_csv(path)
-                            has_today = ("Date" in df_existing.columns) and (df_existing["Date"] == today).any()
-                            if not has_today:
-                                status = "no_data"
-                        except Exception:
-                            status = "no_data"
+                    if path and isinstance(path, _Path) and path.exists():
+                        df_existing = pd.read_csv(path)
+                        has_today_row = ("Date" in df_existing.columns) and (df_existing["Date"] == today).any()
                 except Exception:
+                    pass
+                if has_today_row:
+                    reason = "already_has_today"
+                elif not has_price_bar:
+                    reason = "no_price_bar_today"
+                else:
+                    reason = "no_valuation_fields"
+                if not has_today_row:
                     status = "no_data"
 
             rows.append({
@@ -918,14 +1496,15 @@ def update_all_valuations(
                 "file": str(path) if isinstance(path, _Path) else str(path),
                 "updated": updated,
                 "status": status,
+                "reason": reason,
             })
             time.sleep(pause)
     df = pd.DataFrame(rows)
     # Mark execution time for visibility in CI
     try:
-        ts = datetime.utcnow().isoformat(timespec="seconds") + "Z"
+        ts = datetime.now(_ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds")
     except Exception:
-        ts = datetime.utcnow().isoformat() + "Z"
+        ts = datetime.now().isoformat()
     df["run_at"] = ts
     df.to_csv(_BASE_DIR / "data" / "valuations_update_summary.csv", index=False)
     return df
@@ -977,5 +1556,20 @@ if __name__ == "__main__":
             print(vsummary.head())
         else:
             print("Skipping valuation snapshots (set FORCE_VALUATIONS=1 to override).")
+
+        # KRX indices via pykrx (prices + valuations)
+        _krx_run = _os.environ.get("INCLUDE_KRX", "1").lower() in {"1","true","yes","on"}
+        if _krx_run:
+            print("Updating KRX index prices and valuations (via pykrx)...")
+            _krx_backfill = _os.environ.get("KRX_VAL_MODE", "backfill").lower() == "backfill"
+            _krx_price_mode = _os.environ.get("KRX_PRICE_MODE", "full")
+            _krx_price_years = int(_os.environ.get("KRX_PRICE_YEARS", "3"))
+            ksum = update_krx_indices(run_backfill=_krx_backfill,
+                                      price_mode=_krx_price_mode,
+                                      price_years=_krx_price_years)
+            if ksum is not None:
+                print("KRX update complete. Saved to data/krx_batch_summary_from_world_indices.csv")
+            else:
+                print("KRX update skipped (import or runtime error)")
     except Exception as e:
         print(f"Error during update: {e}")
