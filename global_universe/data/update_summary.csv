@@ -1,256 +1,256 @@
 symbol,file,added,updated,status,reason,run_at
-PDBC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/PDBC.csv,2723,True,ok,appended 2723,2025-09-09T17:39:47+09:00
-DBE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/DBE.csv,4698,True,ok,appended 4698,2025-09-09T17:39:47+09:00
-OILK,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/OILK.csv,2248,True,ok,appended 2248,2025-09-09T17:39:47+09:00
-UNG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/UNG.csv,4628,True,ok,appended 4628,2025-09-09T17:39:47+09:00
-GLD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/GLD.csv,5233,True,ok,appended 5233,2025-09-09T17:39:47+09:00
-SLV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SLV.csv,4871,True,ok,appended 4871,2025-09-09T17:39:47+09:00
-PALL,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/PALL.csv,3940,True,ok,appended 3940,2025-09-09T17:39:47+09:00
-PPLT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/PPLT.csv,3940,True,ok,appended 3940,2025-09-09T17:39:47+09:00
-CPER,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CPER.csv,3472,True,ok,appended 3472,2025-09-09T17:39:47+09:00
-BCIM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/BCIM.csv,992,True,ok,appended 992,2025-09-09T17:39:47+09:00
-TILL,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/TILL.csv,830,True,ok,appended 830,2025-09-09T17:39:47+09:00
-BDRY,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/BDRY.csv,1876,True,ok,appended 1876,2025-09-09T17:39:47+09:00
-KRBN,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/KRBN.csv,1282,True,ok,appended 1282,2025-09-09T17:39:47+09:00
-KCCA,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/KCCA.csv,985,True,ok,appended 985,2025-09-09T17:39:47+09:00
-VXX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/VXX.csv,1915,True,ok,appended 1915,2025-09-09T17:39:47+09:00
-IXN,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IXN.csv,5984,True,ok,appended 5984,2025-09-09T17:39:47+09:00
-IXJ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IXJ.csv,5984,True,ok,appended 5984,2025-09-09T17:39:47+09:00
-IXG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IXG.csv,5984,True,ok,appended 5984,2025-09-09T17:39:47+09:00
-RXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/RXI.csv,4770,True,ok,appended 4770,2025-09-09T17:39:47+09:00
-KXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/KXI.csv,4769,True,ok,appended 4769,2025-09-09T17:39:47+09:00
-EXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EXI.csv,4766,True,ok,appended 4766,2025-09-09T17:39:47+09:00
-IXC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IXC.csv,5984,True,ok,appended 5984,2025-09-09T17:39:47+09:00
-MXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/MXI.csv,4769,True,ok,appended 4769,2025-09-09T17:39:47+09:00
-JXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/JXI.csv,4769,True,ok,appended 4769,2025-09-09T17:39:47+09:00
-IXP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IXP.csv,5984,True,ok,appended 5984,2025-09-09T17:39:47+09:00
-SHLD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SHLD.csv,497,True,ok,appended 497,2025-09-09T17:39:47+09:00
-REET,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/REET.csv,2808,True,ok,appended 2808,2025-09-09T17:39:47+09:00
-JETS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/JETS.csv,2605,True,ok,appended 2605,2025-09-09T17:39:47+09:00
-ACWI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ACWI.csv,4390,True,ok,appended 4390,2025-09-09T17:39:47+09:00
-IGOV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IGOV.csv,4177,True,ok,appended 4177,2025-09-09T17:39:47+09:00
-URTH,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/URTH.csv,3433,True,ok,appended 3433,2025-09-09T17:39:47+09:00
-FID,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/FID.csv,3028,True,ok,appended 3028,2025-09-09T17:39:47+09:00
-IDOG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDOG.csv,3067,True,ok,appended 3067,2025-09-09T17:39:47+09:00
-IMTM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IMTM.csv,2670,True,ok,appended 2670,2025-09-09T17:39:47+09:00
-IQLT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IQLT.csv,2674,True,ok,appended 2674,2025-09-09T17:39:47+09:00
-IPOS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IPOS.csv,2746,True,ok,appended 2746,2025-09-09T17:39:47+09:00
-MOTG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/MOTG.csv,1721,True,ok,appended 1721,2025-09-09T17:39:47+09:00
-GCOW,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/GCOW.csv,2400,True,ok,appended 2400,2025-09-09T17:39:47+09:00
-EFAV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EFAV.csv,3490,True,ok,appended 3490,2025-09-09T17:39:47+09:00
-SPTM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SPTM.csv,6264,True,ok,appended 6264,2025-09-09T17:39:47+09:00
-XLK,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLK.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-SOXX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SOXX.csv,6074,True,ok,appended 6074,2025-09-09T17:39:47+09:00
-IGV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IGV.csv,6072,True,ok,appended 6072,2025-09-09T17:39:47+09:00
-IBB,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IBB.csv,6179,True,ok,appended 6179,2025-09-09T17:39:47+09:00
-XLV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLV.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-XLF,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLF.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-XLY,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLY.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-XLP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLP.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-XLI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-XLE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLE.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-XLB,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLB.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-XLU,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLU.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-XLC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLC.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-XLRE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLRE.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-ITA,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ITA.csv,4866,True,ok,appended 4866,2025-09-09T17:39:47+09:00
-KBWB,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/KBWB.csv,3482,True,ok,appended 3482,2025-09-09T17:39:47+09:00
-KRE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/KRE.csv,4833,True,ok,appended 4833,2025-09-09T17:39:47+09:00
-KIE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/KIE.csv,4983,True,ok,appended 4983,2025-09-09T17:39:47+09:00
-XRT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XRT.csv,4833,True,ok,appended 4833,2025-09-09T17:39:47+09:00
-^GSPC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_GSPC.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-^SP400,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_SP400.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-^RUT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_RUT.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-^SP600,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_SP600.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-^NDX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_NDX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-IWC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IWC.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-IJS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IJS.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-IJT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IJT.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-IWS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IWS.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-IWP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IWP.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-RSP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/RSP.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-USMV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/USMV.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-SPHB,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SPHB.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-SPLV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SPLV.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-VYM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/VYM.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-VIG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/VIG.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-IUSV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IUSV.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-IUSG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IUSG.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-MTUM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/MTUM.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-QUAL,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/QUAL.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-SPHQ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SPHQ.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-COWZ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/COWZ.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-LRGF,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/LRGF.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-MOAT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/MOAT.csv,3362,True,ok,appended 3362,2025-09-09T17:39:47+09:00
-ZAP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ZAP.csv,179,True,ok,appended 179,2025-09-09T17:39:47+09:00
-DRAG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/DRAG.csv,232,True,ok,appended 232,2025-09-09T17:39:47+09:00
-AIRR,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/AIRR.csv,2892,True,ok,appended 2892,2025-09-09T17:39:47+09:00
-TPYP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/TPYP.csv,2563,True,ok,appended 2563,2025-09-09T17:39:47+09:00
-NOBL,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/NOBL.csv,2995,True,ok,appended 2995,2025-09-09T17:39:47+09:00
-PFFD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/PFFD.csv,2006,True,ok,appended 2006,2025-09-09T17:39:47+09:00
-SCHD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SCHD.csv,3490,True,ok,appended 3490,2025-09-09T17:39:47+09:00
-SPYD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SPYD.csv,2483,True,ok,appended 2483,2025-09-09T17:39:47+09:00
-IPO,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IPO.csv,2991,True,ok,appended 2991,2025-09-09T17:39:47+09:00
-PKW,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/PKW.csv,4707,True,ok,appended 4707,2025-09-09T17:39:47+09:00
-LQD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/LQD.csv,5815,True,ok,appended 5815,2025-09-09T17:39:47+09:00
-HYG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/HYG.csv,4633,True,ok,appended 4633,2025-09-09T17:39:47+09:00
-TLT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/TLT.csv,5815,True,ok,appended 5815,2025-09-09T17:39:47+09:00
-AGG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/AGG.csv,5521,True,ok,appended 5521,2025-09-09T17:39:47+09:00
-TIP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/TIP.csv,5473,True,ok,appended 5473,2025-09-09T17:39:47+09:00
-CWB,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CWB.csv,4125,True,ok,appended 4125,2025-09-09T17:39:47+09:00
-MBB,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/MBB.csv,4650,True,ok,appended 4650,2025-09-09T17:39:47+09:00
-SRLN,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SRLN.csv,3127,True,ok,appended 3127,2025-09-09T17:39:47+09:00
-FALN,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/FALN.csv,2317,True,ok,appended 2317,2025-09-09T17:39:47+09:00
-EXV3.DE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EXV3.DE.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-SXDP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXDP.Z.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-SX6P.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SX6P.Z.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-SXKP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXKP.Z.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-SXAP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXAP.Z.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-SXPP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXPP.Z.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-SX4P.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SX4P.Z.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-BNKE.L,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/BNKE.L.csv,1549,True,ok,appended 1549,2025-09-09T17:39:47+09:00
-SXIP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXIP.Z.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-SXNP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXNP.Z.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-SXOP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXOP.Z.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-ESIC.L,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ESIC.L.csv,1213,True,ok,appended 1213,2025-09-09T17:39:47+09:00
-ESIS.L,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ESIS.L.csv,1213,True,ok,appended 1213,2025-09-09T17:39:47+09:00
-ENGE.L,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ENGE.L.csv,3692,True,ok,appended 3692,2025-09-09T17:39:47+09:00
-EUAD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EUAD.csv,219,True,ok,appended 219,2025-09-09T17:39:47+09:00
-ESIF.L,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ESIF.L.csv,1212,True,ok,appended 1212,2025-09-09T17:39:47+09:00
-XDER.L,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XDER.L.csv,3903,True,ok,appended 3903,2025-09-09T17:39:47+09:00
-^STOXX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_STOXX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-SMEA.MI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SMEA.MI.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-IEVL.MI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IEVL.MI.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-CEMR.DE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CEMR.DE.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-CEMQ.DE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CEMQ.DE.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-EUMV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EUMV.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-^STOXX50E,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_STOXX50E.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-EWG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWG.csv,7417,True,ok,appended 7417,2025-09-09T17:39:47+09:00
-^CXPHX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_CXPHX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-^CXPPX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_CXPPX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-^CXPNX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_CXPNX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-^CXPVX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_CXPVX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-^CXPIX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_CXPIX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-^GDAXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_GDAXI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-^MDAXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_MDAXI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-^SDAXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_SDAXI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-EWJ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWJ.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-^N225,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_N225.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-2854.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/2854.T.csv,791,True,ok,appended 791,2025-09-09T17:39:47+09:00
-2644.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/2644.T.csv,972,True,ok,appended 972,2025-09-09T17:39:47+09:00
-1615.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1615.T.csv,4345,True,ok,appended 4345,2025-09-09T17:39:47+09:00
-1617.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1617.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1618.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1618.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1619.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1619.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1620.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1620.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1621.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1621.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1622.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1622.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1623.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1623.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1624.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1624.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1625.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1625.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1626.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1626.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1627.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1627.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1628.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1628.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1629.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1629.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1630.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1630.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1632.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1632.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1633.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1633.T.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-1488.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1488.T.csv,2192,True,ok,appended 2192,2025-09-09T17:39:47+09:00
-SCJ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SCJ.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-EWJV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWJV.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-2561.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/2561.T.csv,1358,True,ok,appended 1358,2025-09-09T17:39:47+09:00
-2639.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/2639.T.csv,1036,True,ok,appended 1036,2025-09-09T17:39:47+09:00
-1480.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1480.T.csv,2300,True,ok,appended 2300,2025-09-09T17:39:47+09:00
-1477.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1477.T.csv,2440,True,ok,appended 2440,2025-09-09T17:39:47+09:00
-2529.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/2529.T.csv,1561,True,ok,appended 1561,2025-09-09T17:39:47+09:00
-2564.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/2564.T.csv,1236,True,ok,appended 1236,2025-09-09T17:39:47+09:00
-1494.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1494.T.csv,2052,True,ok,appended 2052,2025-09-09T17:39:47+09:00
-EWY,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWY.csv,6368,True,ok,appended 6368,2025-09-09T17:39:47+09:00
-139260.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/139260.KS.csv,3520,True,ok,appended 3520,2025-09-09T17:39:47+09:00
-091230.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/091230.KS.csv,4019,True,ok,appended 4019,2025-09-09T17:39:47+09:00
-157490.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/157490.KS.csv,3237,True,ok,appended 3237,2025-09-09T17:39:47+09:00
-315270.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/315270.KS.csv,1611,True,ok,appended 1611,2025-09-09T17:39:47+09:00
-139290.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/139290.KS.csv,3513,True,ok,appended 3513,2025-09-09T17:39:47+09:00
-227560.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/227560.KS.csv,2411,True,ok,appended 2411,2025-09-09T17:39:47+09:00
-449450.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/449450.KS.csv,635,True,ok,appended 635,2025-09-09T17:39:47+09:00
-139250.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/139250.KS.csv,3507,True,ok,appended 3507,2025-09-09T17:39:47+09:00
-139270.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/139270.KS.csv,3485,True,ok,appended 3485,2025-09-09T17:39:47+09:00
-140700.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/140700.KS.csv,3504,True,ok,appended 3504,2025-09-09T17:39:47+09:00
-227540.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/227540.KS.csv,2413,True,ok,appended 2413,2025-09-09T17:39:47+09:00
-244580.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/244580.KS.csv,2260,True,ok,appended 2260,2025-09-09T17:39:47+09:00
-476800.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/476800.KS.csv,365,True,ok,appended 365,2025-09-09T17:39:47+09:00
-466920.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/466920.KS.csv,467,True,ok,appended 467,2025-09-09T17:39:47+09:00
-091180.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/091180.KS.csv,4017,True,ok,appended 4017,2025-09-09T17:39:47+09:00
-385560.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/385560.KS.csv,1031,True,ok,appended 1031,2025-09-09T17:39:47+09:00
-211560.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/211560.KS.csv,2603,True,ok,appended 2603,2025-09-09T17:39:47+09:00
-210780.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/210780.KS.csv,2611,True,ok,appended 2611,2025-09-09T17:39:47+09:00
-147970.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/147970.KS.csv,3351,True,ok,appended 3351,2025-09-09T17:39:47+09:00
-275300.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/275300.KS.csv,1936,True,ok,appended 1936,2025-09-09T17:39:47+09:00
-215620.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/215620.KS.csv,2265,True,ok,appended 2265,2025-09-09T17:39:47+09:00
-FXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/FXI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-MCHI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/MCHI.csv,3631,True,ok,appended 3631,2025-09-09T17:39:47+09:00
-CQQQ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CQQQ.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-CHIQ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIQ.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-CHIS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIS.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-CHIX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIX.csv,1,True,ok,appended 1,2025-09-09T17:39:47+09:00
-510230.SS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/510230.SS.csv,3485,True,ok,appended 3485,2025-09-09T17:39:47+09:00
-CHII,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHII.csv,1,True,ok,appended 1,2025-09-09T17:39:47+09:00
-CHIM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIM.csv,1,True,ok,appended 1,2025-09-09T17:39:47+09:00
-CHIE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIE.csv,1,True,ok,appended 1,2025-09-09T17:39:47+09:00
-CHIU,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIU.csv,1,True,ok,appended 1,2025-09-09T17:39:47+09:00
-CHIC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIC.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-CHIR,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIR.csv,1,True,ok,appended 1,2025-09-09T17:39:47+09:00
-CHIH,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIH.csv,1,True,ok,appended 1,2025-09-09T17:39:47+09:00
-512800.SS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/512800.SS.csv,1966,True,ok,appended 1966,2025-09-09T17:39:47+09:00
-2820.HK,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/2820.HK.csv,1511,True,ok,appended 1511,2025-09-09T17:39:47+09:00
-159852.SZ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/159852.SZ.csv,1114,True,ok,appended 1114,2025-09-09T17:39:47+09:00
-ECNS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ECNS.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-ASHR,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ASHR.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-000300.SS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/000300.SS.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-CNXT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CNXT.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-02803.HK,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/02803.HK.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-515300.SS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/515300.SS.csv,1457,True,ok,appended 1457,2025-09-09T17:39:47+09:00
-^GSPTSE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_GSPTSE.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-EWC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWC.csv,7417,True,ok,appended 7417,2025-09-09T17:39:47+09:00
-^BVSP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_BVSP.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-EWW,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWW.csv,7417,True,ok,appended 7417,2025-09-09T17:39:47+09:00
-ARGT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ARGT.csv,3651,True,ok,appended 3651,2025-09-09T17:39:47+09:00
-ICOL,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ICOL.csv,2317,True,ok,appended 2317,2025-09-09T17:39:47+09:00
-ACWX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ACWX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-IXUS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IXUS.csv,3235,True,ok,appended 3235,2025-09-09T17:39:47+09:00
-EFA,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EFA.csv,6043,True,ok,appended 6043,2025-09-09T17:39:47+09:00
-EEM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EEM.csv,5637,True,ok,appended 5637,2025-09-09T17:39:47+09:00
-EMXC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EMXC.csv,2041,True,ok,appended 2041,2025-09-09T17:39:47+09:00
-VPL,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/VPL.csv,5157,True,ok,appended 5157,2025-09-09T17:39:47+09:00
-ILF,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ILF.csv,6004,True,ok,appended 6004,2025-09-09T17:39:47+09:00
-EZU,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EZU.csv,6314,True,ok,appended 6314,2025-09-09T17:39:47+09:00
-EWS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWS.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-EIDO,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EIDO.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-THD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/THD.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-EWM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWM.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-VNM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/VNM.csv,4041,True,ok,appended 4041,2025-09-09T17:39:47+09:00
-^NSEI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_NSEI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-INDF,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/INDF.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-INCO,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/INCO.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-INQQ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/INQQ.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-SMIN,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SMIN.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-EPI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EPI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-^FTSE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_FTSE.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-EWU,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWU.csv,7417,True,ok,appended 7417,2025-09-09T17:39:47+09:00
-^FCHI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_FCHI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-EWQ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWQ.csv,7417,True,ok,appended 7417,2025-09-09T17:39:47+09:00
-FTSEMIB.MI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/FTSEMIB.MI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-EWI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWI.csv,7417,True,ok,appended 7417,2025-09-09T17:39:47+09:00
-^IBEX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_IBEX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-EWP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWP.csv,7417,True,ok,appended 7417,2025-09-09T17:39:47+09:00
-^TWII,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_TWII.csv,0,False,no_change,up_to_date,2025-09-09T17:39:47+09:00
-EWT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWT.csv,6339,True,ok,appended 6339,2025-09-09T17:39:47+09:00
-^HSI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_HSI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T17:39:47+09:00
-3033.HK,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/3033.HK.csv,1238,True,ok,appended 1238,2025-09-09T17:39:47+09:00
-3199.HK,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/3199.HK.csv,2847,True,ok,appended 2847,2025-09-09T17:39:47+09:00
-EWA,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWA.csv,7417,True,ok,appended 7417,2025-09-09T17:39:47+09:00
-EWD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWD.csv,7417,True,ok,appended 7417,2025-09-09T17:39:47+09:00
-GREK,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/GREK.csv,3456,True,ok,appended 3456,2025-09-09T17:39:47+09:00
-EWL,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWL.csv,7417,True,ok,appended 7417,2025-09-09T17:39:47+09:00
-EIS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EIS.csv,4390,True,ok,appended 4390,2025-09-09T17:39:47+09:00
-TUR,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/TUR.csv,4390,True,ok,appended 4390,2025-09-09T17:39:47+09:00
+PDBC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/PDBC.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+DBE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/DBE.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+OILK,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/OILK.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+UNG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/UNG.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+GLD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/GLD.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SLV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SLV.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+PALL,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/PALL.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+PPLT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/PPLT.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+CPER,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CPER.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+BCIM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/BCIM.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+TILL,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/TILL.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+BDRY,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/BDRY.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+KRBN,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/KRBN.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+KCCA,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/KCCA.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+VXX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/VXX.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+IXN,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IXN.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+IXJ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IXJ.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+IXG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IXG.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+RXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/RXI.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+KXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/KXI.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EXI.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+IXC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IXC.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+MXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/MXI.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+JXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/JXI.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+IXP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IXP.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SHLD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SHLD.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+REET,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/REET.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+JETS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/JETS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+ACWI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ACWI.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+IGOV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IGOV.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+URTH,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/URTH.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+FID,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/FID.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+IDOG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDOG.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+IMTM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IMTM.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+IQLT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IQLT.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+IPOS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IPOS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+MOTG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/MOTG.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+GCOW,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/GCOW.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EFAV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EFAV.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SPTM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SPTM.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+XLK,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLK.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+SOXX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SOXX.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+IGV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IGV.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+IBB,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IBB.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+XLV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLV.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+XLF,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLF.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+XLY,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLY.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+XLP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLP.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+XLI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+XLE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLE.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+XLB,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLB.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+XLU,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLU.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+XLC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLC.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+XLRE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XLRE.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+ITA,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ITA.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+KBWB,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/KBWB.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+KRE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/KRE.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+KIE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/KIE.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+XRT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XRT.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+^GSPC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_GSPC.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+^SP400,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_SP400.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+^RUT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_RUT.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+^SP600,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_SP600.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+^NDX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_NDX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+IWC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IWC.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+IJS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IJS.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+IJT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IJT.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+IWS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IWS.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+IWP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IWP.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+RSP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/RSP.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+USMV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/USMV.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+SPHB,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SPHB.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+SPLV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SPLV.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+VYM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/VYM.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+VIG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/VIG.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+IUSV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IUSV.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+IUSG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IUSG.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+MTUM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/MTUM.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+QUAL,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/QUAL.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+SPHQ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SPHQ.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+COWZ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/COWZ.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+LRGF,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/LRGF.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+MOAT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/MOAT.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+ZAP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ZAP.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+DRAG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/DRAG.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+AIRR,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/AIRR.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+TPYP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/TPYP.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+NOBL,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/NOBL.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+PFFD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/PFFD.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SCHD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SCHD.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SPYD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SPYD.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+IPO,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IPO.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+PKW,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/PKW.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+LQD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/LQD.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+HYG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/HYG.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+TLT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/TLT.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+AGG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/AGG.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+TIP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/TIP.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+CWB,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CWB.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+MBB,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/MBB.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SRLN,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SRLN.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+FALN,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/FALN.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EXV3.DE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EXV3.DE.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SXDP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXDP.Z.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SX6P.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SX6P.Z.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SXKP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXKP.Z.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SXAP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXAP.Z.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SXPP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXPP.Z.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SX4P.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SX4P.Z.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+BNKE.L,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/BNKE.L.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SXIP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXIP.Z.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SXNP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXNP.Z.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SXOP.Z,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SXOP.Z.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+ESIC.L,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ESIC.L.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+ESIS.L,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ESIS.L.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+ENGE.L,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ENGE.L.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EUAD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EUAD.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+ESIF.L,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ESIF.L.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+XDER.L,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/XDER.L.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+^STOXX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_STOXX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+SMEA.MI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SMEA.MI.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+IEVL.MI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IEVL.MI.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+CEMR.DE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CEMR.DE.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+CEMQ.DE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CEMQ.DE.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EUMV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EUMV.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+^STOXX50E,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_STOXX50E.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+EWG,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWG.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+^CXPHX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_CXPHX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+^CXPPX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_CXPPX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+^CXPNX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_CXPNX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+^CXPVX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_CXPVX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+^CXPIX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_CXPIX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+^GDAXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_GDAXI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+^MDAXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_MDAXI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+^SDAXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_SDAXI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+EWJ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWJ.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+^N225,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_N225.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+2854.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/2854.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+2644.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/2644.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1615.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1615.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1617.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1617.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1618.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1618.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1619.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1619.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1620.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1620.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1621.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1621.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1622.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1622.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1623.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1623.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1624.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1624.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1625.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1625.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1626.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1626.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1627.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1627.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1628.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1628.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1629.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1629.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1630.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1630.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1632.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1632.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1633.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1633.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1488.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1488.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+SCJ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SCJ.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+EWJV,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWJV.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+2561.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/2561.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+2639.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/2639.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1480.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1480.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1477.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1477.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+2529.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/2529.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+2564.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/2564.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+1494.T,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/1494.T.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EWY,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWY.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+139260.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/139260.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+091230.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/091230.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+157490.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/157490.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+315270.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/315270.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+139290.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/139290.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+227560.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/227560.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+449450.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/449450.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+139250.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/139250.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+139270.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/139270.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+140700.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/140700.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+227540.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/227540.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+244580.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/244580.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+476800.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/476800.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+466920.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/466920.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+091180.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/091180.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+385560.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/385560.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+211560.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/211560.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+210780.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/210780.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+147970.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/147970.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+275300.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/275300.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+215620.KS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/215620.KS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+FXI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/FXI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+MCHI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/MCHI.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+CQQQ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CQQQ.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+CHIQ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIQ.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+CHIS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+CHIX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIX.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+510230.SS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/510230.SS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+CHII,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHII.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+CHIM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIM.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+CHIE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIE.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+CHIU,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIU.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+CHIC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIC.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+CHIR,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIR.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+CHIH,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CHIH.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+512800.SS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/512800.SS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+2820.HK,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/2820.HK.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+159852.SZ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/159852.SZ.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+ECNS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ECNS.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+ASHR,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ASHR.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+000300.SS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/000300.SS.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+CNXT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/CNXT.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+02803.HK,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/02803.HK.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+515300.SS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/515300.SS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+^GSPTSE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_GSPTSE.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+EWC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWC.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+^BVSP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_BVSP.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+EWW,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWW.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+ARGT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ARGT.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+ICOL,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ICOL.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+ACWX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ACWX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+IXUS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IXUS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EFA,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EFA.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EEM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EEM.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EMXC,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EMXC.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+VPL,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/VPL.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+ILF,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/ILF.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EZU,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EZU.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EWS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWS.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+EIDO,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EIDO.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+THD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/THD.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+EWM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWM.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+VNM,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/VNM.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+^NSEI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_NSEI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+INDF,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/INDF.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+INCO,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/INCO.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+INQQ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/INQQ.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+SMIN,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/SMIN.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+EPI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EPI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+^FTSE,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_FTSE.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+EWU,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWU.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+^FCHI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_FCHI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+EWQ,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWQ.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+FTSEMIB.MI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/FTSEMIB.MI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+EWI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWI.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+^IBEX,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_IBEX.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+EWP,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWP.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+^TWII,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_TWII.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EWT,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWT.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+^HSI,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/IDX_HSI.csv,0,False,error,"can only concatenate str (not ""datetime.timedelta"") to str",2025-09-09T23:32:12+09:00
+3033.HK,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/3033.HK.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+3199.HK,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/3199.HK.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EWA,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWA.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EWD,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWD.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+GREK,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/GREK.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EWL,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EWL.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+EIS,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/EIS.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
+TUR,/home/runner/work/Macro-analysis/Macro-analysis/global_universe/data/daily/TUR.csv,0,False,no_change,up_to_date,2025-09-09T23:32:12+09:00
