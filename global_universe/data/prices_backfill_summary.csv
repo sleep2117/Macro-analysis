@@ -1,2 +1,0 @@
-symbol,file,exists,rows,first_date,last_date,days_span,has_adj_close,missing_close_ratio,status,note,added,total_rows,run_at
-ESIT.L,/home/jyp0615/global_universe/data/daily/ESIT.L.csv,True,1212,2020-11-18,2025-09-09,1756,False,0.0,ok,,1212,1212,2025-09-10T15:18:21+09:00

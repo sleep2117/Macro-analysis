@@ -959,6 +959,7 @@ from pathlib import Path as _Path
 import time
 import re
 import json as _json
+import io as _io
 import subprocess as _sp
 
 _BASE_DIR = _Path(__file__).resolve().parent
@@ -999,11 +1000,136 @@ def _load_existing_csv(path: _Path):
     if not path.exists():
         return None
     try:
-        df = pd.read_csv(path, parse_dates=["Date"], index_col="Date")
-        df = df[~df.index.duplicated(keep='last')].sort_index()
+        text = path.read_text(encoding="utf-8")
+        sanitized = False
+        if "<<<<<<<" in text or "=======" in text or ">>>>>>>" in text:
+            # Drop git conflict marker lines
+            lines = []
+            for ln in text.splitlines():
+                if ln.startswith("<<<<<<<") or ln.startswith("=======") or ln.startswith(">>>>>>>"):
+                    sanitized = True
+                    continue
+                lines.append(ln)
+            text = "\n".join(lines)
+        # Use StringIO to parse
+        df = pd.read_csv(_io.StringIO(text))
+        # Ensure Date column is present
+        if "Date" not in df.columns:
+            return None
+        # Coerce to datetime and set as index
+        df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+        df = df.dropna(subset=["Date"]).set_index("Date").sort_index()
+        df = df[~df.index.duplicated(keep='last')]
+        # Attach attr so caller can decide to rewrite
+        try:
+            df.attrs["sanitized"] = sanitized
+        except Exception:
+            pass
         return df
     except Exception:
         return None
+
+
+# ============================
+# CSV Sanitization Utilities
+# ============================
+
+def _strip_conflict_markers(text: str) -> tuple[str, bool]:
+    """Remove git merge conflict markers and duplicate header lines.
+
+    Returns (sanitized_text, changed?).
+    - Drops lines starting with '<<<<<<<', '=======', '>>>>>>>'
+    - Keeps only the first header line beginning with 'Date,'
+    """
+    lines = text.splitlines()
+    out = []
+    changed = False
+    header_seen = False
+    for ln in lines:
+        if ln.startswith("<<<<<<<") or ln.startswith("=======") or ln.startswith(">>>>>>>"):
+            changed = True
+            continue
+        if ln.startswith("Date,"):
+            if header_seen:
+                changed = True
+                continue
+            header_seen = True
+        out.append(ln)
+    sanitized = "\n".join(out)
+    return sanitized, changed or (sanitized != text)
+
+
+def sanitize_daily_csv_file(path: _Path) -> dict:
+    """Sanitize a single daily CSV file in-place if it contains merge markers or header duplication.
+
+    Returns summary dict: {file, changed, rows_before, rows_after, note}
+    """
+    info = {"file": str(path), "changed": False, "rows_before": None, "rows_after": None, "note": None}
+    try:
+        raw = path.read_text(encoding="utf-8")
+    except Exception as e:
+        info.update({"note": f"read_error: {str(e)[:120]}"})
+        return info
+
+    sanitized_text, changed = _strip_conflict_markers(raw)
+    # If no change and file looks fine, try quick parse for dates; if parse is fine, skip
+    if not changed:
+        try:
+            df0 = pd.read_csv(_io.StringIO(sanitized_text))
+            if "Date" in df0.columns:
+                df0["Date"] = pd.to_datetime(df0["Date"], errors="coerce")
+                if df0["Date"].notna().any():
+                    info.update({"rows_before": int(df0["Date"].notna().sum()), "rows_after": int(df0["Date"].notna().sum())})
+                    return info
+        except Exception:
+            # fall-through to rewrite from parsed DataFrame
+            pass
+
+    # Parse with pandas and rewrite canonical CSV
+    try:
+        df = pd.read_csv(_io.StringIO(sanitized_text))
+        info["rows_before"] = int(len(df))
+        if "Date" not in df.columns:
+            # If missing Date, we cannot normalize; write sanitized text only
+            path.write_text(sanitized_text, encoding="utf-8")
+            info.update({"changed": changed, "rows_after": info["rows_before"], "note": "sanitized_text_only"})
+            return info
+        df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+        df = df.dropna(subset=["Date"]).set_index("Date").sort_index()
+        df = df[~df.index.duplicated(keep='last')]
+        tmp = path.with_suffix('.csv.tmp')
+        df.to_csv(tmp, index_label="Date")
+        os.replace(tmp, path)
+        info.update({"changed": True, "rows_after": int(len(df))})
+        return info
+    except Exception as e:
+        # Fallback: write sanitized text if parsing failed
+        try:
+            path.write_text(sanitized_text, encoding="utf-8")
+            info.update({"changed": changed, "rows_after": info["rows_before"], "note": f"parse_failed:{str(e)[:80]}"})
+        except Exception as e2:
+            info.update({"note": f"write_error:{str(e2)[:80]}"})
+        return info
+
+
+def sanitize_all_daily_csvs() -> pd.DataFrame:
+    """Scan global_universe/data/daily for CSVs and sanitize all in-place.
+
+    Writes summary to data/daily_sanitization_summary.csv
+    """
+    rows = []
+    for p in sorted(_DATA_DIR.glob("*.csv")):
+        res = sanitize_daily_csv_file(p)
+        rows.append(res)
+    df = pd.DataFrame(rows)
+    try:
+        ts = datetime.now(_ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds")
+    except Exception:
+        ts = datetime.now().isoformat()
+    df["run_at"] = ts
+    out = _BASE_DIR / "data" / "daily_sanitization_summary.csv"
+    df.to_csv(out, index=False)
+    return df
 
 def _fetch_history(symbol: str, start: datetime | None = None, end: datetime | None = None, max_retries: int = 3, pause: float = 0.5) -> pd.DataFrame:
     last_err = None
@@ -1084,6 +1210,13 @@ def update_symbol_csv(symbol: str, pause: float = 0.6, lookback_days: int = 0) -
     start = (last - timedelta(days=lb)) if lb > 0 else (last + timedelta(days=1))
     new = _fetch_history(symbol, start=start, pause=pause)
     if new is None or new.empty:
+        # If existing was sanitized (conflict markers removed), rewrite file even without new rows
+        sanitized = bool(getattr(existing, 'attrs', {}).get('sanitized', False))
+        if sanitized:
+            tmp = path.with_suffix('.csv.tmp')
+            existing.to_csv(tmp, index_label="Date")
+            os.replace(tmp, path)
+            return path, 0, True
         return path, 0, False
 
     # Merge and detect overlap changes
@@ -1909,6 +2042,16 @@ def update_all_valuations(
 if __name__ == "__main__":
     try:
         import os as _os
+        # Optional sanitization pass for daily CSVs
+        _sanitize = _os.environ.get("SANITIZE_DAILY", "0").lower() in {"1","true","yes","on"}
+        _sanitize_only = _os.environ.get("SANITIZE_ONLY", "0").lower() in {"1","true","yes","on"}
+        if _sanitize or _sanitize_only:
+            print("Sanitizing daily CSV files (removing merge markers, dedup headers)...")
+            ssum = sanitize_all_daily_csvs()
+            print("Sanitization complete. Summary saved to data/daily_sanitization_summary.csv")
+            # If sanitize-only, exit before doing network work
+            if _sanitize_only:
+                raise SystemExit(0)
         # Determine scope and mode
         price_scope = _os.environ.get("PRICE_SCOPE", "primary").lower()  # 'primary' | 'all'
         price_mode = _os.environ.get("PRICE_MODE", "append").lower()    # 'append' | 'backfill'
