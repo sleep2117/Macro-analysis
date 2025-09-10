@@ -246,7 +246,7 @@ def build_symbol_list(universe: Dict[str, Any]) -> List[Tuple[str, str, str, str
     """Return tuples of (country, category_kind, category_name, field, symbol)."""
     items: List[Tuple[str, str, str, str, str]] = []
     for country, cdata in universe.items():
-        for kind in ("sectors", "factors"):
+        for kind in ("sectors", "factors", "themes"):
             for name, entry in cdata.get(kind, {}).items():
                 # index
                 if entry.get("index"):

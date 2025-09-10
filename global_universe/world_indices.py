@@ -123,6 +123,47 @@ investment_universe = {
             'Insurance':     {'index': None, 'etf': 'KIE',  'currency': 'USD', 'valuation_data': True,  'alternatives': ['KBWP']},
             'Retail':        {'index': None, 'etf': 'XRT',  'currency': 'USD', 'valuation_data': True,  'alternatives': []},
         },
+        'themes': {
+            # Disruptive Tech
+            'Battery':             {'index': None, 'etf': 'LIT',   'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            '5G':                  {'index': None, 'etf': 'NXTG',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'AI':                  {'index': None, 'etf': 'AIQ',   'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'IoT':                 {'index': None, 'etf': 'SNSR',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Gaming':              {'index': None, 'etf': 'ESPO',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Robotics':            {'index': None, 'etf': 'BOTZ',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Data_Center_REITs':   {'index': None, 'etf': 'DTCR',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Blockchain':          {'index': None, 'etf': 'BLOK',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Bitcoin_Spot':        {'index': None, 'etf': 'IBIT',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Cybersecurity':       {'index': None, 'etf': 'CIBR',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Smart_Factory':       {'index': None, 'etf': 'MAKX',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Smart_Grid':          {'index': None, 'etf': 'GRID',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Quantum_Computing':   {'index': None, 'etf': 'QTUM',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Space_Exploration':   {'index': None, 'etf': 'UFO',   'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Autonomous_Vehicles': {'index': None, 'etf': 'DRIV',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Digital_Payments':    {'index': None, 'etf': 'IPAY',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Cloud':               {'index': None, 'etf': 'SKYY',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Exponential_Tech':    {'index': None, 'etf': 'XT',    'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            # Demographics & Culture
+            'Online_Retail':       {'index': None, 'etf': 'IBUY',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Aging_Longevity':     {'index': None, 'etf': 'AGNG',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Digital_Health':      {'index': None, 'etf': 'FDHT',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Luxury':              {'index': None, 'etf': 'KLXY',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Millennials':         {'index': None, 'etf': 'MILN',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Obesity_Treatment':   {'index': None, 'etf': 'THNR',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'India_Consumer':      {'index': None, 'etf': 'INCO',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Genomics':            {'index': None, 'etf': 'ARKG',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Pet_Care':            {'index': None, 'etf': 'PAWZ',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            # Physical Environment
+            'Hydrogen':            {'index': None, 'etf': 'HYDR',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Water_Infrastructure':{'index': None, 'etf': 'PHO',   'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'AgTech':              {'index': None, 'etf': 'KROP',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Uranium_Nuclear':     {'index': None, 'etf': 'NLR',   'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Clean_Energy':        {'index': None, 'etf': 'ICLN',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'CleanTech':           {'index': None, 'etf': 'CTEC',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Solar':               {'index': None, 'etf': 'TAN',   'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Disruptive_Materials':{'index': None, 'etf': 'DMAT',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Rare_Earths':         {'index': None, 'etf': 'REMX',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+        },
         'factors': {
             'Large_Cap':        {'index': '^GSPC',  'currency': 'USD', 'valuation_data': False, 'alternatives': ['SPY','VOO']},
             'Mid_Cap':          {'index': '^SP400', 'currency': 'USD', 'valuation_data': False, 'alternatives': ['IJH']},
@@ -162,6 +203,11 @@ investment_universe = {
             'High_Dividend_US':   {'index': None, 'etf': 'SPYD', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
             'IPO_US':             {'index': None, 'etf': 'IPO',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
             'Buyback_US':         {'index': None, 'etf': 'PKW',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            # Additional large-cap/benchmark styles
+            'Mega_Cap_US':        {'index': None, 'etf': 'XLG',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Nasdaq100_EW':       {'index': None, 'etf': 'QQQE', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Dow_30':             {'index': None, 'etf': 'DIA',  'currency': 'USD', 'valuation_data': True, 'alternatives': []},
+            'Magnificent7_US':    {'index': None, 'etf': 'MAGS', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
             # Corporate credit
             'US_IG_Corp':       {'index': None,     'etf': 'LQD',      'currency': 'USD', 'valuation_data': True,  'alternatives': []},
             'US_HY_Corp':       {'index': None,     'etf': 'HYG',      'currency': 'USD', 'valuation_data': True,  'alternatives': []},
@@ -182,8 +228,8 @@ investment_universe = {
         'sectors': {
             # Technology: use ETF as primary (index has short history on Yahoo)
             'Technology':    {'index': None,     'etf': 'EXV3.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': ['SX8P.Z','ESIT.L']},
-            'Healthcare':    {'index': 'SXDP.Z', 'etf': 'CH5.L',  'currency': 'GBP', 'valuation_data': True, 'alternatives': ['EXV4.DE']},
-            'Utilities':     {'index': 'SX6P.Z', 'etf': 'XS6R.L', 'currency': 'GBP', 'valuation_data': True, 'alternatives': ['EXH9.DE']},
+            'Healthcare':    {'index': 'SXDP.Z', 'etf': 'CH5.L',  'currency': 'GBp', 'valuation_data': True, 'alternatives': ['EXV4.DE']},
+            'Utilities':     {'index': 'SX6P.Z', 'etf': 'XS6R.L', 'currency': 'GBp', 'valuation_data': True, 'alternatives': ['EXH9.DE']},
             'Telecom':       {'index': 'SXKP.Z', 'etf': 'EXV2.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
             'Automobiles':   {'index': 'SXAP.Z', 'etf': 'EXV5.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
             'Basic_Resrcs':  {'index': 'SXPP.Z', 'etf': 'EXV6.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
@@ -198,7 +244,7 @@ investment_universe = {
             'Energy':        {'index': None,     'etf': 'ENGE.L',  'currency': 'GBP', 'valuation_data': True, 'alternatives': []},
             'Defense':       {'index': None,     'etf': 'EUAD',    'currency': 'USD', 'valuation_data': True, 'alternatives': []},
             'Financials':    {'index': None,     'etf': 'ESIF.L',  'currency': 'GBP', 'valuation_data': True, 'alternatives': []},
-            'Real_Estate':   {'index': None,     'etf': 'XDER.L',  'currency': 'GBP', 'valuation_data': True, 'alternatives': []},
+            'Real_Estate':   {'index': None,     'etf': 'XDER.L',  'currency': 'GBp', 'valuation_data': True, 'alternatives': []},
         },
         'factors': {
             'Large_Cap':     {'index': '^STOXX', 'currency': 'EUR', 'valuation_data': False, 'alternatives': ['EXSA.DE','DX2X.DE']},
@@ -235,6 +281,9 @@ investment_universe = {
             'Nikkei_225':   {'index': '^N225','currency': 'JPY', 'valuation_data': False,'alternatives': ['EWJ']},
             'Technology':    {'index': None, 'etf': '2854.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
             'Semiconductors':{'index': None, 'etf': '2644.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Infrastructure_JP': {'index': None, 'etf': '2096.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Hotel_Retail_JP':   {'index': None, 'etf': '2098.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Logistics_JP':      {'index': None, 'etf': '2565.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
             'Banks':         {'index': None, 'etf': '1615.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': ['1631.T']},
         # TOPIX-17 sector ETFs (JPY, Tokyo)
             'Foods':                     {'index': None, 'etf': '1617.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
@@ -265,8 +314,26 @@ investment_universe = {
             'Quality':   {'index': None, 'etf': '1480.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
             'Low_Vol':   {'index': None, 'etf': '1477.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
             'Shareholder_Return': {'index': None, 'etf': '2529.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
-            'High_Dividend_JP': {'index': None, 'etf': '2564.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'High_Dividend_JP': {'index': None, 'etf': '2564.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': ['1577.T']},
             'Dividend_Growth_JP': {'index': None, 'etf': '1494.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'LowVol_HighDiv_JP': {'index': None, 'etf': '1399.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Agg_Bond_JP': {'index': None, 'etf': '2510.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': ['2511.T']},
+        },
+        'themes': {
+            'Tech_JP':                 {'index': None, 'etf': '2854.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Digital_JP':              {'index': None, 'etf': '2626.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Robotics_JP':             {'index': None, 'etf': '2638.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Leisure_Entertainment_JP':{'index': None, 'etf': '2645.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Games_JP':                {'index': None, 'etf': '2640.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Retail_JP':               {'index': None, 'etf': '1617.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Topix':                   {'index': None, 'etf': '1306.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Topix30':                 {'index': None, 'etf': '1311.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Nikkei225_JP':            {'index': None, 'etf': '1321.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Prime150_JP':             {'index': None, 'etf': '2017.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'SmallMid_JP':             {'index': None, 'etf': '1493.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'MegaCap_JP':              {'index': None, 'etf': '2516.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'CleanTech_JP':            {'index': None, 'etf': '2637.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
+            'Global_Leaders_JP':       {'index': None, 'etf': '2641.T', 'currency': 'JPY', 'valuation_data': True, 'alternatives': []},
         }
     },
 
@@ -292,13 +359,37 @@ investment_universe = {
         },
         'factors': {
             # Korea gov bonds via local ETF (approximation)
-            'Gov_Bonds': {'index': None, 'etf': '385560.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Gov_Bonds': {'index': None, 'etf': '385560.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': ['302190.KS']},
             'Dividend_Growth': {'index': None, 'etf': '211560.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
             'High_Dividend':   {'index': None, 'etf': '210780.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
             'Momentum':        {'index': None, 'etf': '147970.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
             'Quality':         {'index': None, 'etf': '275300.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
             'Low_Vol':         {'index': None, 'etf': '215620.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Agg_Bond_KR':     {'index': None, 'etf': '273130.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
             # 'Shareholder_Return' removed pending valid Yahoo symbol
+        },
+        'themes': {
+            'Tech_KR':            {'index': None, 'etf': '139260.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Semiconductors_KR':  {'index': None, 'etf': '091230.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Robotics_KR':        {'index': None, 'etf': '445290.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Battery_KR':         {'index': None, 'etf': '305540.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Clean_Energy_KR':    {'index': None, 'etf': '381570.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Leisure_Travel_KR':  {'index': None, 'etf': '228800.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Consumer_KR':        {'index': None, 'etf': '139290.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Gaming_KR':          {'index': None, 'etf': '364990.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'E_Commerce_KR':      {'index': None, 'etf': '322400.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Internet_KR':        {'index': None, 'etf': '365000.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            # Representatives and industries
+            'MSCI_Korea_Local':   {'index': None, 'etf': '310970.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Mega_Cap_KR':        {'index': None, 'etf': '122090.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Large_KR_200':       {'index': None, 'etf': '102110.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Mid_Cap_KR':         {'index': None, 'etf': '277650.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Media_KR':           {'index': None, 'etf': '266360.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Medical_Devices_KR': {'index': None, 'etf': '307510.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Securities_KR':      {'index': None, 'etf': '102970.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Steel_KR':           {'index': None, 'etf': '139240.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Cosmetics_KR':       {'index': None, 'etf': '228790.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
+            'Shareholder_Return_KR': {'index': None, 'etf': '472720.KS', 'currency': 'KRW', 'valuation_data': True, 'alternatives': []},
         }
     },
 
@@ -324,6 +415,9 @@ investment_universe = {
             'Banks_Local':  {'index': None, 'etf': '512800.SS', 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
             'Biotech':      {'index': None, 'etf': '2820.HK', 'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
             'Software':     {'index': None, 'etf': '159852.SZ', 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
+            'Telecom_Equip_CN': {'index': None, 'etf': '515880.SS', 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
+            'Food_Beverage_CN': {'index': None, 'etf': '159736.SZ', 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
+            'Pharma_CN':        {'index': None, 'etf': '159992.SZ', 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
             # China Defense (512660.CH) removed pending valid Yahoo symbol
             'Insurance':    {'index': None, 'etf': None, 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
             # China Financials local added as 510230.SS above
@@ -336,6 +430,29 @@ investment_universe = {
             'Growth':    {'index': None, 'etf': 'CNXT', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
             'Quality_CN': {'index': None, 'etf': '02803.HK', 'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
             'Low_Vol_CN': {'index': None, 'etf': '515300.SS', 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
+            'High_Dividend_HK': {'index': None, 'etf': '3070.HK', 'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'LowVol_HighDiv_CN': {'index': None, 'etf': '515100.SS', 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
+        },
+        'themes': {
+            'AI':                   {'index': None, 'etf': '159819.SZ', 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
+            'Semiconductors_CN':    {'index': None, 'etf': '3191.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'Tech_HangSeng':        {'index': None, 'etf': '3033.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'Robotics_CN':          {'index': None, 'etf': '2807.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'Battery_CN':           {'index': None, 'etf': '2845.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'Clean_Energy_CN':      {'index': None, 'etf': '2809.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'Internet_HK':          {'index': None, 'etf': '2812.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'IPO_HK':               {'index': None, 'etf': '2835.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'New_Economy_CN':       {'index': None, 'etf': '3173.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'Cloud_CN':             {'index': None, 'etf': '2826.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'Solar_CN_HK':          {'index': None, 'etf': '3134.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'Global_Leaders_HK':    {'index': None, 'etf': '3050.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'Consumer_Services_HK': {'index': None, 'etf': '3167.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'MSCI_CN_HK':           {'index': None, 'etf': '2801.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'A50_HK':               {'index': None, 'etf': '2823.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'CSI300_HK':            {'index': None, 'etf': '3188.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'HSCEI_HK':             {'index': None, 'etf': '2828.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'HSI_HK':               {'index': None, 'etf': '2800.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            'STAR50_HK':            {'index': None, 'etf': '3151.HK',   'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
         }
     },
 
@@ -714,6 +831,86 @@ KOREAN_LABELS = {
         'Gov_Bonds_HK': '홍콩 국채',
         'Financials_Local': '중국 금융(본토)',
         'Banks_Local': '중국 은행(본토)',
+        'Mega_Cap_US': '미국 초대형주',
+        'Nasdaq100_EW': '나스닥100 동일가중',
+        'Dow_30': '다우 30',
+        'Magnificent7_US': '매그니피센트 7',
+    },
+    'themes': {
+        # Disruptive Tech
+        'Battery': '2차 전지',
+        '5G': '5G',
+        'AI': '인공지능',
+        'IoT': '사물인터넷',
+        'Gaming': '게임',
+        'Robotics': '로봇',
+        'Data_Center_REITs': '데이터 센터 리츠',
+        'Blockchain': '블록체인',
+        'Bitcoin_Spot': '비트코인 현물',
+        'Cybersecurity': '사이버 보안',
+        'Smart_Factory': '스마트 공장',
+        'Smart_Grid': '스마트 그리드',
+        'Quantum_Computing': '양자컴퓨팅',
+        'Space_Exploration': '우주 탐사',
+        'Autonomous_Vehicles': '자율주행',
+        'Digital_Payments': '전자 결제',
+        'Cloud': '클라우드',
+        'Exponential_Tech': '혁신 기술',
+        # Demographics & Culture
+        'Online_Retail': '온라인 리테일',
+        'Aging_Longevity': '고령화·장수',
+        'Digital_Health': '디지털 헬스',
+        'Luxury': '럭셔리',
+        'Millennials': '밀레니얼',
+        'Obesity_Treatment': '비만 치료',
+        'India_Consumer': '인도 소비',
+        'Genomics': '유전체',
+        'Pet_Care': '펫케어',
+        'Internet_KR': '한국 인터넷',
+        # Physical Environment
+        'Hydrogen': '수소 산업',
+        'Water_Infrastructure': '수자원 인프라',
+        'AgTech': '애그테크',
+        'Uranium_Nuclear': '우라늄·원자력',
+        'Clean_Energy': '클린에너지',
+        'CleanTech': '클린테크',
+        'Solar': '태양광',
+        'Disruptive_Materials': '디스럽티브 소재',
+        'Rare_Earths': '희귀 광물',
+        # Korea themes extended
+        'MSCI_Korea_Local': 'MSCI 한국(현지)',
+        'Mega_Cap_KR': '한국 초대형주',
+        'Large_KR_200': '한국 대형(200)',
+        'Mid_Cap_KR': '한국 중형주',
+        'Media_KR': '한국 미디어',
+        'Medical_Devices_KR': '한국 의료기기',
+        'Securities_KR': '한국 증권',
+        'Steel_KR': '한국 철강',
+        'Cosmetics_KR': '한국 화장품',
+        'Shareholder_Return_KR': '한국 주주환원',
+        # China/HK themes
+        'Internet_HK': '홍콩 인터넷',
+        'IPO_HK': '홍콩 IPO',
+        'New_Economy_CN': '중국 신경제',
+        'Cloud_CN': '중국 클라우드',
+        'Solar_CN_HK': '태양광(중국/HK)',
+        'Global_Leaders_HK': '홍콩 글로벌리더',
+        'Consumer_Services_HK': '홍콩 소비·서비스',
+        'MSCI_CN_HK': '중국 MSCI(홍콩)',
+        'A50_HK': '중국 A50(홍콩)',
+        'CSI300_HK': 'CSI 300(홍콩)',
+        'HSCEI_HK': 'HSCEI(홍콩)',
+        'HSI_HK': 'HSI(홍콩)',
+        'STAR50_HK': 'STAR 50(홍콩)',
+        # Japan themes extended
+        'Topix': '일본 TOPIX',
+        'Topix30': '일본 TOPIX 30',
+        'Nikkei225_JP': '일본 니케이 225',
+        'Prime150_JP': '일본 프라임 150',
+        'SmallMid_JP': '일본 중소형',
+        'MegaCap_JP': '일본 초대형',
+        'CleanTech_JP': '일본 클린테크',
+        'Global_Leaders_JP': '일본 글로벌리더',
     },
 }
 
@@ -766,6 +963,27 @@ import subprocess as _sp
 _BASE_DIR = _Path(__file__).resolve().parent
 _DATA_DIR = _BASE_DIR / "data" / "daily"
 _DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+# Currency overrides (auto-resolved from Yahoo audit)
+_CUR_OVERRIDES_PATH = _BASE_DIR / "data" / "currency_overrides.json"
+
+def _load_currency_overrides() -> dict:
+    try:
+        import json as _json
+        if _CUR_OVERRIDES_PATH.exists():
+            return _json.loads(_CUR_OVERRIDES_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        pass
+    return {}
+
+def resolve_currency(symbol: str, expected: str | None) -> str | None:
+    """Return corrected currency for symbol if an override exists; else expected.
+
+    Use this when exporting catalogs or performing FX conversion to ensure
+    we use the actual trading currency detected from Yahoo metadata.
+    """
+    overrides = _load_currency_overrides()
+    return overrides.get(symbol, expected)
 
 def _sanitize_symbol(symbol: str) -> str:
     """Filesystem-safe filename for a Yahoo symbol."""
@@ -893,7 +1111,7 @@ def list_primary_symbols(universe: dict) -> list[str]:
 def build_symbols_catalog(universe: dict, primary_only: bool = True) -> pd.DataFrame:
     rows = []
     for country, cdata in universe.items():
-        for section in ("sectors", "factors"):
+        for section in ("sectors", "factors", "themes"):
             for name, asset in cdata.get(section, {}).items():
                 if primary_only:
                     key = "index" if asset.get("index") else ("etf" if asset.get("etf") else None)
@@ -906,6 +1124,7 @@ def build_symbols_catalog(universe: dict, primary_only: bool = True) -> pd.DataF
                             "field": key,
                             "symbol": v,
                             "currency": asset.get("currency"),
+                            "resolved_currency": resolve_currency(v, asset.get("currency")),
                             "file": str(_csv_path_for(v)),
                         })
                 else:
@@ -919,6 +1138,7 @@ def build_symbols_catalog(universe: dict, primary_only: bool = True) -> pd.DataF
                                 "field": key,
                                 "symbol": v,
                                 "currency": asset.get("currency"),
+                                "resolved_currency": resolve_currency(v, asset.get("currency")),
                                 "file": str(_csv_path_for(v)),
                             })
                     for alt in asset.get("alternatives", []) or []:
@@ -929,6 +1149,7 @@ def build_symbols_catalog(universe: dict, primary_only: bool = True) -> pd.DataF
                             "field": "alternative",
                             "symbol": alt,
                             "currency": asset.get("currency"),
+                            "resolved_currency": resolve_currency(alt, asset.get("currency")),
                             "file": str(_csv_path_for(alt)),
                         })
     df = pd.DataFrame(rows).drop_duplicates(subset=["field","symbol"]).reset_index(drop=True)

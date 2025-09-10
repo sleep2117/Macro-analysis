@@ -1,8 +1,8 @@
-Total symbols: 380
+Total symbols: 487
 
 Not found on Yahoo: 0
 
-Expected type mismatch: 12
+Expected type mismatch: 19
   - Europe | sectors:Technology | alternative SX8P.Z | type=INDEX exch=Zurich name=STXE 600 Technology           I
   - Europe | sectors:Banks | alternative SX7P.Z | type=INDEX exch=Zurich name=STXE 600 Banks                I
   - China | sectors:Technology | alternative 159939.SZ | type=EQUITY exch=Shenzhen name=GF FUND MANAGEMENT
@@ -13,21 +13,25 @@ Expected type mismatch: 12
   - China | sectors:Healthcare | alternative 512010.SS | type=EQUITY exch=Shanghai name=E FUND MANAGEMENT CO LTD E FUND
   - China | sectors:Banks_Local | etf 512800.SS | type=EQUITY exch=Shanghai name=HWABAO WP FUND MANAGEMENT CO LT
   - China | sectors:Software | etf 159852.SZ | type=EQUITY exch=Shenzhen name=HARVEST FUND MGMT
+  - China | sectors:Telecom_Equip_CN | etf 515880.SS | type=EQUITY exch=Shanghai name=GUOTAI ASSET MANAGEMENT CO GUOT
+  - China | sectors:Food_Beverage_CN | etf 159736.SZ | type=EQUITY exch=Shenzhen name=TIANHONG ASSET MAN
+  - China | sectors:Pharma_CN | etf 159992.SZ | type=EQUITY exch=Shenzhen name=YINHUA FUND MANAGE
   - China | factors:Quality_CN | etf 02803.HK | type=MUTUALFUND exch=YHD name=
   - China | factors:Low_Vol_CN | etf 515300.SS | type=EQUITY exch=Shanghai name=HARVEST FUND MANAGEMENT HVST CS
+  - China | factors:LowVol_HighDiv_CN | etf 515100.SS | type=EQUITY exch=Shanghai name=INVESCO GREAT WALL FUND MGMT CO
+  - China | themes:AI | etf 159819.SZ | type=EQUITY exch=Shenzhen name=E FUND MANAGEMENT
+  - China | themes:Internet_HK | etf 2812.HK | type=EQUITY exch=HKSE name=SAMSUNGCDGN
+  - China | themes:IPO_HK | etf 2835.HK | type=EQUITY exch=HKSE name=2835.HK,0P0001QF2Q,0
 
-Currency mismatch: 35
+Currency mismatch: 32
   - Europe | sectors:Technology | alternative ESIT.L | type=ETF exch=LSE name=ISHARES VI PLC ISH MSCI EPE ITS
   - Europe | sectors:Healthcare | index SXDP.Z | type=INDEX exch=Zurich name=STXE 600 Health Care          I
-  - Europe | sectors:Healthcare | etf CH5.L | type=ETF exch=LSE name=MULTI UNITS LUXEMBOURG AMUNDI S
   - Europe | sectors:Healthcare | alternative EXV4.DE | type=ETF exch=XETRA name=iSh.ST.Eu.600 Healt.C.U.ETF DEI
   - Europe | sectors:Utilities | index SX6P.Z | type=INDEX exch=Zurich name=STXE 600 Utilities            I
-  - Europe | sectors:Utilities | etf XS6R.L | type=ETF exch=LSE name=XTRACKERS X MSCI EU UTILITIES E
   - Europe | sectors:Utilities | alternative EXH9.DE | type=ETF exch=XETRA name=iSh.ST.Eur.600 Utilit.U.ETF DEI
   - Europe | sectors:Banks | alternative EXV1.DE | type=ETF exch=XETRA name=iSh.ST.Euro.600 Banks U.ETF DEI
   - Europe | sectors:Banks | alternative SX7P.Z | type=INDEX exch=Zurich name=STXE 600 Banks                I
   - Europe | sectors:Industrials | alternative ESIN.L | type=ETF exch=LSE name=ISHARES VI PLC ISH MSCI ERPE IN
-  - Europe | sectors:Real_Estate | etf XDER.L | type=ETF exch=LSE name=XTRACKERS X FTSE EUROPE REAL ES
   - Europe | factors:Small_Cap(EMU) | alternative IEUS | type=ETF exch=NasdaqGM name=iShares MSCI Europe Small-Cap E
   - Europe | factors:Momentum | alternative IEFM.L | type=ETF exch=LSE name=ISHARES IV PLC ISHS EDG MSCI EU
   - Europe | factors:Quality | alternative IEFQ.L | type=ETF exch=LSE name=ISHARES IV PLC ISHS EDGE MSCI E
@@ -53,17 +57,25 @@ Currency mismatch: 35
   - Taiwan | sectors:Broad_Market | alternative EWT | type=ETF exch=NYSEArca name=iShares Inc iShares MSCI Taiwan
   - Hong_Kong | sectors:Broad_Market | alternative EWH | type=ETF exch=NYSEArca name=iShares MSCI Hong Kong Index Fu
 
-Country/region tokens not found: 10
-  - China | sectors:Technology | alternative 159939.SZ | type=EQUITY exch=Shenzhen name=GF FUND MANAGEMENT
+Country/region tokens not found: 18
+  - US | factors:Small_Cap_600 | index ^SP600 | type=INDEX exch=SNP name=^SP600
   - China | sectors:Financials_Local | etf 510230.SS | type=EQUITY exch=Shanghai name=GUOTAI ASSET MANAGEMENT CO SSE 
   - China | sectors:Utilities | alternative 159611.SZ | type=EQUITY exch=Shenzhen name=GF FUND MANAGEMENT
   - China | sectors:Healthcare | alternative 512010.SS | type=EQUITY exch=Shanghai name=E FUND MANAGEMENT CO LTD E FUND
   - China | sectors:Banks_Local | etf 512800.SS | type=EQUITY exch=Shanghai name=HWABAO WP FUND MANAGEMENT CO LT
   - China | sectors:Software | etf 159852.SZ | type=EQUITY exch=Shenzhen name=HARVEST FUND MGMT
+  - China | sectors:Food_Beverage_CN | etf 159736.SZ | type=EQUITY exch=Shenzhen name=TIANHONG ASSET MAN
+  - China | sectors:Pharma_CN | etf 159992.SZ | type=EQUITY exch=Shenzhen name=YINHUA FUND MANAGE
   - China | factors:CSI_300 | index 000300.SS | type=INDEX exch=Shanghai name=CSI 300 Index
   - China | factors:Growth | etf CNXT | type=ETF exch=NYSEArca name=VanEck ChiNext ETF
   - China | factors:Quality_CN | etf 02803.HK | type=MUTUALFUND exch=YHD name=
   - China | factors:Low_Vol_CN | etf 515300.SS | type=EQUITY exch=Shanghai name=HARVEST FUND MANAGEMENT HVST CS
+  - China | factors:LowVol_HighDiv_CN | etf 515100.SS | type=EQUITY exch=Shanghai name=INVESCO GREAT WALL FUND MGMT CO
+  - China | themes:AI | etf 159819.SZ | type=EQUITY exch=Shenzhen name=E FUND MANAGEMENT
+  - China | themes:Tech_HangSeng | etf 3033.HK | type=ETF exch=HKSE name=CSOP HS TECH
+  - China | themes:IPO_HK | etf 2835.HK | type=EQUITY exch=HKSE name=2835.HK,0P0001QF2Q,0
+  - China | themes:Solar_CN_HK | etf 3134.HK | type=ETF exch=HKSE name=CSOP CSI PV
+  - China | themes:HSI_HK | etf 2800.HK | type=ETF exch=HKSE name=TRACKER FUND
 
 Sector/Factor tokens not found: 83
   - Global | sectors:Comm_Services | etf IXP | type=ETF exch=NYSEArca name=iShares Global Comm Services ET
