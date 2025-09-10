@@ -227,7 +227,7 @@ investment_universe = {
         'currency': 'EUR',
         'sectors': {
             # Technology: use ETF as primary (index has short history on Yahoo)
-            'Technology':    {'index': None,     'etf': 'EXV3.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': ['SX8P.Z','ESIT.L']},
+            'Technology':    {'index': None,     'etf': 'EXV3.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': ['ESIT.L']},
             'Healthcare':    {'index': 'SXDP.Z', 'etf': 'CH5.L',  'currency': 'GBp', 'valuation_data': True, 'alternatives': ['EXV4.DE']},
             'Utilities':     {'index': 'SX6P.Z', 'etf': 'XS6R.L', 'currency': 'GBp', 'valuation_data': True, 'alternatives': ['EXH9.DE']},
             'Telecom':       {'index': 'SXKP.Z', 'etf': 'EXV2.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
@@ -235,7 +235,7 @@ investment_universe = {
             'Basic_Resrcs':  {'index': 'SXPP.Z', 'etf': 'EXV6.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
             'Chemicals':     {'index': 'SX4P.Z', 'etf': 'EXV7.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
             # Banks: use ETF as primary (index has short history on Yahoo)
-            'Banks':         {'index': None,     'etf': 'BNKE.L', 'currency': 'GBP', 'valuation_data': True, 'alternatives': ['EXV1.DE','SX7P.Z']},
+            'Banks':         {'index': None,     'etf': 'BNKE.L', 'currency': 'GBP', 'valuation_data': True, 'alternatives': ['EXV1.DE']},
             'Insurance':     {'index': 'SXIP.Z', 'etf': 'EXH5.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
             'Industrials':   {'index': 'SXNP.Z', 'etf': 'EXH4.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': ['ESIN.L']},
             'Construction':  {'index': 'SXOP.Z', 'etf': 'EXV8.DE', 'currency': 'EUR', 'valuation_data': True, 'alternatives': []},
@@ -428,7 +428,8 @@ investment_universe = {
             'A_Shares':  {'index': None, 'etf': 'ASHR', 'currency': 'USD', 'valuation_data': True, 'alternatives': ['CNYA','KBA']},
             'CSI_300':   {'index': '000300.SS','currency': 'CNY','valuation_data': False,'alternatives': ['ASHR']},
             'Growth':    {'index': None, 'etf': 'CNXT', 'currency': 'USD', 'valuation_data': True, 'alternatives': []},
-            'Quality_CN': {'index': None, 'etf': '02803.HK', 'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
+            # Disabled: no reliable Yahoo price history for 02803.HK (YHD placeholder). No clean Quality CN ETF found.
+            'Quality_CN': {'index': None, 'etf': None, 'currency': 'HKD', 'valuation_data': False, 'alternatives': []},
             'Low_Vol_CN': {'index': None, 'etf': '515300.SS', 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
             'High_Dividend_HK': {'index': None, 'etf': '3070.HK', 'currency': 'HKD', 'valuation_data': True, 'alternatives': []},
             'LowVol_HighDiv_CN': {'index': None, 'etf': '515100.SS', 'currency': 'CNY', 'valuation_data': True, 'alternatives': []},
@@ -1064,7 +1065,7 @@ def _fetch_history(symbol: str, start: datetime | None = None, end: datetime | N
             time.sleep(min(10, pause * (2 ** (attempt - 1))))
     raise RuntimeError(f"Failed to fetch history for {symbol}: {last_err}")
 
-def update_symbol_csv(symbol: str, pause: float = 0.6) -> tuple[_Path, int]:
+def update_symbol_csv(symbol: str, pause: float = 0.6, lookback_days: int = 0) -> tuple[_Path, int, bool]:
     path = _csv_path_for(symbol)
     existing = _load_existing_csv(path)
     if existing is None or existing.empty:
@@ -1072,22 +1073,188 @@ def update_symbol_csv(symbol: str, pause: float = 0.6) -> tuple[_Path, int]:
         if df is None or df.empty:
             # write empty placeholder
             pd.DataFrame(columns=["Open","High","Low","Close","Adj Close","Volume"]).to_csv(path)
-            return path, 0
+            return path, 0, False
         tmp = path.with_suffix('.csv.tmp')
         df.to_csv(tmp, index_label="Date")
         os.replace(tmp, path)
-        return path, len(df)
+        return path, len(df), True
     last = existing.index.max()
-    start = last + timedelta(days=1)
+    # Re-fetch recent window to capture corrections/splits/dividends
+    lb = int(max(0, lookback_days))
+    start = (last - timedelta(days=lb)) if lb > 0 else (last + timedelta(days=1))
     new = _fetch_history(symbol, start=start, pause=pause)
     if new is None or new.empty:
-        return path, 0
+        return path, 0, False
+
+    # Merge and detect overlap changes
     combined = pd.concat([existing, new])
     combined = combined[~combined.index.duplicated(keep='last')].sort_index()
+    added_rows = len(combined) - len(existing)
+    changed_recent = False
+    try:
+        overlap_idx = existing.index.intersection(new.index)
+        if len(overlap_idx) > 0:
+            cols = [c for c in ["Open","High","Low","Close","Adj Close","Volume"] if c in combined.columns and c in existing.columns]
+            if cols:
+                before = existing.loc[overlap_idx, cols]
+                after = combined.loc[overlap_idx, cols]
+                # Normalize dtypes to avoid false diffs
+                before = before.astype(float, errors='ignore') if hasattr(before, 'astype') else before
+                after = after.astype(float, errors='ignore') if hasattr(after, 'astype') else after
+                changed_recent = not before.equals(after)
+    except Exception:
+        changed_recent = True  # conservative
     tmp = path.with_suffix('.csv.tmp')
     combined.to_csv(tmp, index_label="Date")
     os.replace(tmp, path)
-    return path, len(new)
+    return path, added_rows if added_rows > 0 else 0, changed_recent
+
+def backfill_symbol_csv(symbol: str, pause: float = 0.6) -> tuple[_Path, int, int]:
+    """Fetch the longest-available history for `symbol` and merge with any existing CSV.
+
+    Returns (path, added_rows, total_rows_after).
+    Writes an empty placeholder file if no history is available.
+    """
+    path = _csv_path_for(symbol)
+    existing = _load_existing_csv(path)
+    try:
+        df = _fetch_history(symbol, pause=pause)
+    except Exception:
+        df = pd.DataFrame()
+    if df is None or df.empty:
+        # Ensure file exists even if empty, for monitoring
+        if existing is None:
+            pd.DataFrame(columns=["Open","High","Low","Close","Adj Close","Volume"]).to_csv(path)
+            return path, 0, 0
+        else:
+            return path, 0, len(existing)
+    if existing is None or existing.empty:
+        tmp = path.with_suffix('.csv.tmp')
+        df.to_csv(tmp, index_label="Date")
+        os.replace(tmp, path)
+        return path, len(df), len(df)
+    combined = pd.concat([existing, df])
+    combined = combined[~combined.index.duplicated(keep='last')].sort_index()
+    added = len(combined) - len(existing)
+    tmp = path.with_suffix('.csv.tmp')
+    combined.to_csv(tmp, index_label="Date")
+    os.replace(tmp, path)
+    return path, added, len(combined)
+
+def list_all_symbols(universe: dict) -> list[str]:
+    """Return all symbols including index, etf, and alternatives (deduped)."""
+    symbols: list[str] = []
+    for _, country_data in universe.items():
+        for section in ("sectors", "factors", "themes"):
+            for _, asset in country_data.get(section, {}).items():
+                for key in ("index", "etf"):
+                    v = asset.get(key)
+                    if v:
+                        symbols.append(str(v))
+                for alt in asset.get("alternatives", []) or []:
+                    if alt:
+                        symbols.append(str(alt))
+    # Deduplicate preserving order
+    seen = set(); out = []
+    for s in symbols:
+        if s not in seen:
+            seen.add(s); out.append(s)
+    return out
+
+def analyze_price_file(symbol: str) -> dict:
+    """Compute basic quality metrics for a symbol's price CSV."""
+    path = _csv_path_for(symbol)
+    out = {
+        "symbol": symbol,
+        "file": str(path),
+        "exists": path.exists(),
+        "rows": 0,
+        "first_date": None,
+        "last_date": None,
+        "days_span": None,
+        "has_adj_close": False,
+        "missing_close_ratio": None,
+        "status": None,
+        "note": None,
+    }
+    if not path.exists():
+        out.update({"status": "missing_file", "note": "no_csv"})
+        return out
+    try:
+        df = pd.read_csv(path)
+    except Exception as e:
+        out.update({"status": "error", "note": f"read_error: {str(e)[:120]}"})
+        return out
+    if df.empty or "Date" not in df.columns:
+        out.update({"status": "empty", "rows": 0, "note": "no_rows"})
+        return out
+    try:
+        df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+        df = df.dropna(subset=["Date"]).sort_values("Date")
+        out["rows"] = len(df)
+        out["first_date"] = df["Date"].iloc[0].date().isoformat()
+        out["last_date"] = df["Date"].iloc[-1].date().isoformat()
+        out["days_span"] = (df["Date"].iloc[-1] - df["Date"].iloc[0]).days + 1
+        out["has_adj_close"] = ("Adj Close" in df.columns)
+        if "Close" in df.columns:
+            miss = pd.isna(df["Close"]).sum()
+            out["missing_close_ratio"] = float(miss) / float(len(df)) if len(df) else None
+        # Derive basic status
+        if out["rows"] <= 0:
+            out["status"] = "empty"
+            out["note"] = "no_rows"
+        elif out["rows"] == 1 or (out["days_span"] is not None and out["days_span"] <= 1):
+            out["status"] = "single_day"
+            out["note"] = "only_1_day"
+        elif out["rows"] < 5:
+            out["status"] = "few_rows"
+            out["note"] = "lt_5_rows"
+        else:
+            out["status"] = "ok"
+    except Exception as e:
+        out.update({"status": "error", "note": f"analyze_error: {str(e)[:120]}"})
+    return out
+
+def backfill_all_prices(universe: dict, pause: float = 0.6, symbols: list[str] | None = None) -> pd.DataFrame:
+    """Backfill price history to the maximum available for the given symbols and write a monitoring summary."""
+    if symbols is None:
+        symbols = list_all_symbols(universe)
+    results = []
+    for sym in symbols:
+        try:
+            path, added, total = backfill_symbol_csv(sym, pause=pause)
+            q = analyze_price_file(sym)
+            q.update({
+                "added": added,
+                "total_rows": total,
+            })
+            results.append(q)
+        except Exception as e:
+            results.append({
+                "symbol": sym,
+                "file": str(_csv_path_for(sym)),
+                "exists": _csv_path_for(sym).exists(),
+                "rows": 0,
+                "first_date": None,
+                "last_date": None,
+                "days_span": None,
+                "has_adj_close": False,
+                "missing_close_ratio": None,
+                "status": "error",
+                "note": str(e)[:200],
+                "added": 0,
+                "total_rows": None,
+            })
+        time.sleep(pause)
+    df = pd.DataFrame(results)
+    try:
+        ts = datetime.now(_ZoneInfo("Asia/Seoul")).isoformat(timespec="seconds")
+    except Exception:
+        ts = datetime.now().isoformat()
+    df["run_at"] = ts
+    out_path = _BASE_DIR / "data" / "prices_backfill_summary.csv"
+    df.to_csv(out_path, index=False)
+    return df
 
 def list_primary_symbols(universe: dict) -> list[str]:
     """
@@ -1208,21 +1375,29 @@ def _fetch_history_via_chart(symbol: str, period: str = "max", interval: str = "
     except Exception:
         return None
 
-def update_all_daily_data(universe: dict, pause: float = 0.6, symbols: list[str] | None = None) -> pd.DataFrame:
+def update_all_daily_data(universe: dict, pause: float = 0.6, symbols: list[str] | None = None, lookback_days: int = 0) -> pd.DataFrame:
     if symbols is None:
         symbols = list_primary_symbols(universe)
     results = []
     for sym in symbols:
         try:
-            path, added = update_symbol_csv(sym, pause=pause)
-            updated = added > 0
+            path, added, changed_recent = update_symbol_csv(sym, pause=pause, lookback_days=lookback_days)
+            updated = (added > 0) or changed_recent
+            if added > 0 and changed_recent:
+                reason = f"appended {added} & revised_recent(lb={lookback_days})"
+            elif added > 0:
+                reason = f"appended {added} (lb={lookback_days})"
+            elif changed_recent:
+                reason = f"revised_recent(lb={lookback_days})"
+            else:
+                reason = f"up_to_date(lb={lookback_days})"
             results.append({
                 "symbol": sym,
                 "file": str(path),
                 "added": added,
                 "updated": updated,
                 "status": "ok" if updated else "no_change",
-                "reason": (f"appended {added}" if updated else "up_to_date"),
+                "reason": reason,
             })
         except Exception as e:
             results.append({
@@ -1732,21 +1907,37 @@ def update_all_valuations(
 
 # Run data updater if script is executed
 if __name__ == "__main__":
-    print("Updating daily CSV cache for primary symbols only (index preferred)...")
     try:
-        # Build catalog for primary symbols (index > ETF). No alternatives.
-        build_symbols_catalog(investment_universe, primary_only=True)
-        syms = list_primary_symbols(investment_universe)
-        # Allow optional limit via env for testing speed
         import os as _os
+        # Determine scope and mode
+        price_scope = _os.environ.get("PRICE_SCOPE", "primary").lower()  # 'primary' | 'all'
+        price_mode = _os.environ.get("PRICE_MODE", "append").lower()    # 'append' | 'backfill'
+        _is_ci = _os.environ.get("GITHUB_ACTIONS") == "true"
+        price_pause = float(_os.environ.get("PRICE_PAUSE", "0.6" if _is_ci else "0.3"))
+        price_lookback = int(_os.environ.get("PRICE_LOOKBACK", "7"))
+
+        # Build catalog for visibility
+        build_symbols_catalog(investment_universe, primary_only=(price_scope != "all"))
+        if price_scope == "all":
+            syms = list_all_symbols(investment_universe)
+        else:
+            syms = list_primary_symbols(investment_universe)
+        # Optional manual symbol list override
+        _syms_env = _os.environ.get("PRICE_SYMBOLS")
+        if _syms_env:
+            syms = [s.strip() for s in _syms_env.split(',') if s.strip()]
+        # Allow optional limit for testing speed
         _max = _os.environ.get("MAX_SYMBOLS")
         if _max:
             syms = syms[:int(_max)]
-        # In CI we slow down more to mitigate Yahoo 429
-        _is_ci = _os.environ.get("GITHUB_ACTIONS") == "true"
-        price_pause = float(_os.environ.get("PRICE_PAUSE", "0.6" if _is_ci else "0.3"))
-        summary = update_all_daily_data(investment_universe, pause=price_pause, symbols=syms)
-        print("Price update complete. Summary saved to data/update_summary.csv")
+
+        print(f"Price update scope={price_scope} mode={price_mode} lb={price_lookback} symbols={len(syms)}")
+        if price_mode == "backfill":
+            summary = backfill_all_prices(investment_universe, pause=price_pause, symbols=syms)
+            print("Backfill complete. Summary saved to data/prices_backfill_summary.csv")
+        else:
+            summary = update_all_daily_data(investment_universe, pause=price_pause, symbols=syms, lookback_days=price_lookback)
+            print("Incremental price update complete. Summary saved to data/update_summary.csv")
 
         # Valuation snapshots (snapshot only, daily append)
         skip_vals = _os.environ.get("SKIP_VALUATIONS", "false").lower() in {"1","true","yes","on"}

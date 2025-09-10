@@ -42,6 +42,10 @@ jobs:
           MAX_SYMBOLS: ''
           # We DO run valuations daily; use batch quote API to avoid 429
           SKIP_VALUATIONS: 'false'
+          # Prices: incremental with recent lookback window to catch corrections
+          PRICE_SCOPE: 'primary'
+          PRICE_MODE: 'append'
+          PRICE_LOOKBACK: '7'
           VALUATION_FETCH_MODE: 'batch_quote'
           VALUATION_CHUNK: '20'
           VALUATION_INFO_FALLBACK: '1'
