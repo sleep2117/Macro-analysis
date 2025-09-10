@@ -59,6 +59,10 @@ jobs:
         run: |
           python -u global_universe/world_indices.py
 
+      - name: Update FX rates (recent 7 days)
+        run: |
+          python -m global_universe.fx_rates --recent 7 --buffer-days 3
+
       # Cleanup is manual only to avoid irrecoverable deletions
 
       - name: Commit and push changes
