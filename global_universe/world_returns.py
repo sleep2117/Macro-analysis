@@ -17,6 +17,7 @@ CSVs under global_universe/data/daily via world_indices helpers.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from functools import lru_cache
 from datetime import datetime, date, timedelta
 from pathlib import Path
 from typing import Iterable, Optional
@@ -76,6 +77,7 @@ def build_default_index_specs() -> list[IndexSpec]:
 # IO helpers
 # ----------------------------
 
+@lru_cache(maxsize=256)
 def _read_price_series(symbol: str) -> pd.Series:
     """Return daily close series for symbol from the local CSV cache.
 
@@ -95,18 +97,12 @@ def _read_price_series(symbol: str) -> pd.Series:
         return pd.Series(dtype=float)
     if df is None or df.empty or "Date" not in df.columns:
         return pd.Series(dtype=float)
-    df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+    # Parse with utc=True to handle mixed offsets (-05:00/-04:00 across DST)
+    df["Date"] = pd.to_datetime(df["Date"], errors="coerce", utc=True)
     df = df.dropna(subset=["Date"]).set_index("Date").sort_index()
-    # Ensure DatetimeIndex and make it tz-naive
+    # Convert to tz-naive for clean indexing
     try:
-        if isinstance(df.index, pd.DatetimeIndex):
-            if df.index.tz is not None:
-                df.index = df.index.tz_convert(None)
-        else:
-            df.index = pd.to_datetime(df.index, errors="coerce")
-            if hasattr(df.index, "tz") and df.index.tz is not None:
-                df.index = df.index.tz_convert(None)
-            df = df[~df.index.isna()]
+        df.index = df.index.tz_convert(None)
     except Exception:
         pass
     col = "Adj Close" if "Adj Close" in df.columns else ("Close" if "Close" in df.columns else None)
@@ -153,6 +149,7 @@ def _ensure_series(symbols: Iterable[str]) -> None:
 # FX helpers
 # ----------------------------
 
+@lru_cache(maxsize=64)
 def _fx_usd_per_local(currency: str) -> pd.Series:
     """Return a series of USD per 1 unit of local `currency`.
 
@@ -188,6 +185,7 @@ def _fx_usd_per_local(currency: str) -> pd.Series:
     return pd.Series(1.0, index=base.index)
 
 
+@lru_cache(maxsize=64)
 def _fx_usd_from_cache(currency: str) -> pd.Series:
     """Load daily USD per currency series from fx_rates module cache, if available.
 
@@ -200,11 +198,9 @@ def _fx_usd_from_cache(currency: str) -> pd.Series:
     fx_dir = fxmod.OUT_DIR
     path = fx_dir / f"{code}.csv"
     if not path.exists():
-        try:
-            # Build/update recent window for speed
-            fxmod.build_fx_rates(recent_days=365)
-        except Exception:
-            return pd.Series(dtype=float)
+        # Do not trigger a full FX rebuild here; it is expensive and blocks UI.
+        # Fallback to Yahoo FX pairs path handled by _fx_usd_per_local.
+        return pd.Series(dtype=float)
     try:
         df = pd.read_csv(path, parse_dates=["Date"], index_col="Date")
         if df.empty or "toUSD" not in df.columns:
@@ -259,7 +255,9 @@ def _period_bounds(period: str | None, start: Optional[date | datetime], end: Op
 
     if period is not None:
         p = period.lower()
-        if p == "ytd":
+        if p in {"1m", "1mo", "30d"}:
+            start_ts = end_ts - pd.DateOffset(months=1)
+        elif p == "ytd":
             start_ts = pd.Timestamp(year=end_ts.year, month=1, day=1)
         elif p == "1y":
             start_ts = end_ts - pd.DateOffset(years=1)
@@ -310,15 +308,80 @@ def compute_sharpe(series: pd.Series, start: pd.Timestamp, end: pd.Timestamp, rf
     rets = s.pct_change().dropna()
     if rets.empty:
         return None
+    # Infer observation frequency to avoid mis-annualization for weekly/monthly series
+    obs_per_year = _infer_obs_per_year(s.index)
+    if obs_per_year is None or len(rets) < 20:
+        return None
     avg = rets.mean()
     std = rets.std()
     if std == 0 or not np.isfinite(std):
         return None
-    ann_ret = (1 + avg) ** 252 - 1
-    ann_vol = std * np.sqrt(252)
+    ann_ret = (1 + avg) ** obs_per_year - 1
+    ann_vol = std * np.sqrt(obs_per_year)
     excess = ann_ret - rf_annual
     return float(excess / ann_vol)
 
+def compute_sortino(series: pd.Series, start: pd.Timestamp, end: pd.Timestamp, rf_annual: float = 0.0) -> Optional[float]:
+    """Compute annualized Sortino ratio using downside deviation of daily returns.
+
+    - Threshold = daily risk-free rate (rf_annual / 252). Defaults to 0.
+    - Returns None if not enough data.
+    """
+    if series is None or series.empty:
+        return None
+    t0 = _first_on_or_after(series, start)
+    t1 = _last_on_or_before(series, end)
+    if t0 is None or t1 is None or t1 <= t0:
+        return None
+    s = series.loc[t0:t1]
+    rets = s.pct_change().dropna()
+    if rets.empty:
+        return None
+    # Infer observation frequency
+    obs_per_year = _infer_obs_per_year(s.index)
+    if obs_per_year is None or len(rets) < 20:
+        return None
+    rf_daily = rf_annual / float(obs_per_year)
+    # Downside deviation relative to rf_daily
+    downside = rets - rf_daily
+    downside = downside[downside < 0.0]
+    if downside.empty:
+        return None
+    dd = downside.std()
+    if dd == 0 or not np.isfinite(dd):
+        return None
+    # Annualize return and downside deviation similar to Sharpe
+    avg = rets.mean()
+    ann_ret = (1 + avg) ** obs_per_year - 1
+    ann_dd = dd * np.sqrt(obs_per_year)
+    excess = ann_ret - rf_annual
+    return float(excess / ann_dd)
+
+
+def _infer_obs_per_year(index: pd.DatetimeIndex) -> Optional[int]:
+    """Infer observations per year from median day spacing.
+
+    Returns 252 for daily, 52 for weekly, 12 for monthly, else a rounded estimate.
+    """
+    try:
+        if not isinstance(index, pd.DatetimeIndex) or len(index) < 3:
+            return None
+        d = pd.Series(index).diff().dropna().dt.days.astype(float)
+        if d.empty:
+            return None
+        med = float(np.nanmedian(d.values))
+        if not np.isfinite(med) or med <= 0:
+            return None
+        if med <= 2.0:
+            return 252
+        if med <= 10.0:
+            return 52
+        if med <= 45.0:
+            return 12
+        # Fallback heuristic
+        return max(1, int(round(365.0 / med)))
+    except Exception:
+        return None
 
 def compute_returns_table(
     specs: Iterable[IndexSpec] | None = None,
@@ -326,7 +389,9 @@ def compute_returns_table(
     start: Optional[date | datetime] = None,
     end: Optional[date | datetime] = None,
     calc_sharpe: bool = True,
+    calc_sortino: bool = True,
     use_usd_proxy_if_available: bool = False,
+    ensure_data: bool = False,
 ) -> pd.DataFrame:
     """Compute returns and optional Sharpe metrics for the given benchmarks.
 
@@ -341,8 +406,9 @@ def compute_returns_table(
         all_syms.append(s.local_symbol)
         if s.usd_proxy:
             all_syms.append(s.usd_proxy)
-    # Include FX pairs implicitly when converting
-    _ensure_series(all_syms)
+    # Optionally ensure local CSVs exist (network). Default False for UI speed.
+    if ensure_data:
+        _ensure_series(all_syms)
 
     start_ts, end_ts = _period_bounds(period, start, end)
 
@@ -389,6 +455,8 @@ def compute_returns_table(
 
         sh_loc = compute_sharpe(s_loc, start_ts, end_ts) if calc_sharpe else None
         sh_usd = compute_sharpe(usd_series, start_ts, end_ts) if calc_sharpe else None
+        so_loc = compute_sortino(s_loc, start_ts, end_ts) if calc_sortino else None
+        so_usd = compute_sortino(usd_series, start_ts, end_ts) if calc_sortino else None
 
         rows.append({
             "name": spec.name,
@@ -401,6 +469,8 @@ def compute_returns_table(
             "diff_vs_sp500_usd": (None if (r_usd is None or spx_ret is None) else (r_usd - spx_ret)),
             "sharpe_local": sh_loc,
             "sharpe_usd": sh_usd,
+            "sortino_local": so_loc,
+            "sortino_usd": so_usd,
         })
 
     df = pd.DataFrame(rows)
@@ -423,11 +493,23 @@ def compute_returns_table(
     out["diff_vs_sp500_usd_%"] = df["diff_vs_sp500_usd"].apply(_pct_fmt)
     out["sharpe_local_str"] = df["sharpe_local"].apply(_sh_fmt)
     out["sharpe_usd_str"] = df["sharpe_usd"].apply(_sh_fmt)
+    out["sortino_local_str"] = df["sortino_local"].apply(_sh_fmt)
+    out["sortino_usd_str"] = df["sortino_usd"].apply(_sh_fmt)
 
     out.attrs["period"] = period
     out.attrs["start"] = str(start_ts.date())
     out.attrs["end"] = str(end_ts.date())
     return out
+
+
+def clear_caches() -> None:
+    """Clear memoized readers (for app's refresh button)."""
+    try:
+        _read_price_series.cache_clear()
+        _fx_usd_from_cache.cache_clear()
+        _fx_usd_per_local.cache_clear()
+    except Exception:
+        pass
 
 
 def save_returns_report(
