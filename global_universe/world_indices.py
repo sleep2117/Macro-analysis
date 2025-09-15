@@ -1017,7 +1017,12 @@ def _load_existing_csv(path: _Path):
         if "Date" not in df.columns:
             return None
         # Coerce to datetime and set as index
-        df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
+        dt = pd.to_datetime(df["Date"], errors="coerce", utc=True)
+        try:
+            dt = dt.dt.tz_convert(None)
+        except Exception:
+            pass
+        df["Date"] = dt
         df = df.dropna(subset=["Date"]).set_index("Date").sort_index()
         df = df[~df.index.duplicated(keep='last')]
         # Attach attr so caller can decide to rewrite
@@ -1578,10 +1583,32 @@ def _has_price_for_date(symbol: str, date_iso: str) -> bool:
         df = pd.read_csv(p)
         if "Date" not in df.columns or df.empty:
             return False
-        s = pd.to_datetime(df["Date"], errors="coerce").dt.date.astype(str)
+        s = pd.to_datetime(df["Date"], errors="coerce", utc=True).dt.date.astype(str)
         return (s == date_iso).any()
     except Exception:
         return False
+
+def _latest_price_date(symbol: str) -> tuple[str | None, int | None]:
+    """Return (latest_price_date_iso, days_ago) from the symbol's daily CSV.
+    If file missing or no dates, returns (None, None).
+    """
+    try:
+        p = _csv_path_for(symbol)
+        if not p.exists():
+            return None, None
+        df = pd.read_csv(p)
+        if "Date" not in df.columns or df.empty:
+            return None, None
+        s = pd.to_datetime(df["Date"], errors="coerce", utc=True).dt.date
+        s = s.dropna()
+        if s.empty:
+            return None, None
+        last = s.max()
+        from datetime import datetime as _dt, timezone as _tz
+        today = _dt.now(_tz.utc).date()
+        return last.isoformat(), (today - last).days
+    except Exception:
+        return None, None
 
 def fetch_valuation_snapshot(symbol: str) -> dict | None:
     """
@@ -1616,18 +1643,18 @@ def update_valuation_csv(symbol: str) -> tuple[_Path, bool]:
     """
     path = _valuation_csv_path(symbol)
     from datetime import datetime as _dt
-    today = _dt.utcnow().date().isoformat()
-    # Only append for trading days where a price bar exists for today
-    if not _has_price_for_date(symbol, today):
+    # Use the latest available price bar date instead of strict UTC today
+    eff_date, _age = _latest_price_date(symbol)
+    if not eff_date:
         return path, False
     snap = fetch_valuation_snapshot(symbol)
     if snap is None:
         return path, False
-    df_new = pd.DataFrame([{**{"Date": today}, **snap}])
+    df_new = pd.DataFrame([{**{"Date": eff_date}, **snap}])
     if path.exists():
         try:
             df = pd.read_csv(path)
-            if (df["Date"] == today).any():
+            if (df["Date"] == eff_date).any():
                 return path, False
             df = pd.concat([df, df_new], ignore_index=True)
         except Exception:
@@ -1736,9 +1763,11 @@ def _append_valuation_row(symbol: str, row: dict) -> tuple[_Path, bool]:
     """
     path = _valuation_csv_path(symbol)
     from datetime import datetime as _dt
-    today = _dt.utcnow().date().isoformat()
-    # Build the new row frame
-    df_new = pd.DataFrame([{**{"Date": today}, **row}])
+    eff_date, _age = _latest_price_date(symbol)
+    if not eff_date:
+        # Without a recent price bar date, skip creating a row
+        return _valuation_csv_path(symbol), False
+    df_new = pd.DataFrame([{**{"Date": eff_date}, **row}])
     # Load existing for duplicate checks
     df = None
     if path.exists():
@@ -1747,7 +1776,7 @@ def _append_valuation_row(symbol: str, row: dict) -> tuple[_Path, bool]:
         except Exception:
             df = None
     if df is not None and not df.empty:
-        if (df.get("Date") == today).any():
+        if (df.get("Date") == eff_date).any():
             return path, False
         # Compare against last stored row for metric equality
         last = df.iloc[-1].to_dict()
@@ -1771,10 +1800,16 @@ def _append_valuation_row(symbol: str, row: dict) -> tuple[_Path, bool]:
                     changed = True; break
                 if not _np.isclose(a, b, rtol=1e-9, atol=1e-12):
                     changed = True; break
-        has_price_today = _has_price_for_date(symbol, today)
-        if not has_price_today and not changed:
-            # No price bar and metrics unchanged -> skip appending
-            return path, False
+        # If metrics unchanged versus latest stored row, skip appending
+        if not changed:
+            # Allow override to append even if metrics unchanged
+            try:
+                import os as _os
+                _always = _os.environ.get("VALUATION_ALWAYS_APPEND", "0").lower() in {"1","true","yes","on"}
+            except Exception:
+                _always = False
+            if not _always:
+                return path, False
         # else proceed to append
         try:
             df = pd.concat([df, df_new], ignore_index=True)
@@ -1943,26 +1978,27 @@ def update_all_valuations(
             status = "ok" if updated else "no_change"
             if not updated:
                 # Check specific reasons
-                has_price_bar = _has_price_for_date(used_symbol or chosen, today)
-                # Check if valuation file already has today's row
-                has_today_row = False
+                eff_date, _age = _latest_price_date(used_symbol or chosen)
+                has_price_bar = bool(eff_date)
+                # Check if valuation file already has the effective price date row
+                has_eff_row = False
                 try:
                     if path and isinstance(path, _Path) and path.exists():
                         df_existing = pd.read_csv(path)
-                        has_today_row = ("Date" in df_existing.columns) and (df_existing["Date"] == today).any()
+                        has_eff_row = ("Date" in df_existing.columns) and (df_existing["Date"] == (eff_date or "")).any()
                 except Exception:
                     pass
-                if has_today_row:
-                    reason = "already_has_today"
+                if has_eff_row:
+                    reason = "already_has_effective_date"
                 elif not has_price_bar:
-                    reason = "no_price_bar_today"
+                    reason = "no_recent_price_bar"
                 else:
                     # No metrics found on all sources
                     primary_ok = _has_metrics(snap)
                     any_fb_ok = any(_has_metrics(fb_map.get(s)) for s in fb_lists[ti])
                     reason = "no_valuation_fields" if not (primary_ok or any_fb_ok) else "unknown_or_write_skipped"
                 # If truly no data captured at all, mark status accordingly
-                if not has_today_row:
+                if not has_eff_row:
                     status = "no_data"
 
             rows.append({
@@ -1998,22 +2034,23 @@ def update_all_valuations(
             status = "ok" if updated else "no_change"
             if not updated:
                 # Reasoning
-                has_price_bar = _has_price_for_date(chosen, today)
-                # Check if valuation file already has today's row
-                has_today_row = False
+                eff_date, _age = _latest_price_date(chosen)
+                has_price_bar = bool(eff_date)
+                # Check if valuation file already has the effective date row
+                has_eff_row = False
                 try:
                     if path and isinstance(path, _Path) and path.exists():
                         df_existing = pd.read_csv(path)
-                        has_today_row = ("Date" in df_existing.columns) and (df_existing["Date"] == today).any()
+                        has_eff_row = ("Date" in df_existing.columns) and (df_existing["Date"] == (eff_date or "")).any()
                 except Exception:
                     pass
-                if has_today_row:
-                    reason = "already_has_today"
+                if has_eff_row:
+                    reason = "already_has_effective_date"
                 elif not has_price_bar:
-                    reason = "no_price_bar_today"
+                    reason = "no_recent_price_bar"
                 else:
                     reason = "no_valuation_fields"
-                if not has_today_row:
+                if not has_eff_row:
                     status = "no_data"
 
             rows.append({

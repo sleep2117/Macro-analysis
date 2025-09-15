@@ -49,6 +49,8 @@ jobs:
           MAX_SYMBOLS: ''
           # We DO run valuations daily; use batch quote API to avoid 429
           SKIP_VALUATIONS: 'false'
+          # Always append valuation row for latest price date (even if unchanged)
+          VALUATION_ALWAYS_APPEND: '1'
           # Prices: incremental with recent lookback window to catch corrections
           PRICE_SCOPE: 'primary'
           PRICE_MODE: 'append'
